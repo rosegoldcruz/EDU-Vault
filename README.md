@@ -34,8 +34,8 @@ OpenAI workspace sites can read the current user's email from
 
 SIWC-authenticated workspace sites may also receive
 `oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
-`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied
-by `oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
+`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
+`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
 
 Treat the full name as optional and fall back to email when it is absent:
 
@@ -68,8 +68,8 @@ optional or required ChatGPT sign-in:
   anonymous visitors through Sign in with ChatGPT.
 - Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
   browser links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after
-  sign-in or sign-out. The helper validates and safely encodes it.
+- Pass a same-origin relative `returnTo` path for the destination after sign-in
+  or sign-out. The helper validates and safely encodes it.
 - Mark protected pages with `export const dynamic = "force-dynamic"` because
   they depend on per-request identity headers.
 
