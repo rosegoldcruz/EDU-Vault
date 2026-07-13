@@ -15,21 +15,26 @@ const geistMono = Geist_Mono({
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "blockwise.academy";
+  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
   const origin = `${protocol}://${host}`;
 
   return {
-    title: "Blockwise Academy | Understand Crypto, DeFi & Blockchain",
-    description: "Practical crypto, DeFi, and blockchain education—built to turn noise into knowledge you can use.",
+    title: "Iron Vault | Vaulted Academy — Learn. Prove. Operate. Earn.",
+    description: "Structured crypto, blockchain, and DeFi education built for practical execution, verified mastery, progression, and onchain-ready skills.",
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
     openGraph: {
-      title: "Don’t chase the future. Understand it.",
-      description: "Crypto, DeFi, and blockchain education—without the hype.",
+      title: "Iron Vault | Vaulted Academy",
+      description: "Learn. Prove. Operate. Earn. Build practical, onchain-ready skills through structured education and verified mastery.",
       type: "website",
-      images: [{ url: `${origin}/og.png`, width: 1792, height: 907, alt: "Blockwise Academy crypto education" }],
+      images: [{ url: `${origin}/og.png`, width: 1672, height: 941, alt: "Iron Vault | Vaulted Academy crypto, DeFi, and blockchain education" }],
     },
-    twitter: { card: "summary_large_image", images: [`${origin}/og.png`] },
+    twitter: {
+      card: "summary_large_image",
+      title: "Iron Vault | Vaulted Academy",
+      description: "Learn. Prove. Operate. Earn. Structured education for onchain-ready skills.",
+      images: [`${origin}/og.png`],
+    },
   };
 }
 
@@ -39,10 +44,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="antialiased">
         {children}
       </body>
     </html>

@@ -1,113 +1,303 @@
-const modules = [
-  { n: "01", title: "Blockchain, decoded", text: "Understand blocks, wallets, keys, and consensus without the jargon fog." },
-  { n: "02", title: "DeFi from first principles", text: "See how swaps, lending, liquidity, and stablecoins actually work onchain." },
-  { n: "03", title: "Risk before reward", text: "Learn to read protocols, spot fragile mechanics, and make informed decisions." },
-  { n: "04", title: "Put knowledge onchain", text: "Follow guided labs that turn concepts into practical, repeatable skills." },
+import { AcademyExperience } from "./AcademyExperience";
+import { MobileNav } from "./MobileNav";
+import { OrbitLearning } from "./OrbitLearning";
+
+const methodStages = [
+  {
+    number: "01",
+    title: "Learn",
+    text: "Structured lessons build first-principles understanding across crypto, wallets, DeFi, security, and onchain research.",
+  },
+  {
+    number: "02",
+    title: "Prove",
+    text: "Knowledge checks and assessments verify understanding instead of rewarding passive completion.",
+  },
+  {
+    number: "03",
+    title: "Operate",
+    text: "Scenario-based practice prepares you to interpret transactions, assess risk, and use wallets safely.",
+    note: "Practical execution is the method; live lab availability may vary.",
+  },
+  {
+    number: "04",
+    title: "Earn",
+    text: "XP, ranks, achievements, access, credentials, and eligible milestones recognize progress.",
+  },
 ];
 
-const outcomes = [
-  ["Read", "a block explorer with confidence"],
-  ["Explain", "where DeFi yield really comes from"],
-  ["Evaluate", "protocol design and smart-contract risk"],
-  ["Act", "with a framework—not a hunch"],
+const curriculum = [
+  {
+    title: "Crypto Foundations",
+    text: "Understand money, networks, keys, transactions, and the ideas beneath crypto systems.",
+  },
+  {
+    title: "Wallets and Custody",
+    text: "Understand ownership, signing, custody models, recovery practices, and operational security.",
+  },
+  {
+    title: "Blockchain Operations",
+    text: "Read transaction flows, fees, confirmations, explorers, and network behavior.",
+  },
+  {
+    title: "DeFi Systems",
+    text: "Explain swaps, liquidity, lending, stablecoins, yields, and protocol dependencies.",
+  },
+  {
+    title: "Trading and Market Structure",
+    text: "Interpret liquidity, order flow, volatility, and risk without chasing signals.",
+  },
+  {
+    title: "Tokenomics and Project Analysis",
+    text: "Evaluate incentives, supply mechanics, governance, and project design.",
+  },
+  {
+    title: "Security and Scam Defense",
+    text: "Recognize attack patterns, verify claims, and protect keys and approvals.",
+  },
+  {
+    title: "Onchain Research",
+    text: "Use public data and structured reasoning to investigate wallets, protocols, and activity.",
+  },
+  {
+    title: "Advanced Protocol Analysis",
+    text: "Assess architecture, dependencies, failure modes, and systemic risk.",
+  },
+];
+
+const progressionSystems = [
+  ["XP", "Measures learning activity and mastery."],
+  ["Rank", "Reflects long-term academy progress."],
+  ["Badges", "Recognize specific competencies."],
+  ["Streaks", "Encourage consistency."],
+  ["Credentials", "Verify completed pathways."],
+  ["Vault access", "Unlocks advanced content and experiences."],
+  ["Eligible IVT rewards", "Recognize certain milestones—not every lesson or action."],
+];
+
+const rewardStandards = [
+  "Rewards connect to eligible milestones and completion requirements.",
+  "Learning progress and token rewards are separate systems.",
+  "XP does not automatically equal token value.",
+  "Rewards may be reviewed, limited, or unavailable.",
+  "Token values can fluctuate. Education is the primary product.",
+];
+
+const standards = [
+  "Structured curriculum",
+  "Beginner-to-advanced progression",
+  "Practical security emphasis",
+  "Clear explanations without unnecessary jargon",
+  "Content reviewed as the ecosystem evolves",
+  "No requests for seed phrases or private keys",
+  "No personalized financial instructions",
+  "Focus on systems, evidence, and risk",
+];
+
+function ArrowUpRight() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 16 16">
+      <path d="M4 12 12 4M6 4h6v6" />
+    </svg>
+  );
+}
+
+function ArrowDown() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 16 16">
+      <path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" />
+    </svg>
+  );
+}
+
+function Brand() {
+  return (
+    <span className="brand-lockup">
+      <span className="brand-mark" aria-hidden="true"><i /><i /><i /></span>
+      <span className="brand-copy">
+        <span>IRON VAULT</span><em>/</em><span>VAULTED ACADEMY</span>
+      </span>
+    </span>
+  );
+}
+
+const navItems = [
+  ["Method", "#method"],
+  ["Curriculum", "#curriculum"],
+  ["Experience", "#academy-experience"],
+  ["Rewards", "#rewards"],
+  ["Standards", "#standards"],
 ];
 
 export default function Home() {
   return (
     <main>
-      <nav className="nav shell" aria-label="Primary navigation">
-        <a className="brand" href="#top" aria-label="Blockwise Academy home">
-          <span className="brand-mark"><i /><i /><i /></span>
-          <span>BLOCKWISE<span className="brand-dot">/</span>ACADEMY</span>
+      <header className="site-header shell">
+        <a className="brand" href="#top" aria-label="Iron Vault, Vaulted Academy home">
+          <Brand />
         </a>
-        <div className="nav-links">
-          <a href="#curriculum">Curriculum</a>
-          <a href="#method">How it works</a>
-          <a href="#faq">FAQ</a>
-        </div>
-        <a className="button button-small" href="#enroll">Explore the academy <span>↗</span></a>
-      </nav>
+
+        <nav className="nav-links" aria-label="Primary navigation">
+          {navItems.map(([label, href]) => <a href={href} key={href}>{label}</a>)}
+        </nav>
+
+        <a className="button button-small header-cta" href="#academy-experience">
+          Enter the Academy <ArrowUpRight />
+        </a>
+
+        <MobileNav />
+      </header>
 
       <section className="hero shell" id="top">
-        <div className="eyebrow"><span className="pulse" /> Crypto education for the conviction era</div>
         <h1>Don’t chase the future.<br /><span>Understand it.</span></h1>
-        <p className="hero-copy">The education platform that turns crypto, blockchain, and DeFi from noise into knowledge you can actually use.</p>
+        <p className="hero-copy">
+          Master crypto, blockchain, and DeFi through structured learning, practical labs,
+          verified assessments, and onchain-ready skills.
+        </p>
         <div className="hero-actions">
-          <a className="button" href="#enroll">Start learning now <span>↗</span></a>
-          <a className="text-link" href="#curriculum">View the curriculum <span>↓</span></a>
+          <a className="button" href="#academy-experience">Enter the Academy <ArrowUpRight /></a>
+          <a className="text-link" href="#curriculum">Explore the Curriculum <ArrowDown /></a>
         </div>
+
         <OrbitLearning />
-        <div className="proof-strip">
-          <span>Built for beginners</span><i /> <span>Practical onchain labs</span><i /> <span>No hype. No signals.</span><i /> <span>Learn at your pace</span>
+
+        <div className="proof-rail" aria-label="Academy proof points">
+          <span>320+ Structured Lessons</span>
+          <span>Beginner to Advanced</span>
+          <span>Verified Knowledge Checks</span>
+          <span>Progress + Eligible Rewards</span>
         </div>
       </section>
 
-      <section className="statement shell" id="method">
-        <div className="section-tag">[ OUR POSITION ]</div>
-        <p>Crypto doesn’t need more noise.<br /><strong>It needs more people who understand it.</strong></p>
-        <div className="statement-grid">
-          <div><span>NOT A</span><b>Trading room</b></div><div><span>NOT A</span><b>Token pitch</b></div><div><span>NOT A</span><b>Shortcut</b></div><div className="yes"><span>BUILT TO</span><b>Teach you how it works</b></div>
-        </div>
+      <section className="method shell section-space" id="method">
+        <div className="section-tag">[ THE IRON VAULT METHOD ]</div>
+        <h2>Learn. Prove. Operate. Earn.</h2>
+        <ol className="method-rail">
+          {methodStages.map((stage) => (
+            <li key={stage.number}>
+              <span className="stage-number">{stage.number}</span>
+              <h3>{stage.title}</h3>
+              <p>{stage.text}</p>
+              {stage.note ? <small>{stage.note}</small> : null}
+            </li>
+          ))}
+        </ol>
+        <p className="method-caption"><i /> One connected system—from first principle to capable operation.</p>
       </section>
 
       <section className="curriculum" id="curriculum">
-        <div className="shell">
-          <div className="section-head">
-            <div><div className="section-tag">[ THE LEARNING PATH ]</div><h2>From curious<br />to <span>crypto-literate.</span></h2></div>
-            <p>A focused curriculum designed to build your knowledge in the right order—one clear concept at a time.</p>
+        <div className="shell section-space">
+          <div className="section-intro curriculum-intro">
+            <div>
+              <div className="section-tag">[ CURRICULUM DEPTH ]</div>
+              <h2>From first principles<br />to <span>onchain fluency.</span></h2>
+            </div>
+            <p>A beginner-to-advanced curriculum built in the order capable operators need.</p>
           </div>
-          <div className="module-grid">
-            {modules.map((m) => <article className="module" key={m.n}><span className="module-num">{m.n}</span><div className="module-icon">{m.n === "01" ? "◇" : m.n === "02" ? "⇄" : m.n === "03" ? "⌁" : "↗"}</div><h3>{m.title}</h3><p>{m.text}</p><a href="#enroll">Explore module <span>↗</span></a></article>)}
+
+          <div className="curriculum-grid">
+            {curriculum.map((item, index) => (
+              <article key={item.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+
+          <a className="button curriculum-cta" href="#academy-experience">
+            Explore the Academy Experience <ArrowUpRight />
+          </a>
+        </div>
+      </section>
+
+      <section className="experience shell section-space" id="academy-experience">
+        <div className="section-intro experience-intro">
+          <div>
+            <div className="section-tag">[ ACADEMY EXPERIENCE ]</div>
+            <h2>See how the academy works.</h2>
+            <p>A structured learning path makes the next action clear—from lesson to assessment to mastery.</p>
+          </div>
+          <a className="button" href="#curriculum">Explore the Curriculum <ArrowUpRight /></a>
+        </div>
+        <AcademyExperience />
+      </section>
+
+      <section className="progression" id="progression">
+        <div className="shell section-space">
+          <div className="section-intro progression-intro">
+            <div>
+              <div className="section-tag">[ PROGRESSION + REWARDS ]</div>
+              <h2>Progress has more<br />than one signal.</h2>
+            </div>
+            <div>
+              <p>Each system has a distinct job. Rewards support the education system; they do not define it.</p>
+              <a className="text-link dark-link" href="#rewards">How rewards work <ArrowDown /></a>
+            </div>
+          </div>
+
+          <div className="progression-layout">
+            <ol className="progression-list">
+              {progressionSystems.map(([label, text], index) => (
+                <li key={label}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{label}</h3>
+                  <p>{text}</p>
+                </li>
+              ))}
+            </ol>
+
+            <div className="reward-explainer" id="rewards">
+              <div className="section-tag">[ REWARD TRANSPARENCY ]</div>
+              <h2>How rewards work</h2>
+              <ul>
+                {rewardStandards.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+              <p className="reward-note">Education first. Rewards apply only to eligible milestones.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="outcomes shell">
-        <div><div className="section-tag">[ WHAT CHANGES ]</div><h2>Leave with more<br />than information.</h2></div>
-        <div className="outcome-list">
-          {outcomes.map(([verb, detail], i) => <div key={verb}><span>0{i + 1}</span><p><strong>{verb}</strong> {detail}</p><b>✓</b></div>)}
+      <section className="standards shell section-space" id="standards">
+        <div className="standards-copy">
+          <div className="section-tag">[ TRUST + STANDARDS ]</div>
+          <h2>Competence requires <span>standards.</span></h2>
+          <p>Protective by design. Practical by default.</p>
         </div>
-      </section>
-
-      <section className="protocol shell">
-        <div className="protocol-card">
-          <div className="section-tag">[ HOW YOU LEARN ]</div>
-          <h2>A protocol for<br /><span>real understanding.</span></h2>
-          <div className="steps">
-            <div><b>01</b><h3>See it clearly</h3><p>Visual lessons make complex systems click.</p></div>
-            <div><b>02</b><h3>Test the idea</h3><p>Knowledge checks reveal what you truly know.</p></div>
-            <div><b>03</b><h3>Use it onchain</h3><p>Guided labs connect theory to the real world.</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section className="faq shell" id="faq">
-        <div><div className="section-tag">[ COMMON QUESTIONS ]</div><h2>Start with clarity.</h2></div>
-        <div className="faq-list">
-          <details open><summary>Do I need crypto experience?<span>−</span></summary><p>No. The path starts with first principles and builds deliberately from there.</p></details>
-          <details><summary>Is this financial advice or trading signals?<span>+</span></summary><p>No. Blockwise is education: concepts, systems, research skills, and risk awareness.</p></details>
-          <details><summary>How do the practical labs work?<span>+</span></summary><p>Step-by-step simulations and guided onchain activities let you apply each lesson safely.</p></details>
-          <details><summary>Can I learn at my own pace?<span>+</span></summary><p>Yes. Lessons are on demand, so your learning path fits your schedule.</p></details>
-        </div>
+        <ol className="standards-list">
+          {standards.map((item, index) => (
+            <li key={item}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{item}</strong>
+              <i aria-hidden="true" />
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section className="cta" id="enroll">
         <div className="shell">
-          <div className="eyebrow"><span className="pulse" /> Your education is the edge</div>
-          <h2>The next era is onchain.<br /><span>Be ready to understand it.</span></h2>
-          <p>Join the education platform built for people who want knowledge—not noise.</p>
-          <a className="button button-light" href="mailto:learn@blockwise.academy?subject=Blockwise%20Academy%20Access">Explore the academy <span>↗</span></a>
-          <small>Education only. No hype. No financial advice.</small>
+          <h2>Learn the system. <span>Prove what you know.</span></h2>
+          <p>Build the knowledge, judgment, and operating habits required to move onchain with competence.</p>
+          <div className="cta-actions">
+            <a className="button button-dark" href="#academy-experience">Enter the Academy <ArrowUpRight /></a>
+            <a className="text-link dark-link" href="#curriculum">Explore the Curriculum <ArrowUpRight /></a>
+          </div>
+          <small>Education first. Rewards apply only to eligible milestones.</small>
         </div>
       </section>
 
       <footer className="shell">
-        <a className="brand" href="#top"><span className="brand-mark"><i /><i /><i /></span><span>BLOCKWISE<span className="brand-dot">/</span>ACADEMY</span></a>
-        <p>Crypto knowledge, built block by block.</p>
-        <div><a href="#curriculum">Curriculum</a><a href="#method">Method</a><a href="#faq">FAQ</a></div>
-        <span>© 2026 Blockwise Academy</span>
+        <a className="brand" href="#top" aria-label="Iron Vault, Vaulted Academy home"><Brand /></a>
+        <nav aria-label="Footer navigation">
+          {navItems.map(([label, href]) => <a href={href} key={href}>{label}</a>)}
+        </nav>
+        <div className="footer-meta">
+          <span>© 2026 Iron Vault | Vaulted Academy</span>
+          <p>Learn. Prove. Operate. Earn.</p>
+        </div>
       </footer>
     </main>
   );
 }
-import { OrbitLearning } from "./OrbitLearning";

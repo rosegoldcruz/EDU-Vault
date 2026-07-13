@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 
 const orbitModules = [
-  { number: "01", title: "FOUNDATIONS", subtitle: "Wallets · Keys · Blocks", className: "card-a" },
-  { number: "02", title: "DEFI SYSTEMS", subtitle: "Liquidity · Lending · Yield", className: "card-b" },
-  { number: "03", title: "RISK & RESEARCH", subtitle: "Evaluate · Verify · Decide", className: "card-c" },
+  { number: "01", title: "FOUNDATIONS", subtitle: "Wallets · Keys · Blocks", className: "card-a", href: "#curriculum" },
+  { number: "02", title: "DEFI SYSTEMS", subtitle: "Liquidity · Lending · Yield", className: "card-b", href: "#curriculum" },
+  { number: "03", title: "RISK & RESEARCH", subtitle: "Evaluate · Verify · Decide", className: "card-c", href: "#standards" },
 ];
 
 export function OrbitLearning() {
@@ -34,7 +34,7 @@ export function OrbitLearning() {
     <div
       ref={orbitRef}
       className={`hero-stage learning-orbit${isActive ? " is-active" : ""}`}
-      aria-label="An interactive learning orbit from crypto foundations through DeFi systems and risk research"
+      aria-label="A connected learning orbit from crypto foundations through DeFi systems and risk research"
     >
       <div className="orbit-grid" aria-hidden="true" />
       <div className="core-pulse" aria-hidden="true" />
@@ -44,37 +44,37 @@ export function OrbitLearning() {
       <div className="orbit-signal" aria-hidden="true" />
 
       {orbitModules.map((module, index) => (
-        <button
+        <a
           className={`chain-card ${module.className}`}
           style={{ "--module-delay": `${1.05 + index * 1.15}s` } as React.CSSProperties}
-          type="button"
+          href={module.href}
           key={module.number}
           aria-label={`${module.title}: ${module.subtitle}`}
         >
           <span className="module-tick">{module.number}</span>
           <span className="module-title">{module.title}</span>
           <small>{module.subtitle}</small>
-          <span className="card-proof" aria-hidden="true">VERIFIED</span>
+          <span className="card-proof" aria-hidden="true">PATH STAGE</span>
           <i className="connection-line" aria-hidden="true" />
-        </button>
+        </a>
       ))}
 
       <div className="core" aria-live="polite">
         <span className="core-kicker">LEARNING STATE</span>
         <div className="core-sequence">
-          <strong className="core-word word-knowledge">KNOWLEDGE</strong>
-          <strong className="core-word word-understanding">UNDERSTANDING</strong>
-          <strong className="core-word word-conviction">CONVICTION</strong>
+          <strong className="core-word word-knowledge">LEARN</strong>
+          <strong className="core-word word-understanding">PROVE</strong>
+          <strong className="core-word word-conviction">ONCHAIN READY</strong>
         </div>
         <div className="core-progress"><i /><i /><i /></div>
       </div>
 
       <div className="stage-label label-left">LEARN THE SYSTEM</div>
-      <div className="stage-label label-right">USE THE KNOWLEDGE</div>
+      <div className="stage-label label-right">PROVE THE KNOWLEDGE</div>
       <div className="orbit-proof" aria-hidden="true">
-        <span>LEARNING PROOF</span>
+        <span>STRUCTURED PATH</span>
         <div><i /><i /><i /></div>
-        <b>03 / 03</b>
+        <b>CONNECTED</b>
       </div>
     </div>
   );
