@@ -40,6 +40,8 @@ repomix-output.xml
 
 # typescript
 next-env.d.ts
+*.tsbuildinfo
+/.data/
 /dist/
 /.wrangler/
 /outputs/

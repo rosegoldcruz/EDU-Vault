@@ -1,13 +1,43 @@
-import { env } from "cloudflare:workers";
-import { drizzle } from "drizzle-orm/d1";
+import { createClient, type Client } from "@libsql/client";
+import { drizzle, type LibSQLDatabase } from "drizzle-orm/libsql";
 import * as schema from "./schema";
 
-export function getDb() {
-  if (!env.DB) {
+export type AcademyDatabase = LibSQLDatabase<typeof schema>;
+
+let client: Client | null = null;
+let database: AcademyDatabase | null = null;
+
+function databaseConfig() {
+  const url = process.env.DATABASE_URL;
+  if (!url && process.env.NODE_ENV === "production") {
     throw new Error(
-      "Cloudflare D1 binding `DB` is unavailable. Set the `d1` field in .openai/hosting.json to `DB` or let your control plane inject the real binding values before using the database."
+      "DATABASE_URL is required in production. Use a persistent LibSQL/Turso URL for Vercel.",
     );
   }
 
-  return drizzle(env.DB, { schema });
+  return {
+    url: url ?? "file:.data/academy.db",
+    authToken: process.env.DATABASE_AUTH_TOKEN,
+  };
+}
+
+export function createAcademyDatabase(
+  url: string,
+  authToken?: string,
+): AcademyDatabase {
+  return drizzle(createClient({ url, authToken }), { schema });
+}
+
+export function getDb(): AcademyDatabase {
+  if (!database) {
+    client = createClient(databaseConfig());
+    database = drizzle(client, { schema });
+  }
+  return database;
+}
+
+export function resetDatabaseForTests() {
+  client?.close();
+  client = null;
+  database = null;
 }

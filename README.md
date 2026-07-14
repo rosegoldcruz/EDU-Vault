@@ -23,7 +23,7 @@ This starter does not use `wrangler.jsonc`.
 - edit site code under `app/`
 - `.openai/hosting.json` declares optional Sites D1 and R2 bindings
 - `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
+- `db/schema.ts` contains the Core Academy LibSQL/Drizzle schema
 - `examples/d1/` contains an optional D1 example surface
 - `drizzle.config.ts` supports local migration generation when needed
 
@@ -89,8 +89,62 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 
 - `npm run dev`: start local development
 - `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
+- `npm test`: run the Academy domain tests, production build, and rendered-route checks
 - `npm run db:generate`: generate Drizzle migrations after schema changes
+
+## Core Academy Foundation
+
+The academy application lives beside the unchanged public homepage. Privy owns
+authentication and wallet connectivity; the application database owns internal
+users, entitlements, wallet verification, curriculum, progress, unlocks, and XP.
+
+Required production environment variables:
+
+- `NEXT_PUBLIC_PRIVY_APP_ID`: public Privy application ID.
+- `PRIVY_APP_SECRET`: server-only Privy application secret.
+- `PRIVY_VERIFICATION_KEY`: optional server-side JWT verification key; when
+  omitted, the Privy server SDK retrieves the app key.
+- `NEXT_PUBLIC_PRIVY_CLIENT_ID`: optional Privy App Client ID for environments
+  that use App Clients.
+- `DATABASE_URL`: persistent LibSQL/Turso URL used by Vercel. Local development
+  defaults to the ignored `.data/academy.db` file.
+- `DATABASE_AUTH_TOKEN`: server-only token for a remote LibSQL/Turso database.
+
+Privy production and development apps should be separate. Register every live
+origin in Privy. If a production app uses a custom auth domain, localhost must
+use a development Privy app or a configured App Client; otherwise the custom
+domain will correctly reject the localhost iframe.
+
+Database setup:
+
+```bash
+npm run db:migrate
+npm run db:seed
+```
+
+Quality and verification:
+
+```bash
+npm run lint
+npm run typecheck
+npm run test
+NITRO_PRESET=vercel npx vite build
+```
+
+Application routes:
+
+- `/login` and `/refresh`: Privy entry and session restoration.
+- `/academy`: authenticated learner dashboard.
+- `/academy/paths/crypto-foundations`: the core learning path.
+- `/academy/modules/wallet-foundations`: module entry.
+- `/academy/lessons/[slug]`: server-authorized lesson start and completion.
+- `/account`: wallet connection, verification, and primary/reward selection.
+- `/admin/academy`: read-only, server-authorized inspection for administrators.
+
+The initial path contains the three wallet-foundation lessons already represented
+by the public academy preview. Assessment scoring is intentionally deferred because
+the repository had no viable assessment engine. Token payouts, badges, ranks,
+streaks, credentials, leaderboards, and the full curriculum are also out of scope.
 
 ## Learn More
 
