@@ -10,7 +10,7 @@ export default async function WalletFoundationsModulePage() {
   return (
     <main className="academy-app-main">
       <nav className="academy-breadcrumb" aria-label="Breadcrumb">
-        <Link href="/academy">Academy</Link>
+        <Link href="/academy">Vaulted Academy</Link>
         <span>/</span>
         <Link href="/academy/paths/crypto-foundations">{state.path.title}</Link>
         <span>/</span>

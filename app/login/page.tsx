@@ -16,12 +16,12 @@ export default async function LoginPage({
     <AcademyProviders appId={appId}>
       <main className="academy-auth-page">
         <section className="academy-auth-card">
-          <Link href="/" className="academy-eyebrow">IRON VAULT / VAULTED ACADEMY</Link>
-          <span className="academy-kicker">Secure academy access</span>
+          <Link href="/" className="academy-eyebrow">Iron Vault | Vaulted Academy</Link>
+          <span className="academy-kicker">Secure Vaulted Academy access</span>
           <h1>Continue your learning path.</h1>
           <p>
             Privy restores your identity and linked accounts. Your curriculum progress,
-            XP, membership, and wallet selections remain in the Academy database.
+            XP, membership, and wallet selections remain in the Vaulted Academy database.
           </p>
           <LoginPanel appId={appId} returnTo={returnTo} />
           <small>Email, social, external Solana wallet, and embedded wallet methods follow the project’s Privy configuration.</small>

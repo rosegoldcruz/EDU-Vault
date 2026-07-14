@@ -25,9 +25,9 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
   const next = state.lessons[index + 1];
   return (
     <main className="academy-app-main academy-lesson-page">
-      <nav className="academy-breadcrumb" aria-label="Breadcrumb"><Link href="/academy">Academy</Link><span>/</span><Link href="/academy/paths/crypto-foundations">{state.path.title}</Link><span>/</span><span>{lesson.title}</span></nav>
+      <nav className="academy-breadcrumb" aria-label="Breadcrumb"><Link href="/academy">Vaulted Academy</Link><span>/</span><Link href="/academy/paths/crypto-foundations">{state.path.title}</Link><span>/</span><span>{lesson.title}</span></nav>
       <article className="academy-lesson-content"><header><span className="academy-kicker">{state.module.title} · Lesson {lesson.order}</span><h1>{lesson.title}</h1><p>{lesson.summary}</p><div><span>{lesson.estimatedMinutes} minutes</span><span>{lesson.xpValue} XP</span><span>{lesson.state}</span></div></header><div className="academy-reading"><p>{lesson.content}</p><aside><strong>Operational standard</strong><p>Iron Vault will never ask for your seed phrase or private key.</p></aside></div><CompleteLessonButton slug={slug} completed={lesson.state === "COMPLETED"} /></article>
-      <nav className="academy-lesson-navigation">{previous ? <Link href={`/academy/lessons/${previous.slug}`}>← {previous.title}</Link> : <span />}{next && next.state !== "LOCKED" ? <Link href={`/academy/lessons/${next.slug}`}>{next.title} →</Link> : next ? <span title={next.lockedReason ?? undefined}>{next.title} · Locked</span> : <Link href="/academy">Back to dashboard →</Link>}</nav>
+      <nav className="academy-lesson-navigation">{previous ? <Link href={`/academy/lessons/${previous.slug}`}>← {previous.title}</Link> : <span />}{next && next.state !== "LOCKED" ? <Link href={`/academy/lessons/${next.slug}`}>{next.title} →</Link> : next ? <span title={next.lockedReason ?? undefined}>{next.title} · Locked</span> : <Link href="/academy">Back to Vaulted Academy dashboard →</Link>}</nav>
     </main>
   );
 }

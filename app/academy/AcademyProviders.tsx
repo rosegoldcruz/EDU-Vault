@@ -21,7 +21,7 @@ export function AcademyProviders({
         loginMethods: ["email", "google", "wallet"],
         appearance: {
           theme: "dark",
-          accentColor: "#d1ff75",
+          accentColor: "#56E628",
           walletChainType: "solana-only",
           walletList: [
             "phantom",

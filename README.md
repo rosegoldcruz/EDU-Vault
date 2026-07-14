@@ -23,7 +23,7 @@ This starter does not use `wrangler.jsonc`.
 - edit site code under `app/`
 - `.openai/hosting.json` declares optional Sites D1 and R2 bindings
 - `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` contains the Core Academy LibSQL/Drizzle schema
+- `db/schema.ts` contains the Vaulted Academy LibSQL/Drizzle schema
 - `examples/d1/` contains an optional D1 example surface
 - `drizzle.config.ts` supports local migration generation when needed
 
@@ -89,14 +89,53 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 
 - `npm run dev`: start local development
 - `npm run build`: verify the vinext build output
-- `npm test`: run the Academy domain tests, production build, and rendered-route checks
+- `npm test`: run the Vaulted Academy domain tests, production build, and rendered-route checks
 - `npm run db:generate`: generate Drizzle migrations after schema changes
 
-## Core Academy Foundation
+## Vaulted Academy Foundation
 
-The academy application lives beside the unchanged public homepage. Privy owns
+The Vaulted Academy application lives beside the unchanged public homepage. Privy owns
 authentication and wallet connectivity; the application database owns internal
 users, entitlements, wallet verification, curriculum, progress, unlocks, and XP.
+
+### Branding
+
+Official product lock:
+
+Iron Vault | Vaulted Academy  
+#760CBC · #56E628 · #FFFFFF
+
+### Official Color System — Locked
+
+The Iron Vault | Vaulted Academy visual identity must use this exact primary palette:
+
+- Vault Purple: `#760CBC`
+- Electric Green: `#56E628`
+- White: `#FFFFFF`
+
+Use Vault Purple as the dominant brand color for primary identity, major gradients,
+selected states, branded surfaces, and premium visual elements.
+
+Use Electric Green for progress, success states, XP, completion indicators, active
+learning elements, achievement feedback, and strategic calls to action.
+
+Use White for primary typography, high-contrast interface content, icons, and clean
+visual separation.
+
+Dark neutral backgrounds may support the interface, but they must not replace or
+dilute the three official brand colors. Maintain strong readability for older
+viewers and never use near-black text or low-contrast gray copy on dark surfaces.
+
+Do not introduce cyan, pink, blue, gold, orange, or unrelated accent colors. Status
+colors may only be added when functionally necessary and must remain visually
+subordinate to the official palette.
+
+All gradients must be derived from:
+`#760CBC` -> `#56E628`
+
+The complete product must feel unified, premium, energetic, modern, and
+unmistakably Iron Vault. Purple owns the identity, green communicates momentum and
+achievement, and white keeps the whole product readable.
 
 Required production environment variables:
 
@@ -130,6 +169,13 @@ npm run typecheck
 npm run test
 NITRO_PRESET=vercel npx vite build
 ```
+
+Production readiness follow-up:
+
+- Dependency audit remediation remains open: Step 0 `npm install` reported 38
+  findings, 30 moderate and 8 high. Handle this in a dedicated pass before
+  calling the platform production-ready; do not run a disruptive audit fix in the
+  middle of feature buildout.
 
 Application routes:
 

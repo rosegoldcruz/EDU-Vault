@@ -530,7 +530,7 @@ export async function createWalletChallenge(
     "Wallet ownership verification",
     `Origin: ${origin}`,
     `Address: ${address}`,
-    `Academy user: ${user.id}`,
+    `Vaulted Academy user: ${user.id}`,
     `Nonce: ${nonce}`,
     `Issued at: ${issuedAt.toISOString()}`,
     `Expires at: ${expiresAt.toISOString()}`,

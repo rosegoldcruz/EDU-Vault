@@ -18,7 +18,7 @@ export async function apiRoute(handler: () => Promise<unknown>) {
         { status: 400 },
       );
     }
-    console.error("Academy API error", error);
+    console.error("Vaulted Academy API error", error);
     return Response.json(
       { error: "The academy service is temporarily unavailable.", code: "INTERNAL_ERROR" },
       { status: 500 },

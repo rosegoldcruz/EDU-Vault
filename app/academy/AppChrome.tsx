@@ -14,8 +14,8 @@ export function AppChrome({
   return (
     <div className="academy-app">
       <header className="academy-app-header">
-        <Link href="/" className="academy-app-brand">IRON VAULT <span>/ VAULTED ACADEMY</span></Link>
-        <nav aria-label="Academy navigation">
+        <Link href="/" className="academy-app-brand">Iron Vault | Vaulted Academy</Link>
+        <nav aria-label="Vaulted Academy navigation">
           <Link href="/academy">Dashboard</Link>
           <Link href="/academy/paths/crypto-foundations">Learning path</Link>
           <Link href="/account">Account & wallets</Link>
@@ -30,7 +30,7 @@ export function AppChrome({
         </button>
       </header>
       <div className="academy-app-identity">
-        <span>{user.displayName ?? user.primaryEmail ?? "Academy member"}</span>
+        <span>{user.displayName ?? user.primaryEmail ?? "Vaulted Academy member"}</span>
         <em>{user.role}</em>
       </div>
       {children}

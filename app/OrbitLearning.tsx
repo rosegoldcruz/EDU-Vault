@@ -44,19 +44,22 @@ export function OrbitLearning() {
       <div className="orbit-signal" aria-hidden="true" />
 
       {orbitModules.map((module, index) => (
-        <a
-          className={`chain-card ${module.className}`}
-          style={{ "--module-delay": `${1.05 + index * 1.15}s` } as React.CSSProperties}
-          href={module.href}
-          key={module.number}
-          aria-label={`${module.title}: ${module.subtitle}`}
-        >
-          <span className="module-tick">{module.number}</span>
-          <span className="module-title">{module.title}</span>
-          <small>{module.subtitle}</small>
-          <span className="card-proof" aria-hidden="true">PATH STAGE</span>
-          <i className="connection-line" aria-hidden="true" />
-        </a>
+        <div className={`orbit-node ${module.className}`} key={module.number}>
+          <div className="orbit-parallax-layer" data-parallax-max={[8, 12, 16][index]}>
+            <a
+              className="chain-card"
+              style={{ "--module-delay": `${1.05 + index * 1.15}s` } as React.CSSProperties}
+              href={module.href}
+              aria-label={`${module.title}: ${module.subtitle}`}
+            >
+              <span className="module-tick">{module.number}</span>
+              <span className="module-title">{module.title}</span>
+              <small>{module.subtitle}</small>
+              <span className="card-proof" aria-hidden="true">PATH STAGE</span>
+              <i className="connection-line" aria-hidden="true" />
+            </a>
+          </div>
+        </div>
       ))}
 
       <div className="core" aria-live="polite">

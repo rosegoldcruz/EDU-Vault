@@ -1,6 +1,8 @@
 import { AcademyExperience } from "./AcademyExperience";
-import { MobileNav } from "./MobileNav";
-import { OrbitLearning } from "./OrbitLearning";
+import { Hero } from "./Hero";
+import { LandingBrand } from "./LandingBrand";
+import { Nav } from "./Nav";
+import { landingNavItems } from "./landingNavigation";
 
 const methodStages = [
   {
@@ -110,64 +112,11 @@ function ArrowDown() {
   );
 }
 
-function Brand() {
-  return (
-    <span className="brand-lockup">
-      <span className="brand-mark" aria-hidden="true"><i /><i /><i /></span>
-      <span className="brand-copy">
-        <span>IRON VAULT</span><em>/</em><span>VAULTED ACADEMY</span>
-      </span>
-    </span>
-  );
-}
-
-const navItems = [
-  ["Method", "#method"],
-  ["Curriculum", "#curriculum"],
-  ["Experience", "#academy-experience"],
-  ["Rewards", "#rewards"],
-  ["Standards", "#standards"],
-];
-
 export default function Home() {
   return (
     <main>
-      <header className="site-header shell">
-        <a className="brand" href="#top" aria-label="Iron Vault, Vaulted Academy home">
-          <Brand />
-        </a>
-
-        <nav className="nav-links" aria-label="Primary navigation">
-          {navItems.map(([label, href]) => <a href={href} key={href}>{label}</a>)}
-        </nav>
-
-        <a className="button button-small header-cta" href="#academy-experience">
-          Enter the Academy <ArrowUpRight />
-        </a>
-
-        <MobileNav />
-      </header>
-
-      <section className="hero shell" id="top">
-        <h1>Don’t chase the future.<br /><span>Understand it.</span></h1>
-        <p className="hero-copy">
-          Master crypto, blockchain, and DeFi through structured learning, practical labs,
-          verified assessments, and onchain-ready skills.
-        </p>
-        <div className="hero-actions">
-          <a className="button" href="#academy-experience">Enter the Academy <ArrowUpRight /></a>
-          <a className="text-link" href="#curriculum">Explore the Curriculum <ArrowDown /></a>
-        </div>
-
-        <OrbitLearning />
-
-        <div className="proof-rail" aria-label="Academy proof points">
-          <span>320+ Structured Lessons</span>
-          <span>Beginner to Advanced</span>
-          <span>Verified Knowledge Checks</span>
-          <span>Progress + Eligible Rewards</span>
-        </div>
-      </section>
+      <Nav />
+      <Hero />
 
       <section className="method shell section-space" id="method">
         <div className="section-tag">[ THE IRON VAULT METHOD ]</div>
@@ -206,7 +155,7 @@ export default function Home() {
           </div>
 
           <a className="button curriculum-cta" href="#academy-experience">
-            Explore the Academy Experience <ArrowUpRight />
+            Explore the Vaulted Academy Experience <ArrowUpRight />
           </a>
         </div>
       </section>
@@ -281,7 +230,7 @@ export default function Home() {
           <h2>Learn the system. <span>Prove what you know.</span></h2>
           <p>Build the knowledge, judgment, and operating habits required to move onchain with competence.</p>
           <div className="cta-actions">
-            <a className="button button-dark" href="#academy-experience">Enter the Academy <ArrowUpRight /></a>
+            <a className="button button-dark" href="#academy-experience">Enter Vaulted Academy <ArrowUpRight /></a>
             <a className="text-link dark-link" href="#curriculum">Explore the Curriculum <ArrowUpRight /></a>
           </div>
           <small>Education first. Rewards apply only to eligible milestones.</small>
@@ -289,9 +238,9 @@ export default function Home() {
       </section>
 
       <footer className="shell">
-        <a className="brand" href="#top" aria-label="Iron Vault, Vaulted Academy home"><Brand /></a>
+        <a className="brand" href="#top" aria-label="Iron Vault | Vaulted Academy home"><LandingBrand /></a>
         <nav aria-label="Footer navigation">
-          {navItems.map(([label, href]) => <a href={href} key={href}>{label}</a>)}
+          {landingNavItems.map(({ label, href }) => <a href={href} key={href}>{label}</a>)}
         </nav>
         <div className="footer-meta">
           <span>© 2026 Iron Vault | Vaulted Academy</span>

@@ -11,12 +11,12 @@ export default async function AcademyDashboard() {
   return (
     <main className="academy-app-main">
       <div className="academy-page-heading">
-        <div><span className="academy-kicker">Academy dashboard</span><h1>Your next move is clear.</h1></div>
+        <div><span className="academy-kicker">Vaulted Academy dashboard</span><h1>Your next move is clear.</h1></div>
         <Link className="academy-primary-button" href={`/academy/lessons/${state.nextLesson?.slug ?? "wallet-ownership"}`}>
           {state.progressPercent === 100 ? "Review the module" : "Continue learning"}
         </Link>
       </div>
-      <section className="academy-metric-grid" aria-label="Academy status">
+      <section className="academy-metric-grid" aria-label="Vaulted Academy status">
         <article><span>Membership</span><strong>{state.user.membershipTier}</strong><small>{state.user.membershipStatus}</small></article>
         <article><span>Path progress</span><strong>{state.progressPercent}%</strong><small>{state.module.title}</small></article>
         <article><span>XP earned</span><strong>{state.xpTotal}</strong><small>From verified completion events</small></article>

@@ -41,7 +41,7 @@ const identity: VerifiedIdentity = {
   ],
 };
 
-test("Core Academy vertical slice", async (t) => {
+test("Vaulted Academy vertical slice", async (t) => {
   const directory = await mkdtemp(join(tmpdir(), "vaulted-academy-"));
   const db = createAcademyDatabase(`file:${join(directory, "academy.db")}`);
   await migrate(db, { migrationsFolder: join(process.cwd(), "drizzle") });
