@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { CTAButton } from "./CTAButton";
 import { LandingBrand } from "./LandingBrand";
 import { MobileNav } from "./MobileNav";
 import { landingNavItems } from "./landingNavigation";
 import { readMotionTokens } from "./motion/tokens";
+
+const NavActiveLine = lazy(() => import("./NavActiveLine").then((module) => ({ default: module.NavActiveLine })));
 
 type HoverState = "idle" | "in" | "out";
 
@@ -19,9 +21,17 @@ function afterFirstPaint() {
   });
 }
 
+function afterIdle(callback: () => void) {
+  const timeoutId = globalThis.setTimeout(callback, 4600);
+  return () => globalThis.clearTimeout(timeoutId);
+}
+
 export function Nav() {
   const [activeHref, setActiveHref] = useState<string>(landingNavItems[0].href);
   const [hoverStates, setHoverStates] = useState<Record<string, HoverState>>({});
+  const [motionReady, setMotionReady] = useState(false);
+
+  useEffect(() => afterIdle(() => setMotionReady(true)), []);
 
   useEffect(() => {
     let cleanup: (() => void) | undefined;
@@ -39,7 +49,10 @@ export function Nav() {
       const hero = document.querySelector<HTMLElement>("#top");
       if (!elevation || !hero) return;
 
-      const context = gsap.context(() => {
+      let context: gsap.Context | undefined;
+      const createTriggers = () => {
+        context?.revert();
+        context = gsap.context(() => {
         const duration = prefersReducedMotion() ? 0 : tokens.section;
         const elevate = (visible: boolean) => {
           gsap.to(elevation, {
@@ -69,9 +82,16 @@ export function Nav() {
             onEnterBack: () => setActiveHref(item.href),
           });
         });
-      });
+        });
+      };
 
-      cleanup = () => context.revert();
+      createTriggers();
+      document.addEventListener("landing-sections-ready", createTriggers);
+
+      cleanup = () => {
+        document.removeEventListener("landing-sections-ready", createTriggers);
+        context?.revert();
+      };
     }
 
     void mountMotion();
@@ -105,7 +125,13 @@ export function Nav() {
               {item.label}
               <span className="nav-hover-line" aria-hidden="true" />
               {activeHref === item.href ? (
-                <span className="nav-active-line" aria-hidden="true" />
+                motionReady ? (
+                  <Suspense fallback={<span className="nav-active-line" aria-hidden="true" />}>
+                    <NavActiveLine />
+                  </Suspense>
+                ) : (
+                  <span className="nav-active-line" aria-hidden="true" />
+                )
               ) : null}
             </a>
           );

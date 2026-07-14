@@ -1,0 +1,232 @@
+"use client";
+
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useState } from "react";
+import { VaultAccordion, type VaultAccordionItem } from "./VaultAccordion";
+import { useMotionTokens } from "./motion/tokens";
+
+const tabContent = [
+  {
+    label: "Foundation",
+    title: "Concepts become usable mental models.",
+    text: "Learners connect wallets, keys, blocks, transactions, fees, and custody before moving into protocol behavior.",
+  },
+  {
+    label: "Execution",
+    title: "Practice makes the next action legible.",
+    text: "Assessments and guided scenarios train the habit of reading a transaction, checking assumptions, and explaining risk.",
+  },
+  {
+    label: "Proof",
+    title: "Progress is earned through demonstrated understanding.",
+    text: "XP, rank, credentials, access, and eligible milestones are tied to completion requirements rather than passive activity.",
+  },
+];
+
+const surfaceCards = [
+  {
+    title: "Wallet Confidence",
+    text: "Understand signing, approvals, custody tradeoffs, and recovery decisions before value is at risk.",
+    href: "#benefits",
+  },
+  {
+    title: "DeFi Literacy",
+    text: "Read swaps, liquidity, lending, stablecoins, yields, and protocol dependencies with a systems view.",
+    href: "#benefits",
+  },
+  {
+    title: "Research Discipline",
+    text: "Use onchain evidence, project design, incentives, and token mechanics to build informed analysis.",
+    href: "#benefits",
+  },
+  {
+    title: "Security Standards",
+    text: "Recognize attack patterns, verify claims, and keep private keys and seed phrases out of every workflow.",
+    href: "#faq",
+  },
+];
+
+const benefitItems: VaultAccordionItem[] = [
+  {
+    title: "Beginner-to-advanced curriculum",
+    detail: "The path starts with crypto primitives and moves into DeFi, trading structure, security, tokenomics, and protocol analysis in the order learners need.",
+  },
+  {
+    title: "Verified knowledge checks",
+    detail: "Progression depends on demonstrated comprehension, so the academy can distinguish completion from genuine operating readiness.",
+  },
+  {
+    title: "Scenario-based practice",
+    detail: "Learners rehearse wallet approvals, transaction interpretation, custody decisions, and risk review before they meet those choices in the wild.",
+  },
+  {
+    title: "Separate education and rewards logic",
+    detail: "XP, ranks, badges, credentials, and eligible IVT rewards have distinct jobs. Education remains the product, and rewards apply only to defined milestones.",
+  },
+  {
+    title: "Standards-first safety posture",
+    detail: "The academy avoids seed phrase requests, private-key handling, personalized financial instructions, and token-value framing.",
+  },
+];
+
+const faqItems: VaultAccordionItem[] = [
+  {
+    title: "Is Vaulted Academy financial advice?",
+    detail: "No. The academy teaches systems, evidence, security, and risk reasoning. It does not provide personalized investment instructions.",
+  },
+  {
+    title: "Do learners earn rewards for every lesson?",
+    detail: "No. Rewards are separate from ordinary XP and apply only to eligible milestones, completion requirements, and review conditions.",
+  },
+  {
+    title: "Will the academy ask for seed phrases or private keys?",
+    detail: "No. Seed phrases and private keys should never be shared. Security standards are part of the curriculum and the platform posture.",
+  },
+  {
+    title: "Who is the curriculum built for?",
+    detail: "It is built for beginners who need a clean foundation and advancing learners who want stronger judgment across wallets, DeFi, research, and protocol risk.",
+  },
+];
+
+function CardIcon() {
+  return (
+    <svg className="surface-card-icon" aria-hidden="true" viewBox="0 0 28 28">
+      <path d="M5 15.5 12.5 23 23 6" />
+      <path className="icon-orbit" d="M6 7h16v16H6z" />
+    </svg>
+  );
+}
+
+function ArrowUpRight() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 16 16">
+      <path d="M4 12 12 4M6 4h6v6" />
+    </svg>
+  );
+}
+
+export function StatementTabs() {
+  const [selected, setSelected] = useState(0);
+  const tokens = useMotionTokens();
+  const transition = tokens ? { duration: tokens.micro, ease: tokens.easeHover } : undefined;
+
+  return (
+    <section className="statement shell section-space" id="method">
+      <div className="statement-copy">
+        <div className="section-tag">[ THE IRON VAULT METHOD ]</div>
+        <h2>
+          <span className="gsap-reveal-line">Learn the system.</span>
+          <span className="gsap-reveal-line">Prove the knowledge.</span>
+          <span className="gsap-reveal-line">Operate with <em>standards<i className="statement-accent-line" aria-hidden="true" /></em>.</span>
+        </h2>
+      </div>
+
+      <div className="tab-strip-shell">
+        <div className="tab-strip" role="tablist" aria-label="Academy method stages">
+          {tabContent.map((tab, index) => (
+            <button
+              type="button"
+              role="tab"
+              aria-selected={selected === index}
+              aria-controls={`tab-panel-${index}`}
+              id={`tab-${index}`}
+              onClick={() => setSelected(index)}
+              key={tab.label}
+            >
+              {selected === index ? <motion.span className="tab-active-bg" layoutId="academy-tab-bg" transition={transition} /> : null}
+              <span>{tab.label}</span>
+            </button>
+          ))}
+        </div>
+
+        <div className="tab-panel-frame">
+          <AnimatePresence mode="popLayout" initial={false}>
+            <motion.div
+              className="tab-panel"
+              role="tabpanel"
+              id={`tab-panel-${selected}`}
+              aria-labelledby={`tab-${selected}`}
+              key={tabContent[selected].label}
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 10, opacity: 0 }}
+              transition={transition}
+            >
+              <h3>{tabContent[selected].title}</h3>
+              <p>{tabContent[selected].text}</p>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function LightSurfaceCardGrid() {
+  const tokens = useMotionTokens();
+  const reduceMotion = useReducedMotion();
+  const transition = tokens ? { duration: tokens.micro, ease: tokens.easeHover } : undefined;
+
+  return (
+    <section className="light-surface" id="curriculum">
+      <div className="shell section-space">
+        <div className="section-intro light-surface-intro">
+          <div>
+            <div className="section-tag">[ CURRICULUM DEPTH ]</div>
+            <h2>From first principles<br />to <span>onchain fluency.</span></h2>
+          </div>
+          <p>A structured curriculum built around the capabilities learners actually need before they operate onchain.</p>
+        </div>
+
+        <div className="surface-card-grid">
+          {surfaceCards.map((card) => (
+            <div className="surface-card-shell" key={card.title}>
+              <motion.article className="surface-card" whileHover={reduceMotion ? undefined : { y: -6 }} transition={transition}>
+                <CardIcon />
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+                <a href={card.href}>
+                  Explore capability <ArrowUpRight />
+                </a>
+              </motion.article>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function BenefitsChecklist() {
+  return (
+    <section className="benefits shell section-space" id="benefits">
+      <div className="benefits-headline">
+        <div className="section-tag">[ BENEFITS CHECKLIST ]</div>
+        <h2>Competence compounds when the path is clear.</h2>
+        <p>Every layer of the academy is designed to reduce guessing and increase operational judgment.</p>
+      </div>
+      <div className="benefits-list">
+        <VaultAccordion
+          items={benefitItems}
+          label="Vaulted Academy benefits"
+          revealClassName="benefits-reveal-item"
+        />
+      </div>
+    </section>
+  );
+}
+
+export function FAQAccordion() {
+  return (
+    <section className="faq shell section-space" id="faq">
+      <div className="section-intro faq-intro">
+        <div>
+          <div className="section-tag">[ FAQ ]</div>
+          <h2>Clear boundaries. Clear expectations.</h2>
+        </div>
+        <p>The same expansion pattern is reused here so interaction behavior stays consistent across the page.</p>
+      </div>
+      <VaultAccordion items={faqItems} label="Vaulted Academy frequently asked questions" mode="faq" />
+    </section>
+  );
+}

@@ -65,8 +65,8 @@ export function CTAButton({
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reducedMotion || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reducedMotion.matches || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
       return;
     }
 
@@ -92,7 +92,8 @@ export function CTAButton({
       setOffset({ x: targetX, y: targetY });
     };
 
-    return subscribeToMagneticPointer(move);
+    const unsubscribe = subscribeToMagneticPointer(move);
+    return unsubscribe;
   }, []);
 
   const classes = [
