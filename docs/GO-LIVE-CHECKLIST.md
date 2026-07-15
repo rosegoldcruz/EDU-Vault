@@ -6,7 +6,7 @@
 - [ ] Railway API/worker/scheduler builds, starts, shuts down, restarts, and reports healthy.
 - [ ] Privy staging login maps one stable internal user; role/entitlement checks pass.
 - [ ] Wallet ownership, replay/expiry, primary/reward constraints pass.
-- [ ] Module 0 and paid Modules 1-22 enforce access and sequencing server-side.
+- [ ] Module 0 and the verified paid Modules 1-12 enforce access and sequencing server-side; any later expansion has separately approved content records.
 - [ ] Assessment tampering fails; lesson/assessment progress and XP persist exactly once.
 - [ ] Duplicate/concurrent payment events grant once; refund/revocation passes.
 - [ ] Rewards reach manual review only; no automatic transfer path or signer secret exists.
@@ -18,4 +18,3 @@
 - [ ] Security, privacy/retention, content/legal, load, failure-injection, and end-to-end staging reviews pass.
 - [ ] DNS/domain, production env, migration, promotion, communication, and rollback approvals recorded.
 - [ ] Stop before customer-facing activation until explicit approval.
-
