@@ -1,0 +1,32 @@
+{
+  "name": "@iron-vault/member",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "MEMBER_MOCK_MODE=true next dev -p 3011",
+    "dev:api": "MEMBER_DATA_MODE=api next dev -p 3011",
+    "build": "next build",
+    "start": "next start -p 3011",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/contracts.test.mjs"
+  },
+  "dependencies": {
+    "@privy-io/react-auth": "^3.35.0",
+    "lucide-react": "^0.468.0",
+    "next": "15.5.15",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@eslint/js": "^9.39.0",
+    "@next/eslint-plugin-next": "15.5.15",
+    "eslint": "9.39.4",
+    "globals": "^16.5.0",
+    "typescript-eslint": "^8.49.0",
+    "typescript": "5.9.3"
+  }
+}
