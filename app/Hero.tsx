@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CTAButton } from "./CTAButton";
 import { OrbitLearning } from "./OrbitLearning";
 import { readMotionTokens } from "./motion/tokens";
+import { useScrollSteps } from "./useScrollSteps";
 
 function afterFirstPaint() {
   return new Promise<void>((resolve) => {
@@ -13,6 +14,16 @@ function afterFirstPaint() {
 
 export function Hero() {
   const heroRef = useRef<HTMLElement>(null);
+  const [activeStep, setActiveStep] = useState(0);
+
+  useScrollSteps({
+    rootRef: heroRef,
+    stepCount: 4,
+    onStepChange: setActiveStep,
+    pinSelector: ".hero-scroll-stage",
+    stepViewportRatio: 0.78,
+    refreshPriority: 5,
+  });
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -31,26 +42,9 @@ export function Hero() {
 
       const tokens = readMotionTokens();
       const context = gsap.context(() => {
-      const copyStage = heroElement.querySelector<HTMLElement>(".hero-copy-stage");
       const visualStage = heroElement.querySelector<HTMLElement>(".hero-visual-stage");
 
       const motionMedia = gsap.matchMedia();
-
-      motionMedia.add("(prefers-reduced-motion: no-preference)", () => {
-        if (copyStage && visualStage) {
-          gsap.timeline({
-            scrollTrigger: {
-              trigger: hero,
-              start: "top top",
-              end: "bottom top",
-              scrub: true,
-            },
-          })
-            .to(copyStage, { y: -48, scale: 0.94, opacity: 0.2, ease: "none" }, 0)
-            .to(visualStage, { y: -64, scale: 1.03, ease: "none" }, 0);
-        }
-
-      });
 
       motionMedia.add("(prefers-reduced-motion: no-preference) and (min-width: 801px)", () => {
         const driftNodes = gsap.utils.toArray<HTMLElement>(".orbit-node");
@@ -137,7 +131,8 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="hero shell" id="top" ref={heroRef}>
+    <section className="hero-scroll-story" id="top" ref={heroRef}>
+      <div className="hero hero-scroll-stage shell">
       <div className="hero-copy-stage">
         <div className="hero-heading-stack">
           <h1>Don’t chase the future.<br /><span>Understand it.<i className="hero-accent-sweep" aria-hidden="true" /></span></h1>
@@ -157,7 +152,16 @@ export function Hero() {
       </div>
 
       <div className="hero-visual-stage">
-        <OrbitLearning />
+        <OrbitLearning activeStep={activeStep} />
+      </div>
+
+      <div className="hero-step-rail" aria-label="Academy learning path progress">
+        {["Foundations", "DeFi systems", "Risk and research", "Onchain ready"].map((label, index) => (
+          <span className={index === activeStep ? "is-current" : index < activeStep ? "is-complete" : ""} key={label}>
+            <i aria-hidden="true" />
+            {label}
+          </span>
+        ))}
       </div>
 
       <div className="proof-rail" aria-label="Vaulted Academy proof points">
@@ -165,6 +169,7 @@ export function Hero() {
         <span>Beginner to Advanced</span>
         <span>Verified Knowledge Checks</span>
         <span>Progress + Eligible Rewards</span>
+      </div>
       </div>
     </section>
   );

@@ -14,10 +14,20 @@ type VaultAccordionProps = {
   label: string;
   mode?: "benefits" | "faq";
   revealClassName?: string;
+  activeIndex?: number;
+  onActiveIndexChange?: (index: number) => void;
 };
 
-export function VaultAccordion({ items, label, mode = "benefits", revealClassName = "" }: VaultAccordionProps) {
-  const [openIndex, setOpenIndex] = useState(0);
+export function VaultAccordion({
+  items,
+  label,
+  mode = "benefits",
+  revealClassName = "",
+  activeIndex,
+  onActiveIndexChange,
+}: VaultAccordionProps) {
+  const [uncontrolledIndex, setUncontrolledIndex] = useState(0);
+  const openIndex = activeIndex ?? uncontrolledIndex;
   const tokens = useMotionTokens();
   const reduceMotion = useReducedMotion();
   const transition = tokens ? { duration: tokens.micro, ease: tokens.easeHover } : undefined;
@@ -33,7 +43,11 @@ export function VaultAccordion({ items, label, mode = "benefits", revealClassNam
               <button
                 type="button"
                 aria-expanded={open}
-                onClick={() => setOpenIndex(open ? -1 : index)}
+                onClick={() => {
+                  const nextIndex = open ? -1 : index;
+                  if (activeIndex === undefined) setUncontrolledIndex(nextIndex);
+                  onActiveIndexChange?.(nextIndex);
+                }}
               >
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <strong>{item.title}</strong>

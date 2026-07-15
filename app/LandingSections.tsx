@@ -1,9 +1,10 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { useState } from "react";
+import { useRef, useState, type CSSProperties } from "react";
 import { VaultAccordion, type VaultAccordionItem } from "./VaultAccordion";
 import { useMotionTokens } from "./motion/tokens";
+import { useScrollSteps } from "./useScrollSteps";
 
 const tabContent = [
   {
@@ -107,11 +108,22 @@ function ArrowUpRight() {
 
 export function StatementTabs() {
   const [selected, setSelected] = useState(0);
+  const storyRef = useRef<HTMLElement>(null);
   const tokens = useMotionTokens();
   const transition = tokens ? { duration: tokens.micro, ease: tokens.easeHover } : undefined;
 
+  useScrollSteps({
+    rootRef: storyRef,
+    stepCount: tabContent.length,
+    onStepChange: setSelected,
+    pinSelector: ".statement-pinned",
+    stepViewportRatio: 0.76,
+    refreshPriority: 4,
+  });
+
   return (
-    <section className="statement shell section-space" id="method">
+    <section className="statement-scroll-story" id="method" ref={storyRef}>
+      <div className="statement statement-pinned shell section-space">
       <div className="statement-copy">
         <div className="section-tag">[ THE IRON VAULT METHOD ]</div>
         <h2>
@@ -158,18 +170,35 @@ export function StatementTabs() {
           </AnimatePresence>
         </div>
       </div>
+      <div className="scroll-story-counter" aria-live="polite">
+        <span>{String(selected + 1).padStart(2, "0")}</span>
+        <i aria-hidden="true"><b style={{ transform: `scaleX(${(selected + 1) / tabContent.length})` }} /></i>
+        <span>{String(tabContent.length).padStart(2, "0")}</span>
+      </div>
+      </div>
     </section>
   );
 }
 
 export function LightSurfaceCardGrid() {
+  const [selected, setSelected] = useState(0);
+  const storyRef = useRef<HTMLElement>(null);
   const tokens = useMotionTokens();
   const reduceMotion = useReducedMotion();
   const transition = tokens ? { duration: tokens.micro, ease: tokens.easeHover } : undefined;
 
+  useScrollSteps({
+    rootRef: storyRef,
+    stepCount: surfaceCards.length,
+    onStepChange: setSelected,
+    pinSelector: ".light-surface-pinned",
+    stepViewportRatio: 0.78,
+    refreshPriority: 3,
+  });
+
   return (
-    <section className="light-surface" id="curriculum">
-      <div className="shell section-space">
+    <section className="light-surface light-surface-scroll-story" id="curriculum" ref={storyRef}>
+      <div className="light-surface-pinned shell section-space">
         <div className="section-intro light-surface-intro">
           <div>
             <div className="section-tag">[ CURRICULUM DEPTH ]</div>
@@ -179,9 +208,17 @@ export function LightSurfaceCardGrid() {
         </div>
 
         <div className="surface-card-grid">
-          {surfaceCards.map((card) => (
-            <div className="surface-card-shell" key={card.title}>
-              <motion.article className="surface-card" whileHover={reduceMotion ? undefined : { y: -6 }} transition={transition}>
+          {surfaceCards.map((card, index) => {
+            const offset = index - selected;
+            return (
+            <div
+              className={`surface-card-shell${index === selected ? " is-active" : ""}${index < selected ? " is-before" : " is-after"}`}
+              style={{ "--card-offset": offset } as CSSProperties}
+              aria-hidden={Math.abs(offset) > 1}
+              key={card.title}
+            >
+              <motion.article className="surface-card" whileHover={reduceMotion || index !== selected ? undefined : { y: -6 }} transition={transition}>
+                <span className="surface-card-number">{String(index + 1).padStart(2, "0")}</span>
                 <CardIcon />
                 <h3>{card.title}</h3>
                 <p>{card.text}</p>
@@ -190,7 +227,12 @@ export function LightSurfaceCardGrid() {
                 </a>
               </motion.article>
             </div>
-          ))}
+          )})}
+        </div>
+        <div className="curriculum-scroll-status" aria-live="polite">
+          <span>{surfaceCards[selected].title}</span>
+          <div>{surfaceCards.map((card, index) => <i className={index <= selected ? "is-complete" : ""} key={card.title} />)}</div>
+          <b>{String(selected + 1).padStart(2, "0")} / {String(surfaceCards.length).padStart(2, "0")}</b>
         </div>
       </div>
     </section>
@@ -198,8 +240,21 @@ export function LightSurfaceCardGrid() {
 }
 
 export function BenefitsChecklist() {
+  const [selected, setSelected] = useState(0);
+  const storyRef = useRef<HTMLElement>(null);
+
+  useScrollSteps({
+    rootRef: storyRef,
+    stepCount: benefitItems.length,
+    onStepChange: setSelected,
+    pinSelector: ".benefits-pinned",
+    stepViewportRatio: 0.72,
+    refreshPriority: 1,
+  });
+
   return (
-    <section className="benefits shell section-space" id="benefits">
+    <section className="benefits-scroll-story" id="benefits" ref={storyRef}>
+      <div className="benefits benefits-pinned shell section-space">
       <div className="benefits-headline">
         <div className="section-tag">[ BENEFITS CHECKLIST ]</div>
         <h2>Competence compounds when the path is clear.</h2>
@@ -210,7 +265,12 @@ export function BenefitsChecklist() {
           items={benefitItems}
           label="Vaulted Academy benefits"
           revealClassName="benefits-reveal-item"
+          activeIndex={selected}
+          onActiveIndexChange={(index) => {
+            if (index >= 0) setSelected(index);
+          }}
         />
+      </div>
       </div>
     </section>
   );

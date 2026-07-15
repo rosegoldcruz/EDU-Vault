@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useScrollSteps } from "./useScrollSteps";
 
 const lessons = [
   {
@@ -39,14 +40,26 @@ function Chevron({ direction }: { direction: "left" | "right" }) {
 
 export function AcademyExperience() {
   const [selectedLesson, setSelectedLesson] = useState(0);
+  const storyRef = useRef<HTMLDivElement>(null);
   const lesson = lessons[selectedLesson];
+
+  useScrollSteps({
+    rootRef: storyRef,
+    stepCount: lessons.length,
+    onStepChange: setSelectedLesson,
+    pinSelector: ".academy-console-pinned",
+    start: "top top+=84px",
+    stepViewportRatio: 0.72,
+    refreshPriority: 2,
+  });
 
   const move = (direction: -1 | 1) => {
     setSelectedLesson((current) => (current + direction + lessons.length) % lessons.length);
   };
 
   return (
-    <div className="academy-console" aria-label="Neutral academy interface preview">
+    <div className="academy-experience-story" ref={storyRef}>
+    <div className="academy-console academy-console-pinned" aria-label="Neutral academy interface preview">
       <aside className="academy-sidebar">
         <div className="academy-path">
           <span>Current path</span>
@@ -79,7 +92,7 @@ export function AcademyExperience() {
       <div className="academy-main">
         <div className="academy-topline">
           <span>Learning state</span>
-          <span>Neutral preview</span>
+          <span>{String(selectedLesson + 1).padStart(2, "0")} / {String(lessons.length).padStart(2, "0")}</span>
         </div>
 
         <div className="academy-lesson-title">
@@ -116,6 +129,7 @@ export function AcademyExperience() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
