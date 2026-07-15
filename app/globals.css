@@ -16,6 +16,9 @@
   --line: #30213d;
   --line-strong: #49305d;
   --paper-line: #c6c8c4;
+  --font-display: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --shell: 1180px;
   --ease-signature: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-hover: cubic-bezier(0.4, 0, 0.2, 1);
@@ -59,15 +62,16 @@
 .academy-panel h2,
 .academy-lesson-content h1 {
   margin: 12px 0;
-  font-weight: 540;
-  letter-spacing: -0.045em;
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 .academy-auth-card h1 { font-size: clamp(38px, 7vw, 66px); line-height: 0.98; }
 .academy-auth-card > p { color: #aeb3ae; font-size: 17px; line-height: 1.7; }
 .academy-auth-card > small { display: block; margin-top: 22px; color: #737a76; line-height: 1.5; }
-.academy-eyebrow { display: inline-block; margin-bottom: 70px; color: var(--electric-green); font: 600 11px/1 var(--font-geist-mono), monospace; letter-spacing: 0.12em; text-decoration: none; }
-.academy-kicker { color: var(--electric-green); font: 600 11px/1.4 var(--font-geist-mono), monospace; letter-spacing: 0.12em; text-transform: uppercase; }
+.academy-eyebrow { display: inline-block; margin-bottom: 70px; color: var(--electric-green); font: 500 15px/1.3 var(--font-sans); letter-spacing: 0; text-decoration: none; }
+.academy-kicker { color: var(--electric-green); font: 500 15px/1.4 var(--font-sans); letter-spacing: 0; text-transform: none; }
 .academy-auth-card .academy-kicker { display: block; }
 
 .academy-primary-button,
@@ -119,7 +123,7 @@
   background: rgba(9, 11, 13, 0.92);
   backdrop-filter: blur(18px);
 }
-.academy-app-brand { color: #f3f4ef; font: 650 12px/1 var(--font-geist-mono), monospace; letter-spacing: 0.08em; text-decoration: none; }
+.academy-app-brand { color: #f3f4ef; font: 650 12px/1 var(--font-geist-mono), monospace; letter-spacing: 0; text-decoration: none; }
 .academy-app-header nav { display: flex; gap: 28px; }
 .academy-app-header nav a { color: #aeb3ae; font-size: 13px; text-decoration: none; }
 .academy-app-header nav a:hover { color: var(--electric-green); }
@@ -135,7 +139,7 @@
 
 .academy-metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; margin-bottom: 24px; background: #2a2e30; border: 1px solid #2a2e30; }
 .academy-metric-grid article { min-height: 150px; padding: 22px; background: #111416; }
-.academy-metric-grid article > span { display: block; margin-bottom: 34px; color: #7e8580; font: 600 10px/1 var(--font-geist-mono), monospace; letter-spacing: 0.12em; text-transform: uppercase; }
+.academy-metric-grid article > span { display: block; margin-bottom: 34px; color: #7e8580; font: 600 10px/1 var(--font-geist-mono), monospace; letter-spacing: 0; text-transform: uppercase; }
 .academy-metric-grid strong { display: block; font-size: 26px; font-weight: 520; }
 .academy-metric-grid small { display: block; margin-top: 8px; color: #7e8580; }
 .academy-metric-grid code { display: block; overflow-wrap: anywhere; color: var(--electric-green); font-size: 12px; }
@@ -167,7 +171,7 @@
 .academy-empty { padding: 28px 0; color: #777e79; }
 
 .academy-path-detail { display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 80px; }
-.academy-detail-rail > span { color: #777e79; font: 600 10px/1 var(--font-geist-mono), monospace; letter-spacing: 0.12em; text-transform: uppercase; }
+.academy-detail-rail > span { color: #777e79; font: 600 10px/1 var(--font-geist-mono), monospace; letter-spacing: 0; text-transform: uppercase; }
 .academy-detail-rail p { color: #d8dad6; font-size: 22px; line-height: 1.45; }
 .academy-detail-rail dl { display: grid; gap: 16px; margin-top: 42px; }
 .academy-detail-rail dl div { display: flex; justify-content: space-between; padding-top: 14px; border-top: 1px solid #303536; }
@@ -257,6 +261,7 @@
 
 * {
   box-sizing: border-box;
+  letter-spacing: 0;
 }
 
 html {
@@ -268,8 +273,26 @@ body {
   margin: 0;
   background: var(--ink);
   color: var(--text);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
 }
 
 button,
@@ -372,9 +395,9 @@ main > :not(.ambient-background):not(.site-header) {
 
 .section-tag {
   color: #7d858b;
-  font: 600 10px/1.4 var(--font-geist-mono), monospace;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font: 500 15px/1.4 var(--font-sans);
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .section-intro {
@@ -390,7 +413,7 @@ main > :not(.ambient-background):not(.site-header) {
   font-size: clamp(48px, 5.4vw, 78px);
   font-weight: 500;
   line-height: 0.98;
-  letter-spacing: -0.06em;
+  letter-spacing: 0;
 }
 
 .section-intro h2 span,
@@ -447,7 +470,7 @@ main > :not(.ambient-background):not(.site-header) {
   gap: 6px;
   align-items: center;
   font: 700 11px/1.2 var(--font-geist-mono), monospace;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   white-space: nowrap;
 }
 
@@ -493,7 +516,7 @@ main > :not(.ambient-background):not(.site-header) {
   align-items: center;
   color: #aeb3b7;
   font: 600 9px/1 var(--font-geist-mono), monospace;
-  letter-spacing: 0.1em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -561,7 +584,7 @@ footer nav a:hover {
   background: var(--acid);
   color: #091000;
   font: 700 10px/1 var(--font-geist-mono), monospace;
-  letter-spacing: 0.07em;
+  letter-spacing: 0;
   text-transform: uppercase;
   transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
@@ -667,7 +690,7 @@ footer nav a:hover {
   gap: 16px;
   border-bottom: 1px solid #646b70;
   font: 700 9px/1 var(--font-geist-mono), monospace;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -697,7 +720,7 @@ footer nav a:hover {
   font-size: clamp(62px, 7.4vw, 106px);
   font-weight: 500;
   line-height: 0.9;
-  letter-spacing: -0.075em;
+  letter-spacing: 0;
 }
 
 .hero-heading-stack {
@@ -716,7 +739,7 @@ footer nav a:hover {
   font-size: clamp(62px, 7.4vw, 106px);
   font-weight: 500;
   line-height: 0.9;
-  letter-spacing: -0.075em;
+  letter-spacing: 0;
   animation: hero-heading-overlay-out var(--dur-micro) linear calc(var(--dur-reveal) + var(--stagger-loose)) forwards;
   pointer-events: none;
 }
@@ -831,7 +854,7 @@ footer nav a:hover {
   padding: 12px;
   color: #b0b6ba;
   font: 600 8px/1.35 var(--font-geist-mono), monospace;
-  letter-spacing: 0.09em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -859,7 +882,7 @@ footer nav a:hover {
   font-size: clamp(48px, 5.4vw, 78px);
   font-weight: 500;
   line-height: 0.98;
-  letter-spacing: -0.06em;
+  letter-spacing: 0;
 }
 
 .statement-copy h2 > span {
@@ -904,7 +927,7 @@ footer nav a:hover {
   background: transparent;
   color: #9aa2a8;
   font: 700 9px/1 var(--font-geist-mono), monospace;
-  letter-spacing: 0.1em;
+  letter-spacing: 0;
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -945,7 +968,7 @@ footer nav a:hover {
   font-size: clamp(28px, 3.5vw, 44px);
   font-weight: 520;
   line-height: 1;
-  letter-spacing: -0.052em;
+  letter-spacing: 0;
 }
 
 .tab-panel p {
@@ -1045,7 +1068,7 @@ footer nav a:hover {
   font-size: 21px;
   font-weight: 620;
   line-height: 1.05;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 
 .surface-card p {
@@ -1062,7 +1085,7 @@ footer nav a:hover {
   margin-top: auto;
   color: #172114;
   font: 700 8px/1 var(--font-geist-mono), monospace;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -1098,7 +1121,7 @@ footer nav a:hover {
   font-size: clamp(46px, 4.8vw, 70px);
   font-weight: 500;
   line-height: 0.98;
-  letter-spacing: -0.06em;
+  letter-spacing: 0;
 }
 
 .benefits-headline p {
@@ -1141,7 +1164,7 @@ footer nav a:hover {
 .vault-row strong {
   font-size: 19px;
   font-weight: 540;
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
 }
 
 .vault-row button i {
@@ -1253,7 +1276,7 @@ footer nav a:hover {
   display: block;
   color: #858d93;
   font: 600 9px/1.4 var(--font-geist-mono), monospace;
-  letter-spacing: 0.13em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -1261,7 +1284,7 @@ footer nav a:hover {
   display: block;
   margin-top: 14px;
   font: 600 14px/1.4 var(--font-geist-mono), monospace;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -1271,7 +1294,7 @@ footer nav a:hover {
   color: var(--acid);
   font: 600 9px/1 var(--font-geist-mono), monospace;
   font-style: normal;
-  letter-spacing: 0.09em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -1369,7 +1392,7 @@ footer nav a:hover {
   font-size: clamp(34px, 4vw, 52px);
   font-weight: 500;
   line-height: 1;
-  letter-spacing: -0.055em;
+  letter-spacing: 0;
 }
 
 .academy-lesson-title p {
@@ -1421,7 +1444,7 @@ footer nav a:hover {
   top: 18px;
   left: 20px;
   color: #7e878d;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
 }
 
 .academy-states article > i {
@@ -1553,7 +1576,7 @@ footer nav a:hover {
   margin-top: 18px;
   color: #415422;
   font: 600 8px/1.4 var(--font-geist-mono), monospace;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -1571,7 +1594,7 @@ footer nav {
   flex-wrap: wrap;
   gap: 19px;
   font: 600 8px/1 var(--font-geist-mono), monospace;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -1584,7 +1607,7 @@ footer nav {
   display: block;
   margin: 0;
   font: 500 8px/1.5 var(--font-geist-mono), monospace;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -1725,7 +1748,7 @@ footer nav {
   top: 14px;
   color: #65706f;
   font: 600 8px/1 var(--font-geist-mono), monospace;
-  letter-spacing: 0.16em;
+  letter-spacing: 0;
 }
 
 .core-sequence {
@@ -1742,7 +1765,7 @@ footer nav {
   place-items: center;
   color: #fff;
   font: 700 12px/1 var(--font-geist-mono), monospace;
-  letter-spacing: 0.1em;
+  letter-spacing: 0;
   opacity: 0;
   transform: translateY(7px);
 }
@@ -1846,7 +1869,7 @@ footer nav {
 
 .learning-orbit .module-title {
   font: 700 9px/1 var(--font-geist-mono), monospace;
-  letter-spacing: 0.06em;
+  letter-spacing: 0;
 }
 
 .learning-orbit .chain-card small {
@@ -1864,7 +1887,7 @@ footer nav {
   bottom: 8px;
   color: #607057;
   font: 600 6px/1 var(--font-geist-mono), monospace;
-  letter-spacing: 0.12em;
+  letter-spacing: 0;
   opacity: 0;
 }
 
@@ -1959,7 +1982,7 @@ footer nav {
   position: absolute;
   color: #596066;
   font: 500 8px/1 var(--font-geist-mono), monospace;
-  letter-spacing: 0.12em;
+  letter-spacing: 0;
   opacity: 0;
 }
 
@@ -1986,7 +2009,7 @@ footer nav {
   align-items: center;
   color: #50595e;
   font: 600 6px/1 var(--font-geist-mono), monospace;
-  letter-spacing: 0.12em;
+  letter-spacing: 0;
   opacity: 0;
   transform: translateX(-50%);
 }
@@ -2253,7 +2276,7 @@ footer nav {
     padding: 13px 17px;
     border-bottom: 1px solid var(--line);
     font: 600 10px/1 var(--font-geist-mono), monospace;
-    letter-spacing: 0.08em;
+    letter-spacing: 0;
     text-transform: uppercase;
   }
 
