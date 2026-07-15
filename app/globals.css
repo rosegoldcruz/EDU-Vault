@@ -1,20 +1,20 @@
 @import "tailwindcss/index.css";
 
 @theme {
-  --vault-purple: #583692;
+  --vault-purple: #311E52;
   --electric-green: #56E628;
   --brand-white: #FFFFFF;
-  --ink: #583692;
-  --ink-soft: #493077;
-  --ink-raised: #6848a0;
+  --ink: #311E52;
+  --ink-soft: #291845;
+  --ink-raised: #452B70;
   --paper: #f2f1ed;
   --acid: #56E628;
   --acid-deep: #2d8f16;
   --text: #FFFFFF;
   --muted: #ded5eb;
   --muted-dark: #b8aacd;
-  --line: #7459a3;
-  --line-strong: #8d74b6;
+  --line: #5e447e;
+  --line-strong: #765b96;
   --paper-line: #c6c8c4;
   --font-display: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-geist-sans), Arial, Helvetica, sans-serif;
@@ -39,7 +39,7 @@
   color: var(--brand-white);
   background:
     radial-gradient(circle at 82% 4%, rgba(86, 230, 40, 0.16), transparent 30rem),
-    linear-gradient(145deg, rgba(88, 54, 146, 0.62), rgba(86, 230, 40, 0.05) 48%, transparent 72%),
+    linear-gradient(145deg, rgba(49, 30, 82, 0.62), rgba(86, 230, 40, 0.05) 48%, transparent 72%),
     var(--ink);
 }
 
@@ -53,7 +53,7 @@
   width: min(100%, 620px);
   padding: clamp(30px, 6vw, 64px);
   border: 1px solid rgba(222, 213, 235, 0.34);
-  background: rgba(73, 48, 119, 0.94);
+  background: rgba(41, 24, 69, 0.94);
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.36);
 }
 
@@ -120,7 +120,7 @@
   gap: 28px;
   padding: 0 clamp(22px, 4vw, 64px);
   border-bottom: 1px solid var(--line);
-  background: rgba(73, 48, 119, 0.92);
+  background: rgba(41, 24, 69, 0.92);
   backdrop-filter: blur(18px);
 }
 .academy-app-brand { color: #f3f4ef; font: 650 12px/1 var(--font-geist-mono), monospace; letter-spacing: 0; text-decoration: none; }
@@ -367,7 +367,7 @@ main > :not(.ambient-background):not(.site-header) {
   width: min(48vw, 620px);
   height: min(48vw, 620px);
   border-radius: 50%;
-  background: radial-gradient(circle, rgb(86 230 40 / 10%), rgb(88 54 146 / 24%) 42%, transparent 70%);
+  background: radial-gradient(circle, rgb(86 230 40 / 10%), rgb(49 30 82 / 24%) 42%, transparent 70%);
   opacity: 0.04;
   animation: ambient-glow-pulse 6s var(--ease-signature) infinite alternate;
 }
@@ -450,7 +450,7 @@ main > :not(.ambient-background):not(.site-header) {
   height: 82px;
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(12px);
-  background: rgb(73 48 119 / 88%);
+  background: rgb(41 24 69 / 88%);
   opacity: 0;
   pointer-events: none;
 }
@@ -909,7 +909,7 @@ footer nav a:hover {
 
 .tab-strip-shell {
   border: 1px solid var(--line-strong);
-  background: rgb(73 48 119 / 72%);
+  background: rgb(41 24 69 / 72%);
 }
 
 .tab-strip {
@@ -1720,7 +1720,7 @@ footer nav {
   justify-content: center;
   overflow: hidden;
   border: 1px solid rgba(86, 230, 40, 0.72);
-  background: rgba(73, 48, 119, 0.94);
+  background: rgba(41, 24, 69, 0.94);
   box-shadow: 0 0 0 rgba(86, 230, 40, 0);
   opacity: 0.72;
   transform: translate(-50%, -50%) scale(0.96);
