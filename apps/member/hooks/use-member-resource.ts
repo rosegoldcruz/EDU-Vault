@@ -32,7 +32,10 @@ export function useMemberResource<K extends keyof MemberData>(key: K, emptyValue
     return () => controller.abort();
   }, [adapter, forcedState, key]);
 
-  useEffect(() => { void load(); }, [load]);
+  useEffect(() => {
+    const timer = window.setTimeout(() => void load(), 0);
+    return () => window.clearTimeout(timer);
+  }, [load]);
   const submit = useCallback(<T extends object>(path: string, payload: T): Promise<MutationResult<T & { id: string }>> => adapter.submit(path, payload), [adapter]);
   return { ...state, retry: load, submit, mode: dataMode };
 }
