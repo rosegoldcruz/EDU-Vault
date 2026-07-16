@@ -11,6 +11,7 @@ type ScrollStepsOptions = {
   stepViewportRatio?: number;
   snap?: boolean;
   pinOnMobile?: boolean;
+  pinMinWidth?: number;
   refreshPriority?: number;
 };
 
@@ -29,6 +30,7 @@ export function useScrollSteps({
   stepViewportRatio = 0.82,
   snap = false,
   pinOnMobile = true,
+  pinMinWidth = 801,
   refreshPriority = 0,
 }: ScrollStepsOptions) {
   const onStepChangeRef = useRef(onStepChange);
@@ -99,8 +101,8 @@ export function useScrollSteps({
         if (pinOnMobile) {
           media.add("(prefers-reduced-motion: no-preference)", () => createTrigger(true));
         } else {
-          media.add("(prefers-reduced-motion: no-preference) and (min-width: 801px)", () => createTrigger(true));
-          media.add("(prefers-reduced-motion: no-preference) and (max-width: 800px)", () => createTrigger(false));
+          media.add(`(prefers-reduced-motion: no-preference) and (min-width: ${pinMinWidth}px)`, () => createTrigger(true));
+          media.add(`(prefers-reduced-motion: no-preference) and (max-width: ${pinMinWidth - 1}px)`, () => createTrigger(false));
         }
 
         media.add("(prefers-reduced-motion: reduce)", () => {
@@ -129,5 +131,5 @@ export function useScrollSteps({
       cancelled = true;
       cleanup?.();
     };
-  }, [pinOnMobile, pinSelector, refreshPriority, rootRef, snap, start, stepCount, stepViewportRatio]);
+  }, [pinMinWidth, pinOnMobile, pinSelector, refreshPriority, rootRef, snap, start, stepCount, stepViewportRatio]);
 }

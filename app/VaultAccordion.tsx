@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { useState } from "react";
 import { useMotionTokens } from "./motion/tokens";
 
@@ -31,17 +31,21 @@ export function VaultAccordion({
   const tokens = useMotionTokens();
   const reduceMotion = useReducedMotion();
   const transition = tokens ? { duration: tokens.micro, ease: tokens.easeHover } : undefined;
-  const detailTransition = tokens ? { duration: tokens.micro, ease: tokens.easeHover, delay: tokens.micro + 0.1 } : undefined;
+  const detailTransition = tokens ? { duration: tokens.reveal, ease: [0.22, 1, 0.36, 1] as const } : undefined;
 
   return (
     <div className={`vault-accordion vault-accordion-${mode}`} aria-label={label}>
       {items.map((item, index) => {
         const open = openIndex === index;
+        const panelId = `${mode}-detail-${index}`;
+        const triggerId = `${mode}-trigger-${index}`;
         return (
           <div className={revealClassName} key={item.title}>
             <motion.article className="vault-row" layout transition={transition}>
               <button
                 type="button"
+                id={triggerId}
+                aria-controls={panelId}
                 aria-expanded={open}
                 onClick={() => {
                   const nextIndex = open ? -1 : index;
@@ -57,19 +61,20 @@ export function VaultAccordion({
                   transition={transition}
                 />
               </button>
-              <AnimatePresence initial={false}>
-                {open ? (
-                  <motion.div
-                    className="vault-row-detail"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0, transition }}
-                    transition={detailTransition}
-                  >
-                    <p>{item.detail}</p>
-                  </motion.div>
-                ) : null}
-              </AnimatePresence>
+              {open ? (
+                <motion.div
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={triggerId}
+                  className="vault-row-detail"
+                  initial={reduceMotion ? false : { height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  transition={detailTransition}
+                  style={{ overflow: "hidden" }}
+                >
+                  <p>{item.detail}</p>
+                </motion.div>
+              ) : null}
             </motion.article>
           </div>
         );

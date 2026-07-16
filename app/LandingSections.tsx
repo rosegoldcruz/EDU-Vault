@@ -277,16 +277,58 @@ export function BenefitsChecklist() {
 }
 
 export function FAQAccordion() {
+  const [selected, setSelected] = useState(0);
+  const storyRef = useRef<HTMLElement>(null);
+  const scrollStepRef = useRef(0);
+  const manualOverrideRef = useRef<null | { baseStep: number }>(null);
+
+  useScrollSteps({
+    rootRef: storyRef,
+    stepCount: faqItems.length,
+    onStepChange: (index) => {
+      scrollStepRef.current = index;
+      const manualOverride = manualOverrideRef.current;
+
+      // Keep manual selection stable until the user actually advances scroll steps.
+      if (manualOverride) {
+        if (index === manualOverride.baseStep) return;
+        manualOverrideRef.current = null;
+      }
+
+      setSelected(index);
+    },
+    pinSelector: ".faq-pinned",
+    stepViewportRatio: 0.72,
+    pinOnMobile: false,
+    pinMinWidth: 1025,
+    refreshPriority: 0,
+  });
+
   return (
-    <section className="faq shell section-space" id="faq">
-      <div className="section-intro faq-intro">
-        <div>
-          <div className="section-tag">[ FAQ ]</div>
-          <h2>Clear boundaries. Clear expectations.</h2>
+    <section className="faq-scroll-story" id="faq" ref={storyRef}>
+      <div className="faq faq-pinned shell section-space">
+        <div className="section-intro faq-intro">
+          <div>
+            <div className="section-tag">[ FAQ ]</div>
+            <h2>Clear boundaries. Clear expectations.</h2>
+          </div>
+          <p>The same expansion pattern is reused here so interaction behavior stays consistent across the page.</p>
         </div>
-        <p>The same expansion pattern is reused here so interaction behavior stays consistent across the page.</p>
+        <div className="faq-list">
+          <VaultAccordion
+            items={faqItems}
+            label="Vaulted Academy frequently asked questions"
+            mode="faq"
+            revealClassName="faq-reveal-item"
+            activeIndex={selected}
+            onActiveIndexChange={(index) => {
+              if (index < 0) return;
+              manualOverrideRef.current = { baseStep: scrollStepRef.current };
+              setSelected(index);
+            }}
+          />
+        </div>
       </div>
-      <VaultAccordion items={faqItems} label="Vaulted Academy frequently asked questions" mode="faq" />
     </section>
   );
 }

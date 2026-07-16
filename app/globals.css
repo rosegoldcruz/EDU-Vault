@@ -1110,6 +1110,14 @@ footer nav a:hover {
   align-items: start;
 }
 
+.faq {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(440px, 1.14fr);
+  gap: 82px;
+  align-items: start;
+  padding-top: 0;
+}
+
 .benefits-headline {
   top: 94px;
 }
@@ -1199,17 +1207,13 @@ footer nav a:hover {
   line-height: 1.7;
 }
 
-.faq {
-  padding-top: 70px;
-}
-
 .faq-intro {
-  margin-bottom: 54px;
+  margin-bottom: 0;
 }
 
-.faq .vault-accordion {
-  max-width: 920px;
-  margin-left: auto;
+.faq-list .vault-accordion {
+  max-width: none;
+  margin-left: 0;
 }
 
 .experience-intro {
@@ -2150,6 +2154,7 @@ footer nav {
 .statement-scroll-story,
 .light-surface-scroll-story,
 .benefits-scroll-story,
+.faq-scroll-story,
 .academy-experience-story {
   position: relative;
 }
@@ -2157,7 +2162,8 @@ footer nav {
 .hero-scroll-stage,
 .statement-pinned,
 .light-surface-pinned,
-.benefits-pinned {
+.benefits-pinned,
+.faq-pinned {
   min-height: 100svh;
 }
 
@@ -2476,6 +2482,30 @@ footer nav {
   padding-block: 64px;
 }
 
+.faq-pinned {
+  align-content: center;
+  padding-block: 64px;
+}
+
+.faq-pinned .faq-intro {
+  align-self: start;
+}
+
+.faq-pinned .faq-intro > p {
+  margin-top: 34px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line-strong);
+  color: #9ba3a8;
+}
+
+.faq-pinned .vault-row button[aria-expanded="true"] strong {
+  color: var(--acid);
+}
+
+.faq-pinned .vault-row button[aria-expanded="true"] > span {
+  color: #fff;
+}
+
 .benefits-pinned .benefits-headline {
   top: auto;
 }
@@ -2706,7 +2736,8 @@ footer nav {
   }
 
   .statement,
-  .benefits {
+  .benefits,
+  .faq {
     grid-template-columns: 1fr;
     gap: 58px;
   }
@@ -3124,6 +3155,38 @@ footer nav {
     overflow: hidden;
   }
 
+  .faq-pinned.section-space {
+    min-height: auto;
+    gap: 24px;
+    align-content: start;
+    padding-block: 36px;
+  }
+
+  .faq-pinned .faq-intro > p {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .faq-pinned .vault-row button {
+    min-height: 56px;
+    grid-template-columns: 30px 1fr 16px;
+    gap: 10px;
+  }
+
+  .faq-pinned .vault-row strong {
+    font-size: 14px;
+  }
+
+  .faq-pinned .vault-row-detail {
+    padding: 0 24px 16px 40px;
+  }
+
+  .faq-pinned .vault-row-detail p {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
   .benefits-pinned .benefits-headline h2 {
     margin-top: 14px;
     font-size: 36px;
@@ -3321,7 +3384,8 @@ footer nav {
   .statement-accent-line,
   .tab-strip-shell,
   .surface-card-shell,
-  .benefits-reveal-item {
+  .benefits-reveal-item,
+  .faq-reveal-item {
     opacity: 1 !important;
     transform: none !important;
   }
@@ -3333,7 +3397,8 @@ footer nav {
   .hero-scroll-stage,
   .statement-pinned,
   .light-surface-pinned,
-  .benefits-pinned {
+  .benefits-pinned,
+  .faq-pinned {
     min-height: auto;
   }
 

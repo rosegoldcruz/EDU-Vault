@@ -86,24 +86,51 @@ export function LandingMotionController() {
           });
 
           const benefitItems = gsap.utils.toArray<HTMLElement>(".benefits .benefits-reveal-item");
+          const faqItems = gsap.utils.toArray<HTMLElement>(".faq .faq-reveal-item");
 
           if (benefitItems.length > 0) {
-            gsap.fromTo(
-              benefitItems,
-              { y: 12, opacity: 0.5 },
-              {
-                y: 0,
-                opacity: 1,
-                duration: tokens.reveal,
-                stagger: tokens.staggerTight,
-                ease: tokens.easeSignature,
-              },
-            );
+            benefitItems.forEach((item, index) => {
+              gsap.fromTo(
+                item,
+                { y: 12, opacity: 0.5 },
+                {
+                  y: 0,
+                  opacity: 1,
+                  duration: tokens.reveal,
+                  ease: tokens.easeSignature,
+                  delay: index * tokens.staggerTight,
+                  scrollTrigger: {
+                    trigger: item,
+                    start: "top 84%",
+                  },
+                },
+              );
+            });
+          }
+
+          if (faqItems.length > 0) {
+            faqItems.forEach((item, index) => {
+              gsap.fromTo(
+                item,
+                { y: 12, opacity: 0.5 },
+                {
+                  y: 0,
+                  opacity: 1,
+                  duration: tokens.reveal,
+                  ease: tokens.easeSignature,
+                  delay: index * tokens.staggerTight,
+                  scrollTrigger: {
+                    trigger: item,
+                    start: "top 84%",
+                  },
+                },
+              );
+            });
           }
         });
 
         media.add("(prefers-reduced-motion: reduce)", () => {
-          gsap.set(".gsap-reveal-line, .statement-accent-line, .tab-strip-shell, .surface-card-shell, .benefits-reveal-item", {
+          gsap.set(".gsap-reveal-line, .statement-accent-line, .tab-strip-shell, .surface-card-shell, .benefits-reveal-item, .faq-reveal-item", {
             opacity: 1,
             y: 0,
             clearProps: "transform",
