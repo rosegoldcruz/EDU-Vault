@@ -33,7 +33,7 @@ yarn-error.log*
 .env*
 .env.local
 repomix-output.xml
-
+*.env
 
 # vercel
 .vercel
