@@ -21,8 +21,11 @@ test("public homepage remains intact", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /Iron Vault \| Vaulted Academy/);
-  assert.match(html, /Don.t chase the future/);
-  assert.match(html, /See how the academy works/);
+  assert.match(html, /Learn first\./);
+  assert.match(html, /Participate with context\./);
+  assert.match(html, /The token is a component\./);
+  assert.match(html, /Not the whole machine\./);
+  assert.match(html, /Built in the open/);
 });
 
 test("login renders a finite authentication state", async () => {

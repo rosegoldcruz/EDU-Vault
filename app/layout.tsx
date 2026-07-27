@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif, Inter_Tight } from "next/font/google";
 import { headers } from "next/headers";
 import { SmoothScroll } from "./SmoothScroll";
 import "./globals.css";
+import "./iv/iron.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,6 +22,11 @@ const instrumentSerif = Instrument_Serif({
   style: ["normal", "italic"],
 });
 
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
+  subsets: ["latin"],
+});
+
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
@@ -28,19 +34,19 @@ export async function generateMetadata(): Promise<Metadata> {
   const origin = `${protocol}://${host}`;
 
   return {
-    title: "Iron Vault | Vaulted Academy — Learn. Prove. Operate. Earn.",
-    description: "Structured crypto, blockchain, and DeFi education built for practical execution, verified mastery, progression, and onchain-ready skills.",
+    title: "Iron Vault | Vaulted Academy — Learn first. Participate with context.",
+    description: "An education-first Web3 ecosystem built around financial literacy, emerging technology, operational transparency, and informed participation. Vaulted Academy is the knowledge layer. IV SOL is the participation layer.",
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
     openGraph: {
       title: "Iron Vault | Vaulted Academy",
-      description: "Learn. Prove. Operate. Earn. Build practical, onchain-ready skills through structured education and verified mastery.",
+      description: "Learn first. Participate with context. A precision-engineered operating system for financial and technological literacy.",
       type: "website",
-      images: [{ url: `${origin}/og.png`, width: 1672, height: 941, alt: "Iron Vault | Vaulted Academy crypto, DeFi, and blockchain education" }],
+      images: [{ url: `${origin}/og.png`, width: 1672, height: 941, alt: "Iron Vault | Vaulted Academy — education-first Web3 ecosystem" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "Iron Vault | Vaulted Academy",
-      description: "Learn. Prove. Operate. Earn. Structured education for onchain-ready skills.",
+      description: "Learn first. Participate with context. Education before participation — proof before promises.",
       images: [`${origin}/og.png`],
     },
   };
@@ -52,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${instrumentSerif.variable} ${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${instrumentSerif.variable} ${geistSans.variable} ${geistMono.variable} ${interTight.variable}`}>
       <body className="antialiased">
         <SmoothScroll>{children}</SmoothScroll>
       </body>

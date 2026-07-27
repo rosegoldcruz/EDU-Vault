@@ -277,12 +277,12 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1:not(.iv-root *),
+h2:not(.iv-root *),
+h3:not(.iv-root *),
+h4:not(.iv-root *),
+h5:not(.iv-root *),
+h6:not(.iv-root *) {
   font-family: var(--font-display) !important;
   font-weight: 400 !important;
   letter-spacing: 0;
