@@ -34,20 +34,32 @@ export default function Home() {
 
       <main>
         {/* ============ FOLD 1 — Immediate recognition ============ */}
-        <section className="iv-hero iv-shell relative overflow-hidden min-h-[600px]">
-          <div className="absolute inset-0 z-0 pointer-events-none opacity-70">
+        <section className="iv-hero iv-shell relative overflow-hidden min-h-[780px]">
+          <div className="absolute inset-0 z-0 pointer-events-auto">
             <Ballpit
-              count={88}
-              gravity={0}
-              friction={1}
-              wallBounce={1}
-              followCursor={false}
-              colors={[0x760cbc, 0x56e628, 0x42106a, 0x2b8f15]}
+              count={33}
+              gravity={0.08}
+              friction={0.9995}
+              wallBounce={0.96}
+              maxVelocity={0.1}
+              followCursor={true}
+              colors={[0x760cbc, 0x56e628, 0x42106a, 0x2b8f15, 0x9d4edd, 0x7ef955]}
               ambientColor={0xffffff}
-              ambientIntensity={0.8}
-              lightIntensity={260}
+              ambientIntensity={0.65}
+              lightIntensity={340}
+              minSize={0.6}
+              maxSize={2.8}
+              size0={2}
+              materialParams={{
+                metalness: 0.8,
+                roughness: 0.18,
+                clearcoat: 1,
+                clearcoatRoughness: 0.06,
+              }}
             />
           </div>
+
+          <div className="absolute inset-0 z-[1] pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,rgba(250,249,247,0.45)_70%)]" />
 
           <div className="relative z-10">
             <span className="iv-label">An education-first ecosystem</span>
