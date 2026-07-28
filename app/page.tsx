@@ -47,9 +47,9 @@ export default function Home() {
               ambientColor={0xffffff}
               ambientIntensity={0.55}
               lightIntensity={280}
-              minSize={0.55}
-              maxSize={2.2}
-              size0={1.6}
+              minSize={0.37}
+              maxSize={1.47}
+              size0={1.07}
               materialParams={{
                 metalness: 0.75,
                 roughness: 0.22,
