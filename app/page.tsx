@@ -3,6 +3,7 @@ import { FreeLesson } from "./iv/FreeLesson";
 import { IvNav } from "./iv/IvNav";
 import { SystemDiagram } from "./iv/SystemDiagram";
 import { pillars, tracks } from "./iv/data";
+import Ballpit from "@/components/Ballpit";
 
 const specRows = [
   ["Attention before understanding", "Capability before participation"],
@@ -33,30 +34,46 @@ export default function Home() {
 
       <main>
         {/* ============ FOLD 1 — Immediate recognition ============ */}
-        <section className="iv-hero iv-shell">
-          <span className="iv-label">An education-first ecosystem</span>
-          <h1>
-            Learn first.
-            <span className="iv-serif">Participate with context.</span>
-          </h1>
-          <p className="iv-hero-sub">
-            Iron Vault is built around financial literacy, emerging technology, operational
-            transparency, and informed participation.
-          </p>
-          <div className="iv-hero-actions">
-            <a className="iv-btn" href="/login">Enter Vaulted Academy</a>
-            <a className="iv-textlink" href="#system">View the system</a>
-          </div>
-          <div className="iv-hero-layers">
-            <span><b>Vaulted Academy</b> — the knowledge layer</span>
-            <span><b>IV SOL</b> — the participation layer</span>
+        <section className="iv-hero iv-shell relative overflow-hidden min-h-[600px]">
+          <div className="absolute inset-0 z-0 pointer-events-auto opacity-35">
+            <Ballpit
+              count={66}
+              gravity={0}
+              friction={1}
+              wallBounce={1}
+              followCursor={false}
+              colors={[0x0a0a0a, 0x1a1a1a, 0x2b2b2b, 0x111111]}
+              ambientColor={0xffffff}
+              ambientIntensity={1}
+              lightIntensity={200}
+            />
           </div>
 
-          <div className="iv-status-strip" aria-label="Current status">
-            <span><span className="iv-dot" data-state="live" />IV SOL deployed on Solana</span>
-            <span><span className="iv-dot" data-state="progress" />Academy in active development</span>
-            <span><span className="iv-dot" data-state="live" />Enrollment available through advisors</span>
-            <span><span className="iv-dot" data-state="progress" />Merchant integration in progress</span>
+          <div className="relative z-10">
+            <span className="iv-label">An education-first ecosystem</span>
+            <h1>
+              Learn first.
+              <span className="iv-serif">Participate with context.</span>
+            </h1>
+            <p className="iv-hero-sub">
+              Iron Vault is built around financial literacy, emerging technology, operational
+              transparency, and informed participation.
+            </p>
+            <div className="iv-hero-actions">
+              <a className="iv-btn" href="/login">Enter Vaulted Academy</a>
+              <a className="iv-textlink" href="#system">View the system</a>
+            </div>
+            <div className="iv-hero-layers">
+              <span><b>Vaulted Academy</b> — the knowledge layer</span>
+              <span><b>IV SOL</b> — the participation layer</span>
+            </div>
+
+            <div className="iv-status-strip" aria-label="Current status">
+              <span><span className="iv-dot" data-state="live" />IV SOL deployed on Solana</span>
+              <span><span className="iv-dot" data-state="progress" />Academy in active development</span>
+              <span><span className="iv-dot" data-state="live" />Enrollment available through advisors</span>
+              <span><span className="iv-dot" data-state="progress" />Merchant integration in progress</span>
+            </div>
           </div>
         </section>
 
