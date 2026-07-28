@@ -38,23 +38,23 @@ export default function Home() {
           <div className="absolute inset-0 z-0 pointer-events-auto">
             <Ballpit
               count={33}
-              gravity={0.08}
-              friction={0.9995}
-              wallBounce={0.96}
-              maxVelocity={0.1}
+              gravity={0}
+              friction={0.998}
+              wallBounce={0.7}
+              maxVelocity={0.22}
               followCursor={true}
               colors={[0x760cbc, 0x56e628, 0x42106a, 0x2b8f15, 0x9d4edd, 0x7ef955]}
               ambientColor={0xffffff}
-              ambientIntensity={0.65}
-              lightIntensity={340}
-              minSize={0.6}
-              maxSize={2.8}
-              size0={2}
+              ambientIntensity={0.55}
+              lightIntensity={280}
+              minSize={0.55}
+              maxSize={2.2}
+              size0={1.6}
               materialParams={{
-                metalness: 0.8,
-                roughness: 0.18,
-                clearcoat: 1,
-                clearcoatRoughness: 0.06,
+                metalness: 0.75,
+                roughness: 0.22,
+                clearcoat: 0.9,
+                clearcoatRoughness: 0.1,
               }}
             />
           </div>
