@@ -35,17 +35,17 @@ export default function Home() {
       <main>
         {/* ============ FOLD 1 — Immediate recognition ============ */}
         <section className="iv-hero iv-shell relative overflow-hidden min-h-[600px]">
-          <div className="absolute inset-0 z-0 pointer-events-auto opacity-35">
+          <div className="absolute inset-0 z-0 pointer-events-none opacity-70">
             <Ballpit
-              count={66}
+              count={88}
               gravity={0}
               friction={1}
               wallBounce={1}
               followCursor={false}
-              colors={[0x0a0a0a, 0x1a1a1a, 0x2b2b2b, 0x111111]}
+              colors={[0x760cbc, 0x56e628, 0x42106a, 0x2b8f15]}
               ambientColor={0xffffff}
-              ambientIntensity={1}
-              lightIntensity={200}
+              ambientIntensity={0.8}
+              lightIntensity={260}
             />
           </div>
 
