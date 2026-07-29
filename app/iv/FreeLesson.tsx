@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const options = [
   { id: "a", label: "Whoever holds the private keys controls the assets." },
@@ -17,41 +17,55 @@ const correctOption = "a";
 export function FreeLesson() {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
   const answered = selected !== null;
   const correct = selected === correctOption;
 
-  if (!open) {
-    return (
-      <button className="iv-track iv-track-free" type="button" onClick={() => setOpen(true)}>
+  useEffect(() => {
+    if (open && dialogRef.current && !dialogRef.current.open) dialogRef.current.showModal();
+  }, [open]);
+
+  const close = () => {
+    dialogRef.current?.close();
+    setOpen(false);
+    setSelected(null);
+  };
+
+  return (
+    <>
+      <button className="iv-track-free" type="button" onClick={() => setOpen(true)}>
         <div className="iv-track-top">
           <span className="iv-track-code">Free lesson</span>
           <span className="iv-chip">No account needed</span>
         </div>
-        <h3><span>Try a free lesson</span>Keys, Wallets, and Custody</h3>
+        <h3><span>Try a 3-minute lesson</span>Keys, Wallets, and Custody</h3>
         <div className="iv-track-meta">
-          <span>3 min</span>
           <span>1 comprehension check</span>
-          <span>Runs in-page</span>
+          <span>Opens without leaving this page</span>
         </div>
       </button>
-    );
-  }
 
-  return (
-    <div className="iv-lesson iv-panel" role="region" aria-label="Free lesson: Keys, Wallets, and Custody">
+      {open && <dialog
+        className="iv-dialog iv-lesson-dialog"
+        ref={dialogRef}
+        aria-labelledby="iv-free-lesson-title"
+        onCancel={(event) => { event.preventDefault(); close(); }}
+        onClick={(event) => { if (event.target === event.currentTarget) close(); }}
+      >
+      <div className="iv-lesson iv-dialog-panel">
       <div className="iv-lesson-head">
         <span className="iv-label">Free lesson</span>
         <button
           className="iv-lesson-close"
           type="button"
-          onClick={() => { setOpen(false); setSelected(null); }}
+          onClick={close}
         >
           Close
         </button>
       </div>
 
-      <h3>Keys, Wallets, and Custody</h3>
+      <h3 id="iv-free-lesson-title">Keys, Wallets, and Custody</h3>
       <p className="iv-lesson-body">
         A crypto wallet does not store coins. It stores <strong>keys</strong>. The assets live on
         the blockchain; the <strong>private key</strong> is the credential that authorizes moving
@@ -112,6 +126,8 @@ export function FreeLesson() {
           <a className="iv-btn" href="/login">Enter Vaulted Academy</a>
         </div>
       )}
-    </div>
+      </div>
+      </dialog>}
+    </>
   );
 }

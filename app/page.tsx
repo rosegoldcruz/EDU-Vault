@@ -1,9 +1,11 @@
 import { ContractPanel } from "./iv/ContractPanel";
 import { FreeLesson } from "./iv/FreeLesson";
 import { IvNav } from "./iv/IvNav";
+import { ResponsiveHeroBallpit } from "./iv/ResponsiveHeroBallpit";
 import { SystemDiagram } from "./iv/SystemDiagram";
+import { TrackCatalog } from "./iv/TrackCatalog";
+import { Container, DescriptorRow, HeroActions, Section, StatusItem } from "./iv/ui";
 import { pillars, tracks } from "./iv/data";
-import Ballpit from "@/components/Ballpit";
 
 const specRows = [
   ["Attention before understanding", "Capability before participation"],
@@ -25,6 +27,18 @@ const commTerms = [
   { term: "Verified", tier: "deployed" },
 ] as const;
 
+const descriptors = [
+  { name: "Vaulted Academy", description: "the knowledge layer" },
+  { name: "IV SOL", description: "the participation layer" },
+] as const;
+
+const statusItems = [
+  { label: "IV SOL deployed on Solana", variant: "live" as const },
+  { label: "Academy in active development", variant: "active" as const },
+  { label: "Enrollment available through advisors", variant: "live" as const },
+  { label: "Merchant integration in progress", variant: "integration" as const },
+] as const;
+
 export default function Home() {
   const mintAddress = process.env.NEXT_PUBLIC_IVSOL_MINT?.trim() || null;
 
@@ -34,100 +48,82 @@ export default function Home() {
 
       <main>
         {/* ============ FOLD 1 — Immediate recognition ============ */}
-        <section className="iv-hero iv-shell relative overflow-hidden min-h-[780px]">
+        <section className="iv-hero relative overflow-hidden">
           <div className="absolute inset-0 z-0 pointer-events-auto">
-            <Ballpit
-              count={33}
-              gravity={0}
-              friction={0.998}
-              wallBounce={0.7}
-              maxVelocity={0.22}
-              followCursor={true}
-              colors={[0x760cbc, 0x56e628, 0x42106a, 0x2b8f15, 0x9d4edd, 0x7ef955]}
-              ambientColor={0xffffff}
-              ambientIntensity={0.55}
-              lightIntensity={280}
-              minSize={0.37}
-              maxSize={1.47}
-              size0={1.07}
-              materialParams={{
-                metalness: 0.75,
-                roughness: 0.22,
-                clearcoat: 0.9,
-                clearcoatRoughness: 0.1,
-              }}
-            />
+            <ResponsiveHeroBallpit />
           </div>
 
-          <div className="absolute inset-0 z-[1] pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,rgba(250,249,247,0.45)_70%)]" />
+          <div className="iv-hero-vignette absolute inset-0 z-[1] pointer-events-none" />
 
-          <div className="relative z-10">
-            <span className="iv-label">An education-first ecosystem</span>
-            <h1>
-              Learn first.
-              <span className="iv-serif">Participate with context.</span>
-            </h1>
-            <p className="iv-hero-sub">
-              Iron Vault is built around financial literacy, emerging technology, operational
-              transparency, and informed participation.
-            </p>
-            <div className="iv-hero-actions">
-              <a className="iv-btn" href="/login">Enter Vaulted Academy</a>
-              <a className="iv-textlink" href="#system">View the system</a>
-            </div>
-            <div className="iv-hero-layers">
-              <span><b>Vaulted Academy</b> — the knowledge layer</span>
-              <span><b>IV SOL</b> — the participation layer</span>
+          <Container className="relative z-10">
+            <div className="iv-hero-copy-block">
+              <span className="iv-label">An education-first ecosystem</span>
+              <h1>
+                Learn first.
+                <span className="iv-serif">Participate with context.</span>
+              </h1>
+              <p className="iv-hero-sub">
+                Iron Vault is built around financial literacy, emerging technology, operational
+                transparency, and informed participation.
+              </p>
+              <HeroActions
+                primaryHref="/login"
+                primaryLabel="Enter Vaulted Academy"
+                secondaryHref="#system"
+                secondaryLabel="View the system"
+              />
+              <DescriptorRow items={descriptors} />
             </div>
 
-            <div className="iv-status-strip" aria-label="Current status">
-              <span><span className="iv-dot" data-state="live" />IV SOL deployed on Solana</span>
-              <span><span className="iv-dot" data-state="progress" />Academy in active development</span>
-              <span><span className="iv-dot" data-state="live" />Enrollment available through advisors</span>
-              <span><span className="iv-dot" data-state="progress" />Merchant integration in progress</span>
+            <div className="iv-status-group" role="list" aria-label="Current status">
+              {statusItems.map((item) => (
+                <StatusItem key={item.label} label={item.label} variant={item.variant} />
+              ))}
             </div>
-          </div>
+          </Container>
         </section>
 
         {/* ============ FOLD 2 — The operating thesis ============ */}
-        <section className="iv-section iv-section-alt">
-          <div className="iv-thesis iv-shell">
-            <div className="iv-manifesto">
-              <span className="iv-label">Our thesis</span>
-              <h2>Most token websites sell attention around an asset. Iron Vault is building the system <span className="iv-serif">around the participant.</span></h2>
-              <p>
-                The distinction is structural, not rhetorical. Every surface on this platform is
-                designed to build capability before it invites participation — and to prove its
-                progress with evidence rather than promises.
-              </p>
-              <ul className="iv-principles">
-                <li><i>i.</i>Evidence before marketing</li>
-                <li><i>ii.</i>Capability before speculation</li>
-                <li><i>iii.</i>Education before participation</li>
-                <li><i>iv.</i>Shipped work before promises</li>
-                <li><i>v.</i>Transparency before hype</li>
-              </ul>
-            </div>
-
-            <div className="iv-spec iv-panel" role="table" aria-label="Specification comparison">
-              <div className="iv-spec-head" role="row">
-                <span role="columnheader">Conventional token experience</span>
-                <span role="columnheader">Iron Vault</span>
+        <Section alt>
+          <Container>
+            <div className="iv-thesis">
+              <div className="iv-manifesto">
+                <span className="iv-label">Our thesis</span>
+                <h2>Most token websites sell attention around an asset. Iron Vault is building the system <span className="iv-serif">around the participant.</span></h2>
+                <p>
+                  The distinction is structural, not rhetorical. Every surface on this platform is
+                  designed to build capability before it invites participation — and to prove its
+                  progress with evidence rather than promises.
+                </p>
+                <ul className="iv-principles">
+                  <li><i>i.</i>Evidence before marketing</li>
+                  <li><i>ii.</i>Capability before speculation</li>
+                  <li><i>iii.</i>Education before participation</li>
+                  <li><i>iv.</i>Shipped work before promises</li>
+                  <li><i>v.</i>Transparency before hype</li>
+                </ul>
               </div>
-              {specRows.map(([conventional, ironVault]) => (
-                <div className="iv-spec-row" role="row" key={ironVault}>
-                  <div role="cell">{conventional}</div>
-                  <div role="cell">{ironVault}</div>
+
+              <div className="iv-spec iv-panel" role="table" aria-label="Specification comparison">
+                <div className="iv-spec-head" role="row">
+                  <span role="columnheader">Conventional token experience</span>
+                  <span role="columnheader">Iron Vault</span>
                 </div>
-              ))}
+                {specRows.map(([conventional, ironVault]) => (
+                  <div className="iv-spec-row" role="row" key={ironVault}>
+                    <div role="cell">{conventional}</div>
+                    <div role="cell">{ironVault}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         {/* ============ FOLD 3 — Vaulted Academy preview ============ */}
-        <section className="iv-section" id="academy">
-          <div className="iv-shell">
-            <div className="iv-section-head iv-section-head-row" style={{ maxWidth: "none" }}>
+        <Section id="academy">
+          <Container>
+            <div className="iv-section-head iv-section-head-row">
               <div>
                 <span className="iv-label">Vaulted Academy</span>
                 <h2>The intelligence layer <span className="iv-serif">of the system.</span></h2>
@@ -139,28 +135,14 @@ export default function Home() {
               <a className="iv-textlink" href="/login">Open the Academy</a>
             </div>
 
-            <div className="iv-track-grid">
-              {tracks.map((track) => (
-                <article className="iv-track" key={track.code}>
-                  <div className="iv-track-top">
-                    <span className="iv-track-code">{track.code}</span>
-                    <span className="iv-chip" data-state="planned">{track.level}</span>
-                  </div>
-                  <h3>{track.name}</h3>
-                  <div className="iv-track-meta">
-                    <span>{track.modules} modules</span>
-                    <span>~{track.hours}</span>
-                  </div>
-                </article>
-              ))}
-              <FreeLesson />
-            </div>
-          </div>
-        </section>
+            <FreeLesson />
+            <TrackCatalog tracks={tracks} />
+          </Container>
+        </Section>
 
         {/* ============ FOLD 4 — Platform architecture ============ */}
-        <section className="iv-section iv-section-alt" id="system">
-          <div className="iv-shell">
+        <Section alt id="system">
+          <Container>
             <div className="iv-section-head">
               <span className="iv-label">The platform</span>
               <h2>One system. <span className="iv-serif">Inspect any module.</span></h2>
@@ -170,12 +152,12 @@ export default function Home() {
               </p>
             </div>
             <SystemDiagram />
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         {/* ============ FOLD 5 — IV SOL, honestly ============ */}
-        <section className="iv-section" id="token">
-          <div className="iv-shell">
+        <Section id="token">
+          <Container>
             <div className="iv-section-head">
               <span className="iv-label">IV SOL</span>
               <h2>The token is a component. <span className="iv-serif">Not the whole machine.</span></h2>
@@ -223,12 +205,12 @@ export default function Home() {
             </div>
 
             <ContractPanel mintAddress={mintAddress} />
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         {/* ============ FOLD 6 — Roadmap as proof gates ============ */}
-        <section className="iv-section iv-section-alt" id="proof">
-          <div className="iv-shell">
+        <Section alt id="proof">
+          <Container>
             <div className="iv-section-head">
               <span className="iv-label">Progress</span>
               <h2>No dates. <span className="iv-serif">Definitions of done.</span></h2>
@@ -270,73 +252,77 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         {/* ============ FOLD 7 — Advisor-led enrollment ============ */}
-        <section className="iv-section" id="enroll">
-          <div className="iv-enroll iv-shell">
-            <div>
-              <span className="iv-label">Enrollment</span>
-              <h2>Emerging technology creates questions <span className="iv-serif">a checkout page cannot answer.</span></h2>
-              <p className="iv-enroll-lede">
-                Iron Vault uses advisor-led enrollment so prospective members understand the
-                Academy, the participation structure, platform access, policies, and next steps —
-                before committing to anything.
-              </p>
-              <a className="iv-btn" href="/login">Speak with an advisor</a>
-              <p className="iv-enroll-note">
-                The conversation is informational and enrollment-focused. No pressure mechanics.
-              </p>
-            </div>
+        <Section id="enroll">
+          <Container>
+            <div className="iv-enroll">
+              <div>
+                <span className="iv-label">Enrollment</span>
+                <h2>Emerging technology creates questions <span className="iv-serif">a checkout page cannot answer.</span></h2>
+                <p className="iv-enroll-lede">
+                  Iron Vault uses advisor-led enrollment so prospective members understand the
+                  Academy, the participation structure, platform access, policies, and next steps —
+                  before committing to anything.
+                </p>
+                <a className="iv-btn" href="/login">Speak with an advisor</a>
+                <p className="iv-enroll-note">
+                  The conversation is informational and enrollment-focused. No pressure mechanics.
+                </p>
+              </div>
 
-            <div className="iv-enroll-card iv-panel">
-              <h3>What the conversation covers</h3>
-              <ul>
-                <li><b>Academy walkthrough</b><span>Curriculum + progression</span></li>
-                <li><b>Participation structure</b><span>How IV SOL fits in</span></li>
-                <li><b>Platform access</b><span>What is available today</span></li>
-                <li><b>Policies &amp; disclosures</b><span>Before any commitment</span></li>
-                <li><b>Typical length</b><span>20–30 minutes</span></li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* ============ FOLD 8 + 9 — Accountability & language ============ */}
-        <section className="iv-section iv-section-alt">
-          <div className="iv-anchor iv-shell">
-            <div className="iv-anchor-card iv-panel">
-              <span className="iv-label">Phoenix, Arizona</span>
-              <h3>Built and operated by identifiable people.</h3>
-              <p>
-                Iron Vault is not an anonymous website attached to a temporary Discord server. It
-                is a real platform operated from Phoenix, Arizona, with a named team, a legal
-                operating entity, and public accountability commitments — building in the open.
-              </p>
-            </div>
-
-            <div className="iv-anchor-card iv-panel">
-              <span className="iv-label">Our language</span>
-              <h3>Planned functionality is never described as available.</h3>
-              <p>
-                Every public statement on this platform distinguishes clearly between the
-                following states — and the interface reflects them through status indicators,
-                timestamps, and proof links:
-              </p>
-              <div className="iv-comm-terms">
-                {commTerms.map(({ term, tier }) => (
-                  <span key={term} data-tier={tier}>{term}</span>
-                ))}
+              <div className="iv-enroll-card iv-panel">
+                <h3>What the conversation covers</h3>
+                <ul>
+                  <li><b>Academy walkthrough</b><span>Curriculum + progression</span></li>
+                  <li><b>Participation structure</b><span>How IV SOL fits in</span></li>
+                  <li><b>Platform access</b><span>What is available today</span></li>
+                  <li><b>Policies &amp; disclosures</b><span>Before any commitment</span></li>
+                  <li><b>Typical length</b><span>20–30 minutes</span></li>
+                </ul>
               </div>
             </div>
-          </div>
-        </section>
+          </Container>
+        </Section>
+
+        {/* ============ FOLD 8 + 9 — Accountability & language ============ */}
+        <Section alt>
+          <Container>
+            <div className="iv-anchor">
+              <div className="iv-anchor-card iv-panel">
+                <span className="iv-label">Phoenix, Arizona</span>
+                <h3>Built and operated by identifiable people.</h3>
+                <p>
+                  Iron Vault is not an anonymous website attached to a temporary Discord server. It
+                  is a real platform operated from Phoenix, Arizona, with a named team, a legal
+                  operating entity, and public accountability commitments — building in the open.
+                </p>
+              </div>
+
+              <div className="iv-anchor-card iv-panel">
+                <span className="iv-label">Our language</span>
+                <h3>Planned functionality is never described as available.</h3>
+                <p>
+                  Every public statement on this platform distinguishes clearly between the
+                  following states — and the interface reflects them through status indicators,
+                  timestamps, and proof links:
+                </p>
+                <div className="iv-comm-terms">
+                  {commTerms.map(({ term, tier }) => (
+                    <span key={term} data-tier={tier}>{term}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Container>
+        </Section>
       </main>
 
       {/* ============ Footer — colophon ============ */}
       <footer className="iv-footer">
-        <div className="iv-shell">
+        <Container>
           <div className="iv-footer-grid">
             <div className="iv-footer-readout" aria-label="Current status summary">
               <span><b>Network</b> — Solana</span>
@@ -357,7 +343,7 @@ export default function Home() {
             <span className="iv-serif">Iron Vault — Phoenix, Arizona. Built in the open.</span>
             <span>© 2026 Iron Vault | Vaulted Academy</span>
           </div>
-        </div>
+        </Container>
       </footer>
     </div>
   );

@@ -5,17 +5,27 @@
 
 export type SystemState = "live" | "progress" | "planned";
 
-export const tracks = [
-  { code: "No. 1", name: "Money", modules: 6, hours: "4h", level: "Foundations" },
-  { code: "No. 2", name: "Bitcoin", modules: 8, hours: "6h", level: "Foundations" },
-  { code: "No. 3", name: "Blockchain", modules: 9, hours: "7h", level: "Core" },
-  { code: "No. 4", name: "Solana", modules: 7, hours: "5h", level: "Core" },
-  { code: "No. 5", name: "DeFi", modules: 10, hours: "8h", level: "Advanced" },
-  { code: "No. 6", name: "Artificial Intelligence", modules: 6, hours: "5h", level: "Core" },
-  { code: "No. 7", name: "Security", modules: 8, hours: "6h", level: "Core" },
-  { code: "No. 8", name: "Architecture", modules: 5, hours: "4h", level: "Advanced" },
-  { code: "No. 9", name: "Compliance", modules: 4, hours: "3h", level: "Core" },
-  { code: "No. 10", name: "Wealth Systems", modules: 7, hours: "6h", level: "Advanced" },
+export interface Track {
+  code: string;
+  slug: string;
+  name: string;
+  hours: string;
+  level: "Foundations" | "Core" | "Advanced";
+  summary: string;
+  modules: readonly string[];
+}
+
+export const tracks: readonly Track[] = [
+  { code: "No. 1", slug: "money", name: "Money", hours: "4h", level: "Foundations", summary: "Build a practical model of money before evaluating digital assets or financial systems.", modules: ["Why money exists", "Ledgers and accounting", "Inflation and purchasing power", "Debt and credit", "Risk, return, and time", "Personal financial foundations"] },
+  { code: "No. 2", slug: "bitcoin", name: "Bitcoin", hours: "6h", level: "Foundations", summary: "Understand Bitcoin as a monetary network, from custody and transactions to mining and supply.", modules: ["The double-spend problem", "The Bitcoin network", "Blocks and transactions", "Mining and proof of work", "Supply and issuance", "Wallets and custody", "Fees and settlement", "Evaluating Bitcoin claims"] },
+  { code: "No. 3", slug: "blockchain", name: "Blockchain", hours: "7h", level: "Core", summary: "Learn what blockchains do well, where they fail, and how to inspect their claims.", modules: ["Distributed ledgers", "Consensus models", "Public and private keys", "Transactions and state", "Smart contracts", "Nodes and validators", "Scaling tradeoffs", "Interoperability", "Reading a block explorer"] },
+  { code: "No. 4", slug: "solana", name: "Solana", hours: "5h", level: "Core", summary: "Read Solana accounts, programs, transactions, and token activity with operational context.", modules: ["Solana architecture", "Accounts and programs", "Transactions and fees", "Validators and consensus", "SPL tokens", "Wallet operations", "Explorer-based research"] },
+  { code: "No. 5", slug: "defi", name: "DeFi", hours: "8h", level: "Advanced", summary: "Analyze decentralized finance by mechanism, risk, liquidity, and evidence rather than headline yield.", modules: ["DeFi primitives", "Automated market makers", "Liquidity pools", "Lending and borrowing", "Stablecoins", "Oracles", "Staking and restaking", "Protocol governance", "Smart-contract risk", "Position due diligence"] },
+  { code: "No. 6", slug: "artificial-intelligence", name: "Artificial Intelligence", hours: "5h", level: "Core", summary: "Use modern AI systems effectively while understanding models, limitations, data, and verification.", modules: ["How models learn", "Language models", "Prompt and context design", "Verification and hallucinations", "Agents and automation", "AI governance and privacy"] },
+  { code: "No. 7", slug: "security", name: "Security", hours: "6h", level: "Core", summary: "Develop repeatable habits for custody, authentication, transaction review, recovery, and incident response.", modules: ["Threat modeling", "Keys and seed phrases", "Authentication", "Phishing and social engineering", "Transaction simulation", "Device security", "Recovery planning", "Incident response"] },
+  { code: "No. 8", slug: "architecture", name: "Architecture", hours: "4h", level: "Advanced", summary: "Map how identity, data, services, chains, and interfaces form a production platform.", modules: ["System boundaries", "Identity and authorization", "Data ownership", "APIs and integrations", "Reliability and observability"] },
+  { code: "No. 9", slug: "compliance", name: "Compliance", hours: "3h", level: "Core", summary: "Understand the operational purpose of disclosures, consent, recordkeeping, and financial controls.", modules: ["Regulatory foundations", "Disclosures and communications", "Consent and recordkeeping", "Operational controls"] },
+  { code: "No. 10", slug: "wealth-systems", name: "Wealth Systems", hours: "6h", level: "Advanced", summary: "Combine cash flow, allocation, risk controls, and review practices into a durable personal system.", modules: ["Goals and constraints", "Cash-flow systems", "Emergency reserves", "Asset allocation", "Risk management", "Tax-aware records", "Review and rebalancing"] },
 ] as const;
 
 export interface SystemNode {

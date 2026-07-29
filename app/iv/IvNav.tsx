@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { label: "Academy", href: "#academy" },
@@ -35,6 +36,7 @@ export function IvNav() {
         </nav>
 
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+          <ThemeToggle />
           <a className="iv-nav-cta" href="/login">Sign in</a>
           <button
             className="iv-nav-toggle"

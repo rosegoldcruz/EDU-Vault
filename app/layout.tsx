@@ -58,7 +58,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${instrumentSerif.variable} ${geistSans.variable} ${geistMono.variable} ${interTight.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${instrumentSerif.variable} ${geistSans.variable} ${geistMono.variable} ${interTight.variable}`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('iv-theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.ivTheme=t;document.documentElement.style.colorScheme=t}catch(e){}})()` }} />
+      </head>
       <body className="antialiased">
         <SmoothScroll>{children}</SmoothScroll>
       </body>
