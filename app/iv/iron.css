@@ -460,11 +460,11 @@ html[data-iv-theme="dark"] .iv-root {
 
 /* Status group — compact, centered pills */
 .iv-status-group {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
   justify-content: center;
-  gap: 10px 12px;
-  max-width: 860px;
+  gap: 12px;
+  max-width: 1100px;
   margin: 40px auto 0;
 }
 
@@ -602,7 +602,7 @@ html[data-iv-theme="dark"] .iv-root {
 
 .iv-track-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -697,6 +697,11 @@ html[data-iv-theme="dark"] .iv-track-free .iv-chip { color: #151517; background:
 }
 .iv-dialog::backdrop { background: var(--iv-dialog-backdrop); backdrop-filter: blur(5px); }
 .iv-dialog-panel { max-height: min(82dvh, 820px); overflow-y: auto; padding: clamp(24px, 4vw, 32px); }
+.iv-dialog-panel {
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  touch-action: pan-y;
+}
 .iv-dialog-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
 .iv-dialog-head h2 { margin-top: 8px; font: 600 clamp(30px, 5vw, 46px)/1.05 var(--iv-display); letter-spacing: -0.025em; }
 .iv-dialog-close {
@@ -713,6 +718,7 @@ html[data-iv-theme="dark"] .iv-track-free .iv-chip { color: #151517; background:
 .iv-syllabus li { display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: center; min-height: 46px; border-bottom: 1px solid var(--iv-hairline-soft); }
 .iv-syllabus li span { color: var(--iv-ink-3); font: italic 400 14px/1 var(--iv-serif); }
 .iv-syllabus li strong { font-size: 15px; font-weight: 550; }
+.iv-syllabus li small { display: block; margin-top: 3px; color: var(--iv-ink-3); font-size: 12px; line-height: 1.45; }
 .iv-dialog-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 18px; margin-top: 18px; }
 .iv-dialog-footer > span { color: var(--iv-ink-3); font-size: 13px; }
 
@@ -1135,6 +1141,7 @@ html[data-iv-theme="dark"] .iv-track-free .iv-chip { color: #151517; background:
    ============================================================ */
 
 @media (max-width: 1080px) {
+  .iv-status-group { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .iv-track-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .iv-system-wrap { grid-template-columns: 1fr; }
 }
@@ -1173,6 +1180,7 @@ html[data-iv-theme="dark"] .iv-track-free .iv-chip { color: #151517; background:
 }
 
 @media (max-width: 640px) {
+  .iv-status-group { grid-template-columns: 1fr; }
   .iv-track-grid { grid-template-columns: 1fr; }
   .iv-track { min-height: 138px; gap: 14px; padding: 20px 22px; }
   .iv-track h3 { font-size: 20px; }

@@ -25,12 +25,12 @@ export function TrackCatalog({ tracks }: { tracks: readonly Track[] }) {
           <button className="iv-track" type="button" key={track.slug} onClick={() => setSelected(track)}>
             <div className="iv-track-top">
               <span className="iv-track-code">{track.code}</span>
-              <span className="iv-chip" data-state="planned">{track.level}</span>
+              <span className="iv-chip" data-state="planned">{track.unitLabel}</span>
             </div>
             <h3>{track.name}</h3>
             <div className="iv-track-meta">
-              <span>{track.modules.length} modules</span>
-              <span>~{track.hours}</span>
+              <span>{track.units.length} {track.unitLabel}</span>
+              {track.duration !== `${track.units.length} ${track.unitLabel}` && track.duration && <span>{track.duration}</span>}
             </div>
             <span className="iv-track-action">View syllabus</span>
           </button>
@@ -45,25 +45,33 @@ export function TrackCatalog({ tracks }: { tracks: readonly Track[] }) {
           onCancel={(event) => { event.preventDefault(); close(); }}
           onClick={(event) => { if (event.target === event.currentTarget) close(); }}
         >
-          <div className="iv-dialog-panel">
+          <div
+            className="iv-dialog-panel"
+            data-lenis-prevent
+            data-lenis-prevent-wheel
+            onWheel={(event) => event.stopPropagation()}
+          >
             <div className="iv-dialog-head">
               <div>
-                <span className="iv-label">{selected.code} · {selected.level}</span>
+                <span className="iv-label">{selected.code} · {selected.audience}</span>
                 <h2 id="iv-syllabus-title">{selected.name}</h2>
               </div>
               <button className="iv-dialog-close" type="button" onClick={close} aria-label="Close syllabus">Close</button>
             </div>
             <p className="iv-dialog-summary">{selected.summary}</p>
             <ol className="iv-syllabus">
-              {selected.modules.map((module, index) => (
-                <li key={module}>
+              {selected.units.map((unit, index) => (
+                <li key={unit.title}>
                   <span>{String(index + 1).padStart(2, "0")}</span>
-                  <strong>{module}</strong>
+                  <div>
+                    <strong>{unit.title}</strong>
+                    {unit.detail && <small>{unit.detail}</small>}
+                  </div>
                 </li>
               ))}
             </ol>
             <div className="iv-dialog-footer">
-              <span>Estimated track time: {selected.hours}</span>
+              <span>{selected.duration ?? `${selected.units.length} ${selected.unitLabel}`} · Verified completion credential</span>
               <a className="iv-btn" href="/login">Enter the Academy</a>
             </div>
           </div>

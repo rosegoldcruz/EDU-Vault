@@ -128,7 +128,7 @@ export default function Home() {
                 <span className="iv-label">Vaulted Academy</span>
                 <h2>The intelligence layer <span className="iv-serif">of the system.</span></h2>
                 <p className="iv-sub">
-                  Structured tracks, server-verified assessments, and progression that unlocks with
+                  Eight clear pathways, server-verified assessments, and progression that unlocks with
                   demonstrated understanding — not with a checkout page.
                 </p>
               </div>

@@ -53,7 +53,12 @@ export function FreeLesson() {
         onCancel={(event) => { event.preventDefault(); close(); }}
         onClick={(event) => { if (event.target === event.currentTarget) close(); }}
       >
-      <div className="iv-lesson iv-dialog-panel">
+      <div
+        className="iv-lesson iv-dialog-panel"
+        data-lenis-prevent
+        data-lenis-prevent-wheel
+        onWheel={(event) => event.stopPropagation()}
+      >
       <div className="iv-lesson-head">
         <span className="iv-label">Free lesson</span>
         <button
