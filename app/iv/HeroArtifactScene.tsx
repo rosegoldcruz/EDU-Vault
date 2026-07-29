@@ -36,8 +36,10 @@ interface FloatingObject {
   object: Group;
   origin: Vector3;
   phase: number;
-  drift: number;
   spin: number;
+  velocity: number;
+  mode: "gravity" | "parachute" | "thrust";
+  baseScale: number;
 }
 
 interface CoinTransform {
@@ -45,6 +47,10 @@ interface CoinTransform {
   scale: number;
   phase: number;
   spin: number;
+  velocityY: number;
+  floorY: number;
+  gravity: number;
+  restitution: number;
 }
 
 function normalizeModel(model: Group, targetHeight: number) {
@@ -151,7 +157,16 @@ export function HeroArtifactScene() {
         position.x = (Math.cos(angle) < 0 ? -1 : 1) * 4.3;
       }
       const scale = (isMobile ? 0.34 : 0.42) + (index % 4) * (isMobile ? 0.055 : 0.08);
-      coinTransforms.push({ position, scale, phase: index * 0.77, spin: 0.14 + (index % 3) * 0.045 });
+      coinTransforms.push({
+        position,
+        scale,
+        phase: index * 0.77,
+        spin: 0.14 + (index % 3) * 0.045,
+        velocityY: 0.15 + (index % 5) * 0.18,
+        floorY: isMobile ? -2.15 : -4.15 + (index % 3) * 0.18,
+        gravity: 0.72 + (index % 4) * 0.14,
+        restitution: 0.74 + (index % 3) * 0.06,
+      });
       const color = index % 3 === 0 ? GREEN : PURPLE;
       coins.setColorAt(index, color);
       rims.setColorAt(index, color);
@@ -181,8 +196,10 @@ export function HeroArtifactScene() {
         object: rocket,
         origin: rocket.position.clone(),
         phase: index * 1.9,
-        drift: 0.12,
         spin: index % 2 === 0 ? 0.035 : -0.035,
+        velocity: 0.62 + index * 0.08,
+        mode: "thrust",
+        baseScale: rocket.scale.x,
       });
     });
 
@@ -200,8 +217,10 @@ export function HeroArtifactScene() {
         object: character,
         origin: character.position.clone(),
         phase: 0.7,
-        drift: 0.055,
         spin: 0.012,
+        velocity: 0,
+        mode: "gravity",
+        baseScale: character.scale.x,
       });
     });
 
@@ -222,8 +241,10 @@ export function HeroArtifactScene() {
           object: parachute,
           origin: parachute.position.clone(),
           phase: 1.2 + index * 1.4,
-          drift: 0.09 + index * 0.015,
           spin: index % 2 === 0 ? 0.02 : -0.02,
+          velocity: 0.16 + index * 0.025,
+          mode: "parachute",
+          baseScale: parachute.scale.x,
         });
       });
     });
@@ -248,19 +269,39 @@ export function HeroArtifactScene() {
 
     let frame = 0;
     const start = performance.now();
+    let previousTime = start;
     const render = (time: number) => {
       const elapsed = (time - start) / 1000;
+      const delta = Math.min((time - previousTime) / 1000, 0.04);
+      previousTime = time;
       const motion = reducedMotion ? 0 : 1;
+      const stage = canvas.closest<HTMLElement>("[data-hero-stage]");
+      const stageRect = stage?.getBoundingClientRect();
+      const scrollDistance = Math.max((stageRect?.height ?? window.innerHeight) - window.innerHeight, 1);
+      const scrollProgress = reducedMotion
+        ? 0
+        : MathUtils.clamp(-(stageRect?.top ?? 0) / scrollDistance, 0, 1);
 
       coinTransforms.forEach((transform, index) => {
+        if (motion) {
+          transform.velocityY -= transform.gravity * delta;
+          transform.position.y += transform.velocityY * delta;
+          if (transform.position.y < transform.floorY) {
+            transform.position.y = transform.floorY;
+            transform.velocityY = Math.max(0.68, Math.abs(transform.velocityY) * transform.restitution);
+          }
+        }
         dummy.position.copy(transform.position);
-        dummy.position.y += Math.sin(elapsed * 0.42 + transform.phase) * 0.16 * motion;
+        dummy.position.x += Math.sin(elapsed * 0.32 + transform.phase) * 0.08 * motion;
+        dummy.position.x *= 1 - scrollProgress * (isMobile ? 0.18 : 0.34);
+        dummy.position.y *= 1 - scrollProgress * 0.14;
+        dummy.position.z += scrollProgress * (3.2 + (index % 4) * 0.42);
         dummy.rotation.set(
-          0.24 + Math.sin(elapsed * 0.18 + transform.phase) * 0.22 * motion,
-          elapsed * transform.spin * motion + transform.phase,
+          0.24 + transform.velocityY * 0.12,
+          elapsed * transform.spin * motion * 2.4 + transform.phase,
           Math.sin(transform.phase) * 0.28,
         );
-        dummy.scale.setScalar(transform.scale);
+        dummy.scale.setScalar(transform.scale * (1 + scrollProgress * 0.52));
         dummy.updateMatrix();
         coins.setMatrixAt(index, dummy.matrix);
         rims.setMatrixAt(index, dummy.matrix);
@@ -268,15 +309,41 @@ export function HeroArtifactScene() {
       coins.instanceMatrix.needsUpdate = true;
       rims.instanceMatrix.needsUpdate = true;
 
-      floatingObjects.forEach(({ object, origin, phase, drift, spin }) => {
-        object.position.x = origin.x + Math.sin(elapsed * 0.28 + phase) * drift * motion;
-        object.position.y = origin.y + Math.cos(elapsed * 0.36 + phase) * drift * 1.6 * motion;
+      floatingObjects.forEach((item) => {
+        const { object, origin, phase, spin, mode } = item;
+        if (motion && mode === "parachute") {
+          object.position.y -= item.velocity * delta;
+          object.position.x = origin.x + Math.sin(elapsed * 0.5 + phase) * 0.16;
+          if (object.position.y < -4.7) object.position.y = 4.7;
+        } else if (motion && mode === "thrust") {
+          object.position.y += item.velocity * delta;
+          object.position.x = origin.x + Math.sin(elapsed * 0.8 + phase) * 0.1;
+          if (object.position.y > 4.8) object.position.y = -4.6;
+        } else if (motion && mode === "gravity") {
+          item.velocity -= 0.58 * delta;
+          object.position.y += item.velocity * delta;
+          if (object.position.y < -4.35) {
+            object.position.y = -4.35;
+            item.velocity = Math.max(0.45, Math.abs(item.velocity) * 0.7);
+          }
+        }
+        object.position.x += (origin.x * (mode === "gravity" ? 0.58 : 0.72) - object.position.x) * scrollProgress;
+        object.position.y *= 1 - scrollProgress * 0.08;
+        object.position.z = origin.z + scrollProgress * (mode === "gravity" ? 4.8 : 3.4);
+        const scrollScale = 1 + scrollProgress * (mode === "gravity" ? 0.72 : 0.38);
+        object.scale.setScalar(item.baseScale * scrollScale);
         object.rotation.y += spin * 0.016 * motion;
       });
 
       camera.position.x = pointer.x * 0.18 * motion;
-      camera.position.y = pointer.y * 0.12 * motion;
+      camera.position.y = pointer.y * 0.12 * motion - scrollProgress * 0.18;
+      camera.position.z = 12 - scrollProgress * 2.35;
       camera.lookAt(0, 0, 0);
+      const heroContent = stage?.querySelector<HTMLElement>(".iv-hero-content");
+      if (heroContent) {
+        heroContent.style.opacity = String(1 - MathUtils.smoothstep(scrollProgress, 0.24, 0.9) * 0.82);
+        heroContent.style.transform = `translate3d(0, ${-scrollProgress * 24}px, 0)`;
+      }
       renderer.render(scene, camera);
       frame = requestAnimationFrame(render);
     };

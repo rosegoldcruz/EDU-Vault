@@ -48,39 +48,41 @@ export default function Home() {
 
       <main>
         {/* ============ FOLD 1 — Immediate recognition ============ */}
-        <section className="iv-hero relative overflow-hidden">
-          <div className="absolute inset-0 z-0 pointer-events-auto">
-            <HeroArtifactScene />
+        <section className="iv-hero relative" data-hero-stage>
+          <div className="iv-hero-viewport">
+            <div className="absolute inset-0 z-0 pointer-events-auto">
+              <HeroArtifactScene />
+            </div>
+
+            <div className="iv-hero-vignette absolute inset-0 z-1 pointer-events-none" />
+
+            <Container className="iv-hero-content relative z-10">
+              <div className="iv-hero-copy-block">
+                <span className="iv-label">An education-first ecosystem</span>
+                <h1>
+                  Learn first.
+                  <span className="iv-serif">Participate with context.</span>
+                </h1>
+                <p className="iv-hero-sub">
+                  Iron Vault is built around financial literacy, emerging technology, operational
+                  transparency, and informed participation.
+                </p>
+                <HeroActions
+                  primaryHref="/login"
+                  primaryLabel="Enter Vaulted Academy"
+                  secondaryHref="#system"
+                  secondaryLabel="View the system"
+                />
+                <DescriptorRow items={descriptors} />
+              </div>
+
+              <div className="iv-status-group" role="list" aria-label="Current status">
+                {statusItems.map((item) => (
+                  <StatusItem key={item.label} label={item.label} variant={item.variant} />
+                ))}
+              </div>
+            </Container>
           </div>
-
-          <div className="iv-hero-vignette absolute inset-0 z-[1] pointer-events-none" />
-
-          <Container className="relative z-10">
-            <div className="iv-hero-copy-block">
-              <span className="iv-label">An education-first ecosystem</span>
-              <h1>
-                Learn first.
-                <span className="iv-serif">Participate with context.</span>
-              </h1>
-              <p className="iv-hero-sub">
-                Iron Vault is built around financial literacy, emerging technology, operational
-                transparency, and informed participation.
-              </p>
-              <HeroActions
-                primaryHref="/login"
-                primaryLabel="Enter Vaulted Academy"
-                secondaryHref="#system"
-                secondaryLabel="View the system"
-              />
-              <DescriptorRow items={descriptors} />
-            </div>
-
-            <div className="iv-status-group" role="list" aria-label="Current status">
-              {statusItems.map((item) => (
-                <StatusItem key={item.label} label={item.label} variant={item.variant} />
-              ))}
-            </div>
-          </Container>
         </section>
 
         {/* ============ FOLD 2 — The operating thesis ============ */}
