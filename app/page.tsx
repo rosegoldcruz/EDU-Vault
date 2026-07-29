@@ -1,7 +1,7 @@
 import { ContractPanel } from "./iv/ContractPanel";
 import { FreeLesson } from "./iv/FreeLesson";
+import { HeroArtifactScene } from "./iv/HeroArtifactScene";
 import { IvNav } from "./iv/IvNav";
-import { ResponsiveHeroBallpit } from "./iv/ResponsiveHeroBallpit";
 import { SystemDiagram } from "./iv/SystemDiagram";
 import { TrackCatalog } from "./iv/TrackCatalog";
 import { Container, DescriptorRow, HeroActions, Section, StatusItem } from "./iv/ui";
@@ -50,7 +50,7 @@ export default function Home() {
         {/* ============ FOLD 1 — Immediate recognition ============ */}
         <section className="iv-hero relative overflow-hidden">
           <div className="absolute inset-0 z-0 pointer-events-auto">
-            <ResponsiveHeroBallpit />
+            <HeroArtifactScene />
           </div>
 
           <div className="iv-hero-vignette absolute inset-0 z-[1] pointer-events-none" />

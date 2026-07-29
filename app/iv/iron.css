@@ -374,6 +374,12 @@ html[data-iv-theme="dark"] .iv-root {
   background: radial-gradient(circle at center, transparent 0%, color-mix(in srgb, var(--iv-paper) 48%, transparent) 72%);
 }
 
+.iv-hero-artifacts {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .iv-hero-copy-block {
   width: 100%;
   max-width: 720px;
