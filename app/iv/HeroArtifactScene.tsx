@@ -11,15 +11,14 @@ import {
   CylinderGeometry,
   DirectionalLight,
   Group,
-  InstancedMesh,
   MathUtils,
   Mesh,
   MeshPhysicalMaterial,
-  Object3D,
+  Plane,
   PerspectiveCamera,
+  Raycaster,
   Scene,
   SRGBColorSpace,
-  TorusGeometry,
   Vector2,
   Vector3,
   WebGLRenderer,
@@ -31,6 +30,11 @@ const PURPLE = new Color(0x760cbc);
 const GREEN = new Color(0x56e628);
 const CHARACTER_URL = "/glb/meshy-character-web.glb";
 const PARACHUTE_URL = "/glb/parachute-medal-web.glb";
+const DESKTOP_MIN_SIZE = 0.37;
+const DESKTOP_MAX_SIZE = 1.47;
+const DESKTOP_BASE_SIZE = 1.07;
+const MOBILE_SCALE = 0.56;
+const TOKEN_VISUAL_SCALE = 0.32;
 
 interface FloatingObject {
   object: Group;
@@ -43,14 +47,123 @@ interface FloatingObject {
 }
 
 interface CoinTransform {
-  position: Vector3;
-  scale: number;
+  object?: Group;
   phase: number;
   spin: number;
-  velocityY: number;
-  floorY: number;
+  baseScale: number;
+}
+
+interface CoinPhysicsConfig {
+  count: number;
+  maxX: number;
+  maxY: number;
+  maxZ: number;
+  minSize: number;
+  maxSize: number;
+  size0: number;
   gravity: number;
-  restitution: number;
+  friction: number;
+  wallBounce: number;
+  maxVelocity: number;
+}
+
+class CoinPhysics {
+  config: CoinPhysicsConfig;
+  positions: Float32Array;
+  velocities: Float32Array;
+  sizes: Float32Array;
+  pointerCenter = new Vector3();
+  pointerActive = false;
+
+  constructor(config: CoinPhysicsConfig) {
+    this.config = config;
+    this.positions = new Float32Array(config.count * 3);
+    this.velocities = new Float32Array(config.count * 3);
+    this.sizes = new Float32Array(config.count);
+    this.initialize();
+  }
+
+  initialize() {
+    for (let index = 0; index < this.config.count; index += 1) {
+      const offset = index * 3;
+      this.positions[offset] = MathUtils.randFloatSpread(this.config.maxX * 2);
+      this.positions[offset + 1] = MathUtils.randFloatSpread(this.config.maxY * 2);
+      this.positions[offset + 2] = MathUtils.randFloatSpread(this.config.maxZ * 2);
+      this.sizes[index] = index === 0
+        ? this.config.size0
+        : MathUtils.randFloat(this.config.minSize, this.config.maxSize);
+    }
+  }
+
+  update(delta: number) {
+    const { config, positions, sizes, velocities } = this;
+    const frameScale = Math.min(delta * 60, 2);
+
+    if (this.pointerActive) {
+      const pointerPosition = new Vector3().fromArray(positions, 0);
+      pointerPosition.lerp(this.pointerCenter, 0.16).toArray(positions, 0);
+      velocities.fill(0, 0, 3);
+    }
+
+    for (let index = this.pointerActive ? 1 : 0; index < config.count; index += 1) {
+      const offset = index * 3;
+      const velocity = new Vector3().fromArray(velocities, offset);
+      const position = new Vector3().fromArray(positions, offset);
+      velocity.y -= delta * config.gravity * sizes[index];
+      velocity.multiplyScalar(Math.pow(config.friction, frameScale));
+      velocity.clampLength(0, config.maxVelocity);
+      position.addScaledVector(velocity, frameScale);
+      position.toArray(positions, offset);
+      velocity.toArray(velocities, offset);
+    }
+
+    for (let index = 0; index < config.count; index += 1) {
+      const offset = index * 3;
+      const position = new Vector3().fromArray(positions, offset);
+      const velocity = new Vector3().fromArray(velocities, offset);
+      const radius = sizes[index];
+
+      for (let otherIndex = index + 1; otherIndex < config.count; otherIndex += 1) {
+        const otherOffset = otherIndex * 3;
+        const otherPosition = new Vector3().fromArray(positions, otherOffset);
+        const difference = otherPosition.clone().sub(position);
+        const distance = difference.length();
+        const minimumDistance = radius + sizes[otherIndex];
+        if (distance >= minimumDistance) continue;
+
+        const normal = distance > 0.0001
+          ? difference.multiplyScalar(1 / distance)
+          : new Vector3(1, 0, 0);
+        const correction = normal.multiplyScalar((minimumDistance - distance) * 0.5);
+        const otherVelocity = new Vector3().fromArray(velocities, otherOffset);
+        position.sub(correction);
+        otherPosition.add(correction);
+        const impulse = Math.max(velocity.length(), otherVelocity.length(), 0.035);
+        velocity.addScaledVector(normal, -impulse * config.wallBounce);
+        otherVelocity.addScaledVector(normal, impulse * config.wallBounce);
+        otherPosition.toArray(positions, otherOffset);
+        otherVelocity.toArray(velocities, otherOffset);
+      }
+
+      if (Math.abs(position.x) + radius > config.maxX) {
+        position.x = Math.sign(position.x) * (config.maxX - radius);
+        velocity.x *= -config.wallBounce;
+      }
+      if (config.gravity === 0 && Math.abs(position.y) + radius > config.maxY) {
+        position.y = Math.sign(position.y) * (config.maxY - radius);
+        velocity.y *= -config.wallBounce;
+      } else if (config.gravity !== 0 && position.y - radius < -config.maxY) {
+        position.y = -config.maxY + radius;
+        velocity.y *= -config.wallBounce;
+      }
+      if (Math.abs(position.z) + radius > config.maxZ) {
+        position.z = Math.sign(position.z) * (config.maxZ - radius);
+        velocity.z *= -config.wallBounce;
+      }
+      position.toArray(positions, offset);
+      velocity.toArray(velocities, offset);
+    }
+  }
 }
 
 function normalizeModel(model: Group, targetHeight: number) {
@@ -60,6 +173,12 @@ function normalizeModel(model: Group, targetHeight: number) {
   model.position.sub(center);
   model.position.y += size.y / 2;
   model.scale.setScalar(targetHeight / Math.max(size.y, 0.001));
+}
+
+function wrapModel(source: Group) {
+  const wrapper = new Group();
+  wrapper.add(source.clone(true));
+  return wrapper;
 }
 
 function createRocket(material: MeshPhysicalMaterial) {
@@ -112,68 +231,29 @@ export function HeroArtifactScene() {
     accentLight.position.set(6, -2, 5);
     scene.add(accentLight);
 
-    const mobileCoinPositions = [
-      new Vector3(-2.7, 4.65, -0.4),
-      new Vector3(2.7, 4.55, -0.8),
-      new Vector3(-2.7, -1.82, -0.4),
-      new Vector3(2.7, -1.82, -0.8),
-    ];
-    const coinCount = isMobile ? mobileCoinPositions.length : 22;
-    const coinGeometry = new CylinderGeometry(0.48, 0.48, 0.12, 48);
-    coinGeometry.rotateX(Math.PI / 2);
-    const rimGeometry = new TorusGeometry(0.39, 0.045, 12, 48);
-    const coinMaterial = new MeshPhysicalMaterial({
-      color: 0xffffff,
-      metalness: 0.82,
-      roughness: 0.2,
-      clearcoat: 1,
-      clearcoatRoughness: 0.12,
+    const coinCount = isMobile ? 28 : 33;
+    const coinPhysics = new CoinPhysics({
+      count: coinCount,
+      maxX: isMobile ? 2.65 : 6.8,
+      maxY: isMobile ? 4.45 : 4.1,
+      maxZ: 1.8,
+      minSize: isMobile ? DESKTOP_MIN_SIZE * MOBILE_SCALE : DESKTOP_MIN_SIZE,
+      maxSize: isMobile ? DESKTOP_MAX_SIZE * MOBILE_SCALE : DESKTOP_MAX_SIZE,
+      size0: isMobile ? DESKTOP_BASE_SIZE * MOBILE_SCALE : DESKTOP_BASE_SIZE,
+      gravity: 0,
+      friction: 0.998,
+      wallBounce: 0.7,
+      maxVelocity: 0.22,
     });
-    const rimMaterial = new MeshPhysicalMaterial({
-      color: 0xffffff,
-      emissiveIntensity: 0.32,
-      metalness: 0.65,
-      roughness: 0.2,
-    });
-    const coins = new InstancedMesh(coinGeometry, coinMaterial, coinCount);
-    const rims = new InstancedMesh(rimGeometry, rimMaterial, coinCount);
     const coinTransforms: CoinTransform[] = [];
-    const dummy = new Object3D();
 
     for (let index = 0; index < coinCount; index += 1) {
-      const angle = (index / coinCount) * Math.PI * 2 + 0.34;
-      const sideBias = Math.abs(Math.cos(angle));
-      const radiusX = isMobile ? 4.65 : 7.15;
-      const radiusY = isMobile ? 4.1 : 4.25;
-      const position = isMobile
-        ? mobileCoinPositions[index].clone()
-        : new Vector3(
-            Math.cos(angle) * radiusX,
-            Math.sin(angle) * radiusY,
-            -1.8 + (index % 5) * 0.46,
-          );
-      if (!isMobile && sideBias < 0.42) position.x *= 1.42;
-      if (!isMobile && Math.abs(position.x) < 4.3) {
-        position.x = (Math.cos(angle) < 0 ? -1 : 1) * 4.3;
-      }
-      const scale = (isMobile ? 0.34 : 0.42) + (index % 4) * (isMobile ? 0.055 : 0.08);
       coinTransforms.push({
-        position,
-        scale,
         phase: index * 0.77,
         spin: 0.14 + (index % 3) * 0.045,
-        velocityY: 0.15 + (index % 5) * 0.18,
-        floorY: isMobile ? -2.15 : -4.15 + (index % 3) * 0.18,
-        gravity: 0.72 + (index % 4) * 0.14,
-        restitution: 0.74 + (index % 3) * 0.06,
+        baseScale: 1,
       });
-      const color = index % 3 === 0 ? GREEN : PURPLE;
-      coins.setColorAt(index, color);
-      rims.setColorAt(index, color);
     }
-    coins.instanceColor!.needsUpdate = true;
-    rims.instanceColor!.needsUpdate = true;
-    scene.add(coins, rims);
 
     const floatingObjects: FloatingObject[] = [];
     const rocketMaterial = new MeshPhysicalMaterial({
@@ -207,21 +287,19 @@ export function HeroArtifactScene() {
     loader.setMeshoptDecoder(MeshoptDecoder);
     let disposed = false;
 
-    void loader.loadAsync(CHARACTER_URL).then(({ scene: character }) => {
+    void loader.loadAsync(CHARACTER_URL).then(({ scene: tokenSource }) => {
       if (disposed) return;
-      normalizeModel(character, isMobile ? 1.45 : 2.35);
-      character.position.set(isMobile ? 3.8 : 6.25, isMobile ? -4.1 : -4.35, -0.75);
-      character.rotation.y = isMobile ? -0.18 : -0.24;
-      scene.add(character);
-      floatingObjects.push({
-        object: character,
-        origin: character.position.clone(),
-        phase: 0.7,
-        spin: 0.012,
-        velocity: 0,
-        mode: "gravity",
-        baseScale: character.scale.x,
+      normalizeModel(tokenSource, 1);
+
+      coinTransforms.forEach((transform, index) => {
+        const token = wrapModel(tokenSource);
+        token.rotation.set(0.24, transform.phase, Math.sin(transform.phase) * 0.28);
+        token.scale.setScalar(coinPhysics.sizes[index] * TOKEN_VISUAL_SCALE);
+        transform.baseScale = token.scale.x;
+        transform.object = token;
+        scene.add(token);
       });
+
     });
 
     void loader.loadAsync(PARACHUTE_URL).then(({ scene: parachuteSource }) => {
@@ -250,10 +328,18 @@ export function HeroArtifactScene() {
     });
 
     const pointer = new Vector2();
+    const raycaster = new Raycaster();
+    const pointerPlane = new Plane(new Vector3(0, 0, 1), 0);
     const onPointerMove = (event: PointerEvent) => {
       pointer.set((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
+      raycaster.setFromCamera(pointer, camera);
+      coinPhysics.pointerActive = Boolean(raycaster.ray.intersectPlane(pointerPlane, coinPhysics.pointerCenter));
+    };
+    const onPointerLeave = () => {
+      coinPhysics.pointerActive = false;
     };
     window.addEventListener("pointermove", onPointerMove, { passive: true });
+    window.addEventListener("pointerleave", onPointerLeave);
 
     const resize = () => {
       const width = host.clientWidth;
@@ -262,6 +348,9 @@ export function HeroArtifactScene() {
       camera.aspect = width / Math.max(height, 1);
       camera.fov = camera.aspect < 0.7 ? 52 : camera.aspect < 1.2 ? 44 : 38;
       camera.updateProjectionMatrix();
+      const visibleHalfHeight = Math.tan(MathUtils.degToRad(camera.fov / 2)) * camera.position.z;
+      coinPhysics.config.maxY = visibleHalfHeight * 0.95;
+      coinPhysics.config.maxX = visibleHalfHeight * camera.aspect * 0.95;
     };
     const resizeObserver = new ResizeObserver(resize);
     resizeObserver.observe(host);
@@ -282,32 +371,23 @@ export function HeroArtifactScene() {
         ? 0
         : MathUtils.clamp(-(stageRect?.top ?? 0) / scrollDistance, 0, 1);
 
+      if (motion) coinPhysics.update(delta);
+
       coinTransforms.forEach((transform, index) => {
-        if (motion) {
-          transform.velocityY -= transform.gravity * delta;
-          transform.position.y += transform.velocityY * delta;
-          if (transform.position.y < transform.floorY) {
-            transform.position.y = transform.floorY;
-            transform.velocityY = Math.max(0.68, Math.abs(transform.velocityY) * transform.restitution);
-          }
-        }
-        dummy.position.copy(transform.position);
-        dummy.position.x += Math.sin(elapsed * 0.32 + transform.phase) * 0.08 * motion;
-        dummy.position.x *= 1 - scrollProgress * (isMobile ? 0.18 : 0.34);
-        dummy.position.y *= 1 - scrollProgress * 0.14;
-        dummy.position.z += scrollProgress * (3.2 + (index % 4) * 0.42);
-        dummy.rotation.set(
-          0.24 + transform.velocityY * 0.12,
+        const token = transform.object;
+        if (!token) return;
+        token.position.fromArray(coinPhysics.positions, index * 3);
+        token.position.x *= 1 - scrollProgress * (isMobile ? 0.18 : 0.34);
+        token.position.y *= 1 - scrollProgress * 0.14;
+        token.position.z += scrollProgress * (3.2 + (index % 4) * 0.42);
+        const velocityY = coinPhysics.velocities[index * 3 + 1];
+        token.rotation.set(
+          0.24 + velocityY * 1.2,
           elapsed * transform.spin * motion * 2.4 + transform.phase,
           Math.sin(transform.phase) * 0.28,
         );
-        dummy.scale.setScalar(transform.scale * (1 + scrollProgress * 0.52));
-        dummy.updateMatrix();
-        coins.setMatrixAt(index, dummy.matrix);
-        rims.setMatrixAt(index, dummy.matrix);
+        token.scale.setScalar(transform.baseScale * (1 + scrollProgress * 0.52));
       });
-      coins.instanceMatrix.needsUpdate = true;
-      rims.instanceMatrix.needsUpdate = true;
 
       floatingObjects.forEach((item) => {
         const { object, origin, phase, spin, mode } = item;
@@ -354,6 +434,7 @@ export function HeroArtifactScene() {
       cancelAnimationFrame(frame);
       resizeObserver.disconnect();
       window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerleave", onPointerLeave);
       scene.traverse((object) => {
         if (!(object instanceof Mesh)) return;
         object.geometry.dispose();
