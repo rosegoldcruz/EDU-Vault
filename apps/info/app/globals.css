@@ -1,0 +1,26 @@
+:root {
+  --bg: #0f1117;
+  --bg-accent: #1a1f2b;
+  --text: #f8fafc;
+  --muted: #b8c0d4;
+  --brand: #56e628;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(1200px 500px at 20% -5%, rgba(118, 12, 188, 0.35), transparent 60%),
+    radial-gradient(900px 400px at 100% 0%, rgba(86, 230, 40, 0.25), transparent 55%),
+    linear-gradient(180deg, var(--bg-accent) 0%, var(--bg) 100%);
+}
+
+a {
+  color: var(--brand);
+}
