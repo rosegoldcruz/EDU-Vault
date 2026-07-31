@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",
-    "start": "next start -p 3000",
+    "start": "next start -H 127.0.0.1 -p 3000",
     "test": "npm run build && node --test tests/rendered-html.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "typecheck": "tsc --noEmit",
@@ -18,10 +18,14 @@
     "payments:migrate": "tsx scripts/payments-migrate.ts",
     "payments:seed": "tsx scripts/payments-seed.ts",
     "payments:sweep": "tsx scripts/payments-sweep-worker.ts",
+    "curriculum:import:legacy": "tsx scripts/import-legacy-curriculum.ts",
+    "curriculum:import:scholar": "tsx scripts/import-scholar-archive.ts",
+    "curriculum:verify:scholar-routes": "tsx scripts/verify-scholar-routes.ts",
     "members:grandfather:dry-run": "tsx scripts/grandfather-existing-privy-users.ts --dry-run",
     "members:grandfather:apply": "tsx scripts/grandfather-existing-privy-users.ts --apply"
   },
   "dependencies": {
+    "@iron-vault/database": "workspace:*",
     "@privy-io/react-auth": "^3.35.0",
     "@privy-io/server-auth": "^1.32.5",
     "@solana/spl-token": "^0.4.14",

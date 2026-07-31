@@ -10,9 +10,9 @@ type StatusFlag = 'YES' | 'NO' | 'DISCONTINUED'
 
 function StatusBadge({ value }: { value: StatusFlag | string }) {
   const classes =
-    value === 'YES' ? 'border-acid/40 bg-acid/10 text-acid'
+    value === 'YES' ? 'border-acid/40 bg-acid/10 text-[color:var(--iv-accent)]'
     : value === 'DISCONTINUED' ? 'border-amber-400/40 bg-amber-400/10 text-amber-200'
-    : 'border-line bg-ink-raised text-muted'
+    : 'border-[color:var(--iv-hairline)] bg-[color:var(--iv-soft-fill)] text-[color:var(--iv-ink-2)]'
   return <span className={`border px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] ${classes}`}>{value}</span>
 }
 
@@ -27,7 +27,7 @@ function formatNumber(value: number) {
 function CopyButton({ value, label }: { value: string | null | undefined; label: string }) {
   if (!value) return null
   return (
-    <button type="button" className="text-xs font-semibold uppercase tracking-[0.12em] text-acid hover:text-white" onClick={() => void navigator.clipboard.writeText(value)}>
+    <button type="button" className="text-xs font-semibold uppercase tracking-[0.12em] text-[color:var(--iv-accent)] hover:text-[color:var(--iv-ink)]" onClick={() => void navigator.clipboard.writeText(value)}>
       {label}
     </button>
   )
@@ -70,35 +70,35 @@ export function VaultPage() {
 
   return (
     <section className="space-y-6">
-      <div className="iv-panel iv-panel-lime p-6">
+      <div className="iv-panel  p-6">
         <p className="iv-label mb-1">Community Participation</p>
-        <h1 className="iv-title text-5xl">Vault</h1>
+        <h1 className="iv-member-title text-5xl">Vault</h1>
       </div>
 
       {posError ? (
-        <div className="border border-[#6f3934] bg-ink-soft p-5 text-sm text-[#ffb4a8]">{posError}</div>
+        <div className="border border-[#6f3934] bg-[color:var(--iv-paper)] p-5 text-sm text-[#ffb4a8]">{posError}</div>
       ) : null}
 
       <div className="grid gap-6 xl:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)]">
-        <div className="iv-panel p-6">
-          <h2 className="iv-card-title mb-4 text-3xl">Vault Participation Matrix</h2>
+        <div className="iv-panel self-start p-6">
+          <h2 className="iv-member-card-title mb-4 text-3xl">Vault Participation Matrix</h2>
           {position ? (
             <div className="space-y-2">
               {participationRows.map((row) => (
-                <div key={row.label} className="flex items-center justify-between border border-line bg-ink px-4 py-3">
-                  <span className="text-sm text-muted">{row.label}</span>
+                <div key={row.label} className="flex items-center justify-between border border-[color:var(--iv-hairline)] bg-[color:var(--iv-white)] px-4 py-3">
+                  <span className="text-sm text-[color:var(--iv-ink-2)]">{row.label}</span>
                   <StatusBadge value={row.value} />
                 </div>
               ))}
             </div>
           ) : (
-            <p className="text-sm text-muted">No position data available.</p>
+            <p className="text-sm text-[color:var(--iv-ink-2)]">No position data available.</p>
           )}
         </div>
 
         <div className="space-y-6">
-          <div className="iv-panel iv-panel-lime p-6">
-            <h2 className="iv-card-title mb-4 text-3xl">Investment Summary</h2>
+          <div className="iv-panel  p-6">
+            <h2 className="iv-member-card-title mb-4 text-3xl">Investment Summary</h2>
             {position ? (
               <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
                 {[
@@ -109,31 +109,31 @@ export function VaultPage() {
                   { label: 'Dividends Total', value: formatCurrency(position.dividends_total) },
                 ].map((item) => (
                   <div key={item.label} className="iv-panel p-4">
-                    <p className="iv-label-muted mb-2">{item.label}</p>
-                    <p className="iv-card-title text-3xl text-acid">{item.value}</p>
+                    <p className="iv-member-meta mb-2">{item.label}</p>
+                    <p className="iv-member-card-title text-3xl text-[color:var(--iv-accent)]">{item.value}</p>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-sm text-muted">No position data available.</p>
+              <p className="text-sm text-[color:var(--iv-ink-2)]">No position data available.</p>
             )}
           </div>
 
           <div className="iv-panel p-6">
-            <h2 className="iv-card-title mb-4 text-3xl">Your IV-SOL Wallet</h2>
+            <h2 className="iv-member-card-title mb-4 text-3xl">Your IV-SOL Wallet</h2>
             <div className="space-y-4">
               <div>
-                <p className="iv-label-muted mb-2">Solana Wallet Address</p>
-                <p className="text-sm text-white break-all">{profile?.solana_ivt_wallet_address ?? 'Solana wallet not found'}</p>
+                <p className="iv-member-meta mb-2">Solana Wallet Address</p>
+                <p className="text-sm text-[color:var(--iv-ink)] break-all">{profile?.solana_ivt_wallet_address ?? 'Solana wallet not found'}</p>
                 {!profile?.solana_ivt_wallet_address ? <p className="mt-3 text-sm text-amber-300">Solana wallet not found. Complete wallet setup before rewards can be sent.</p> : null}
                 <div className="mt-3 flex flex-wrap gap-3">
                   {profile?.solana_explorer_wallet_url ? (
-                    <a className="inline-flex text-xs font-semibold uppercase tracking-[0.12em] text-acid hover:text-white" href={profile.solana_explorer_wallet_url} target="_blank" rel="noreferrer">
+                    <a className="inline-flex text-xs font-semibold uppercase tracking-[0.12em] text-[color:var(--iv-accent)] hover:text-[color:var(--iv-ink)]" href={profile.solana_explorer_wallet_url} target="_blank" rel="noreferrer">
                       View Tokens on Solscan
                     </a>
                   ) : null}
                   {profile?.solana_explorer_wallet_url ? (
-                    <a className="inline-flex text-xs font-semibold uppercase tracking-[0.12em] text-acid hover:text-white" href={profile.solana_explorer_wallet_url} target="_blank" rel="noreferrer">
+                    <a className="inline-flex text-xs font-semibold uppercase tracking-[0.12em] text-[color:var(--iv-accent)] hover:text-[color:var(--iv-ink)]" href={profile.solana_explorer_wallet_url} target="_blank" rel="noreferrer">
                       View Wallet on Solscan
                     </a>
                   ) : null}
@@ -141,11 +141,11 @@ export function VaultPage() {
                 </div>
               </div>
               <div>
-                <p className="iv-label-muted mb-2">IV-SOL Token Mint</p>
-                <p className="text-sm text-white break-all">{profile?.ivt_token_mint ?? 'Unavailable'}</p>
+                <p className="iv-member-meta mb-2">IV-SOL Token Mint</p>
+                <p className="text-sm text-[color:var(--iv-ink)] break-all">{profile?.ivt_token_mint ?? 'Unavailable'}</p>
                 <div className="mt-3 flex flex-wrap gap-3">
                   {profile?.ivt_token_mint_explorer_url ? (
-                    <a className="inline-flex text-xs font-semibold uppercase tracking-[0.12em] text-acid hover:text-white" href={profile.ivt_token_mint_explorer_url} target="_blank" rel="noreferrer">
+                    <a className="inline-flex text-xs font-semibold uppercase tracking-[0.12em] text-[color:var(--iv-accent)] hover:text-[color:var(--iv-ink)]" href={profile.ivt_token_mint_explorer_url} target="_blank" rel="noreferrer">
                       View IV-SOL Token Mint
                     </a>
                   ) : null}
@@ -153,14 +153,14 @@ export function VaultPage() {
                 </div>
               </div>
               <div>
-                <p className="iv-label-muted mb-2">Live IV-SOL Balance</p>
-                <p className="text-sm text-white">{ivtBalanceDisplay}</p>
+                <p className="iv-member-meta mb-2">Live IV-SOL Balance</p>
+                <p className="text-sm text-[color:var(--iv-ink)]">{ivtBalanceDisplay}</p>
               </div>
-              <div className="border border-line bg-ink p-4">
-                <p className="iv-body text-xs">
+              <div className="border border-[color:var(--iv-hairline)] bg-[color:var(--iv-white)] p-4">
+                <p className="iv-member-copy text-xs">
                   Your IV-SOL tokens are held in your Solana wallet. Solscan is the fastest way to independently verify your wallet, token balance, and payout transactions.
                 </p>
-                <p className="iv-body mt-3 text-xs">
+                <p className="iv-member-copy mt-3 text-xs">
                   To move tokens later, your wallet will need a small SOL balance for network fees. Selling or swapping IV-SOL depends on future liquidity, exchange, or DEX support.
                 </p>
               </div>
@@ -168,16 +168,16 @@ export function VaultPage() {
           </div>
 
           <div className="iv-panel p-6">
-            <h2 className="iv-card-title mb-3 text-3xl">Resources &amp; Education</h2>
+            <h2 className="iv-member-card-title mb-3 text-3xl">Resources &amp; Education</h2>
             <div className="space-y-3">
               {[
-                { title: 'Iron Vault Academy', desc: 'Complete all 6 modules to unlock your full token allocation.' },
+                { title: 'Iron Vault Academy', desc: 'Academy participation and reward eligibility are governed by the active program terms assigned to your account.' },
                 { title: 'Vault Fundamentals', desc: 'Understanding royalty positions, dividends, and token mechanics.' },
                 { title: 'Position Status', desc: 'Review royalty, ownership, equity, dividend, token, and VIP status from your vault matrix.' },
               ].map((item) => (
-                <div key={item.title} className="border border-line bg-ink p-4">
-                  <p className="iv-card-title mb-1 text-xl">{item.title}</p>
-                  <p className="iv-body text-xs">{item.desc}</p>
+                <div key={item.title} className="border border-[color:var(--iv-hairline)] bg-[color:var(--iv-white)] p-4">
+                  <p className="iv-member-card-title mb-1 text-xl">{item.title}</p>
+                  <p className="iv-member-copy text-xs">{item.desc}</p>
                 </div>
               ))}
             </div>

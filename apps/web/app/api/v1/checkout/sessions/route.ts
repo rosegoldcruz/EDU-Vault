@@ -3,19 +3,30 @@ import crypto from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 
+import { createAcceptHostedToken, getAcceptHostedFormUrl } from "@/lib/server/authorize-net";
 import { getPaymentsPool, withPaymentsTransaction } from "@/lib/server/payments-db";
+import { requirePrivyUser } from "@/lib/server/privy-auth";
 
 export const dynamic = "force-dynamic";
 
 const checkoutSchema = z.object({
   productCode: z.string().min(2),
-  memberId: z.string().min(1),
-  email: z.string().email(),
   successPath: z.string().startsWith("/").optional(),
   cancelPath: z.string().startsWith("/").optional(),
 });
 
 export async function POST(request: NextRequest) {
+  let auth: Awaited<ReturnType<typeof requirePrivyUser>>;
+  try {
+    auth = await requirePrivyUser(request);
+  } catch {
+    return NextResponse.json({ error: "Authentication required" }, { status: 401 });
+  }
+
+  if (!auth.email) {
+    return NextResponse.json({ error: "An email address is required for checkout" }, { status: 400 });
+  }
+
   const body = await request.json().catch(() => null);
   const parsed = checkoutSchema.safeParse(body);
   if (!parsed.success) {
@@ -52,7 +63,18 @@ export async function POST(request: NextRequest) {
   const product = productResult.rows[0];
   const paymentId = crypto.randomUUID();
   const checkoutSessionId = crypto.randomUUID();
-  const providerSessionId = crypto.randomUUID();
+  const providerSessionId = `iv_${crypto.randomBytes(8).toString("hex")}`;
+  const webOrigin = process.env.APP_WEB_ORIGIN ?? "https://ironvaulttoken.com";
+  const successPath = payload.successPath ?? "/dashboard";
+  const cancelPath = payload.cancelPath ?? "/enroll";
+  const formToken = await createAcceptHostedToken({
+    providerReferenceId: providerSessionId,
+    amountCents: product.amount_cents,
+    email: auth.email,
+    description: product.name,
+    successUrl: `${webOrigin}${successPath}?sessionId=${encodeURIComponent(checkoutSessionId)}`,
+    cancelUrl: `${webOrigin}${cancelPath}`,
+  });
 
   await withPaymentsTransaction(async (client) => {
     await client.query(
@@ -73,8 +95,8 @@ export async function POST(request: NextRequest) {
       `,
       [
         paymentId,
-        payload.memberId,
-        payload.email,
+        auth.privyUserId,
+        auth.email,
         product.id,
         product.amount_cents,
         product.currency,
@@ -90,7 +112,7 @@ export async function POST(request: NextRequest) {
       `,
       [
         crypto.randomUUID(),
-        payload.memberId,
+        auth.privyUserId,
         paymentId,
         JSON.stringify({
           productCode: product.code,
@@ -102,15 +124,11 @@ export async function POST(request: NextRequest) {
     );
   });
 
-  // This endpoint intentionally controls all amount and entitlement truth on the server.
-  const webOrigin = process.env.APP_WEB_ORIGIN ?? "https://ironvaulttoken.com";
-  const successPath = payload.successPath ?? "/enroll";
-  const checkoutUrl = `${webOrigin}${successPath}?sessionId=${encodeURIComponent(checkoutSessionId)}`;
-
   return NextResponse.json(
     {
       checkoutSessionId,
-      checkoutUrl,
+      formToken,
+      formUrl: getAcceptHostedFormUrl(),
       provider: "authorize-net",
       amountCents: product.amount_cents,
       currency: product.currency,

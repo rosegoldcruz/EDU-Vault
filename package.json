@@ -13,7 +13,7 @@
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
-    "db:migrate": "pnpm --filter @iron-vault/web payments:migrate",
+    "db:migrate": "pnpm --filter @iron-vault/database migrate",
     "deploy": "git pull && pnpm install --frozen-lockfile && pnpm build && pnpm db:migrate && pm2 reload ecosystem.config.cjs --update-env"
   },
   "devDependencies": {

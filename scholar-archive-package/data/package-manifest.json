@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "packageType": "iron-vault-scholar-offline-normalization",
+  "publicationStatus": "unpublished",
+  "databaseImportPerformed": false,
+  "activeReleaseChanged": false,
+  "privacy": {
+    "publicSafeCurriculumFiles": [
+      "curriculum-canonical.json",
+      "curriculum-source-records.json",
+      "assessments.json"
+    ],
+    "serverOnlyFiles": [
+      "answer-keys.private.json"
+    ]
+  },
+  "identity": {
+    "runtimeIds": "deterministic UUIDs derived from source-family keys",
+    "legacyIndexes": "provenance metadata only"
+  },
+  "files": [
+    "sources.json",
+    "source-releases.json",
+    "curriculum-source-records.json",
+    "curriculum-canonical.json",
+    "assessments.json",
+    "answer-keys.private.json",
+    "interactions.json",
+    "learning-activities.json",
+    "capability-map.json",
+    "media-audio-map.json",
+    "narration-manifest.json",
+    "duplicate-reconciliation-map.json",
+    "proposed-placement.json",
+    "missing-content.json",
+    "canvas-blueprints.json",
+    "canvas-coverage-map.json",
+    "validation.json",
+    "package-manifest.json"
+  ]
+}

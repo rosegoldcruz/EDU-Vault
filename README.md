@@ -4,7 +4,7 @@ This repository is structured for one controlled Linux production server hosting
 
 - `ironvaulttoken.com` (public site)
 - `member.ironvaulttoken.com` (member app)
-- `info.ironvaulttoken.com` (documentation app)
+- `info.ironvaulttoken.com` is a separately managed legacy site and is not owned by this repository.
 - `api.ironvaulttoken.com` (API + payments + webhooks)
 
 ## Layout
@@ -35,7 +35,6 @@ This repository is structured for one controlled Linux production server hosting
 
 - `ironvaulttoken.com` -> `localhost:3000`
 - `member.ironvaulttoken.com` -> `localhost:3001`
-- `info.ironvaulttoken.com` -> `localhost:3002`
 - `api.ironvaulttoken.com` -> `localhost:4000`
 
 Nginx config: `infrastructure/nginx/iron-vault.conf`
@@ -44,7 +43,6 @@ Nginx config: `infrastructure/nginx/iron-vault.conf`
 
 - `iron-vault-web`
 - `iron-vault-member`
-- `iron-vault-info`
 - `iron-vault-api`
 - `iron-vault-worker`
 

@@ -1,0 +1,34 @@
+[
+  {
+    "key": "module-zero-authored-curriculum",
+    "severity": "blocking-for-module-zero-claim",
+    "finding": "No authored Module Zero curriculum body exists in the archive. The file named module zero.md is the LessonInstructor component.",
+    "action": "Request the intended Module Zero source or later author it under a separate approved gap-fill phase."
+  },
+  {
+    "key": "canvas-outline-bodies",
+    "severity": "expected-blueprint-gap",
+    "finding": "Master Canvas course/module rows are outlines, not complete lesson bodies.",
+    "affectedOutlineItems": 180,
+    "action": "Do not publish; expand only in a separately approved gap-authoring phase after mapping against canonical authored lessons."
+  },
+  {
+    "key": "assessment-explanations",
+    "severity": "quality-gap",
+    "finding": "Archive module questions generally include correct options but no answer explanations.",
+    "affectedQuestions": 320,
+    "action": "Author explanations during later editorial assessment completion."
+  },
+  {
+    "key": "lesson-media-assets",
+    "severity": "capability-gap",
+    "finding": "No audio, timing, video, image, or diagram asset files are present.",
+    "action": "Generate approved narration offline later; source or create media only after editorial approval."
+  },
+  {
+    "key": "source-links",
+    "severity": "fact-review-gap",
+    "finding": "Many factual claims name sources or tools but lack structured source URLs and review dates.",
+    "action": "Perform fact/legal review and attach primary-source links before publication."
+  }
+]

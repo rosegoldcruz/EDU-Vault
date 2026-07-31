@@ -1,0 +1,322 @@
+[
+  {
+    "primaryLessonId": "5b215abd-46eb-5f14-8ade-e9c16f43bf03",
+    "duplicateLessonId": "76616e2b-f5f8-5937-919d-f78b14df6b62",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "0b7b0baa-a37d-5d40-8e14-bb74fdaf261b",
+    "duplicateLessonId": "12c957eb-159d-549b-baa2-3efcd85d611e",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "e9e35ca3-7d75-57ed-849e-910e6d97ea14",
+    "duplicateLessonId": "0f9f6fee-3c94-50f4-a641-293655e1c7d3",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "09bd40f3-c3ab-5185-b257-b67bd974bc1b",
+    "duplicateLessonId": "a8c92bc5-c201-5cc7-947e-a96e920cdc8d",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "8e539bc5-1c87-5396-8e0e-761d005c54cb",
+    "duplicateLessonId": "19cf216a-8767-5d92-9518-d372a46abbfc",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "875bfb02-8e32-5183-a6e2-b933fdc69728",
+    "duplicateLessonId": "9a4ce4fd-2998-5e04-9894-05ecea504a53",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "5041a680-dcca-5c8d-8d16-e686a3046fdb",
+    "duplicateLessonId": "59b59e90-94c1-5667-92d4-d523b803e357",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "8aa9199d-fc90-545d-801b-75b093203734",
+    "duplicateLessonId": "4955d761-5ce6-5d70-9c4d-c3c2004600cb",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "e16a4a2d-458d-5081-b9f8-080509ca606f",
+    "duplicateLessonId": "e558b70a-9e9f-501d-b331-339efdc58229",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "544aa85e-fdd3-533f-a2d6-1100026412bc",
+    "duplicateLessonId": "30d51ccf-ade7-5643-b7b1-386106846fcb",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "fb2e92c5-fe7a-53ef-b8e0-7c48c443fe1f",
+    "duplicateLessonId": "42844b35-3f1b-5477-ba56-802546eee799",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "03677898-af84-5875-b444-3efbbbc23c19",
+    "duplicateLessonId": "6712a662-c2df-5229-a847-dc3edf36113d",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "6c7aac82-e409-5c49-a1b4-a05eec5fb74b",
+    "duplicateLessonId": "1ec1d8a4-c6c1-59b7-9e80-47dda93f364a",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "c8ed030c-4f09-5831-ba35-6b529500847f",
+    "duplicateLessonId": "5609bd38-b709-50a1-9eac-dba189aff3e5",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "8aa07c04-bffa-5c78-a979-316162f530c7",
+    "duplicateLessonId": "7aea5d1b-3bcc-549a-bc48-c83aa7f03aef",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "eab19558-5ee1-51a1-9fa2-f252a0453fd3",
+    "duplicateLessonId": "f20b7313-70fa-543f-89bf-8f637725ee10",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "260c8965-ff5b-597c-93ac-8fdca9c12c50",
+    "duplicateLessonId": "0b56c46e-37ed-5231-afbe-3325b576a582",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "b11d9cc8-d491-5ba4-b853-06fecd9299d4",
+    "duplicateLessonId": "3ccd37e2-6af3-5c7c-953a-b4ec5b540d3b",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "d0ea4563-c946-5e35-aa3a-4e0d7fc311a6",
+    "duplicateLessonId": "447df83b-f6fc-5ef5-ad2b-babf0d4c5754",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "99ab44a7-a623-5621-b15a-82dc987de4a1",
+    "duplicateLessonId": "3de9e7fb-a7d4-5307-b6f0-ba255ca39510",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "0de1608c-9243-5332-9fc8-1b5e098cc242",
+    "duplicateLessonId": "2598cb30-88d8-5406-833d-3063bd15091d",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "746bbf99-fd61-5d80-b1cb-d9efede3e804",
+    "duplicateLessonId": "5d41038e-7ec6-5126-b50c-57d9dba763fc",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "0d01a2fd-8057-5393-b883-49b27c1a249b",
+    "duplicateLessonId": "773b08ee-2107-5eed-b897-c186d6256de7",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "3a356ee5-7750-5cb0-a4ee-ab325a69012c",
+    "duplicateLessonId": "c1ded3dd-aab3-569d-964c-abb117e7c90b",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "3986acc7-688f-5598-9591-8f4b4e105749",
+    "duplicateLessonId": "8c58c715-476b-5046-b7ef-478cefc5d686",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "0a7613f0-d39e-58c6-a498-a99eb758c0c4",
+    "duplicateLessonId": "5d93d3ba-3395-5fd5-b63f-c01a6ee04f94",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "f14c87a2-0ee9-5f9b-9be7-7f158a933ac1",
+    "duplicateLessonId": "c4f9c825-c1e8-5817-8cdd-f7b85bcf9ce4",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "26dc5abe-8f42-59de-a26c-cf110c88561a",
+    "duplicateLessonId": "0da5d53e-55d7-551f-826b-372aa059cd12",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "f9b0ac75-1344-50dd-96b6-08b233483eb6",
+    "duplicateLessonId": "857f7aca-9978-59fc-a0fe-6ead9c754ea5",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "ceb1a52b-3140-5999-ad54-48b86b3a55b7",
+    "duplicateLessonId": "8c826d7b-703c-5111-9494-ffda564ed614",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "c68fdc77-466a-5d54-8d1f-f7a53b23ba70",
+    "duplicateLessonId": "09b9cc97-f9a5-54eb-a498-2cdce953fb96",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "cabeb1a3-d7d8-5827-8811-567b99509010",
+    "duplicateLessonId": "872d5b8b-eec4-5280-973f-fbe75ef54786",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "aac21185-be39-5a3c-8880-74ea01eff83b",
+    "duplicateLessonId": "b3bf6260-c4a0-571f-8215-32987b687094",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "dfe6d5ee-94f0-5f2b-8ebd-0b092c4627c2",
+    "duplicateLessonId": "bcba8863-be4d-56f6-8f4d-a7e074fbfc35",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "9324d7c1-4b3c-558d-a3a5-664b2710d875",
+    "duplicateLessonId": "e74c0443-a4dd-5d87-baef-6cdf5ae0e9ae",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "b0416af6-8f0e-5e5b-8153-a2ea9a384115",
+    "duplicateLessonId": "d73cbd41-118b-52b4-8a73-4d42423c2462",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "07933acf-7eaf-59b9-9b9c-7ec879b4c332",
+    "duplicateLessonId": "6bea6670-5cd5-5eff-bf3c-0adbb0c8a1f0",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "2ed50184-4eb2-5cf7-8511-5811ffdacb3e",
+    "duplicateLessonId": "24b011a9-cd4d-5f46-9b7f-9ff5c4dd5ca6",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "8d99dd43-8cbb-51ac-89b3-b2ee1b68ed17",
+    "duplicateLessonId": "f5705928-c326-525f-a645-d6c7e30a5116",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  },
+  {
+    "primaryLessonId": "3d7cfa51-13c1-5c3a-bfc5-f88bfca0eab5",
+    "duplicateLessonId": "479da8a7-2b08-56ed-be9d-4edd630bfae9",
+    "relationship": "authored-variant",
+    "titleSimilarity": 1,
+    "contentHashesEqual": false,
+    "decision": "Canonicalize to the more complete unlocked source body; retain gated variant in source records."
+  }
+]

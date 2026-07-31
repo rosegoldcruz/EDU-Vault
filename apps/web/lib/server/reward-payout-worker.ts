@@ -3,6 +3,9 @@ import { getRewardConfig, getSingleModuleRewardAmountRaw } from '@/lib/server/re
 import { sendTokenRewardPayout } from '@/lib/server/solana-payout'
 import { isValidSolanaPublicKey } from '@/lib/server/ivt-solana-wallet'
 
+const AUTOMATIC_TOKEN_TRANSFERS_ENABLED = false
+const MANUAL_REVIEW_MESSAGE = 'Automatic token transfers are disabled; payout records require manual review.'
+
 export type RewardWorkerResult = {
   processedCount: number
   processed: Array<{ jobId: string; status: string; signature?: string }>
@@ -42,14 +45,14 @@ function isEligibleByNextAttemptAt(nextAttemptAt: string | null, nowTime: number
   return parsed <= nowTime
 }
 
-function isSafeTestPayoutJob(row: PayoutCandidate, safeTestAmountRaw: string): boolean {
+function isSafeTestPayoutJob(row: PayoutCandidate, safeTestAmountRaw: string, safeTestModuleNumber: number): boolean {
   return row.reward_track === 'single_module'
-    && row.module_number === 1
+    && row.module_number === safeTestModuleNumber
     && row.amount_raw === safeTestAmountRaw
     && isValidSolanaPublicKey(row.wallet_address)
 }
 
-async function countSkippedHighAmountQueuedJobs(safeTestAmountRaw: string): Promise<number | null> {
+async function countSkippedHighAmountQueuedJobs(safeTestAmountRaw: string, safeTestModuleNumber: number): Promise<number | null> {
   const { data, error } = await getSupabaseAdmin()
     .from('iv_payout_jobs')
     .select('id, reward_track, module_number, amount_raw')
@@ -63,7 +66,7 @@ async function countSkippedHighAmountQueuedJobs(safeTestAmountRaw: string): Prom
 
   return (data ?? []).filter((row) => {
     const job = row as { reward_track: string; module_number: number | null; amount_raw: string }
-    return !(job.reward_track === 'single_module' && job.module_number === 1 && job.amount_raw === safeTestAmountRaw)
+    return !(job.reward_track === 'single_module' && job.module_number === safeTestModuleNumber && job.amount_raw === safeTestAmountRaw)
   }).length
 }
 
@@ -225,6 +228,13 @@ async function handleLockedJobError(input: {
 }
 
 export async function runRewardPayoutWorker(input?: { payoutJobId?: string }): Promise<RewardWorkerResult> {
+  if (!AUTOMATIC_TOKEN_TRANSFERS_ENABLED) {
+    return {
+      processedCount: 0,
+      processed: [],
+    }
+  }
+
   const config = getRewardConfig()
   if (!config.payoutWorkerEnabled) {
     return {
@@ -239,9 +249,13 @@ export async function runRewardPayoutWorker(input?: { payoutJobId?: string }): P
   const processed: Array<{ jobId: string; status: string; signature?: string }> = []
 
   const safeTestAmountRaw = getSingleModuleRewardAmountRaw()
+  const safeTestModuleNumber = config.payoutSafeTestModuleNumber
+  if (config.payoutSafeTestOnly && safeTestModuleNumber === null) {
+    throw new Error('IVT_PAYOUT_SAFE_TEST_MODULE_NUMBER is required when safe-test-only mode is enabled')
+  }
   const maxPayouts = input?.payoutJobId ? 1 : config.maxPayoutsPerRun
   if (config.payoutSafeTestOnly) {
-    const skippedHighAmountCount = await countSkippedHighAmountQueuedJobs(safeTestAmountRaw)
+    const skippedHighAmountCount = await countSkippedHighAmountQueuedJobs(safeTestAmountRaw, safeTestModuleNumber as number)
     console.log('[rewards:worker] safe_test_only enabled safeTestAmountRaw=', safeTestAmountRaw)
     if (skippedHighAmountCount !== null) {
       console.log('[rewards:worker] safe_test_only skipped_high_amount_count=', skippedHighAmountCount)
@@ -259,7 +273,7 @@ export async function runRewardPayoutWorker(input?: { payoutJobId?: string }): P
     if (config.payoutSafeTestOnly) {
       candidateQuery = candidateQuery
         .eq('reward_track', 'single_module')
-        .eq('module_number', 1)
+        .eq('module_number', safeTestModuleNumber as number)
         .eq('amount_raw', safeTestAmountRaw)
     }
 
@@ -274,7 +288,7 @@ export async function runRewardPayoutWorker(input?: { payoutJobId?: string }): P
     const candidate = ((candidateRows ?? []) as PayoutCandidate[]).find((row) => {
       if (!isEligibleByNextAttemptAt(row.next_attempt_at, nowTime)) return false
       if (!config.payoutSafeTestOnly) return true
-      return isSafeTestPayoutJob(row, safeTestAmountRaw)
+      return isSafeTestPayoutJob(row, safeTestAmountRaw, safeTestModuleNumber as number)
     })
 
     if (!candidate) break
@@ -341,6 +355,10 @@ export async function processPayoutJobNow(input: {
   milestoneNumber?: number | null
   amountRaw?: string
 }): Promise<InstantPayoutResult> {
+  if (!AUTOMATIC_TOKEN_TRANSFERS_ENABLED) {
+    return { status: 'skipped', error: MANUAL_REVIEW_MESSAGE }
+  }
+
   const config = getRewardConfig()
 
   const { data: job, error: jobError } = await getSupabaseAdmin()

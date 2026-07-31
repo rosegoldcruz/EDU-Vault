@@ -1,0 +1,114 @@
+{
+  "packageStatus": "reference-only-unmounted",
+  "interactiveBlocks": [
+    {
+      "type": "calculator",
+      "sourceType": "calculator",
+      "variants": [
+        "compound",
+        "streams"
+      ],
+      "behavior": "Range-input calculator with deterministic output and breakdown."
+    },
+    {
+      "type": "simulation",
+      "sourceType": "simulator",
+      "variants": [
+        "bankroll"
+      ],
+      "behavior": "Client visualization of repeated probabilistic rounds; results are educational and not assessment-authoritative."
+    },
+    {
+      "type": "scenario",
+      "sourceType": "scenario",
+      "behavior": "Branching node graph with good/bad/neutral outcomes, explanations, restart, and optional continuation."
+    },
+    {
+      "type": "sorting",
+      "sourceType": "sortgame",
+      "behavior": "Assign each item to a declared bucket, check locally, display count, clear and retry."
+    },
+    {
+      "type": "reveal",
+      "sourceType": "reveal",
+      "behavior": "Progressively disclose ordered steps, optional note after completion, reset."
+    }
+  ],
+  "instructor": {
+    "sourceFilename": "module zero.md",
+    "sourcePath": "/opt/iron-vault/sex/module zero.md",
+    "sourceHash": "304b578f5cd96f7ced2c7749e86348ef8f42583bda4d790fbb6ee462297b21e1",
+    "behaviors": [
+      "audio or video element",
+      "autoplay after learner gesture",
+      "blocked-autoplay fallback",
+      "play/pause/restart",
+      "progress",
+      "onEnded",
+      "optional word highlight",
+      "decorative amplitude proxy"
+    ],
+    "props": [
+      "audioSrc",
+      "timingSrc",
+      "videoSrc",
+      "title",
+      "onEnded",
+      "autoPlay",
+      "accentColor"
+    ],
+    "integrationStatus": "not mounted"
+  },
+  "narration": {
+    "generatorSourceFilename": "instructor-integration.md",
+    "guideSourceFilename": "iron-vault-academy-gated.jsx",
+    "generatorSourceHash": "18e34cda8d00c1f26bb46e7c55727eff1f51efada831e6b68815373a6b29aa2e",
+    "guideSourceHash": "2b77778309f87b9b35d8129745dbf403854c97d4477734b70356cdbd01d07d0f",
+    "provider": "ElevenLabs",
+    "execution": "offline/admin-only proposal",
+    "envNames": [
+      "ELEVENLABS_API_KEY",
+      "ELEVENLABS_VOICE_ID",
+      "ELEVENLABS_MODEL_ID",
+      "LESSON_AUDIO_TIMESTAMPS",
+      "LESSON_NARRATION_PATH",
+      "LESSON_AUDIO_OUT"
+    ],
+    "cacheKeyInputs": [
+      "narration text",
+      "model id",
+      "voice id",
+      "timestamps flag"
+    ],
+    "outputTypes": [
+      "audio/mpeg",
+      "word timing JSON",
+      "content-hash cache JSON"
+    ],
+    "runtimeTtsCallsAllowed": false,
+    "integrationStatus": "not wired"
+  },
+  "motion": {
+    "directiveSourceFilename": "contentblock-interactive-extension.jsx",
+    "loadingGuideSourceFilename": "VaultLoadingScreen.jsx",
+    "directiveSourceHash": "59b13a6ebe25622640c738396e6efa57a3670c69a6302063dfbf44417f876096",
+    "loadingGuideSourceHash": "68b1dc7c349abee430b7c8f036d1d888cb7b538e41fb51f197221b90c749f799",
+    "ownership": {
+      "Lenis": "global smooth scroll",
+      "GSAP": "section scroll choreography",
+      "Motion": "discrete UI interactions"
+    },
+    "accessibility": [
+      "prefers-reduced-motion opacity-only fallback",
+      "disable pointer parallax on touch",
+      "avoid layout animation for reveals"
+    ],
+    "performance": [
+      "transform/opacity for reveals",
+      "no CLS",
+      "GPU-composited transforms",
+      "mobile performance check"
+    ],
+    "integrationStatus": "reference-only; no CSS or component imported"
+  }
+}

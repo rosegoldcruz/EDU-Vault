@@ -1,76 +1,88 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { usePrivy } from '@privy-io/react-auth'
 
+import { MemberError, MemberPageHeader, MemberPanel, MemberState } from '@/components/member/ui'
+
+type RewardProgramState =
+  | 'pending_review'
+  | 'approved'
+  | 'fulfilled'
+  | 'not_currently_eligible'
+
+type LegacyMilestone = {
+  milestone_number: number
+  module_start: number
+  module_end: number
+  status: string
+  eligible_at: string | null
+}
+
+type LegacyPayoutJob = {
+  milestone_number: number | null
+  module_number: number | null
+  status: string
+  amount_raw: string
+  attempts: number
+  last_error: string | null
+}
+
+type LegacyTransaction = {
+  milestone_number: number | null
+  module_number: number | null
+  signature: string
+  status: string
+  confirmed_at: string | null
+  explorerUrl: string | null
+}
+
 type RewardStatusPayload = {
-  walletAddress: string | null
-  evmWalletAddress: string | null
+  rewardProgram: {
+    id: string | null
+    name: string | null
+    state: RewardProgramState
+    requirements: string[]
+    progress: Record<string, unknown> | null
+    message?: string
+  }
+  curriculum: {
+    releaseId: string
+    releaseVersion: string
+  }
   solanaIvtWalletAddress: string | null
-  solanaIvtWalletSource: 'profile' | 'privy' | 'none'
   solanaExplorerWalletUrl: string | null
-  ivtTokenMint: string
-  ivtTokenMintExplorerUrl: string
+  ivtTokenMintExplorerUrl: string | null
   ivtTokenBalance: {
     amountRaw: string
     decimals: number
     uiAmount: string
   } | null
-  completedModules: number[]
-  accessScope: {
-    accessType: 'all_modules' | 'single_module' | 'admin'
-    allowedModules: number[]
-    rewardTrack?: 'full_academy' | 'single_module'
+  legacyRewardHistory: {
+    milestones: LegacyMilestone[]
+    payoutJobs: LegacyPayoutJob[]
+    transactions: LegacyTransaction[]
   }
-  milestones: Array<{
-    milestoneNumber: number
-    moduleStart: number
-    moduleEnd: number
-    status: string
-    eligibleAt: string | null
-  }>
-  payoutJobs: Array<{
-    milestoneNumber: number
-    status: string
-    amountRaw: string
-    tokenMint: string
-    attempts: number
-    lastError: string | null
-    rewardTrack?: string
-    moduleNumber?: number | null
-  }>
-  transactions: Array<{
-    milestoneNumber: number
-    signature: string
-    status: string
-    confirmedAt: string | null
-    explorerUrl: string | null
-  }>
-  nextRequiredModule: number | null
-  walletMissing: boolean
 }
 
-const STATUS_COLORS: Record<string, string> = {
-  locked: 'text-muted border-line bg-ink-raised',
-  eligible: 'text-amber-300 border-amber-400/40 bg-amber-500/10',
-  queued: 'text-muted border-line-strong bg-ink-raised',
-  processing: 'text-muted border-line-strong bg-ink-raised',
-  paid: 'text-acid border-acid/40 bg-acid/10',
-  failed: 'text-[#ffb4a8] border-[#6f3934] bg-[#6f3934]/15',
-  canceled: 'text-muted border-line bg-ink-raised',
+const STATE_LABELS: Record<RewardProgramState, string> = {
+  pending_review: 'Pending review',
+  approved: 'Approved',
+  fulfilled: 'Fulfilled',
+  not_currently_eligible: 'Not currently eligible',
 }
 
-function CopyButton({ value, label }: { value: string | null | undefined; label: string }) {
+function CopyButton({ value }: { value: string | null }) {
   if (!value) return null
   return (
-    <button type="button" className="text-xs font-semibold uppercase tracking-[0.12em] text-acid hover:text-white" onClick={() => void navigator.clipboard.writeText(value)}>
-      {label}
+    <button
+      type="button"
+      className="iv-textlink text-sm"
+      onClick={() => void navigator.clipboard.writeText(value)}
+    >
+      Copy wallet
     </button>
   )
-}
-
-function statusClasses(status: string): string {
-  return STATUS_COLORS[status] ?? STATUS_COLORS.locked
 }
 
 export default function RewardsPage() {
@@ -80,221 +92,156 @@ export default function RewardsPage() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
+    if (!ready || !authenticated) return
     let cancelled = false
 
-    async function loadRewardStatus() {
-      if (!ready || !authenticated) {
-        if (!cancelled) {
-          setData(null)
-          setError(null)
-          setLoading(false)
-        }
-        return
-      }
-
-      setLoading(true)
-      setError(null)
-
+    async function load() {
       try {
         const token = await getAccessToken()
-        if (!token) throw new Error('Unable to load rewards: missing auth token')
-
+        if (!token) throw new Error('Unable to retrieve the authenticated session.')
         const response = await fetch('/api/rewards/status', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+          cache: 'no-store',
+          headers: { Authorization: `Bearer ${token}` },
         })
-
-        const payload = (await response.json().catch(() => null)) as RewardStatusPayload | { error?: string } | null
-
-        if (!response.ok) {
-          const message = payload && 'error' in payload && typeof payload.error === 'string'
-            ? payload.error
-            : 'Unable to load rewards status'
-          throw new Error(message)
-        }
-
+        const payload = await response.json() as RewardStatusPayload & { error?: string }
+        if (!response.ok) throw new Error(payload.error ?? 'Unable to load reward status.')
+        if (!cancelled) setData(payload)
+      } catch (loadError: unknown) {
         if (!cancelled) {
-          setData(payload as RewardStatusPayload)
-          setError(null)
-        }
-      } catch (err: unknown) {
-        if (!cancelled) {
-          setData(null)
-          setError(err instanceof Error ? err.message : 'Unable to load rewards status')
+          setError(loadError instanceof Error ? loadError.message : 'Unable to load reward status.')
         }
       } finally {
-        if (!cancelled) {
-          setLoading(false)
-        }
+        if (!cancelled) setLoading(false)
       }
     }
 
-    void loadRewardStatus()
-
+    void load()
     return () => {
       cancelled = true
     }
   }, [authenticated, getAccessToken, ready])
 
-  const completionSet = useMemo(() => new Set(data?.completedModules ?? []), [data?.completedModules])
-  const isSingleModule = data?.accessScope.rewardTrack === 'single_module'
-  const selectedModule = data?.accessScope.allowedModules[0] ?? null
+  const historyCount = data
+    ? data.legacyRewardHistory.milestones.length
+      + data.legacyRewardHistory.payoutJobs.length
+      + data.legacyRewardHistory.transactions.length
+    : 0
 
   return (
     <section className="space-y-6">
-      <div className="iv-panel iv-panel-lime p-6">
-        <p className="iv-label mb-2">Rewards</p>
-        <h1 className="iv-title mb-2 text-5xl">Reward Milestones</h1>
-        <p className="iv-body max-w-2xl text-sm">
-          {isSingleModule
-            ? `Single Module Access: complete Module ${selectedModule} to queue your selected-module reward.`
-            : 'Complete all academy modules. Rewards unlock at module milestones 2, 4, and 6.'}
-        </p>
-      </div>
+      <MemberPageHeader
+        title="Rewards"
+        accent="Program status."
+        description="Reward programs are governed by the approved policy assigned to your account, independently from Academy completion."
+      />
 
-      {error ? (
-        <div className="border border-[#6f3934] bg-ink-soft p-5 text-sm text-[#ffb4a8]">{error}</div>
-      ) : null}
+      {loading ? <MemberState title="Loading reward program" message="Resolving your assigned policy and history." tone="loading" /> : null}
+      {error ? <MemberError message={error} /> : null}
 
-      <div className="grid gap-4 md:grid-cols-2">
-        <div className="iv-panel p-5">
-          <p className="iv-label-muted mb-2">Solana IVT Payout Wallet</p>
-          <p className="text-sm text-white break-all">{data?.solanaIvtWalletAddress ?? 'Solana wallet not found'}</p>
-          <div className="mt-3 flex flex-wrap gap-3">
-            {data?.solanaExplorerWalletUrl ? (
-              <a className="inline-flex text-xs font-semibold uppercase tracking-[0.12em] text-acid hover:text-white" href={data.solanaExplorerWalletUrl} target="_blank" rel="noreferrer">
-                View Wallet on Solscan
-              </a>
-            ) : null}
-            <CopyButton value={data?.solanaIvtWalletAddress} label="Copy Solana Wallet" />
-          </div>
-          {data?.ivtTokenBalance ? (
-            <p className="mt-3 text-xs text-muted">IVT Balance: {data.ivtTokenBalance.uiAmount}</p>
-          ) : null}
-          {data?.walletMissing ? (
-            <p className="mt-3 text-sm text-amber-300">Solana wallet required before eligible milestones can be queued.</p>
-          ) : null}
-        </div>
-
-        <div className="iv-panel p-5">
-          <p className="iv-label-muted mb-2">Next Required Module</p>
-          <p className="iv-card-title text-3xl text-acid">{isSingleModule ? `Module ${selectedModule}` : data?.nextRequiredModule ?? '—'}</p>
-          <p className="mt-3 text-xs text-muted">Completed: {(data?.completedModules ?? []).join(', ') || 'None yet'}</p>
-        </div>
-      </div>
-
-      <div className="iv-panel p-5">
-        <p className="iv-label-muted mb-3">Modules 1-6</p>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-          {Array.from({ length: 6 }, (_, index) => {
-            const moduleNumber = index + 1
-            const completed = completionSet.has(moduleNumber)
-
-            return (
-              <div
-                key={moduleNumber}
-                className={`border px-3 py-2 text-center font-mono text-[10px] uppercase tracking-[0.12em] ${
-                  completed
-                    ? 'border-acid/40 bg-acid/10 text-acid'
-                    : isSingleModule && moduleNumber !== selectedModule
-                    ? 'border-line bg-ink text-muted-dark'
-                    : 'border-line bg-ink text-muted'
-                }`}
-              >
-                Module {moduleNumber}{isSingleModule && moduleNumber !== selectedModule ? ' Locked' : ''}
-              </div>
-            )
-          })}
-        </div>
-      </div>
-
-      {!isSingleModule ? <div className="iv-panel p-5">
-        <p className="iv-label-muted mb-3">Milestones</p>
-        {(data?.milestones ?? []).length === 0 ? (
-          <p className="text-sm text-muted">No milestones yet.</p>
-        ) : (
-          <div className="space-y-3">
-            {data!.milestones.map((milestone) => (
-              <div key={milestone.milestoneNumber} className="border border-line bg-ink p-4">
-                <div className="flex items-start justify-between gap-3">
+      {data ? (
+        <>
+          <div className="grid gap-6 lg:grid-cols-2">
+            <MemberPanel
+              title="Reward program status"
+              description={data.rewardProgram.name ?? 'No active policy assigned'}
+            >
+              <div className="space-y-4">
+                <span className="iv-chip" data-state={data.rewardProgram.state === 'fulfilled' ? 'verified' : 'pending'}>
+                  {STATE_LABELS[data.rewardProgram.state]}
+                </span>
+                <p className="iv-member-copy">
+                  {data.rewardProgram.message
+                    ?? 'Eligibility and fulfillment follow the approved requirements shown below.'}
+                </p>
+                {data.rewardProgram.requirements.length > 0 ? (
                   <div>
-                    <p className="iv-card-title text-xl">
-                      Milestone {milestone.milestoneNumber} · Modules {milestone.moduleStart}-{milestone.moduleEnd}
-                    </p>
-                    <p className="text-xs text-muted mt-1">
-                      Eligible At: {milestone.eligibleAt ?? 'Not yet eligible'}
-                    </p>
+                    <p className="iv-member-meta mb-3">Eligibility requirements</p>
+                    <ul className="space-y-2">
+                      {data.rewardProgram.requirements.map((requirement) => (
+                        <li key={requirement} className="iv-member-copy text-sm">• {requirement}</li>
+                      ))}
+                    </ul>
                   </div>
-                  <span className={`inline-flex border px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] ${statusClasses(milestone.status)}`}>
-                    {milestone.status}
-                  </span>
+                ) : null}
+                {data.rewardProgram.progress ? (
+                  <pre className="overflow-auto border border-[color:var(--iv-hairline)] bg-[color:var(--iv-white)] p-4 text-xs text-[color:var(--iv-ink-2)]">
+                    {JSON.stringify(data.rewardProgram.progress, null, 2)}
+                  </pre>
+                ) : null}
+              </div>
+            </MemberPanel>
+
+            <MemberPanel title="Reward wallet" description="Wallet details are informational and do not imply eligibility or a pending payout.">
+              <div className="space-y-4">
+                <div>
+                  <p className="iv-member-meta mb-2">Solana wallet</p>
+                  <p className="break-all text-sm text-[color:var(--iv-ink)]">
+                    {data.solanaIvtWalletAddress ?? 'No wallet available'}
+                  </p>
+                </div>
+                <div>
+                  <p className="iv-member-meta mb-2">Current token balance</p>
+                  <p className="iv-member-card-title text-3xl">{data.ivtTokenBalance?.uiAmount ?? 'Unavailable'}</p>
+                </div>
+                <div className="flex flex-wrap gap-4">
+                  <CopyButton value={data.solanaIvtWalletAddress} />
+                  {data.solanaExplorerWalletUrl ? (
+                    <a className="iv-textlink text-sm" href={data.solanaExplorerWalletUrl} target="_blank" rel="noreferrer">View wallet</a>
+                  ) : null}
+                  {data.ivtTokenMintExplorerUrl ? (
+                    <a className="iv-textlink text-sm" href={data.ivtTokenMintExplorerUrl} target="_blank" rel="noreferrer">View token mint</a>
+                  ) : null}
                 </div>
               </div>
-            ))}
+            </MemberPanel>
           </div>
-        )}
-      </div> : null}
 
-      <div className="iv-panel p-5">
-        <p className="iv-label-muted mb-3">Payout Jobs</p>
-        {(data?.payoutJobs ?? []).length === 0 ? (
-          <p className="text-sm text-muted">No payout jobs yet.</p>
-        ) : (
-          <div className="space-y-3">
-            {data!.payoutJobs.map((job) => (
-              <div key={`${job.milestoneNumber}-${job.status}-${job.attempts}`} className="border border-line bg-ink p-4">
-                <div className="flex items-start justify-between gap-3">
+          <MemberPanel
+            title="Legacy Reward History"
+            description="Historical milestones, payout jobs, and transactions are preserved for recordkeeping and do not define current Academy progression."
+          >
+            {historyCount === 0 ? (
+              <MemberState title="No legacy reward records" message="No historical reward activity is recorded for this account." />
+            ) : (
+              <div className="space-y-6">
+                {data.legacyRewardHistory.milestones.length > 0 ? (
                   <div>
-                    <p className="iv-card-title text-xl">
-                      {job.rewardTrack === 'single_module' ? `Module ${job.moduleNumber} Reward` : `Milestone ${job.milestoneNumber}`}
-                    </p>
-                    <p className="text-xs text-muted mt-1">Amount Raw: {job.amountRaw}</p>
-                    <p className="text-xs text-muted">Token Mint: {job.tokenMint}</p>
-                    <p className="text-xs text-muted">Attempts: {job.attempts}</p>
-                    {job.lastError ? <p className="text-xs text-[#ffb4a8] mt-1">Last Error: {job.lastError}</p> : null}
-                  </div>
-                  <span className={`inline-flex border px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] ${statusClasses(job.status)}`}>
-                    {job.status}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-
-      <div className="iv-panel p-5">
-        <p className="iv-label-muted mb-3">Transactions</p>
-        {(data?.transactions ?? []).length === 0 ? (
-          <p className="text-sm text-muted">No transactions yet.</p>
-        ) : (
-          <div className="space-y-3">
-            {data!.transactions.map((transaction) => (
-              <div key={transaction.signature} className="border border-line bg-ink p-4">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <p className="iv-card-title text-xl">Milestone {transaction.milestoneNumber}</p>
-                    <p className="text-xs text-muted mt-1 break-all">Signature: {transaction.signature}</p>
-                    <p className="text-xs text-muted">Confirmed At: {transaction.confirmedAt ?? 'Pending confirmation'}</p>
-                    <div className="mt-3 flex flex-wrap gap-3">
-                      {transaction.explorerUrl ? (
-                        <a className="inline-flex text-xs font-semibold uppercase tracking-[0.12em] text-acid hover:text-white" href={transaction.explorerUrl} target="_blank" rel="noreferrer">
-                          View Payout on Solscan
-                        </a>
-                      ) : <p className="text-xs text-muted">Payout transaction pending</p>}
-                      <CopyButton value={transaction.signature} label="Copy Transaction Signature" />
+                    <p className="iv-member-meta mb-3">Historical milestones</p>
+                    <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+                      {data.legacyRewardHistory.milestones.map((milestone) => (
+                        <article key={milestone.milestone_number} className="border border-[color:var(--iv-hairline)] bg-[color:var(--iv-white)] p-4">
+                          <p className="iv-member-card-title text-xl">Legacy milestone {milestone.milestone_number}</p>
+                          <p className="iv-member-copy mt-2 text-sm">Recorded status: {milestone.status}</p>
+                          <p className="iv-member-meta mt-2">Historical module metadata: {milestone.module_start}–{milestone.module_end}</p>
+                        </article>
+                      ))}
                     </div>
                   </div>
-                  <span className={`inline-flex border px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.14em] ${statusClasses(transaction.status)}`}>
-                    {transaction.status}
-                  </span>
-                </div>
+                ) : null}
+
+                {data.legacyRewardHistory.payoutJobs.map((job, index) => (
+                  <div key={`${job.milestone_number ?? 'module'}-${job.module_number ?? 'none'}-${index}`} className="border border-[color:var(--iv-hairline)] bg-[color:var(--iv-white)] p-4">
+                    <p className="iv-member-card-title text-lg">Legacy payout job</p>
+                    <p className="iv-member-copy mt-1 text-sm">Status: {job.status}</p>
+                    {job.last_error ? <p className="mt-2 text-sm text-[#ffb4a8]">{job.last_error}</p> : null}
+                  </div>
+                ))}
+
+                {data.legacyRewardHistory.transactions.map((transaction) => (
+                  <div key={transaction.signature} className="border border-[color:var(--iv-hairline)] bg-[color:var(--iv-white)] p-4">
+                    <p className="iv-member-card-title text-lg">Legacy transaction</p>
+                    <p className="iv-member-copy mt-1 text-sm">Status: {transaction.status}</p>
+                    <p className="iv-member-meta mt-2 break-all">{transaction.signature}</p>
+                    {transaction.explorerUrl ? (
+                      <a className="iv-textlink mt-3 text-sm" href={transaction.explorerUrl} target="_blank" rel="noreferrer">View transaction</a>
+                    ) : null}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        )}
-      </div>
+            )}
+          </MemberPanel>
+        </>
+      ) : null}
     </section>
   )
 }

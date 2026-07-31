@@ -20,6 +20,16 @@ function getStableMemberEmail(privyUserId: string) {
   return `privy_${digest.slice(0, 24)}@member.ironvault.local`
 }
 
+async function findEducationAuthUserId(privyUserId: string): Promise<string | null> {
+  const memberEmail = getStableMemberEmail(privyUserId)
+  const { data, error } = await getSupabaseAdmin().auth.admin.listUsers({
+    page: 1,
+    perPage: 1000,
+  })
+  if (error) throw new Error(error.message)
+  return data?.users.find((user) => user.email === memberEmail)?.id ?? null
+}
+
 export async function resolveEducationAuthUserId(privyUserId: string) {
   const memberEmail = getStableMemberEmail(privyUserId)
 
@@ -70,9 +80,7 @@ export async function resolveEducationAuthUserId(privyUserId: string) {
   return resolvedUserId
 }
 
-export async function getProgress(privyUserId: string) {
-  const resolvedUserId = await resolveEducationAuthUserId(privyUserId)
-
+async function readProgress(resolvedUserId: string) {
   const admin = getSupabaseAdmin()
   const [{ data: lessons, error: lessonsError }, { data: quizRows, error: quizError }] = await Promise.all([
     admin
@@ -110,6 +118,18 @@ export async function getProgress(privyUserId: string) {
     lessons: (lessons ?? []) as LessonProgressRow[],
     quizResults: Array.from(latestQuizByModule.values()),
   }
+}
+
+export async function getProgress(privyUserId: string) {
+  return readProgress(await resolveEducationAuthUserId(privyUserId))
+}
+
+export async function getExistingProgress(privyUserId: string) {
+  const resolvedUserId = await findEducationAuthUserId(privyUserId)
+  if (!resolvedUserId) {
+    return { lessons: [] as LessonProgressRow[], quizResults: [] as Array<Omit<QuizResultRow, "attempted_at">> }
+  }
+  return readProgress(resolvedUserId)
 }
 
 export async function markLessonComplete(privyUserId: string, moduleIndex: number, lessonIndex: number) {

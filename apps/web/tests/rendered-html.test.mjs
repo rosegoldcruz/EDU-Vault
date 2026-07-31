@@ -54,7 +54,8 @@ test("login renders a finite authentication state", async () => {
   const response = await request("/login", { headers: { accept: "text/html" } });
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /Continue your learning path/);
+  assert.match(html, /Continue your /);
+  assert.match(html, /learning path\./);
   assert.match(html, /Restoring your secure session|Privy configuration required|Sign in with Privy/);
 });
 
@@ -65,9 +66,33 @@ test("protected page redirects and protected API rejects anonymous access", asyn
 
   const api = await request("/api/rewards/status", { headers: { accept: "application/json" } });
   assert.equal(api.status, 401);
+
+  const academyState = await request("/api/academy/state", { headers: { accept: "application/json" } });
+  assert.equal(academyState.status, 401);
 });
 
-test("academy hub is publicly reachable", async () => {
+test("academy hub requires a server-authenticated member session", async () => {
   const response = await request("/academy", { headers: { accept: "text/html" } });
-  assert.equal(response.status, 200);
+  assert.ok([302, 303, 307, 308].includes(response.status));
+  assert.match(response.headers.get("location") ?? "", /\/login\?returnTo=|\/access-required/);
+});
+
+test("retired member learning routes return to the restored academy", async () => {
+  for (const path of ["/entry-test", "/academy/lessons/retired-foundation"]) {
+    const response = await request(path, { headers: { accept: "text/html" } });
+    assert.ok([302, 303, 307, 308].includes(response.status));
+    assert.equal(response.headers.get("location"), "/academy");
+  }
+});
+
+test("session inspection endpoint rejects anonymous access without method drift", async () => {
+  const response = await request("/api/auth/privy-session", {
+    headers: { accept: "application/json" },
+  });
+  assert.equal(response.status, 401);
+  assert.deepEqual(await response.json(), {
+    ok: false,
+    authenticated: false,
+    reason: "session_not_authenticated",
+  });
 });

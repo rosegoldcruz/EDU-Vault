@@ -1,14 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server'
+
 import { getMemberAccessScope, requireMemberAccess } from '@/lib/server/member-access'
 import { getSupabaseAdmin } from '@/lib/server/supabase-admin'
 import {
   getCanonicalSolanaWalletForUser,
-  getIvtTokenMintAddress,
   getIvtTokenBalance,
+  getIvtTokenMintAddress,
   getSolanaExplorerTokenMintUrl,
   getSolanaExplorerTxUrl,
   getSolanaExplorerWalletUrl,
 } from '@/lib/server/ivt-solana-wallet'
+
+const NO_ACTIVE_POLICY_MESSAGE =
+  'Reward programs are configured separately from Academy completion. No active reward policy is currently assigned to this account.'
+
+type RewardProgramState =
+  | 'pending_review'
+  | 'approved'
+  | 'fulfilled'
+  | 'not_currently_eligible'
 
 function mapAccessErrorToStatus(error: unknown): number {
   const message = error instanceof Error ? error.message : ''
@@ -17,24 +27,47 @@ function mapAccessErrorToStatus(error: unknown): number {
   return 500
 }
 
-function getNextRequiredModule(completedModules: number[]): number | null {
-  const completed = new Set(completedModules)
-  for (let moduleNumber = 1; moduleNumber <= 6; moduleNumber += 1) {
-    if (!completed.has(moduleNumber)) return moduleNumber
+function stringArray(value: unknown): string[] {
+  if (!Array.isArray(value)) return []
+  return value.filter((entry): entry is string => typeof entry === 'string' && entry.trim().length > 0)
+}
+
+function assignedRewardProgram(metadata: Record<string, unknown> | undefined) {
+  const candidate = metadata?.reward_policy
+  if (!candidate || typeof candidate !== 'object' || Array.isArray(candidate)) return null
+  const policy = candidate as Record<string, unknown>
+  const id = typeof policy.id === 'string' ? policy.id.trim() : ''
+  const name = typeof policy.name === 'string' ? policy.name.trim() : ''
+  const state = policy.state
+  const validStates = new Set<RewardProgramState>([
+    'pending_review',
+    'approved',
+    'fulfilled',
+    'not_currently_eligible',
+  ])
+
+  if (!id || !name || !validStates.has(state as RewardProgramState)) return null
+  return {
+    id,
+    name,
+    state: state as RewardProgramState,
+    requirements: stringArray(policy.requirements),
+    progress: policy.progress && typeof policy.progress === 'object' && !Array.isArray(policy.progress)
+      ? policy.progress as Record<string, unknown>
+      : null,
   }
-  return null
 }
 
 export async function GET(req: NextRequest) {
   let privyUserId: string
   let walletAddress: string | null
-  let scope: Awaited<ReturnType<typeof getMemberAccessScope>>
+  let entitlementMetadata: Record<string, unknown> | undefined
 
   try {
     const access = await requireMemberAccess(req)
     privyUserId = access.auth.privyUserId
     walletAddress = access.auth.walletAddress
-    scope = await getMemberAccessScope(req)
+    entitlementMetadata = access.entitlement?.metadata
   } catch (error: unknown) {
     const status = mapAccessErrorToStatus(error)
     const message = error instanceof Error ? error.message : 'Failed to verify member access'
@@ -42,9 +75,9 @@ export async function GET(req: NextRequest) {
   }
 
   try {
+    const scope = await getMemberAccessScope(req)
     const [
       profileResult,
-      completionsResult,
       milestonesResult,
       payoutJobsResult,
       transactionsResult,
@@ -55,11 +88,6 @@ export async function GET(req: NextRequest) {
         .eq('privy_user_id', privyUserId)
         .maybeSingle<{ wallet_address: string | null }>(),
       getSupabaseAdmin()
-        .from('iv_module_completions')
-        .select('module_number')
-        .eq('privy_user_id', privyUserId)
-        .order('module_number', { ascending: true }),
-      getSupabaseAdmin()
         .from('iv_reward_milestones')
         .select('milestone_number, module_start, module_end, status, eligible_at')
         .eq('privy_user_id', privyUserId)
@@ -68,7 +96,7 @@ export async function GET(req: NextRequest) {
         .from('iv_payout_jobs')
         .select('milestone_number, reward_track, access_type, module_number, entitlement_id, status, amount_raw, token_mint, attempts, last_error')
         .eq('privy_user_id', privyUserId)
-        .order('milestone_number', { ascending: true }),
+        .order('created_at', { ascending: false }),
       getSupabaseAdmin()
         .from('iv_payout_transactions')
         .select('milestone_number, reward_track, access_type, module_number, entitlement_id, signature, status, confirmed_at')
@@ -78,25 +106,31 @@ export async function GET(req: NextRequest) {
 
     const errors = [
       profileResult.error,
-      completionsResult.error,
       milestonesResult.error,
       payoutJobsResult.error,
       transactionsResult.error,
     ].filter(Boolean)
-
     if (errors.length > 0) {
-      const firstError = errors[0]
-      throw new Error(firstError?.message ?? 'Failed to load reward status')
+      throw new Error(errors[0]?.message ?? 'Failed to load reward status')
     }
-
-    const completedModules = (completionsResult.data ?? [])
-      .map((row) => Number((row as { module_number: number }).module_number))
-      .filter((moduleNumber) => Number.isInteger(moduleNumber) && moduleNumber >= 1 && moduleNumber <= 6)
 
     const solanaWallet = await getCanonicalSolanaWalletForUser(privyUserId)
     const balance = await getIvtTokenBalance(solanaWallet.walletAddress)
+    const rewardProgram = assignedRewardProgram(entitlementMetadata)
 
     return NextResponse.json({
+      rewardProgram: rewardProgram ?? {
+        id: null,
+        name: null,
+        state: 'not_currently_eligible',
+        requirements: [],
+        progress: null,
+        message: NO_ACTIVE_POLICY_MESSAGE,
+      },
+      curriculum: {
+        releaseId: scope.releaseId,
+        releaseVersion: scope.releaseVersion,
+      },
       walletAddress: solanaWallet.walletAddress,
       evmWalletAddress: walletAddress?.startsWith('0x') ? walletAddress : null,
       solanaIvtWalletAddress: solanaWallet.walletAddress,
@@ -105,40 +139,14 @@ export async function GET(req: NextRequest) {
       ivtTokenMint: getIvtTokenMintAddress(),
       ivtTokenMintExplorerUrl: getSolanaExplorerTokenMintUrl(),
       ivtTokenBalance: balance,
-      completedModules,
-      accessScope: scope,
-      milestones: scope.rewardTrack === 'single_module' ? [] : (milestonesResult.data ?? []).map((row) => ({
-        milestoneNumber: (row as { milestone_number: number }).milestone_number,
-        moduleStart: (row as { module_start: number }).module_start,
-        moduleEnd: (row as { module_end: number }).module_end,
-        status: (row as { status: string }).status,
-        eligibleAt: (row as { eligible_at: string | null }).eligible_at,
-      })),
-      payoutJobs: (payoutJobsResult.data ?? []).map((row) => ({
-        milestoneNumber: (row as { milestone_number: number }).milestone_number,
-        rewardTrack: (row as { reward_track: string }).reward_track,
-        accessType: (row as { access_type: string }).access_type,
-        moduleNumber: (row as { module_number: number | null }).module_number,
-        entitlementId: (row as { entitlement_id: string | null }).entitlement_id,
-        status: (row as { status: string }).status,
-        amountRaw: (row as { amount_raw: string }).amount_raw,
-        tokenMint: (row as { token_mint: string }).token_mint,
-        attempts: (row as { attempts: number }).attempts,
-        lastError: (row as { last_error: string | null }).last_error,
-      })),
-      transactions: (transactionsResult.data ?? []).map((row) => ({
-        milestoneNumber: (row as { milestone_number: number }).milestone_number,
-        rewardTrack: (row as { reward_track: string }).reward_track,
-        accessType: (row as { access_type: string }).access_type,
-        moduleNumber: (row as { module_number: number | null }).module_number,
-        entitlementId: (row as { entitlement_id: string | null }).entitlement_id,
-        signature: (row as { signature: string }).signature,
-        status: (row as { status: string }).status,
-        confirmedAt: (row as { confirmed_at: string | null }).confirmed_at,
-        explorerUrl: getSolanaExplorerTxUrl((row as { signature: string }).signature),
-      })),
-      nextRequiredModule: getNextRequiredModule(completedModules),
-      walletMissing: !solanaWallet.walletAddress,
+      legacyRewardHistory: {
+        milestones: milestonesResult.data ?? [],
+        payoutJobs: payoutJobsResult.data ?? [],
+        transactions: (transactionsResult.data ?? []).map((row) => ({
+          ...row,
+          explorerUrl: getSolanaExplorerTxUrl((row as { signature: string }).signature),
+        })),
+      },
     })
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Failed to load reward status'

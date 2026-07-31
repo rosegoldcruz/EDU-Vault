@@ -1,0 +1,36 @@
+.shell {
+  background:
+    radial-gradient(circle at 95% 0%, rgb(178 137 50 / 9%), transparent 28rem),
+    var(--iv-white);
+  min-height: 100vh;
+}
+
+.shell > nav {
+  align-items: center;
+  border-bottom: 1px solid var(--iv-hairline-soft);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 22px 24px;
+}
+
+.shell > nav a {
+  align-items: center;
+  color: var(--iv-accent);
+  display: flex;
+  font-size: 14px;
+  gap: 8px;
+}
+
+.shell > nav a svg {
+  height: 17px;
+  width: 17px;
+}
+
+.shell > nav span {
+  color: var(--iv-ink);
+  font-family: var(--iv-display);
+  font-size: 19px;
+  font-weight: 700;
+}

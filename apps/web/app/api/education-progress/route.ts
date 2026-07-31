@@ -1,13 +1,8 @@
 import { NextRequest, NextResponse } from "next/server"
-import { getProgress, markLessonComplete, saveQuizResult } from "@/lib/education-actions"
+import { getProgress, markLessonComplete } from "@/lib/education-actions"
 import { ensureUserProfile } from "@/lib/backoffice-profile"
-import { canAccessAcademyModule, canAccessModule, getAcademyAccessScope, requireMemberAccess, requireModuleAccess, type MemberAccessScope } from "@/lib/server/member-access"
-import { getUserModuleCompletionStatus } from "@/lib/server/module-completion"
-import { recordVerifiedModuleCompletion } from "@/lib/server/reward-milestones"
-
-const FREE_MODULE_ID = 0
-const PAID_REWARD_MODULE_IDS = new Set([1, 2, 3, 4, 5, 6])
-const EDUCATION_ONLY_MODULE_IDS = new Set([7, 8, 9, 10, 11, 12])
+import { getLegacyModuleByNumber } from "@/lib/server/active-curriculum"
+import { canAccessAcademyModule, getAcademyAccessScope, requireMemberAccess, type MemberAccessScope } from "@/lib/server/member-access"
 
 function isNonEmptyString(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0
@@ -25,63 +20,14 @@ function getMetadataString(metadata: Record<string, unknown> | undefined, key: s
   return typeof value === "string" ? value : undefined
 }
 
-async function syncRewardsForUser(privyUserId: string, scope: MemberAccessScope) {
-  const completionStatuses = await getUserModuleCompletionStatus(privyUserId)
-  const completedModules = completionStatuses
-    .filter((status) => status.completed && canAccessModule(scope, status.moduleNumber))
-    .map((status) => status.moduleNumber)
-
-  const eligibleMilestoneSet = new Set<number>()
-  const queuedMilestoneSet = new Set<number>()
-  let walletMissing = false
-
-  for (const moduleNumber of completedModules) {
-    const result = await recordVerifiedModuleCompletion({
-      privyUserId,
-      moduleNumber,
-      source: "academy",
-      metadata: {
-        trigger: "education-progress",
-        reward_track: scope.rewardTrack ?? "full_academy",
-        access_type: scope.accessType,
-      },
-      rewardTrack: scope.rewardTrack,
-      entitlementId: scope.entitlementId,
-    })
-
-    for (const milestone of result.eligibleMilestones) {
-      eligibleMilestoneSet.add(milestone)
-    }
-
-    for (const milestone of result.queuedMilestones) {
-      queuedMilestoneSet.add(milestone)
-    }
-
-    walletMissing = walletMissing || result.walletMissing
-  }
-
-  return {
-    completedModules,
-    eligibleMilestones: Array.from(eligibleMilestoneSet).sort((a, b) => a - b),
-    queuedMilestones: Array.from(queuedMilestoneSet).sort((a, b) => a - b),
-    walletMissing,
-  }
-}
-
-function canRecordEducationOnlyProgress(scope: MemberAccessScope, moduleId: number): boolean {
-  if (moduleId === FREE_MODULE_ID) return canAccessAcademyModule(scope, moduleId)
-  if (PAID_REWARD_MODULE_IDS.has(moduleId)) return canAccessModule(scope, moduleId)
-  if (EDUCATION_ONLY_MODULE_IDS.has(moduleId)) return scope.accessType === "all_modules" || scope.accessType === "admin"
-  return false
-}
-
 async function persistEducationProgressWithoutRewards(
   privyUserId: string,
   accessScope: MemberAccessScope,
   moduleId: number,
   persist: () => Promise<void>,
 ) {
-  if (!canRecordEducationOnlyProgress(accessScope, moduleId)) {
+  const curriculumModule = await getLegacyModuleByNumber(moduleId)
+  if (!curriculumModule || !canAccessAcademyModule(accessScope, moduleId)) {
     return null
   }
 
@@ -152,52 +98,23 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: "Invalid moduleIndex or lessonIndex" }, { status: 400 })
       }
 
-      if (!PAID_REWARD_MODULE_IDS.has(moduleId)) {
-        const rewardSummary = await persistEducationProgressWithoutRewards(
-          privyUserId,
-          accessScope,
-          moduleId,
-          () => markLessonComplete(privyUserId, moduleId, lessonIndex),
-        )
-        if (!rewardSummary) {
-          return NextResponse.json({ error: "Forbidden: module access not purchased" }, { status: 403 })
-        }
-        return NextResponse.json({ success: true, ...rewardSummary })
+      const progressSummary = await persistEducationProgressWithoutRewards(
+        privyUserId,
+        accessScope,
+        moduleId,
+        () => markLessonComplete(privyUserId, moduleId, lessonIndex),
+      )
+      if (!progressSummary) {
+        return NextResponse.json({ error: "Forbidden: module access not purchased" }, { status: 403 })
       }
-
-      accessScope = await requireModuleAccess(req, moduleId)
-      await markLessonComplete(privyUserId, moduleId, lessonIndex)
-      const rewardSummary = await syncRewardsForUser(privyUserId, accessScope)
-      return NextResponse.json({ success: true, ...rewardSummary })
+      return NextResponse.json({ success: true, ...progressSummary })
     }
 
     if (payload.action === "quiz") {
-      const moduleId = Number(payload.moduleIndex)
-      const score = Number(payload.score)
-      const passed = Boolean(payload.passed)
-
-      if (!Number.isInteger(moduleId) || !Number.isInteger(score)) {
-        return NextResponse.json({ error: "Invalid moduleIndex or score" }, { status: 400 })
-      }
-
-      if (!PAID_REWARD_MODULE_IDS.has(moduleId)) {
-        const rewardSummary = await persistEducationProgressWithoutRewards(
-          privyUserId,
-          accessScope,
-          moduleId,
-          () => saveQuizResult(privyUserId, moduleId, score, passed),
-        )
-        if (!rewardSummary) {
-          return NextResponse.json({ error: "Forbidden: module access not purchased" }, { status: 403 })
-        }
-        return NextResponse.json({ success: true, ...rewardSummary })
-      }
-
-      accessScope = await requireModuleAccess(req, moduleId)
-      await saveQuizResult(privyUserId, moduleId, score, passed)
-      const rewardSummary = await syncRewardsForUser(privyUserId, accessScope)
-
-      return NextResponse.json({ success: true, ...rewardSummary })
+      return NextResponse.json(
+        { error: "Graded Academy submissions are disabled until secure server scoring is connected." },
+        { status: 503 },
+      )
     }
 
     return NextResponse.json({ error: "Invalid action" }, { status: 400 })

@@ -1,0 +1,1280 @@
+[
+  {
+    "id": "13551249-61a5-5670-a97c-84be9a0c072b",
+    "lessonId": "5ed7455c-df4e-5654-a208-9cca81379e66",
+    "moduleId": "8aaae592-d672-532f-a575-3199d909a026",
+    "type": "simulator",
+    "sourceType": "simulator",
+    "definition": {
+      "type": "simulator",
+      "variant": "bankroll",
+      "title": "Custody vs. Self-Custody — The Trust Ledger",
+      "start": 1000,
+      "betPct": {
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "default": 100
+      },
+      "rounds": 60,
+      "winProb": 0.94,
+      "winMult": 2,
+      "loseMult": 1,
+      "note": "Each round = leaving 100% of funds on a custodian. ~94% of the time nothing happens. But run it enough times and the rare custodial-failure event compounds. This is why self-custody exists: not because exchanges usually fail, but because when they do, you hold an IOU, not keys.",
+      "id": "13551249-61a5-5670-a97c-84be9a0c072b",
+      "sourceType": "simulator",
+      "sourceIndex": 6
+    },
+    "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+    "sourceKey": "modules-13-22:module:13:lesson:1:block:6",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "efad8223-67e7-566f-8e2e-757145740b12",
+    "lessonId": "a78ee85b-b5f4-5d3c-9e5a-23704be4dc29",
+    "moduleId": "8aaae592-d672-532f-a575-3199d909a026",
+    "type": "reveal",
+    "sourceType": "reveal",
+    "definition": {
+      "type": "reveal",
+      "title": "How a Transaction Actually Settles",
+      "steps": [
+        {
+          "label": "STEP 1",
+          "tag": "SIGN",
+          "heading": "You sign",
+          "text": "Your wallet uses your private key to create a digital signature authorizing the transfer. The key itself never leaves your device."
+        },
+        {
+          "label": "STEP 2",
+          "tag": "BROADCAST",
+          "heading": "The network hears it",
+          "text": "The signed transaction is broadcast to thousands of nodes. They independently verify the signature is valid and you hold the balance."
+        },
+        {
+          "label": "STEP 3",
+          "tag": "MEMPOOL",
+          "heading": "It waits in the pool",
+          "text": "Valid transactions sit in the mempool. Validators select which to include next — often prioritizing higher fees."
+        },
+        {
+          "label": "STEP 4",
+          "tag": "CONFIRM",
+          "heading": "It enters a block",
+          "text": "A validator includes your transaction in a new block and proposes it to the network. Other nodes confirm the block is valid."
+        },
+        {
+          "label": "STEP 5",
+          "tag": "FINAL",
+          "heading": "It becomes permanent",
+          "text": "As more blocks build on top, reversing the transaction becomes computationally impossible. It is now part of the permanent ledger."
+        }
+      ],
+      "note": "No bank approved this. No business hours applied. No single entity could stop it. The network reached agreement through math and incentives alone.",
+      "id": "efad8223-67e7-566f-8e2e-757145740b12",
+      "sourceType": "reveal",
+      "sourceIndex": 4
+    },
+    "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+    "sourceKey": "modules-13-22:module:13:lesson:3:block:4",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "20e03b67-d37a-5285-92d4-7d31b7a8f462",
+    "lessonId": "ed8a4d44-845e-516a-aa01-9f645084d0e8",
+    "moduleId": "69631824-cfcf-5f51-a104-dcf5613a7528",
+    "type": "reveal",
+    "sourceType": "reveal",
+    "definition": {
+      "type": "reveal",
+      "title": "What a Block Explorer Reveals",
+      "steps": [
+        {
+          "label": "LAYER 1",
+          "tag": "BALANCE",
+          "heading": "Any wallet's full holdings",
+          "text": "Enter any address and see its complete balance and token holdings. Every wallet is an open book — including those of projects, funds, and founders."
+        },
+        {
+          "label": "LAYER 2",
+          "tag": "HISTORY",
+          "heading": "Every transaction ever made",
+          "text": "The full transaction history of any address, timestamped and permanent. You can reconstruct exactly how funds moved."
+        },
+        {
+          "label": "LAYER 3",
+          "tag": "CONTRACT",
+          "heading": "The code behind a token",
+          "text": "For verified contracts, the actual source code is published. You can confirm what a token or protocol actually does before trusting it."
+        },
+        {
+          "label": "LAYER 4",
+          "tag": "FLOW",
+          "heading": "Where money is going",
+          "text": "Track large transfers, exchange inflows and outflows, and treasury movements. Analysts read these flows to anticipate market behavior."
+        },
+        {
+          "label": "LAYER 5",
+          "tag": "PROOF",
+          "heading": "Verification without trust",
+          "text": "You never have to take a project's word for its reserves, its distribution, or its activity. The ledger is the proof. This is the entire point."
+        }
+      ],
+      "note": "Traditional finance hides the ledger and asks for your trust. On-chain finance publishes the ledger and asks you to verify. Learning to read it is the difference between believing and knowing.",
+      "id": "20e03b67-d37a-5285-92d4-7d31b7a8f462",
+      "sourceType": "reveal",
+      "sourceIndex": 3
+    },
+    "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+    "sourceKey": "modules-13-22:module:14:lesson:3:block:3",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "23f2c722-a355-5080-8b97-8e8daa24c015",
+    "lessonId": "9670084c-3dd2-57c6-9cf0-76a6394cbc35",
+    "moduleId": "67d6f838-2e5f-599b-8345-0625bf9e79d7",
+    "type": "scenario",
+    "sourceType": "scenario",
+    "definition": {
+      "type": "scenario",
+      "title": "Two Minds, One Windfall",
+      "prompt": "An unexpected $5,000 lands in your account. Watch which program runs.",
+      "nodes": {
+        "start": {
+          "text": "The money hits. Your first instinct is:",
+          "choices": [
+            {
+              "label": "Finally — I can get the things I've been putting off",
+              "to": "scarcity1"
+            },
+            {
+              "label": "Pause. This is capital, not relief. What's the highest use?",
+              "to": "abundance1"
+            }
+          ]
+        },
+        "scarcity1": {
+          "text": "You spend most of it on immediate wants and relief purchases. Within two months, it's gone and little has changed. The relief was real but temporary.",
+          "outcome": "bad",
+          "lesson": "The scarcity program spends to soothe. It treats windfalls as rare events to be consumed, not deployed — because scarcity says another may never come."
+        },
+        "abundance1": {
+          "text": "You treat the $5,000 as a seed. You clear a high-interest debt draining you monthly and route the rest into an asset. The windfall keeps working after the moment passes.",
+          "outcome": "good",
+          "lesson": "The abundance program asks 'what will this become?' It sees capital as a tool that compounds, because it trusts that more can be created."
+        }
+      },
+      "id": "23f2c722-a355-5080-8b97-8e8daa24c015",
+      "sourceType": "scenario",
+      "sourceIndex": 5
+    },
+    "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+    "sourceKey": "modules-13-22:module:15:lesson:1:block:5",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "a4e02faf-221e-55be-909a-4f76613de7c1",
+    "lessonId": "310e9752-36c0-5c65-b24b-57fe721c4cf4",
+    "moduleId": "39438ebb-9ab1-5b1f-8552-71092230f9f5",
+    "type": "calculator",
+    "sourceType": "calculator",
+    "definition": {
+      "type": "calculator",
+      "variant": "compound",
+      "title": "Watch Time Do the Work",
+      "inputs": [
+        {
+          "key": "principal",
+          "label": "Starting amount",
+          "min": 0,
+          "max": 100000,
+          "step": 500,
+          "default": 5000,
+          "prefix": "$"
+        },
+        {
+          "key": "monthly",
+          "label": "Added each month",
+          "min": 0,
+          "max": 5000,
+          "step": 50,
+          "default": 300,
+          "prefix": "$"
+        },
+        {
+          "key": "rate",
+          "label": "Annual return",
+          "min": 1,
+          "max": 20,
+          "step": 0.5,
+          "default": 8,
+          "suffix": "%"
+        },
+        {
+          "key": "years",
+          "label": "Years of patience",
+          "min": 1,
+          "max": 40,
+          "step": 1,
+          "default": 25
+        }
+      ],
+      "note": "Move the 'years' slider slowly and watch the growth figure. Notice how little happens in the early years and how violently it accelerates near the end. That final surge is the entire game — and it only exists for those who don't interrupt it.",
+      "id": "a4e02faf-221e-55be-909a-4f76613de7c1",
+      "sourceType": "calculator",
+      "sourceIndex": 5
+    },
+    "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+    "sourceKey": "modules-13-22:module:16:lesson:1:block:5",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "003bef1e-edbe-5e63-b160-21c6df9a17f2",
+    "lessonId": "e6e3de62-1e45-5a84-9c01-dcdd4d87c829",
+    "moduleId": "39438ebb-9ab1-5b1f-8552-71092230f9f5",
+    "type": "calculator",
+    "sourceType": "calculator",
+    "definition": {
+      "type": "calculator",
+      "variant": "compound",
+      "title": "The Price of Ten Years",
+      "inputs": [
+        {
+          "key": "principal",
+          "label": "Starting amount",
+          "min": 0,
+          "max": 50000,
+          "step": 500,
+          "default": 0,
+          "prefix": "$"
+        },
+        {
+          "key": "monthly",
+          "label": "Added each month",
+          "min": 50,
+          "max": 2000,
+          "step": 50,
+          "default": 400,
+          "prefix": "$"
+        },
+        {
+          "key": "rate",
+          "label": "Annual return",
+          "min": 1,
+          "max": 15,
+          "step": 0.5,
+          "default": 8,
+          "suffix": "%"
+        },
+        {
+          "key": "years",
+          "label": "Years invested",
+          "min": 5,
+          "max": 40,
+          "step": 1,
+          "default": 30
+        }
+      ],
+      "note": "Run it at 30 years. Now drop to 20 years — a decade of delay. The difference in the final figure, for the exact same monthly contribution, is the literal price of waiting. It's almost always larger than people expect.",
+      "id": "003bef1e-edbe-5e63-b160-21c6df9a17f2",
+      "sourceType": "calculator",
+      "sourceIndex": 4
+    },
+    "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+    "sourceKey": "modules-13-22:module:16:lesson:2:block:4",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "663e1c59-ecc6-5eea-9faf-f944ef9c9954",
+    "lessonId": "2acdfaf1-8dae-575f-9fee-0ac17bcf5a90",
+    "moduleId": "6b11f6f1-87ca-5ed0-92f8-3791d79cd20f",
+    "type": "simulator",
+    "sourceType": "simulator",
+    "definition": {
+      "type": "simulator",
+      "variant": "bankroll",
+      "title": "The Ruin Machine — A Favorable Bet, Sized Wrong",
+      "start": 1000,
+      "betPct": {
+        "min": 5,
+        "max": 100,
+        "step": 5,
+        "default": 60
+      },
+      "rounds": 100,
+      "winProb": 0.55,
+      "winMult": 2,
+      "loseMult": 1,
+      "note": "This bet is FAVORABLE — 55% win rate, even payout. You have a real edge. Now set the bet size to 60% and run it repeatedly. Watch how often the edge still ends in ruin because the position was too large. Then drop to 10% and run it again. Same edge. Completely different survival. Position size, not the edge, decides who's left standing.",
+      "id": "663e1c59-ecc6-5eea-9faf-f944ef9c9954",
+      "sourceType": "simulator",
+      "sourceIndex": 5
+    },
+    "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+    "sourceKey": "modules-13-22:module:17:lesson:1:block:5",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "c4f45680-ee55-5d2c-855c-11f6b39aaa01",
+    "lessonId": "2c13d503-41b4-57af-b4dd-d8649bc1fc38",
+    "moduleId": "c4ba74af-ddb8-58f4-9489-4b9e181e3558",
+    "type": "reveal",
+    "sourceType": "reveal",
+    "definition": {
+      "type": "reveal",
+      "title": "Four Centuries, One Pattern",
+      "steps": [
+        {
+          "label": "1637",
+          "tag": "MANIA",
+          "heading": "Tulip Mania",
+          "text": "In the Dutch Republic, single tulip bulbs traded for the price of a house. A futures market formed around flowers. When confidence broke, prices collapsed to near nothing within weeks. The first well-documented speculative bubble."
+        },
+        {
+          "label": "1720",
+          "tag": "MANIA",
+          "heading": "The South Sea Bubble",
+          "text": "A trading company's stock rose roughly tenfold on speculation and promises, sweeping in nobles and commoners alike. It collapsed and ruined thousands. Isaac Newton lost a fortune and reportedly said he could calculate the motions of the heavens but not the madness of people."
+        },
+        {
+          "label": "1929",
+          "tag": "MANIA",
+          "heading": "The Roaring Twenties Crash",
+          "text": "Stocks bought on heavy margin soared through the decade on the belief in a new permanent prosperity. The crash erased fortunes and helped usher in the Great Depression."
+        },
+        {
+          "label": "2000",
+          "tag": "MANIA",
+          "heading": "The Dot-Com Bubble",
+          "text": "Internet companies with no profits reached staggering valuations on the true belief that the web would change everything. The web did — and most of those specific companies still went to zero. Real innovation, unsustainable prices."
+        },
+        {
+          "label": "NOW",
+          "tag": "PATTERN",
+          "heading": "The lesson, not the prediction",
+          "text": "The point is not that every rising asset is a bubble. It's that when you hear 'this time is different,' when credit is easy and everyone is certain, you are seeing a pattern four centuries old. Recognizing the emotional stage you're in is the skill."
+        }
+      ],
+      "note": "The asset always changes. The innovation is sometimes real. The human emotional sequence never changes. Learn the sequence and you can locate yourself within it.",
+      "id": "c4f45680-ee55-5d2c-855c-11f6b39aaa01",
+      "sourceType": "reveal",
+      "sourceIndex": 5
+    },
+    "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+    "sourceKey": "modules-13-22:module:18:lesson:1:block:5",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "eb8cbf2a-c699-5349-82cb-374f91274c59",
+    "lessonId": "698bbf68-3033-5ab9-a512-2e800daf2d62",
+    "moduleId": "6d00e8e7-2420-5a26-8b97-54c95cc579bd",
+    "type": "calculator",
+    "sourceType": "calculator",
+    "definition": {
+      "type": "calculator",
+      "variant": "streams",
+      "title": "Build Your Freedom Stack",
+      "inputs": [
+        {
+          "key": "rental",
+          "label": "Rental / real estate income",
+          "min": 0,
+          "max": 10000,
+          "step": 100,
+          "default": 0,
+          "prefix": "$"
+        },
+        {
+          "key": "dividends",
+          "label": "Dividends & interest",
+          "min": 0,
+          "max": 10000,
+          "step": 50,
+          "default": 0,
+          "prefix": "$"
+        },
+        {
+          "key": "royalties",
+          "label": "Royalties / digital products",
+          "min": 0,
+          "max": 10000,
+          "step": 50,
+          "default": 0,
+          "prefix": "$"
+        },
+        {
+          "key": "business",
+          "label": "Business / systematized income",
+          "min": 0,
+          "max": 10000,
+          "step": 100,
+          "default": 0,
+          "prefix": "$"
+        },
+        {
+          "key": "staking",
+          "label": "Staking / on-chain yield",
+          "min": 0,
+          "max": 10000,
+          "step": 50,
+          "default": 0,
+          "prefix": "$"
+        }
+      ],
+      "note": "Set each stream to what it currently produces per month — most will start at zero, and that's the honest starting point. The annual figure is our current passive income. The gap between it and our annual expenses is the exact distance to freedom. Now it's a measurable target.",
+      "id": "eb8cbf2a-c699-5349-82cb-374f91274c59",
+      "sourceType": "calculator",
+      "sourceIndex": 5
+    },
+    "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+    "sourceKey": "modules-13-22:module:19:lesson:1:block:5",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "29bbd2de-4893-5119-8229-c77e96f261ba",
+    "lessonId": "18281586-0b22-597f-a533-416653f00c1f",
+    "moduleId": "40e340cc-ba9f-5de8-9548-7bcb15e6a5e9",
+    "type": "scenario",
+    "sourceType": "scenario",
+    "definition": {
+      "type": "scenario",
+      "title": "The Salary Conversation",
+      "prompt": "You've received a job offer. The number is lower than you hoped. The recruiter is waiting.",
+      "nodes": {
+        "start": {
+          "text": "The offer is $75,000. You expected $85,000. The recruiter asks: 'Does that work for you?'",
+          "choices": [
+            {
+              "label": "\"Yes, that works, thank you.\" (Accept immediately)",
+              "to": "accept"
+            },
+            {
+              "label": "\"Thank you. Based on my research and the value I bring, I was targeting $88,000. Can we get closer?\"",
+              "to": "counter"
+            },
+            {
+              "label": "\"That's too low.\" (Reject flatly)",
+              "to": "reject"
+            }
+          ]
+        },
+        "accept": {
+          "text": "You took the first number. The company had budgeted up to $85,000 and expected a counter. You left $10,000 on the table in year one — and every future raise now builds off the lower base.",
+          "outcome": "bad",
+          "lesson": "The first offer is rarely the ceiling. Accepting instantly signals the number was never tested. Silence and a calm counter cost nothing to attempt."
+        },
+        "counter": {
+          "text": "You anchored slightly above your target, backed by research, and stayed warm. The recruiter comes back at $82,000. You've gained $7,000 over the initial offer for one two-minute conversation.",
+          "outcome": "good",
+          "lesson": "Anchor with justification, aim slightly high, stay collaborative. Most negotiators leave room precisely because they expect a counter. The ask itself is the leverage."
+        },
+        "reject": {
+          "text": "A flat rejection with no counter-number gives the recruiter nothing to work with and sets an adversarial tone. They may simply move on. Emotion without a specific ask rarely improves terms.",
+          "outcome": "neutral",
+          "lesson": "Push back with a specific number and a reason, not raw rejection. Negotiation is collaborative problem-solving toward a number, not a fight to win."
+        }
+      },
+      "id": "29bbd2de-4893-5119-8229-c77e96f261ba",
+      "sourceType": "scenario",
+      "sourceIndex": 5
+    },
+    "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+    "sourceKey": "modules-13-22:module:20:lesson:1:block:5",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "1847c975-df67-5dba-a68e-50e5521505a1",
+    "lessonId": "efeade08-1523-5b49-857b-5bdd0cebe5fe",
+    "moduleId": "63affe6e-b91c-5977-ad04-7c895daf9baf",
+    "type": "sorting",
+    "sourceType": "sortgame",
+    "definition": {
+      "type": "sorting",
+      "title": "Deductible or Not? — The Business Expense Filter",
+      "buckets": [
+        {
+          "id": "yes",
+          "label": "Deductible"
+        },
+        {
+          "id": "no",
+          "label": "Not"
+        }
+      ],
+      "items": [
+        {
+          "text": "Software subscriptions used to run your business",
+          "bucket": "yes"
+        },
+        {
+          "text": "A personal vacation with no business purpose",
+          "bucket": "no"
+        },
+        {
+          "text": "Mileage driven to meet a client",
+          "bucket": "yes"
+        },
+        {
+          "text": "Groceries for your family's dinners",
+          "bucket": "no"
+        },
+        {
+          "text": "A portion of home internet used for business work",
+          "bucket": "yes"
+        },
+        {
+          "text": "A new wardrobe for everyday personal wear",
+          "bucket": "no"
+        },
+        {
+          "text": "Professional education that maintains or improves business skills",
+          "bucket": "yes"
+        },
+        {
+          "text": "A speeding ticket",
+          "bucket": "no"
+        }
+      ],
+      "note": "The line is legitimate business purpose. A real, documented business expense reduces taxable income. A personal expense dressed up as business is exactly what triggers audits. The wealthy stay firmly on the legitimate side — and document everything.",
+      "id": "1847c975-df67-5dba-a68e-50e5521505a1",
+      "sourceType": "sortgame",
+      "sourceIndex": 5
+    },
+    "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+    "sourceKey": "modules-13-22:module:21:lesson:1:block:5",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "29d9187f-9d35-52ad-abaf-d1b9ce35d440",
+    "lessonId": "d0c6dc7b-9680-59f8-90e5-f12d80bc862b",
+    "moduleId": "19719b44-e892-58bc-8622-ffbba115358e",
+    "type": "reveal",
+    "sourceType": "reveal",
+    "definition": {
+      "type": "reveal",
+      "title": "The Sovereign Architecture — Assembled",
+      "steps": [
+        {
+          "label": "FOUNDATION",
+          "tag": "SURVIVE",
+          "heading": "Reserves & clean debt",
+          "text": "An emergency fund creates decision-making power. Bad debt is eliminated. You can no longer be forced into bad terms. This is the base every other layer stands on — survival first, always."
+        },
+        {
+          "label": "ENGINE",
+          "tag": "COMPOUND",
+          "heading": "Assets that grow themselves",
+          "text": "Capital is deployed into income-producing and appreciating assets — equities, real estate, on-chain yield. Compounding runs uninterrupted. The engine of growth is now running independent of your labor."
+        },
+        {
+          "label": "FLOW",
+          "tag": "MULTIPLY",
+          "heading": "Stacked, uncorrelated income",
+          "text": "Multiple income streams feed one another in a convergence loop. Active income buys assets; assets fund the next venture. No single stream's failure is fatal. The system becomes resilient."
+        },
+        {
+          "label": "STRUCTURE",
+          "tag": "PROTECT",
+          "heading": "Entities & tax architecture",
+          "text": "Assets sit inside legal structures that protect them, optimize tax treatment, and enable efficient transfer. Your personal name stays clean; your entities do the owning. Structure defends the wealth the engine builds."
+        },
+        {
+          "label": "OPTIONALITY",
+          "tag": "FREE",
+          "heading": "Alternatives & leverage",
+          "text": "Multiple options, reserves, and negotiating leverage mean you are never dependent on any single outcome, employer, or jurisdiction. Freedom is the ability to walk away from anything."
+        },
+        {
+          "label": "MASTERY",
+          "tag": "SOVEREIGN",
+          "heading": "The self-sustaining system",
+          "text": "The components are integrated into a loop that grows itself. Passive income exceeds expenses. Work becomes a choice. No single failure collapses the structure. This is the endgame — not a number, but a sovereign architecture."
+        }
+      ],
+      "note": "Reveal them in order and see the structure assemble. This is the entire vault, converged into one map. Your work now is not to learn more — it's to build the loops that connect what you already know.",
+      "id": "29d9187f-9d35-52ad-abaf-d1b9ce35d440",
+      "sourceType": "reveal",
+      "sourceIndex": 5
+    },
+    "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+    "sourceKey": "modules-13-22:module:22:lesson:1:block:5",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "4e7a08fb-e0ee-5c6d-b680-e658b6a80496",
+    "lessonId": "53130168-43f1-5c92-86e7-f6680c997660",
+    "moduleId": "c98241f5-a878-5159-9a55-fe7183e0d055",
+    "type": "reveal",
+    "sourceType": "reveal",
+    "definition": {
+      "type": "reveal",
+      "title": "The layers of Bitcoin's 'hardness'",
+      "steps": [
+        {
+          "label": "Layer 1",
+          "tag": "SUPPLY",
+          "heading": "Fixed cap",
+          "text": "21 million coins, enforced by code across every node. No inflation by decree."
+        },
+        {
+          "label": "Layer 2",
+          "tag": "ISSUANCE",
+          "heading": "The halving",
+          "text": "New supply drops by 50% every ~4 years, slowing issuance toward zero."
+        },
+        {
+          "label": "Layer 3",
+          "tag": "SECURITY",
+          "heading": "Proof-of-work",
+          "text": "Real-world energy makes the ledger prohibitively expensive to rewrite."
+        },
+        {
+          "label": "Layer 4",
+          "tag": "TIME",
+          "heading": "Lindy effect",
+          "text": "Every year the network survives adds to the market's trust that it will keep surviving."
+        }
+      ],
+      "note": "Hard money is not one feature. It is these four layers stacked.",
+      "id": "4e7a08fb-e0ee-5c6d-b680-e658b6a80496",
+      "sourceType": "reveal",
+      "sourceIndex": 4
+    },
+    "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+    "sourceKey": "researched-crypto-1-10:module:1:lesson:3:block:4",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "8b036eee-d239-5f42-bd8b-fc6b92966726",
+    "lessonId": "c4243ac8-ca7e-5f26-87d5-cf9d6b7b6ff1",
+    "moduleId": "9220372d-c9f2-5c0d-9496-446655633ec5",
+    "type": "sorting",
+    "sourceType": "sortgame",
+    "definition": {
+      "type": "sorting",
+      "title": "Sort the L2s by proof type",
+      "buckets": [
+        {
+          "id": "optimistic",
+          "label": "Optimistic Rollup (assume valid, ~7-day challenge)"
+        },
+        {
+          "id": "zk",
+          "label": "ZK Rollup (cryptographic validity proof)"
+        }
+      ],
+      "items": [
+        {
+          "text": "Arbitrum One",
+          "bucket": "optimistic"
+        },
+        {
+          "text": "Base (Coinbase)",
+          "bucket": "optimistic"
+        },
+        {
+          "text": "Optimism (OP Mainnet)",
+          "bucket": "optimistic"
+        },
+        {
+          "text": "zkSync Era",
+          "bucket": "zk"
+        },
+        {
+          "text": "Starknet",
+          "bucket": "zk"
+        },
+        {
+          "text": "Scroll",
+          "bucket": "zk"
+        }
+      ],
+      "note": "Optimistic rollups are cheaper to build and dominate TVL today; ZK rollups offer faster finality without a challenge window. The top three L2s — Base, Arbitrum, and Optimism — together handle close to 90% of all L2 transactions per 21Shares' December 2025 data.",
+      "id": "8b036eee-d239-5f42-bd8b-fc6b92966726",
+      "sourceType": "sortgame",
+      "sourceIndex": 4
+    },
+    "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+    "sourceKey": "researched-crypto-1-10:module:2:lesson:3:block:4",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "d327daa5-6326-5fba-8af5-c0bd99c6b5b6",
+    "lessonId": "d2e3654b-df0d-5699-9cf9-4a65675a6c32",
+    "moduleId": "20fa2bba-77a8-5d19-9a4a-93e61c225366",
+    "type": "reveal",
+    "sourceType": "reveal",
+    "definition": {
+      "type": "reveal",
+      "title": "The four primitives of Solana DeFi",
+      "steps": [
+        {
+          "label": "Route",
+          "tag": "JUPITER",
+          "heading": "DEX aggregator",
+          "text": "Jupiter (JUP) scans Raydium, Orca, Meteora, and Phoenix and splits your trade across venues for the best price. It does not hold its own spot liquidity — it routes to whoever has it."
+        },
+        {
+          "label": "Trade",
+          "tag": "RAYDIUM",
+          "heading": "AMM DEX",
+          "text": "Raydium (RAY) is a long-running automated market maker where liquidity providers earn fees from swaps. One of the core venues Jupiter routes through."
+        },
+        {
+          "label": "Lend",
+          "tag": "KAMINO",
+          "heading": "Lending + vaults",
+          "text": "Kamino (KMNO) runs Solana's largest lending market plus auto-rebalancing liquidity vaults — deposit collateral, borrow, or earn yield in one app."
+        },
+        {
+          "label": "Stake",
+          "tag": "JITO",
+          "heading": "MEV liquid staking",
+          "text": "Jito (JTO) issues JitoSOL, a liquid staking token that also captures MEV (validator ordering revenue) and passes most of it to holders. Marinade's mSOL is the main alternative."
+        }
+      ],
+      "note": "A single Solana session can chain all four atomically: deposit USDC on Kamino, borrow, swap on Jupiter, stake into JitoSOL — one wallet, near-instant.",
+      "id": "d327daa5-6326-5fba-8af5-c0bd99c6b5b6",
+      "sourceType": "reveal",
+      "sourceIndex": 4
+    },
+    "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+    "sourceKey": "researched-crypto-1-10:module:3:lesson:2:block:4",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "12d40141-d354-5cda-b82b-28a3d862d7df",
+    "lessonId": "d919df3a-5a68-5dfc-a404-636bd4cd95a3",
+    "moduleId": "136da461-46fe-5f91-8398-b6efcea973f2",
+    "type": "sorting",
+    "sourceType": "sortgame",
+    "definition": {
+      "type": "sorting",
+      "title": "Sort: real stablecoin use case vs. myth",
+      "buckets": [
+        {
+          "id": "real",
+          "label": "Documented real use"
+        },
+        {
+          "id": "myth",
+          "label": "Misconception"
+        }
+      ],
+      "items": [
+        {
+          "text": "Cross-border payments and remittances",
+          "bucket": "real"
+        },
+        {
+          "text": "Collateral and yield in DeFi (e.g., Kamino, Aave)",
+          "bucket": "real"
+        },
+        {
+          "text": "Dollar access in high-inflation economies",
+          "bucket": "real"
+        },
+        {
+          "text": "Settlement rails for firms like Visa",
+          "bucket": "real"
+        },
+        {
+          "text": "Stablecoins always earn you interest automatically",
+          "bucket": "myth"
+        },
+        {
+          "text": "A $1 peg means zero risk",
+          "bucket": "myth"
+        }
+      ],
+      "note": "Stablecoin transfer volume has rivaled and at times exceeded major card networks. Standard stablecoins like USDC/USDT do NOT pay holders yield by default — the issuer keeps the reserve interest.",
+      "id": "12d40141-d354-5cda-b82b-28a3d862d7df",
+      "sourceType": "sortgame",
+      "sourceIndex": 2
+    },
+    "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+    "sourceKey": "researched-crypto-1-10:module:4:lesson:2:block:2",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "34005a0f-517a-585d-ad42-50514bb099d1",
+    "lessonId": "2694b87c-078f-57cb-a2e6-41fa90965536",
+    "moduleId": "181c390e-93b2-5bb4-9a23-2b8a22afafb0",
+    "type": "calculator",
+    "sourceType": "calculator",
+    "definition": {
+      "type": "calculator",
+      "variant": "compound",
+      "title": "FDV vs. Market Cap Explorer",
+      "inputs": [
+        {
+          "key": "price",
+          "label": "Token price",
+          "min": 0.01,
+          "max": 10,
+          "step": 0.01,
+          "default": 2,
+          "prefix": "$",
+          "suffix": ""
+        },
+        {
+          "key": "circulating",
+          "label": "Circulating supply (millions)",
+          "min": 1,
+          "max": 1000,
+          "step": 1,
+          "default": 50,
+          "prefix": "",
+          "suffix": "M"
+        },
+        {
+          "key": "maxSupply",
+          "label": "Max supply (millions)",
+          "min": 1,
+          "max": 1000,
+          "step": 1,
+          "default": 500,
+          "prefix": "",
+          "suffix": "M"
+        }
+      ],
+      "note": "Market Cap = price × circulating. FDV = price × max supply. With the defaults ($2 × 50M = $100M market cap vs. $2 × 500M = $1B FDV), 90% of supply is still locked — a 10x dilution overhang.",
+      "id": "34005a0f-517a-585d-ad42-50514bb099d1",
+      "sourceType": "calculator",
+      "sourceIndex": 4
+    },
+    "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+    "sourceKey": "researched-crypto-1-10:module:5:lesson:2:block:4",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "69c61583-c6a7-5d1a-8169-8b8391209ca2",
+    "lessonId": "a8308221-e8a8-539e-b5bd-795a7d179e7e",
+    "moduleId": "181c390e-93b2-5bb4-9a23-2b8a22afafb0",
+    "type": "reveal",
+    "sourceType": "reveal",
+    "definition": {
+      "type": "reveal",
+      "title": "The mechanics that move supply",
+      "steps": [
+        {
+          "label": "Lock",
+          "tag": "VESTING",
+          "heading": "Vesting",
+          "text": "Team and investor tokens are locked and released gradually over months or years. Track schedules on tools like DefiLlama Unlocks or Tokenomist."
+        },
+        {
+          "label": "Drop",
+          "tag": "CLIFF",
+          "heading": "Cliff / unlock",
+          "text": "A cliff is a large one-time unlock on a specific date — often a moment of concentrated sell pressure. Watch the calendar."
+        },
+        {
+          "label": "Flow",
+          "tag": "EMISSIONS",
+          "heading": "Emissions",
+          "text": "Ongoing issuance to stakers, liquidity providers, or miners. Steady emissions dilute holders unless demand keeps pace."
+        },
+        {
+          "label": "Sink",
+          "tag": "BURN",
+          "heading": "Burns",
+          "text": "Permanent removal of tokens from supply (e.g., ETH's EIP-1559 base-fee burn, BNB quarterly burns), which counteracts dilution."
+        }
+      ],
+      "note": "Healthy tokenomics = the flows in (emissions, unlocks) are matched or exceeded by real demand and sinks (burns, staking lockups).",
+      "id": "69c61583-c6a7-5d1a-8169-8b8391209ca2",
+      "sourceType": "reveal",
+      "sourceIndex": 2
+    },
+    "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+    "sourceKey": "researched-crypto-1-10:module:5:lesson:3:block:2",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "b27a3fe8-923b-5333-bbb0-7bd87373e0df",
+    "lessonId": "e4a5da2b-36a2-5978-9fa1-39a602e15daa",
+    "moduleId": "7f558187-6ece-5389-be00-6db4d695a752",
+    "type": "reveal",
+    "sourceType": "reveal",
+    "definition": {
+      "type": "reveal",
+      "title": "The six ways wallets get drained",
+      "steps": [
+        {
+          "label": "1",
+          "tag": "APPROVALS",
+          "heading": "Malicious token approvals",
+          "text": "You sign an approval on a shady site; a contract can then drain that token later — sometimes months later. Permit/Permit2 signatures accounted for 38% of 2025's large losses."
+        },
+        {
+          "label": "2",
+          "tag": "DRAINERS",
+          "heading": "Wallet drainer sites",
+          "text": "Fake sites and browser extensions that trick you into signing a drain transaction. Drainer-as-a-service kits (Inferno, Pink) industrialized this."
+        },
+        {
+          "label": "3",
+          "tag": "POISONING",
+          "heading": "Address poisoning",
+          "text": "Attackers send dust from a lookalike address so you copy the wrong one from history. One victim lost $50M in USDT this way in December 2025."
+        },
+        {
+          "label": "4",
+          "tag": "PHISHING",
+          "heading": "Fake sites & fake support",
+          "text": "Lookalike domains and DMs from fake 'support.' After any hack, drainers register fake 'revoke' sites to trap users following real advice."
+        },
+        {
+          "label": "5",
+          "tag": "SIMSWAP",
+          "heading": "SIM-swap",
+          "text": "Attackers hijack your phone number to intercept SMS 2FA codes. Use an authenticator app or hardware key — never SMS 2FA."
+        },
+        {
+          "label": "6",
+          "tag": "SEED",
+          "heading": "Seed phrase theft",
+          "text": "Phrases stored digitally (photos, cloud, email) get stolen by malware. Keep them fully offline."
+        }
+      ],
+      "note": "Nearly all of these rely on social engineering — tricking YOU into signing — not on 'hacking the blockchain.'",
+      "id": "b27a3fe8-923b-5333-bbb0-7bd87373e0df",
+      "sourceType": "reveal",
+      "sourceIndex": 3
+    },
+    "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+    "sourceKey": "researched-crypto-1-10:module:6:lesson:2:block:3",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "d6368a61-a429-591c-be4d-37173021f6be",
+    "lessonId": "612fac58-fca5-5a7b-bbd4-63ee8d58402b",
+    "moduleId": "7f558187-6ece-5389-be00-6db4d695a752",
+    "type": "scenario",
+    "sourceType": "scenario",
+    "definition": {
+      "type": "scenario",
+      "title": "The Phishing Decision Tree",
+      "prompt": "You get a DM: 'Iron Vault airdrop is LIVE! Connect your wallet at iron-vault-claim.net to claim before it ends.' What do you do?",
+      "nodes": {
+        "start": {
+          "text": "The message creates urgency and links to an unfamiliar domain. Your move?",
+          "choices": [
+            {
+              "label": "Click the link and connect my wallet — don't want to miss it",
+              "to": "clicked"
+            },
+            {
+              "label": "Ignore the DM and verify only through the official site/account I already trust",
+              "to": "verified"
+            },
+            {
+              "label": "Ask the sender if it's legit",
+              "to": "asked"
+            }
+          ]
+        },
+        "clicked": {
+          "text": "The site prompts you to sign a transaction to 'verify' your wallet. It's a drainer signature. Your assets are gone the moment you approve.",
+          "outcome": "bad",
+          "lesson": "Urgency + unsolicited link + wallet connection = the classic drainer trap. Real support and real claims never DM you first."
+        },
+        "verified": {
+          "text": "You check the official Iron Vault channels. There's no such claim link — it was a phishing lookalike domain. You saved everything.",
+          "outcome": "good",
+          "lesson": "Always verify through a source you independently trust. Type the URL yourself; never trust links from DMs or reply threads."
+        },
+        "asked": {
+          "text": "The 'sender' is a scammer or a compromised account — they insist it's real. Trusting their reply just re-confirms the trap.",
+          "outcome": "bad",
+          "lesson": "The person messaging you cannot be your source of truth. Verify independently, not with the stranger."
+        }
+      },
+      "id": "d6368a61-a429-591c-be4d-37173021f6be",
+      "sourceType": "scenario",
+      "sourceIndex": 2
+    },
+    "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+    "sourceKey": "researched-crypto-1-10:module:6:lesson:3:block:2",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "62aaf40f-c8f9-5044-9d5c-a7b29b705dae",
+    "lessonId": "ce54aa7c-1262-5e4e-a333-d2fb8ca23c3e",
+    "moduleId": "829654f3-d20c-50c2-b23e-fcd758f62a4c",
+    "type": "reveal",
+    "sourceType": "reveal",
+    "definition": {
+      "type": "reveal",
+      "title": "The layers a block explorer reveals",
+      "steps": [
+        {
+          "label": "Layer 1",
+          "tag": "TX",
+          "heading": "The transaction",
+          "text": "Sender, receiver, amount, fee, timestamp, and success/fail status — the raw movement of value."
+        },
+        {
+          "label": "Layer 2",
+          "tag": "WALLET",
+          "heading": "The wallet",
+          "text": "Full balance, token holdings, and complete history. Is this a fresh wallet or a seasoned one?"
+        },
+        {
+          "label": "Layer 3",
+          "tag": "TOKEN",
+          "heading": "The token",
+          "text": "Holder count, holder concentration, and how supply is distributed. Ten wallets holding 90%? Red flag."
+        },
+        {
+          "label": "Layer 4",
+          "tag": "CONTRACT",
+          "heading": "The contract",
+          "text": "The code itself — is it verified? Can the owner mint infinite tokens or freeze transfers? The truth is in the source."
+        }
+      ],
+      "note": "Explorers are free and definitive. When an influencer's claim conflicts with the explorer, the explorer wins.",
+      "id": "62aaf40f-c8f9-5044-9d5c-a7b29b705dae",
+      "sourceType": "reveal",
+      "sourceIndex": 4
+    },
+    "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+    "sourceKey": "researched-crypto-1-10:module:7:lesson:1:block:4",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "ac1b515b-6e0d-5973-b103-18d891240452",
+    "lessonId": "9845cabf-4565-5a8b-aaf5-490d00c898c3",
+    "moduleId": "829654f3-d20c-50c2-b23e-fcd758f62a4c",
+    "type": "sorting",
+    "sourceType": "sortgame",
+    "definition": {
+      "type": "sorting",
+      "title": "Match the tool to its job",
+      "buckets": [
+        {
+          "id": "market",
+          "label": "Market / protocol-level data"
+        },
+        {
+          "id": "wallet",
+          "label": "Wallet / entity intelligence"
+        }
+      ],
+      "items": [
+        {
+          "text": "DeFiLlama (TVL, fees, stablecoins across 350+ chains, free)",
+          "bucket": "market"
+        },
+        {
+          "text": "DexScreener (live DEX pairs, price, liquidity, volume)",
+          "bucket": "market"
+        },
+        {
+          "text": "Dune (custom SQL dashboards)",
+          "bucket": "market"
+        },
+        {
+          "text": "Nansen (wallet labels, 'smart money' tracking)",
+          "bucket": "wallet"
+        },
+        {
+          "text": "Arkham (entity attribution — who owns a wallet)",
+          "bucket": "wallet"
+        },
+        {
+          "text": "Etherscan / Solscan (verify any single transaction)",
+          "bucket": "wallet"
+        }
+      ],
+      "note": "DeFiLlama and DexScreener give you the market map; Nansen and Arkham tell you who's moving. Cross-check them — capital flowing in on-chain PLUS rising TVL PLUS labeled funds entering is far stronger than any one signal alone.",
+      "id": "ac1b515b-6e0d-5973-b103-18d891240452",
+      "sourceType": "sortgame",
+      "sourceIndex": 3
+    },
+    "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+    "sourceKey": "researched-crypto-1-10:module:7:lesson:2:block:3",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "53f36a5c-959e-5c96-9c49-896721386f5f",
+    "lessonId": "f20146fc-e9dc-5112-bd3f-214d515d7368",
+    "moduleId": "85542a4a-c4ab-51f4-b5d3-408499c89f33",
+    "type": "reveal",
+    "sourceType": "reveal",
+    "definition": {
+      "type": "reveal",
+      "title": "The four phases of a market cycle",
+      "steps": [
+        {
+          "label": "Phase 1",
+          "tag": "ACCUMULATION",
+          "heading": "Accumulation",
+          "text": "After a bottom, sentiment is dead, prices are flat, and patient buyers quietly accumulate. Nobody is talking about crypto."
+        },
+        {
+          "label": "Phase 2",
+          "tag": "MARKUP",
+          "heading": "Bull / markup",
+          "text": "Prices rise, attention returns, media coverage grows. Confidence builds toward euphoria."
+        },
+        {
+          "label": "Phase 3",
+          "tag": "EUPHORIA",
+          "heading": "Peak / euphoria",
+          "text": "FOMO peaks, memecoins moon, everyone is a genius. Historically the moment of maximum risk."
+        },
+        {
+          "label": "Phase 4",
+          "tag": "DECLINE",
+          "heading": "Bear / markdown",
+          "text": "Prices fall hard (BTC has dropped ~80%, alts ~90%+ in past bears), fear and capitulation dominate, then a new bottom forms."
+        }
+      ],
+      "note": "The Fear & Greed Index is a simple gauge of where sentiment sits in this loop. Extreme greed and extreme fear have historically marked turning points.",
+      "id": "53f36a5c-959e-5c96-9c49-896721386f5f",
+      "sourceType": "reveal",
+      "sourceIndex": 4
+    },
+    "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+    "sourceKey": "researched-crypto-1-10:module:8:lesson:1:block:4",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "8bfc199c-b14a-5c65-b4e8-37783148bf5d",
+    "lessonId": "9e3e8655-56d0-556e-93f0-a1fa5e64ed03",
+    "moduleId": "36cca377-7229-52a0-b51d-9ccf3c33a9a8",
+    "type": "sorting",
+    "sourceType": "sortgame",
+    "definition": {
+      "type": "sorting",
+      "title": "Sort the behavior",
+      "buckets": [
+        {
+          "id": "safe",
+          "label": "Genuine / Sybil-resistant"
+        },
+        {
+          "id": "flagged",
+          "label": "Sybil-flagged pattern"
+        }
+      ],
+      "items": [
+        {
+          "text": "Using one main wallet consistently over months",
+          "bucket": "safe"
+        },
+        {
+          "text": "Diverse actions: swaps, LPing, lending, governance",
+          "bucket": "safe"
+        },
+        {
+          "text": "Actually using the product as intended",
+          "bucket": "safe"
+        },
+        {
+          "text": "20 wallets all making identical tiny transactions",
+          "bucket": "flagged"
+        },
+        {
+          "text": "Many wallets funded from one source at the same time",
+          "bucket": "flagged"
+        },
+        {
+          "text": "Bridging dust back and forth to fake volume",
+          "bucket": "flagged"
+        }
+      ],
+      "note": "Detection keys on shared funding, clustered timing, and near-identical interaction sequences. Genuine, varied, sustained use is the only durable strategy — and it's also just... using crypto.",
+      "id": "8bfc199c-b14a-5c65-b4e8-37783148bf5d",
+      "sourceType": "sortgame",
+      "sourceIndex": 2
+    },
+    "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+    "sourceKey": "researched-crypto-1-10:module:9:lesson:3:block:2",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "8f25ef78-10ba-5ace-9344-ec9fdea36ab6",
+    "lessonId": "2a3668ba-68e1-5481-a437-0a1b54321e35",
+    "moduleId": "983f644a-b48c-5ac7-9e6e-7e50f5f17934",
+    "type": "sorting",
+    "sourceType": "sortgame",
+    "definition": {
+      "type": "sorting",
+      "title": "Match the DePIN network to what it coordinates",
+      "buckets": [
+        {
+          "id": "wireless",
+          "label": "Wireless / connectivity"
+        },
+        {
+          "id": "compute",
+          "label": "Compute / GPU rendering"
+        }
+      ],
+      "items": [
+        {
+          "text": "Helium (hotspots, HNT, on Solana)",
+          "bucket": "wireless"
+        },
+        {
+          "text": "Render (GPU rendering, RENDER, on Solana)",
+          "bucket": "compute"
+        }
+      ],
+      "note": "DePIN (Decentralized Physical Infrastructure Networks) uses token incentives to crowdsource real-world hardware — wireless coverage (Helium), GPU compute (Render), storage (Filecoin), AI (Bittensor). Many use burn-and-mint economics: usage burns credits, rewards mint tokens for providers.",
+      "id": "8f25ef78-10ba-5ace-9344-ec9fdea36ab6",
+      "sourceType": "sortgame",
+      "sourceIndex": 5
+    },
+    "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+    "sourceKey": "researched-crypto-1-10:module:10:lesson:2:block:5",
+    "status": "extracted-unmounted"
+  },
+  {
+    "id": "6dac0b1c-153e-522d-9a7f-3438033f9845",
+    "lessonId": "df766381-f397-5bbd-8db3-139438344f37",
+    "moduleId": "983f644a-b48c-5ac7-9e6e-7e50f5f17934",
+    "type": "reveal",
+    "sourceType": "reveal",
+    "definition": {
+      "type": "reveal",
+      "title": "The future stack, layer by layer",
+      "steps": [
+        {
+          "label": "Settle",
+          "tag": "STABLECOINS",
+          "heading": "Digital dollars",
+          "text": "Regulated stablecoins (post-GENIUS Act) become the default settlement money for humans AND agents."
+        },
+        {
+          "label": "Pay",
+          "tag": "x402 / AGENTS",
+          "heading": "Autonomous payments",
+          "text": "AI agents with wallets pay per-request for data, compute, and services — the machine economy."
+        },
+        {
+          "label": "Back",
+          "tag": "RWA",
+          "heading": "Real yield on-chain",
+          "text": "Tokenized Treasuries and credit bring traditional yield and trillions of potential value on-chain."
+        },
+        {
+          "label": "Build",
+          "tag": "DePIN",
+          "heading": "Physical infrastructure",
+          "text": "Token incentives coordinate real hardware — wireless, compute, storage — owned by the crowd."
+        }
+      ],
+      "note": "Each layer is live today in early form, on fast, cheap chains like Solana and Base — exactly the rails this course has taught.",
+      "id": "6dac0b1c-153e-522d-9a7f-3438033f9845",
+      "sourceType": "reveal",
+      "sourceIndex": 2
+    },
+    "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+    "sourceKey": "researched-crypto-1-10:module:10:lesson:3:block:2",
+    "status": "extracted-unmounted"
+  }
+]

@@ -111,6 +111,8 @@ export function validatePayoutTransferConfig(): {
 }
 
 export async function sendTokenRewardPayout(request: PayoutRequest): Promise<PayoutResult> {
+  throw new Error('Automatic token transfers are disabled; payout records require manual review.')
+
   const destinationWallet = new PublicKey(request.destinationWalletAddress)
   const amount = parseAmountRaw(request.amountRaw)
 

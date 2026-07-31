@@ -20,8 +20,8 @@ export default function MemberProviders({ children }: { children: React.ReactNod
       config={{
         loginMethods: ["email", "wallet"],
         appearance: {
-          theme: "dark",
-          accentColor: "#56E628",
+          theme: "light",
+          accentColor: "#1D4ED8",
           walletChainType: "solana-only",
           walletList: ["phantom", "solflare", "detected_solana_wallets", "wallet_connect_qr_solana"],
         },

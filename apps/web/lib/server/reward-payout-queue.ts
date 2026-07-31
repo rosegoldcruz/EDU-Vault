@@ -32,8 +32,8 @@ export async function queuePayoutForEligibleMilestone(input: {
   entitlementId?: string
 }): Promise<{ queued: boolean; walletMissing: boolean; jobId: string | null }> {
   const milestoneNumber = Number(input.milestoneNumber)
-  if (!Number.isInteger(milestoneNumber) || milestoneNumber < 1 || milestoneNumber > 3) {
-    throw new Error('Invalid milestoneNumber: expected integer between 1 and 3')
+  if (!Number.isInteger(milestoneNumber) || milestoneNumber < 1) {
+    throw new Error('Invalid milestoneNumber: expected a positive integer')
   }
 
   const { data: milestone, error: milestoneError } = await getSupabaseAdmin()
@@ -121,8 +121,8 @@ export async function queuePayoutForSingleModule(input: {
   moduleNumber: number
   entitlementId?: string
 }): Promise<{ queued: boolean; walletMissing: boolean; jobId: string | null }> {
-  if (!Number.isInteger(input.moduleNumber) || input.moduleNumber < 1 || input.moduleNumber > 6) {
-    throw new Error('Invalid moduleNumber: expected integer between 1 and 6')
+  if (!Number.isInteger(input.moduleNumber) || input.moduleNumber < 0) {
+    throw new Error('Invalid moduleNumber: expected a non-negative legacy source number')
   }
 
   const wallet = await resolvePayoutWallet(input.privyUserId)
@@ -197,7 +197,7 @@ export async function syncPayoutJobsForUser(
   const eligibleMilestones = (milestones ?? [])
     .filter((row) => (row as { status: string }).status === 'eligible')
     .map((row) => Number((row as { milestone_number: number }).milestone_number))
-    .filter((milestoneNumber) => Number.isInteger(milestoneNumber) && milestoneNumber >= 1 && milestoneNumber <= 3)
+    .filter((milestoneNumber) => Number.isInteger(milestoneNumber) && milestoneNumber >= 1)
 
   const queuedMilestones: number[] = []
   const milestoneJobIds: Record<number, string> = {}

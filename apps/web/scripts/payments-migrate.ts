@@ -46,12 +46,26 @@ CREATE TABLE IF NOT EXISTS entitlements (
 CREATE TABLE IF NOT EXISTS gateway_notifications (
   id TEXT PRIMARY KEY,
   provider TEXT NOT NULL,
+  provider_notification_id TEXT NOT NULL,
   event_type TEXT NOT NULL,
   signature_valid BOOLEAN NOT NULL,
   checkout_session_id TEXT,
   payload JSONB NOT NULL,
   received_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
+ALTER TABLE gateway_notifications
+  ADD COLUMN IF NOT EXISTS provider_notification_id TEXT;
+
+UPDATE gateway_notifications
+SET provider_notification_id = id
+WHERE provider_notification_id IS NULL;
+
+ALTER TABLE gateway_notifications
+  ALTER COLUMN provider_notification_id SET NOT NULL;
+
+CREATE UNIQUE INDEX IF NOT EXISTS gateway_notifications_provider_notification_unique
+  ON gateway_notifications (provider, provider_notification_id);
 
 CREATE TABLE IF NOT EXISTS audit_events (
   id TEXT PRIMARY KEY,

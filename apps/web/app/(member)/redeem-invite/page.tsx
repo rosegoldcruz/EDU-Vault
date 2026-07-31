@@ -70,23 +70,23 @@ export default function RedeemInvitePage() {
   }
 
   return (
-    <main className="min-h-screen bg-ink text-white grid place-items-center px-6">
-      <div className="iv-panel w-full max-w-md p-8">
-        <p className="iv-label mb-3">Iron Vault</p>
-        <h1 className="iv-title text-4xl">Redeem Invite</h1>
-        <p className="iv-body mt-3 text-sm">
+    <main className="iv-member-auth">
+      <div className="iv-panel iv-member-access-card">
+        <p className="iv-label">Iron Vault</p>
+        <h1 className="iv-member-title">Redeem <span className="iv-serif">invite.</span></h1>
+        <p className="iv-member-copy">
           Enter the invite code issued to you. Redemption is tied to your current signed-in account.
         </p>
 
         <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
           <label className="block">
-            <span className="iv-label-muted mb-2 block">Invite Code</span>
+            <span className="iv-member-meta mb-2 block">Invite Code</span>
             <input
               type="text"
               autoComplete="off"
               value={inviteCode}
               onChange={(event) => setInviteCode(event.target.value.toUpperCase())}
-              className="iv-field w-full px-3 py-2.5 text-sm"
+              className="iv-member-field w-full px-4 py-3 text-sm"
               placeholder="ENTER-CODE"
               disabled={state.type === 'loading'}
             />
@@ -95,7 +95,7 @@ export default function RedeemInvitePage() {
           <button
             type="submit"
             disabled={!canSubmit}
-            className="iv-button inline-flex w-full items-center justify-center px-5 py-2.5 text-sm disabled:cursor-not-allowed disabled:opacity-60"
+            className="iv-btn w-full disabled:cursor-not-allowed disabled:opacity-60"
           >
             {state.type === 'loading' ? 'Redeeming...' : 'Redeem Invite'}
           </button>
@@ -103,7 +103,7 @@ export default function RedeemInvitePage() {
 
         {state.message ? (
           <p
-            className={`mt-4 text-sm ${state.type === 'error' ? 'text-[#ffb4a8]' : state.type === 'success' ? 'text-acid' : 'text-muted'}`}
+            className={`mt-4 text-sm ${state.type === 'error' ? 'iv-member-error' : state.type === 'success' ? 'iv-member-success' : 'iv-member-copy'}`}
           >
             {state.message}
           </p>
@@ -112,13 +112,13 @@ export default function RedeemInvitePage() {
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <Link
             href="/access-required"
-            className="iv-button-ghost inline-flex items-center justify-center px-5 py-2.5 text-xs"
+            className="iv-btn iv-btn-ghost"
           >
             Back
           </Link>
           <Link
             href="https://ironvaulttoken.com/learn"
-            className="iv-button-ghost inline-flex items-center justify-center px-5 py-2.5 text-xs"
+            className="iv-btn iv-btn-ghost"
           >
             Learn Page
           </Link>

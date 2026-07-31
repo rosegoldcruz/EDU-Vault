@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { redirect } from 'next/navigation'
+import { cookies } from 'next/headers'
 import { BackofficeProvider } from '@/components/backoffice/BackofficeProvider'
 import { BackofficeLayout } from '@/components/backoffice/BackofficeLayout'
 import { canAccessDashboard, getMemberAccessScope } from '@/lib/server/member-access'
@@ -20,11 +21,14 @@ export default async function DashboardLayout({ children }: { children: ReactNod
     redirect('/access-required')
   }
 
+  const cookieStore = await cookies()
+  const initialCollapsed = cookieStore.get('iv-member-sidebar')?.value === 'collapsed'
+
   return (
-    <div className="min-h-screen text-white">
-      <BackofficeProvider>
-        <BackofficeLayout>{children}</BackofficeLayout>
-      </BackofficeProvider>
-    </div>
+    <BackofficeProvider>
+      <BackofficeLayout initialCollapsed={initialCollapsed}>
+        {children}
+      </BackofficeLayout>
+    </BackofficeProvider>
   )
 }

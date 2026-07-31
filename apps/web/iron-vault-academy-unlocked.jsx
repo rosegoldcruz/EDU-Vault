@@ -2265,7 +2265,6 @@ const MODULES = [
 
 const PASS_SCORE = 8;
 const TOTAL_XP = MODULES.reduce((s, m) => s + m.xpReward, 0);
-const FULL_CURRICULUM_MODULE_IDS = MODULES.map((module) => module.id);
 
 function getModuleArrayIndex(moduleId) {
   return MODULES.findIndex((module) => module.id === moduleId);
@@ -2323,20 +2322,23 @@ const CSS = `
   ${FONTS}
   *{box-sizing:border-box;margin:0;padding:0;}
   .iv{min-height:100vh;background:var(--ink);color:var(--brand-white);font-family:var(--font-sans);position:relative;overflow-x:hidden;}
-  .iv::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(118,91,150,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(118,91,150,0.06) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;z-index:0;}
-  .iv::after{content:'';position:fixed;top:-300px;right:-300px;width:800px;height:800px;background:radial-gradient(circle,rgba(86,230,40,0.06) 0%,transparent 70%);pointer-events:none;z-index:0;}
+  .iv.iv-embedded{min-height:0;background:transparent;--electric-green:var(--iv-green);--line-strong:color-mix(in srgb,var(--iv-accent) 38%,transparent);}
+  .iv.iv-embedded::before,.iv.iv-embedded::after{display:none;}
+  .iv.iv-embedded .iv-hub{min-height:0;}
+  .iv::before{content:'';position:fixed;inset:0;background-image:linear-gradient(color-mix(in srgb,var(--iv-ink) 6%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--iv-ink) 6%,transparent) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;z-index:0;}
+  .iv::after{content:'';position:fixed;top:-300px;right:-300px;width:800px;height:800px;background:radial-gradient(circle,color-mix(in srgb,var(--iv-accent) 6%,transparent) 0%,transparent 70%);pointer-events:none;z-index:0;}
   .iv-header{background:var(--ink-soft);border-bottom:1px solid var(--line);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;}
   .iv-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:400;font-size:18px;letter-spacing:0;color:var(--brand-white);}
-  .iv-dot{width:10px;height:10px;background:var(--electric-green);border-radius:50%;box-shadow:0 0 12px rgba(86,230,40,0.9);animation:glow 2s infinite;}
+  .iv-dot{width:10px;height:10px;background:var(--electric-green);border-radius:50%;box-shadow:0 0 12px color-mix(in srgb,var(--iv-accent) 90%,transparent);animation:glow 2s infinite;}
   .iv-xp-wrap{display:flex;align-items:center;gap:12px;}
   .iv-xp-label{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:1px;}
-  .iv-xp-track{width:140px;height:3px;background:var(--line);border-radius:0;overflow:hidden;}
-  .iv-xp-fill{height:100%;background:linear-gradient(90deg,var(--line-strong),var(--electric-green));transition:width 0.8s ease;box-shadow:0 0 8px rgba(86,230,40,0.3);}
+  .iv-xp-track{width:140px;height:3px;background:var(--line);border-radius:var(--iv-radius-sm);overflow:hidden;}
+  .iv-xp-fill{height:100%;background:linear-gradient(90deg,var(--line-strong),var(--electric-green));transition:width 0.8s ease;box-shadow:0 0 8px color-mix(in srgb,var(--iv-accent) 30%,transparent);}
   .iv-xp-val{font-family:var(--font-mono);font-size:12px;color:var(--electric-green);font-weight:700;}
-  .iv-chip{display:flex;align-items:center;gap:8px;background:var(--ink-raised);border:1px solid var(--line);border-radius:0;padding:5px 14px;font-size:12px;color:var(--muted);cursor:pointer;transition:all 0.2s;}
+  .iv-chip{display:flex;align-items:center;gap:8px;background:var(--ink-raised);border:1px solid var(--line);border-radius:var(--iv-radius-sm);padding:5px 14px;font-size:12px;color:var(--muted);cursor:pointer;transition:all 0.2s;}
   .iv-chip:hover{border-color:var(--line-strong);color:var(--brand-white);}
   /* ── MEMBER BANNER ── */
-  .iv-member-banner{background:linear-gradient(90deg,rgba(86,230,40,0.08),rgba(69,43,112,0.45));border-bottom:1px solid rgba(86,230,40,0.15);padding:10px 28px;display:flex;align-items:center;justify-content:center;gap:12px;}
+  .iv-member-banner{background:linear-gradient(90deg,color-mix(in srgb,var(--iv-accent) 8%,transparent),color-mix(in srgb,var(--iv-ink) 45%,transparent));border-bottom:1px solid color-mix(in srgb,var(--iv-accent) 15%,transparent);padding:10px 28px;display:flex;align-items:center;justify-content:center;gap:12px;}
   .iv-member-banner span{font-family:var(--font-mono);font-size:9px;letter-spacing:2px;color:var(--electric-green);}
   .iv-hub{min-height:100vh;position:relative;z-index:1;}
   .iv-wrap{max-width:1080px;margin:0 auto;padding:44px 28px;}
@@ -2344,32 +2346,32 @@ const CSS = `
   .iv-h1{font-family:var(--font-display);font-weight:400;font-size:52px;line-height:1;letter-spacing:0;color:var(--brand-white);margin-bottom:10px;}
   .iv-sub{font-size:14px;color:var(--muted);line-height:1.6;max-width:460px;margin-bottom:40px;}
   .iv-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:44px;}
-  .iv-stat{background:var(--ink-soft);border:1px solid var(--line);border-radius:0;padding:18px;position:relative;overflow:hidden;}
-  .iv-stat::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(86,230,40,0.15),transparent);}
+  .iv-stat{background:var(--ink-soft);border:1px solid var(--line);border-radius:var(--iv-radius-sm);padding:18px;position:relative;overflow:hidden;}
+  .iv-stat::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--iv-accent) 15%,transparent),transparent);}
   .iv-stat-l{font-family:var(--font-mono);font-size:8px;letter-spacing:2px;color:var(--muted-dark);margin-bottom:8px;}
   .iv-stat-v{font-family:var(--font-display);font-weight:400;font-size:34px;color:var(--electric-green);line-height:1;}
   .iv-stat-u{font-family:var(--font-mono);font-size:9px;color:var(--muted-dark);margin-top:4px;}
   .iv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
-  .iv-card{background:var(--ink-soft);border:1px solid var(--line);border-radius:0;padding:24px;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;animation:fadeUp 0.4s ease both;}
-  .iv-card.free{border-color:rgba(86,230,40,0.55);box-shadow:0 0 32px rgba(86,230,40,0.08),inset 0 0 0 1px rgba(86,230,40,0.08);}
+  .iv-card{background:var(--ink-soft);border:1px solid var(--line);border-radius:var(--iv-radius-sm);padding:24px;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;animation:fadeUp 0.4s ease both;}
+  .iv-card.free{border-color:color-mix(in srgb,var(--iv-accent) 55%,transparent);box-shadow:0 0 32px color-mix(in srgb,var(--iv-accent) 8%,transparent),inset 0 0 0 1px color-mix(in srgb,var(--iv-accent) 8%,transparent);}
   .iv-card.free::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--electric-green),var(--line-strong));}
-  .iv-card.free .iv-icon{background:rgba(86,230,40,0.14);border-color:rgba(86,230,40,0.45);}
+  .iv-card.free .iv-icon{background:color-mix(in srgb,var(--iv-accent) 14%,transparent);border-color:color-mix(in srgb,var(--iv-accent) 45%,transparent);}
   .iv-card.free .iv-card-tag{color:var(--electric-green);}
-  .iv-card:hover:not(.locked){border-color:rgba(118,91,150,0.5);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.5);}
-  .iv-card.free:hover:not(.locked){border-color:rgba(86,230,40,0.65);box-shadow:0 12px 40px rgba(86,230,40,0.10);}
+  .iv-card:hover:not(.locked){border-color:color-mix(in srgb,var(--iv-ink) 50%,transparent);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.5);}
+  .iv-card.free:hover:not(.locked){border-color:color-mix(in srgb,var(--iv-accent) 65%,transparent);box-shadow:0 12px 40px color-mix(in srgb,var(--iv-accent) 10%,transparent);}
   .iv-card.locked{opacity:0.35;cursor:not-allowed;}
-  .iv-card.passed{border-color:rgba(86,230,40,0.2);}
+  .iv-card.passed{border-color:color-mix(in srgb,var(--iv-accent) 20%,transparent);}
   .iv-card:not(.locked):not(.passed):not(.free)::before,.iv-card.passed:not(.free)::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
   .iv-card:not(.locked):not(.passed):not(.free)::before{background:linear-gradient(90deg,transparent,var(--line-strong),transparent);}
   .iv-card.passed::before{background:linear-gradient(90deg,transparent,var(--electric-green),transparent);}
   .iv-card-hd{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;}
-  .iv-icon{width:44px;height:44px;background:rgba(69,43,112,0.6);border:1px solid rgba(118,91,150,0.3);border-radius:0;display:flex;align-items:center;justify-content:center;font-size:20px;}
-  .iv-badge{font-family:var(--font-mono);font-size:8px;letter-spacing:2px;padding:4px 10px;border-radius:0;}
+  .iv-icon{width:44px;height:44px;background:color-mix(in srgb,var(--iv-ink) 60%,transparent);border:1px solid color-mix(in srgb,var(--iv-ink) 30%,transparent);border-radius:var(--iv-radius-sm);display:flex;align-items:center;justify-content:center;font-size:20px;}
+  .iv-badge{font-family:var(--font-mono);font-size:8px;letter-spacing:2px;padding:4px 10px;border-radius:var(--iv-radius-sm);}
   .b-lock{color:var(--muted-dark);background:var(--ink-raised);}
-  .b-avail{color:var(--electric-green);background:rgba(86,230,40,0.08);border:1px solid rgba(86,230,40,0.2);}
-  .b-prog{color:var(--muted-dark);background:rgba(69,43,112,0.5);border:1px solid rgba(118,91,150,0.3);}
-  .b-pass{color:var(--electric-green);background:rgba(86,230,40,0.1);border:1px solid rgba(86,230,40,0.3);}
-  .iv-prog-bar{height:2px;background:var(--line);border-radius:0;margin-bottom:14px;overflow:hidden;}
+  .b-avail{color:var(--electric-green);background:color-mix(in srgb,var(--iv-accent) 8%,transparent);border:1px solid color-mix(in srgb,var(--iv-accent) 20%,transparent);}
+  .b-prog{color:var(--muted-dark);background:color-mix(in srgb,var(--iv-ink) 50%,transparent);border:1px solid color-mix(in srgb,var(--iv-ink) 30%,transparent);}
+  .b-pass{color:var(--electric-green);background:color-mix(in srgb,var(--iv-accent) 10%,transparent);border:1px solid color-mix(in srgb,var(--iv-accent) 30%,transparent);}
+  .iv-prog-bar{height:2px;background:var(--line);border-radius:var(--iv-radius-sm);margin-bottom:14px;overflow:hidden;}
   .iv-prog-fill{height:100%;background:linear-gradient(90deg,var(--line-strong),var(--electric-green));transition:width 0.5s;}
   .iv-prog-fill.green{background:var(--electric-green);}
   .iv-card-tag{font-family:var(--font-mono);font-size:8px;letter-spacing:2px;color:var(--muted-dark);margin-bottom:5px;}
@@ -2379,24 +2381,24 @@ const CSS = `
   .iv-meta{font-family:var(--font-mono);font-size:9px;color:var(--muted-dark);}
   .iv-meta span{color:var(--muted);}
   .iv-page{max-width:860px;margin:0 auto;padding:44px 28px;}
-  .iv-back{display:inline-flex;align-items:center;gap:8px;background:none;border:1px solid var(--line);border-radius:0;padding:9px 18px;color:var(--muted);font-family:var(--font-mono);font-size:10px;letter-spacing:1px;cursor:pointer;transition:all 0.2s;margin-bottom:28px;}
+  .iv-back{display:inline-flex;align-items:center;gap:8px;background:none;border:1px solid var(--line);border-radius:var(--iv-radius-sm);padding:9px 18px;color:var(--muted);font-family:var(--font-mono);font-size:10px;letter-spacing:1px;cursor:pointer;transition:all 0.2s;margin-bottom:28px;}
   .iv-back:hover{border-color:var(--line-strong);color:var(--electric-green);}
   .iv-lessons{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
-  .iv-lesson-row{background:var(--ink-soft);border:1px solid var(--line);border-radius:0;padding:18px 22px;display:flex;align-items:center;gap:18px;cursor:pointer;transition:all 0.2s;}
-  .iv-lesson-row:hover:not(.l-locked){border-color:rgba(118,91,150,0.4);}
+  .iv-lesson-row{background:var(--ink-soft);border:1px solid var(--line);border-radius:var(--iv-radius-sm);padding:18px 22px;display:flex;align-items:center;gap:18px;cursor:pointer;transition:all 0.2s;}
+  .iv-lesson-row:hover:not(.l-locked){border-color:color-mix(in srgb,var(--iv-ink) 40%,transparent);}
   .iv-lesson-row.l-locked{opacity:0.35;cursor:not-allowed;}
   .iv-ln{font-family:var(--font-mono);font-size:11px;color:var(--muted-dark);min-width:28px;}
   .iv-lt{flex:1;font-size:14px;color:var(--brand-white);font-weight:500;}
   .iv-lc{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;}
-  .lc-done{background:rgba(86,230,40,0.1);color:var(--electric-green);border:1px solid rgba(86,230,40,0.3);}
-  .lc-avail{background:rgba(69,43,112,0.5);color:var(--muted-dark);border:1px solid rgba(118,91,150,0.3);}
+  .lc-done{background:color-mix(in srgb,var(--iv-accent) 10%,transparent);color:var(--electric-green);border:1px solid color-mix(in srgb,var(--iv-accent) 30%,transparent);}
+  .lc-avail{background:color-mix(in srgb,var(--iv-ink) 50%,transparent);color:var(--muted-dark);border:1px solid color-mix(in srgb,var(--iv-ink) 30%,transparent);}
   .lc-pend{background:var(--ink-raised);color:var(--muted-dark);border:1px solid var(--line);}
-  .iv-quiz-box{background:var(--ink-soft);border:1px solid rgba(86,230,40,0.15);border-radius:0;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .iv-quiz-box{background:var(--ink-soft);border:1px solid color-mix(in srgb,var(--iv-accent) 15%,transparent);border-radius:var(--iv-radius-sm);padding:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
   .iv-quiz-box.locked{opacity:0.35;}
   .iv-quiz-box h3{font-family:var(--font-display);font-weight:400;font-size:20px;letter-spacing:0;color:var(--brand-white);margin-bottom:3px;}
   .iv-quiz-box p{font-size:12px;color:var(--muted-dark);}
   .iv-quiz-box .pass{color:var(--electric-green);margin-top:3px;}
-  .iv-qbtn{background:var(--electric-green);border:none;border-radius:0;padding:12px 26px;color:var(--ink);font:620 13px/1 var(--font-sans);letter-spacing:0;cursor:pointer;transition:all 0.2s;white-space:nowrap;flex-shrink:0;}
+  .iv-qbtn{background:var(--electric-green);border:none;border-radius:var(--iv-radius-sm);padding:12px 26px;color:var(--ink);font:620 13px/1 var(--font-sans);letter-spacing:0;cursor:pointer;transition:all 0.2s;white-space:nowrap;flex-shrink:0;}
   .iv-qbtn:hover{background:var(--electric-green);filter:brightness(1.08);}
   .iv-qbtn:disabled{opacity:0.4;cursor:not-allowed;}
   .iv-lesson-view{max-width:740px;margin:0 auto;padding:44px 28px;position:relative;z-index:1;}
@@ -2406,19 +2408,19 @@ const CSS = `
   .iv-lesson-tag{font-family:var(--font-mono);font-size:9px;letter-spacing:2px;color:var(--muted-dark);margin-bottom:8px;}
   .iv-lesson-title{font-family:var(--font-display);font-weight:400;font-size:36px;letter-spacing:0;color:var(--brand-white);line-height:1.1;}
   .iv-body-stack{display:flex;flex-direction:column;gap:22px;margin-bottom:36px;}
-  .c-quote{border-left:3px solid var(--line-strong);padding:16px 20px;background:rgba(69,43,112,0.35);border-radius:0;}
+  .c-quote{border-left:3px solid var(--line-strong);padding:16px 20px;background:color-mix(in srgb,var(--iv-ink) 35%,transparent);border-radius:var(--iv-radius-sm);}
   .c-quote blockquote{font-size:15px;color:var(--muted);font-style:italic;line-height:1.7;margin-bottom:8px;}
   .c-quote cite{font-family:var(--font-mono);font-size:9px;color:var(--muted-dark);letter-spacing:1px;}
   .c-heading{font-family:var(--font-display);font-weight:400;font-size:22px;letter-spacing:0;color:var(--brand-white);border-left:3px solid var(--electric-green);padding-left:14px;}
   .c-body{font-size:14px;color:var(--muted);line-height:1.85;}
-  .c-callout{background:rgba(86,230,40,0.04);border-left:3px solid var(--electric-green);border-radius:0;padding:16px 20px;font-size:14px;color:var(--muted);line-height:1.7;}
+  .c-callout{background:color-mix(in srgb,var(--iv-accent) 4%,transparent);border-left:3px solid var(--electric-green);border-radius:var(--iv-radius-sm);padding:16px 20px;font-size:14px;color:var(--muted);line-height:1.7;}
   .c-list{display:flex;flex-direction:column;gap:10px;}
   .c-list-item{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--muted);line-height:1.6;}
   .c-list-item::before{content:'▸';color:var(--muted-dark);flex-shrink:0;margin-top:2px;}
-  .c-action{background:rgba(69,43,112,0.4);border:1px solid rgba(118,91,150,0.2);border-radius:0;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;}
+  .c-action{background:color-mix(in srgb,var(--iv-ink) 40%,transparent);border:1px solid color-mix(in srgb,var(--iv-ink) 20%,transparent);border-radius:var(--iv-radius-sm);padding:16px 18px;display:flex;gap:12px;align-items:flex-start;}
   .c-action-label{font-family:var(--font-mono);font-size:8px;letter-spacing:2px;color:var(--muted-dark);flex-shrink:0;margin-top:2px;}
   .c-action-text{font-size:13px;color:var(--muted-dark);line-height:1.6;}
-  .c-vault{background:rgba(86,230,40,0.05);border:1px solid rgba(86,230,40,0.25);border-radius:0;padding:20px;position:relative;overflow:hidden;}
+  .c-vault{background:color-mix(in srgb,var(--iv-accent) 5%,transparent);border:1px solid color-mix(in srgb,var(--iv-accent) 25%,transparent);border-radius:var(--iv-radius-sm);padding:20px;position:relative;overflow:hidden;}
   .c-vault::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--electric-green),transparent);}
   .c-vault-label{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:9px;letter-spacing:2px;color:var(--electric-green);margin-bottom:12px;}
   .c-vault-title{font-family:var(--font-display);font-weight:400;font-size:16px;letter-spacing:0;color:var(--electric-green);}
@@ -2427,41 +2429,62 @@ const CSS = `
   .iv-quiz-view{max-width:740px;margin:0 auto;padding:44px 28px;position:relative;z-index:1;}
   .iv-q-prog-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
   .iv-q-prog-label{font-family:var(--font-mono);font-size:10px;color:var(--muted-dark);}
-  .iv-q-prog-track{height:2px;background:var(--line);border-radius:0;overflow:hidden;margin-bottom:28px;}
+  .iv-q-prog-track{height:2px;background:var(--line);border-radius:var(--iv-radius-sm);overflow:hidden;margin-bottom:28px;}
   .iv-q-prog-fill{height:100%;background:linear-gradient(90deg,var(--line-strong),var(--electric-green));transition:width 0.3s;}
-  .iv-q-card{background:var(--ink-soft);border:1px solid var(--line);border-radius:0;padding:28px;margin-bottom:20px;animation:fadeUp 0.25s ease;}
+  .iv-q-card{background:var(--ink-soft);border:1px solid var(--line);border-radius:var(--iv-radius-sm);padding:28px;margin-bottom:20px;animation:fadeUp 0.25s ease;}
   .iv-q-num{font-family:var(--font-mono);font-size:9px;letter-spacing:2px;color:var(--muted-dark);margin-bottom:14px;}
   .iv-q-text{font-size:17px;font-weight:600;color:var(--brand-white);line-height:1.5;margin-bottom:24px;}
   .iv-opts{display:flex;flex-direction:column;gap:10px;}
-  .iv-opt{background:var(--ink);border:1px solid var(--line);border-radius:0;padding:14px 18px;cursor:pointer;font-size:13px;color:var(--muted);text-align:left;transition:all 0.2s;display:flex;align-items:center;gap:14px;}
-  .iv-opt:hover:not(.sel):not(.dis){border-color:rgba(118,91,150,0.4);color:var(--brand-white);}
-  .iv-opt.sel{border-color:var(--line-strong);background:rgba(69,43,112,0.45);color:var(--brand-white);}
-  .iv-opt.correct{border-color:var(--electric-green)!important;background:rgba(86,230,40,0.06)!important;color:var(--electric-green)!important;}
-  .iv-opt.wrong{border-color:#6f3934!important;background:rgba(111,57,52,0.25)!important;color:#ffb4a8!important;}
+  .iv-opt{background:var(--ink);border:1px solid var(--line);border-radius:var(--iv-radius-sm);padding:14px 18px;cursor:pointer;font-size:13px;color:var(--muted);text-align:left;transition:all 0.2s;display:flex;align-items:center;gap:14px;}
+  .iv-opt:hover:not(.sel):not(.dis){border-color:color-mix(in srgb,var(--iv-ink) 40%,transparent);color:var(--brand-white);}
+  .iv-opt.sel{border-color:var(--line-strong);background:color-mix(in srgb,var(--iv-ink) 45%,transparent);color:var(--brand-white);}
+  .iv-opt.correct{border-color:var(--electric-green)!important;background:color-mix(in srgb,var(--iv-accent) 6%,transparent)!important;color:var(--electric-green)!important;}
+  .iv-opt.wrong{border-color:#b42318!important;background:rgba(111,57,52,0.25)!important;color:#b42318!important;}
   .iv-opt.dis{cursor:default;}
-  .iv-opt-l{font-family:var(--font-mono);font-size:10px;width:22px;height:22px;border-radius:0;background:var(--ink-raised);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--muted-dark);transition:all 0.2s;}
+  .iv-opt-l{font-family:var(--font-mono);font-size:10px;width:22px;height:22px;border-radius:var(--iv-radius-sm);background:var(--ink-raised);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--muted-dark);transition:all 0.2s;}
   .iv-opt.sel .iv-opt-l{background:var(--line-strong);color:var(--brand-white);}
   .iv-opt.correct .iv-opt-l{background:var(--electric-green);color:var(--ink);}
-  .iv-opt.wrong .iv-opt-l{background:#6f3934;color:#ffb4a8;}
+  .iv-opt.wrong .iv-opt-l{background:#b42318;color:#b42318;}
   .iv-q-footer{display:flex;justify-content:space-between;align-items:center;}
   .iv-q-score{font-family:var(--font-mono);font-size:11px;color:var(--muted-dark);}
   .iv-results{max-width:600px;margin:0 auto;padding:64px 28px;text-align:center;position:relative;z-index:1;animation:fadeUp 0.4s ease;}
   .iv-results-icon{font-size:60px;margin-bottom:16px;display:block;}
   .iv-results-score{font-family:var(--font-display);font-weight:400;font-size:88px;line-height:1;margin-bottom:6px;}
-  .rs-pass{color:var(--electric-green);text-shadow:0 0 30px rgba(86,230,40,0.3);}
-  .rs-fail{color:#ffb4a8;}
+  .rs-pass{color:var(--electric-green);text-shadow:0 0 30px color-mix(in srgb,var(--iv-accent) 30%,transparent);}
+  .rs-fail{color:#b42318;}
   .iv-results-title{font-family:var(--font-display);font-weight:400;font-size:28px;letter-spacing:0;color:var(--brand-white);margin-bottom:10px;}
   .iv-results-sub{font-size:14px;color:var(--muted);max-width:380px;margin:0 auto 28px;line-height:1.6;}
-  .iv-results-xp{display:inline-flex;align-items:center;gap:10px;background:rgba(86,230,40,0.08);border:1px solid rgba(86,230,40,0.2);border-radius:0;padding:12px 24px;margin-bottom:28px;font-family:var(--font-mono);font-size:13px;color:var(--electric-green);}
+  .iv-results-xp{display:inline-flex;align-items:center;gap:10px;background:color-mix(in srgb,var(--iv-accent) 8%,transparent);border:1px solid color-mix(in srgb,var(--iv-accent) 20%,transparent);border-radius:var(--iv-radius-sm);padding:12px 24px;margin-bottom:28px;font-family:var(--font-mono);font-size:13px;color:var(--electric-green);}
   .iv-results-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-  .iv-btn-lime{background:var(--electric-green);border:none;border-radius:0;padding:14px 28px;color:var(--ink);font:620 13px/1 var(--font-sans);letter-spacing:0;cursor:pointer;transition:all 0.2s;}
+  .iv-btn-lime{background:var(--electric-green);border:none;border-radius:var(--iv-radius-sm);padding:14px 28px;color:var(--ink);font:620 13px/1 var(--font-sans);letter-spacing:0;cursor:pointer;transition:all 0.2s;}
   .iv-btn-lime:hover{background:var(--electric-green);filter:brightness(1.08);}
-  .iv-btn-ghost{background:none;border:1px solid var(--line);color:var(--muted);border-radius:0;padding:12px 24px;font:620 13px/1 var(--font-sans);letter-spacing:0;cursor:pointer;transition:all 0.2s;}
+  .iv-btn-ghost{background:none;border:1px solid var(--line);color:var(--muted);border-radius:var(--iv-radius-sm);padding:12px 24px;font:620 13px/1 var(--font-sans);letter-spacing:0;cursor:pointer;transition:all 0.2s;}
   .iv-btn-ghost:hover{border-color:var(--line-strong);color:var(--brand-white);}
+  /* Homepage design-system alignment */
+  .iv::before,.iv::after{display:none;}
+  .iv-header{height:64px;background:var(--iv-nav-bg);border-color:var(--iv-hairline-soft);backdrop-filter:saturate(1.6) blur(20px);}
+  .iv-logo{font-family:var(--iv-display);font-weight:600;letter-spacing:-0.02em;text-transform:none;}
+  .iv-dot{width:7px;height:7px;background:var(--iv-accent);box-shadow:none;animation:none;}
+  .iv-member-banner{background:var(--iv-paper);border-color:var(--iv-hairline-soft);}
+  .iv-member-banner span,.iv-eyebrow{color:var(--iv-accent);font-family:var(--iv-sans);font-size:13px;letter-spacing:0;}
+  .iv-h1{font-family:var(--iv-display);font-weight:600;letter-spacing:-0.035em;}
+  .iv-card-title,.iv-quiz-box h3,.iv-lesson-title,.iv-results-title,.c-heading{font-family:var(--iv-display);font-weight:600;letter-spacing:-0.02em;}
+  .iv-stat,.iv-card,.iv-lesson-row,.iv-quiz-box,.iv-q-card{background:var(--iv-white);border-color:var(--iv-hairline-soft);border-radius:var(--iv-radius);box-shadow:var(--iv-shadow);}
+  .iv-card:hover:not(.locked),.iv-card.free:hover:not(.locked){border-color:var(--iv-hairline);box-shadow:var(--iv-shadow-hover);}
+  .iv-icon{background:var(--iv-soft-fill);border-color:var(--iv-hairline);border-radius:50%;}
+  .iv-badge,.iv-chip,.iv-back,.iv-results-xp{border-radius:980px;}
+  .iv-qbtn,.iv-btn-lime,.iv-btn-ghost{min-height:48px;border-radius:980px;padding-inline:24px;}
+  .iv-qbtn,.iv-btn-lime{background:var(--iv-ink);color:var(--iv-white);}
+  .iv-qbtn:hover,.iv-btn-lime:hover{background:#333336;filter:none;transform:translateY(-1px);}
+  .iv-opt{border-radius:var(--iv-radius-sm);background:var(--iv-white);}
+  .iv-opt.sel{border-color:var(--iv-accent);background:color-mix(in srgb,var(--iv-accent) 7%,var(--iv-white));}
+  .iv-opt-l{border-radius:50%;}
+  .c-quote{background:var(--iv-paper);border-left-color:var(--iv-hairline);}
+  .c-action{background:var(--iv-paper);border-color:var(--iv-hairline-soft);}
   .confetti-piece{position:fixed;width:8px;height:8px;animation:fall linear both;z-index:999;pointer-events:none;}
   @keyframes fall{0%{transform:translateY(-10px) rotate(0);opacity:1;}100%{transform:translateY(100vh) rotate(720deg);opacity:0;}}
   @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
-  @keyframes glow{0%,100%{box-shadow:0 0 8px rgba(86,230,40,0.9);}50%{box-shadow:0 0 20px rgba(86,230,40,0.9);}}
+  @keyframes glow{0%,100%{box-shadow:0 0 8px color-mix(in srgb,var(--iv-accent) 90%,transparent);}50%{box-shadow:0 0 20px color-mix(in srgb,var(--iv-accent) 90%,transparent);}}
   @media(max-width:768px){
     .iv-stats{grid-template-columns:repeat(2,1fr);}
     .iv-header{padding:0 16px;}
@@ -2473,13 +2496,22 @@ const CSS = `
     .iv-chip{display:none;}
     .iv-quiz-box{flex-direction:column;align-items:flex-start;}
     .iv-results-btns{flex-direction:column;}
-    .iv-member-banner{padding:10px 16px;}
+    .iv-member-banner{
+      display:grid;
+      grid-template-columns:.7fr 1.1fr 1.7fr;
+      gap:8px;
+      padding:10px 16px;
+      text-align:center;
+    }
+    .iv-member-banner span{font-size:10px;line-height:1.35;}
+    .iv-member-banner span:nth-child(2),
+    .iv-member-banner span:nth-child(4){display:none;}
   }
 `;
 
 // ─── HELPERS ───────────────────────────────────────────────────────────────
 function Confetti() {
-  const colors = ["#56E628","#765b96","#56E628","#ffffff","#56E628","#9D4EDD"];
+  const colors = ["#1D4ED8","#7EA2FF","#1D4ED8","#ffffff","#1D4ED8","#7EA2FF"];
   return Array.from({length:70},(_,i)=>({
     id:i,color:colors[i%colors.length],
     left:Math.random()*100,delay:Math.random()*2.5,dur:2+Math.random()*2
@@ -2490,6 +2522,20 @@ function Confetti() {
       borderRadius:Math.random()>0.5?"50%":"0"
     }}/>
   ));
+}
+
+function AcademyHeader({ totalXP, displayName, onIdentityClick }) {
+  return (
+    <header className="iv-header">
+      <Link className="iv-logo" href="/dashboard"><span className="iv-dot"/>Iron Vault <em style={{fontFamily:"var(--iv-serif)",fontWeight:400,color:"var(--iv-ink-3)"}}>Vaulted Academy</em></Link>
+      <div className="iv-xp-wrap">
+        <span className="iv-xp-label">XP</span>
+        <div className="iv-xp-track"><div className="iv-xp-fill" style={{width:`${(totalXP/TOTAL_XP)*100}%`}}/></div>
+        <span className="iv-xp-val">{totalXP.toLocaleString()}</span>
+      </div>
+      <button type="button" className="iv-chip" onClick={onIdentityClick}>{displayName}</button>
+    </header>
+  );
 }
 
 function ContentBlock({b}){
@@ -2519,7 +2565,7 @@ function ContentBlock({b}){
         <div className="c-vault-label">
           <span>🔐</span>
           <span>VAULT SECRET</span>
-          <span style={{flex:1,height:'1px',background:'linear-gradient(90deg,rgba(86,230,40,0.3),transparent)',marginLeft:8}}/>
+          <span style={{flex:1,height:'1px',background:'linear-gradient(90deg,color-mix(in srgb,var(--iv-accent) 30%,transparent),transparent)',marginLeft:8}}/>
         </div>
         <div className="c-vault-title">{b.title}</div>
         <div style={{height:8}}/>
@@ -2532,9 +2578,16 @@ function ContentBlock({b}){
 
 // ─── MAIN ─────────────────────────────────────────────────────────────────
 /**
- * @param {{ allowedModules?: number[], accessType?: "free" | "single_module" | "all_modules" | "admin", onModuleComplete?: () => void }} props
+ * @param {{ allowedModules?: number[], accessType?: "free" | "single_module" | "all_modules" | "admin", curriculum?: { releaseVersion: string, moduleCount: number, lessonCount: number, requiredLessonCount: number, configuredXp: number, freeModuleCount: number, restrictedModuleCount: number, prerequisitesByModule: Record<number, number[]> }, onModuleComplete?: () => void, embedded?: boolean, gradedAssessmentsEnabled?: boolean }} props
  */
-export default function IronVaultAcademyUnlocked({ allowedModules = [], accessType = "free", onModuleComplete }){
+export default function IronVaultAcademyUnlocked({
+  allowedModules = [],
+  accessType = "free",
+  curriculum = null,
+  onModuleComplete,
+  embedded = false,
+  gradedAssessmentsEnabled = false,
+}){
   const { ready, authenticated, user, login, logout, getAccessToken } = usePrivy();
   const displayName = user?.email?.address || user?.phone?.number || (authenticated ? "Member" : "Guest");
 
@@ -2653,41 +2706,39 @@ export default function IronVaultAcademyUnlocked({ allowedModules = [], accessTy
   const modsDone = progress.filter(p=>p.passed).length;
   const lessonsDone = progress.reduce((s,p)=>s+p.done.size,0);
   const totalLessons = MODULES.reduce((s,m)=>s+m.lessons.length,0);
+  const activeModuleCount = curriculum?.moduleCount ?? MODULES.length;
+  const activeLessonCount = curriculum?.lessonCount ?? totalLessons;
+  const requiredLessonCount = curriculum?.requiredLessonCount ?? activeLessonCount;
+  const configuredXp = curriculum?.configuredXp ?? TOTAL_XP;
+  const freeModuleCount = curriculum?.freeModuleCount ?? MODULES.filter((module) => module.free).length;
+  const restrictedModuleCount = curriculum?.restrictedModuleCount ?? activeModuleCount - freeModuleCount;
+  const prerequisitesByModule = curriculum?.prerequisitesByModule ?? {};
   const isFreeAccess = accessType === "free" || !authenticated;
   const isSingleModuleAccess = accessType === "single_module";
   const allowedModuleSet = useMemo(() => {
-    const ids = new Set([0, ...allowedModules]);
-    if (!isFreeAccess && !isSingleModuleAccess) FULL_CURRICULUM_MODULE_IDS.forEach((id) => ids.add(id));
-    return ids;
-  }, [allowedModules, isFreeAccess, isSingleModuleAccess]);
+    return new Set(allowedModules);
+  }, [allowedModules]);
 
   /**
   * Module access rules
-   * - Module 0 is free and always available
-   * - Module 1 is available to entitled users without requiring Module 0
-   * - Subsequent modules require the previous module quiz to be passed
-  * - Free visitors can inspect locked paid modules but cannot open them.
+   * - Entitlements determine the visible release modules a member may open.
+   * - Configured prerequisite relationships determine any additional locks.
+   * - Legacy numeric values are compatibility metadata, not sequence authority.
    */
   function modStatus(i){
     const mod = MODULES[i];
-    if(mod.free){
+    if(mod.free && allowedModuleSet.has(mod.id)){
       if(progress[i].passed) return "passed";
       if(progress[i].done.size > 0) return "progress";
       return "available";
     }
     if(!allowedModuleSet.has(mod.id)) return "locked";
-    if(isSingleModuleAccess){
-      if(progress[i].passed) return "passed";
-      if(progress[i].done.size > 0) return "progress";
-      return "available";
-    }
-    if(mod.id === 1){
-      if(progress[i].passed) return "passed";
-      if(progress[i].done.size > 0) return "progress";
-      return "available";
-    }
-    // Requires previous module passed
-    if(!progress[i-1].passed) return "locked";
+    const prerequisites = prerequisitesByModule[mod.id] ?? [];
+    const requirementsMet = prerequisites.every((requiredModuleId) => {
+      const requiredIndex = MODULES.findIndex((candidate) => candidate.id === requiredModuleId);
+      return requiredIndex >= 0 && progress[requiredIndex].passed;
+    });
+    if(!requirementsMet) return "locked";
     if(progress[i].passed) return "passed";
     if(progress[i].done.size > 0) return "progress";
     return "available";
@@ -2695,8 +2746,7 @@ export default function IronVaultAcademyUnlocked({ allowedModules = [], accessTy
 
   function lessonStatus(mi,li){
     if(progress[mi].done.has(li)) return "done";
-    const prev = li===0 ? true : progress[mi].done.has(li-1);
-    return prev ? "available" : "locked";
+    return "available";
   }
 
   function allLessonsDone(mi){ return progress[mi].done.size >= MODULES[mi].lessons.length; }
@@ -2804,10 +2854,10 @@ export default function IronVaultAcademyUnlocked({ allowedModules = [], accessTy
   // ── Auth gate ──
   if(!ready){
     return(
-      <div className="iv">
+      <div className={`iv ${embedded ? "iv-embedded" : ""}`}>
         <style>{CSS}</style>
         <div style={{minHeight:"100vh",display:"grid",placeItems:"center",padding:"40px 20px",position:"relative",zIndex:1}}>
-          <div style={{maxWidth:560,width:"100%",background:"var(--ink-soft)",border:"1px solid rgba(118,91,150,0.3)",borderRadius:0,padding:"40px 32px",textAlign:"center"}}>
+          <div style={{maxWidth:560,width:"100%",background:"var(--ink-soft)",border:"1px solid color-mix(in srgb,var(--iv-ink) 30%,transparent)",borderRadius:0,padding:"40px 32px",textAlign:"center"}}>
             <div className="iv-dot" style={{margin:"0 auto 16px"}}/>
             <div style={{fontFamily:"var(--font-display)",fontWeight:400,fontSize:34,letterSpacing:0,color:"var(--brand-white)",marginBottom:10}}>
               INITIALIZING MEMBER ACCESS
@@ -2832,39 +2882,36 @@ export default function IronVaultAcademyUnlocked({ allowedModules = [], accessTy
   // ── HUB ──
   if(view==="hub"){
     return(
-      <div className="iv">
+      <div className={`iv ${embedded ? "iv-embedded" : ""}`}>
         <style>{CSS}</style>
-        {/* Member banner */}
-        <div className="iv-member-banner">
-          <span>{isFreeAccess ? "🔓 FREE" : "🔐 MEMBER"}</span>
-          <span style={{color:"var(--muted)",fontSize:8,letterSpacing:1}}>·</span>
-          <span>{isFreeAccess ? "ORIENTATION UNLOCKED" : isSingleModuleAccess ? `MODULE ${allowedModules[0] ?? 1} ACCESS` : "FULL CURRICULUM UNLOCKED"}</span>
-          <span style={{color:"var(--muted)",fontSize:8,letterSpacing:1}}>·</span>
-          <span>{isFreeAccess ? "PAID MODULES REQUIRE MEMBER ACCESS" : isSingleModuleAccess ? `COMPLETE MODULE ${allowedModules[0] ?? 1} TO EARN XP` : "COMPLETE IN SEQUENCE TO EARN XP"}</span>
-        </div>
-        <header className="iv-header">
-          <div className="iv-logo"><div className="iv-dot"/>IRON VAULT</div>
-          <div className="iv-xp-wrap">
-            <span className="iv-xp-label">XP</span>
-            <div className="iv-xp-track"><div className="iv-xp-fill" style={{width:`${(totalXP/TOTAL_XP)*100}%`}}/></div>
-            <span className="iv-xp-val">{totalXP.toLocaleString()}</span>
-          </div>
-          <div className="iv-chip" onClick={async()=>{ if(authenticated){ await logout(); setProgress(createEmptyProgress()); setProgressHydrated(false); } else login(); }}>
-            👤 {displayName} · {authenticated ? "Sign Out" : "Sign In"}
-          </div>
-        </header>
+        {!embedded ? (
+          <>
+            <div className="iv-member-banner">
+              <span>{isFreeAccess ? "🔓 FREE" : "🔐 MEMBER"}</span>
+              <span style={{color:"var(--muted)",fontSize:8,letterSpacing:1}}>·</span>
+              <span>{isFreeAccess ? "ORIENTATION UNLOCKED" : isSingleModuleAccess ? `MODULE ${allowedModules[0] ?? 1} ACCESS` : "FULL CURRICULUM UNLOCKED"}</span>
+              <span style={{color:"var(--muted)",fontSize:8,letterSpacing:1}}>·</span>
+              <span>{isFreeAccess ? "RESTRICTED MODULES REQUIRE MEMBER ACCESS" : "ACCESS AND PREREQUISITES FOLLOW THE ACTIVE RELEASE"}</span>
+            </div>
+            <AcademyHeader
+              totalXP={totalXP}
+              displayName={`${displayName} · ${authenticated ? "Sign out" : "Sign in"}`}
+              onIdentityClick={async()=>{ if(authenticated){ await logout(); setProgress(createEmptyProgress()); setProgressHydrated(false); } else login(); }}
+            />
+          </>
+        ) : null}
         <div className="iv-hub">
           <div className="iv-wrap">
-            <div className="iv-eyebrow">▸ {isFreeAccess ? "FREE ACCESS" : "MEMBER"} — {isFreeAccess ? "ORIENTATION AVAILABLE" : isSingleModuleAccess ? "SINGLE MODULE ACCESS" : "FULL CURRICULUM ACCESS"}</div>
-            <h1 className="iv-h1">Your Vault<br/>Dashboard</h1>
-            <p className="iv-sub">{isFreeAccess ? "Start with the free Iron Vault Orientation. The twelve paid academy modules are visible here and remain locked until member access is active." : isSingleModuleAccess ? `Your member position unlocks paid Module ${allowedModules[0] ?? 1}. The free orientation stays available to everyone. Complete your unlocked module and pass the quiz at 8/10 to earn XP.` : "Your member position unlocks the twelve-module Iron Vault Academy curriculum. Start with the free orientation, then complete each paid module in sequence to earn XP and unlock the next level."}</p>
+            <div className="iv-eyebrow">{isFreeAccess ? "Free orientation" : isSingleModuleAccess ? "Single-module access" : "Full curriculum access"}</div>
+            <h1 className="iv-h1">Your learning <span style={{fontFamily:"var(--iv-serif)",fontStyle:"italic",fontWeight:400}}>path.</span></h1>
+            <p className="iv-sub">{isFreeAccess ? "Start with the free content available in this curriculum release. Restricted modules remain locked until the required member access is active." : isSingleModuleAccess ? "Your member position unlocks the assigned module plus any free content in this release. Progress, assessments, and rewards follow their separately configured policies." : "Your member access applies to the active curriculum release. Available modules and prerequisites are resolved from release configuration rather than a permanent sequence."}</p>
             <div className="iv-stats">
-              <div className="iv-stat"><div className="iv-stat-l">VAULT XP</div><div className="iv-stat-v">{totalXP.toLocaleString()}</div><div className="iv-stat-u">of {TOTAL_XP.toLocaleString()} total</div></div>
-              <div className="iv-stat"><div className="iv-stat-l">MODULES PASSED</div><div className="iv-stat-v">{modsDone}</div><div className="iv-stat-u">of {MODULES.length} total · 1 free + 12 paid</div></div>
-              <div className="iv-stat"><div className="iv-stat-l">LESSONS DONE</div><div className="iv-stat-v">{lessonsDone}</div><div className="iv-stat-u">of {totalLessons}</div></div>
-              <div className="iv-stat"><div className="iv-stat-l">PASS THRESHOLD</div><div className="iv-stat-v">80<span style={{fontSize:16}}>%</span></div><div className="iv-stat-u">8 of 10 correct</div></div>
+              <div className="iv-stat"><div className="iv-stat-l">CONFIGURED XP</div><div className="iv-stat-v">{configuredXp.toLocaleString()}</div><div className="iv-stat-u">from the selected release</div></div>
+              <div className="iv-stat"><div className="iv-stat-l">MODULES PASSED</div><div className="iv-stat-v">{modsDone}</div><div className="iv-stat-u">of {activeModuleCount} visible · {freeModuleCount} free + {restrictedModuleCount} restricted</div></div>
+              <div className="iv-stat"><div className="iv-stat-l">LESSONS DONE</div><div className="iv-stat-v">{lessonsDone}</div><div className="iv-stat-u">of {activeLessonCount} visible</div></div>
+              <div className="iv-stat"><div className="iv-stat-l">REQUIRED ITEMS</div><div className="iv-stat-v">{requiredLessonCount}</div><div className="iv-stat-u">configured by release policy</div></div>
             </div>
-            <div className="iv-eyebrow" style={{marginBottom:14}}>▸ CURRICULUM — {isFreeAccess ? "FREE ORIENTATION + LOCKED PAID MODULES" : isSingleModuleAccess ? `MODULE ${allowedModules[0] ?? 1} UNLOCKED + FREE ORIENTATION` : "FREE ORIENTATION + TWELVE PAID MODULES"}</div>
+            <div className="iv-eyebrow" style={{marginBottom:14}}>▸ CURRICULUM — {curriculum?.releaseVersion ?? "ACTIVE RELEASE"}</div>
             <div className="iv-grid">
               {MODULES.map((mod,i)=>{
                 const st=modStatus(i);
@@ -2876,7 +2923,7 @@ export default function IronVaultAcademyUnlocked({ allowedModules = [], accessTy
                     <div className="iv-card-hd">
                       <div className="iv-icon">{mod.icon}</div>
                       <div className={`iv-badge ${st==="locked"?"b-lock":st==="passed"?"b-pass":st==="progress"?"b-prog":"b-avail"}`}>
-                        {mod.free&&st!=="passed"?"FREE — START HERE":st==="locked"?(isFreeAccess?"🔒 MEMBER ACCESS":"🔒 COMPLETE PREVIOUS"):st==="passed"?"✓ PASSED":st==="progress"?"● IN PROGRESS":"▶ AVAILABLE"}
+                        {mod.free&&st!=="passed"?"FREE — AVAILABLE":st==="locked"?(isFreeAccess?"🔒 MEMBER ACCESS":"🔒 REQUIREMENTS"):st==="passed"?"✓ PASSED":st==="progress"?"● IN PROGRESS":"▶ AVAILABLE"}
                       </div>
                     </div>
                     <div className="iv-prog-bar">
@@ -2889,7 +2936,7 @@ export default function IronVaultAcademyUnlocked({ allowedModules = [], accessTy
                       <div className="iv-meta">⏱ <span>{mod.duration}</span></div>
                       <div className="iv-meta">📖 <span>{mod.lessons.length} lessons</span></div>
                       <div className="iv-meta">⚡ <span style={{color:"var(--electric-green)"}}>{mod.xpReward}xp</span></div>
-                      {progress[i].score!==null&&<div className="iv-meta" style={{color:progress[i].passed?"var(--electric-green)":"#ffb4a8"}}>Quiz:{progress[i].score}/10</div>}
+                      {progress[i].score!==null&&<div className="iv-meta" style={{color:progress[i].passed?"var(--electric-green)":"#b42318"}}>Quiz:{progress[i].score}/10</div>}
                     </div>
                   </div>
                 );
@@ -2906,22 +2953,18 @@ export default function IronVaultAcademyUnlocked({ allowedModules = [], accessTy
     const mod=MODULES[modIdx];
     const allDone=allLessonsDone(modIdx);
     return(
-      <div className="iv">
+      <div className={`iv ${embedded ? "iv-embedded" : ""}`}>
         <style>{CSS}</style>
-        <div className="iv-member-banner">
-          <span>{isFreeAccess ? "🔓 FREE" : "🔐 MEMBER"}</span>
-          <span style={{color:"var(--muted)",fontSize:8}}>·</span>
-          <span>{isFreeAccess ? "ORIENTATION UNLOCKED" : isSingleModuleAccess ? `MODULE ${allowedModules[0] ?? 1} ACCESS` : "FULL CURRICULUM UNLOCKED"}</span>
-        </div>
-        <header className="iv-header">
-          <div className="iv-logo"><div className="iv-dot"/>IRON VAULT</div>
-          <div className="iv-xp-wrap">
-            <span className="iv-xp-label">XP</span>
-            <div className="iv-xp-track"><div className="iv-xp-fill" style={{width:`${(totalXP/TOTAL_XP)*100}%`}}/></div>
-            <span className="iv-xp-val">{totalXP.toLocaleString()}</span>
-          </div>
-          <div className="iv-chip" onClick={authenticated ? undefined : login}>👤 {displayName}{authenticated ? "" : " · Sign In"}</div>
-        </header>
+        {!embedded ? (
+          <>
+            <div className="iv-member-banner">
+              <span>{isFreeAccess ? "🔓 FREE" : "🔐 MEMBER"}</span>
+              <span style={{color:"var(--muted)",fontSize:8}}>·</span>
+              <span>{isFreeAccess ? "ORIENTATION UNLOCKED" : isSingleModuleAccess ? `MODULE ${allowedModules[0] ?? 1} ACCESS` : "FULL CURRICULUM UNLOCKED"}</span>
+            </div>
+            <AcademyHeader totalXP={totalXP} displayName={displayName} onIdentityClick={authenticated ? undefined : login} />
+          </>
+        ) : null}
         <div className="iv-page">
           <button className="iv-back" onClick={()=>setView("hub")}>← DASHBOARD</button>
           <div className="iv-eyebrow">MODULE {String(mod.id).padStart(2,"0")} ▸ {mod.tag}</div>
@@ -2943,15 +2986,21 @@ export default function IronVaultAcademyUnlocked({ allowedModules = [], accessTy
               );
             })}
           </div>
-          <div className={`iv-quiz-box ${!allDone?"locked":""}`}>
+          <div className={`iv-quiz-box ${!gradedAssessmentsEnabled || !allDone ? "locked" : ""}`}>
             <div>
               <h3>MODULE QUIZ</h3>
-              <p>10 questions · 8/10 to pass · Unlimited retakes</p>
+              <p>
+                {gradedAssessmentsEnabled
+                  ? "10 questions · 8/10 to pass · Unlimited retakes"
+                  : "Graded assessment is unavailable until secure server scoring is connected."}
+              </p>
               {progress[modIdx].passed && <p className="pass">✓ Passed — {progress[modIdx].score}/10</p>}
-              {!allDone && <p style={{color:"var(--muted-dark)",marginTop:4}}>Complete all lessons to unlock</p>}
+              {gradedAssessmentsEnabled && !allDone && <p style={{color:"var(--muted-dark)",marginTop:4}}>Complete all lessons to unlock</p>}
             </div>
-            <button className="iv-qbtn" disabled={!allDone} onClick={()=>{ if(allDone) startQuiz(); }}>
-              {progress[modIdx].passed?"RETAKE QUIZ":"START QUIZ →"}
+            <button className="iv-qbtn" disabled={!gradedAssessmentsEnabled || !allDone} onClick={()=>{ if(gradedAssessmentsEnabled && allDone) startQuiz(); }}>
+              {gradedAssessmentsEnabled
+                ? progress[modIdx].passed ? "RETAKE QUIZ" : "START QUIZ →"
+                : "ASSESSMENT LOCKED"}
             </button>
           </div>
         </div>
@@ -2970,17 +3019,9 @@ export default function IronVaultAcademyUnlocked({ allowedModules = [], accessTy
       else setLessonIdx(l=>l+1);
     }
     return(
-      <div className="iv">
+      <div className={`iv ${embedded ? "iv-embedded" : ""}`}>
         <style>{CSS}</style>
-        <header className="iv-header">
-          <div className="iv-logo"><div className="iv-dot"/>IRON VAULT</div>
-          <div className="iv-xp-wrap">
-            <span className="iv-xp-label">XP</span>
-            <div className="iv-xp-track"><div className="iv-xp-fill" style={{width:`${(totalXP/TOTAL_XP)*100}%`}}/></div>
-            <span className="iv-xp-val">{totalXP.toLocaleString()}</span>
-          </div>
-          <div className="iv-chip">👤 {displayName}</div>
-        </header>
+        {!embedded ? <AcademyHeader totalXP={totalXP} displayName={displayName} /> : null}
         <div className="iv-lesson-view">
           <div className="iv-lesson-nav">
             <button className="iv-back" style={{margin:0}} onClick={()=>setView("module")}>← MODULE</button>
@@ -3011,17 +3052,9 @@ export default function IronVaultAcademyUnlocked({ allowedModules = [], accessTy
     const sel=answers[curQ];
     const correctSoFar=Object.entries(answers).filter(([i,a])=>quiz[parseInt(i)].correct===a).length;
     return(
-      <div className="iv">
+      <div className={`iv ${embedded ? "iv-embedded" : ""}`}>
         <style>{CSS}</style>
-        <header className="iv-header">
-          <div className="iv-logo"><div className="iv-dot"/>IRON VAULT</div>
-          <div className="iv-xp-wrap">
-            <span className="iv-xp-label">XP</span>
-            <div className="iv-xp-track"><div className="iv-xp-fill" style={{width:`${(totalXP/TOTAL_XP)*100}%`}}/></div>
-            <span className="iv-xp-val">{totalXP.toLocaleString()}</span>
-          </div>
-          <div className="iv-chip">👤 {displayName}</div>
-        </header>
+        {!embedded ? <AcademyHeader totalXP={totalXP} displayName={displayName} /> : null}
         <div className="iv-quiz-view">
           <button className="iv-back" onClick={()=>setView("module")}>← MODULE</button>
           <div className="iv-q-prog-row">
@@ -3064,22 +3097,19 @@ export default function IronVaultAcademyUnlocked({ allowedModules = [], accessTy
     const score=progress[modIdx].score;
     const passed=progress[modIdx].passed;
     const mod=MODULES[modIdx];
-    // hasNext requires both a next module in the array AND that module being in the user's allowedModuleSet
-    const hasNext=modIdx+1<MODULES.length && allowedModuleSet.has(MODULES[modIdx+1].id);
+    const nextModuleIndex = MODULES.findIndex((candidate, candidateIndex) => (
+      candidateIndex !== modIdx
+      && allowedModuleSet.has(candidate.id)
+      && modStatus(candidateIndex) !== "locked"
+      && !progress[candidateIndex].passed
+    ));
+    const hasNext = nextModuleIndex >= 0;
     const isOrientation=mod.id === 0;
     return(
-      <div className="iv">
+      <div className={`iv ${embedded ? "iv-embedded" : ""}`}>
         <style>{CSS}</style>
         {confetti&&passed&&<Confetti/>}
-        <header className="iv-header">
-          <div className="iv-logo"><div className="iv-dot"/>IRON VAULT</div>
-          <div className="iv-xp-wrap">
-            <span className="iv-xp-label">XP</span>
-            <div className="iv-xp-track"><div className="iv-xp-fill" style={{width:`${(totalXP/TOTAL_XP)*100}%`}}/></div>
-            <span className="iv-xp-val">{totalXP.toLocaleString()}</span>
-          </div>
-          <div className="iv-chip">👤 {displayName}</div>
-        </header>
+        {!embedded ? <AcademyHeader totalXP={totalXP} displayName={displayName} /> : null}
         <div className="iv-results">
           <span className="iv-results-icon">{passed?"🏆":"📖"}</span>
           <div className={`iv-results-score ${passed?"rs-pass":"rs-fail"}`}>{score}/10</div>
@@ -3099,10 +3129,10 @@ export default function IronVaultAcademyUnlocked({ allowedModules = [], accessTy
             {passed&&!hasNext&&<button className="iv-btn-ghost" onClick={()=>setView("hub")}>{isFreeAccess ? "BACK TO ACADEMY →" : "VIEW DASHBOARD →"}</button>}
             <button className="iv-btn-lime" onClick={()=>{
               // Guard: only advance to next module if it is explicitly in allowedModuleSet
-              if(passed&&hasNext&&allowedModuleSet.has(MODULES[modIdx+1].id)){setModIdx(m=>m+1);setView("module");}
+              if(passed&&hasNext){setModIdx(nextModuleIndex);setView("module");}
               else setView("hub");
             }}>
-              {passed&&hasNext?`NEXT: ${MODULES[modIdx+1].tag} →`:"BACK TO DASHBOARD"}
+              {passed&&hasNext?`NEXT: ${MODULES[nextModuleIndex].tag} →`:"BACK TO DASHBOARD"}
             </button>
           </div>
         </div>

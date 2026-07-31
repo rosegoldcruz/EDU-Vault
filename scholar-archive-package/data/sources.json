@@ -1,0 +1,352 @@
+[
+  {
+    "sourcePath": "/opt/iron-vault/sex/contentblock-interactive-extension.jsx",
+    "sourceFilename": "contentblock-interactive-extension.jsx",
+    "sourceKey": "scholar:contentblock-interactive-extension-jsx",
+    "sha256": "59b13a6ebe25622640c738396e6efa57a3670c69a6302063dfbf44417f876096",
+    "bytes": 8309,
+    "extension": ".jsx",
+    "detectedContentType": "motion-and-design-directive",
+    "sourceFamily": "media-motion",
+    "counts": {
+      "modules": 0,
+      "lessons": 0,
+      "assessments": 0,
+      "questions": 0,
+      "answerKeys": 0,
+      "interactiveComponents": 0,
+      "narrationFeatures": 0,
+      "mediaFeatures": 1
+    },
+    "implementationInstructionsFound": [
+      "GSAP/Lenis/Motion ownership",
+      "reduced-motion fallback",
+      "performance and CLS budgets"
+    ],
+    "contradictions": [
+      "Filename says interactive content blocks; payload is a site-wide motion directive."
+    ],
+    "editorialStatus": "source-inventoried",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "sourcePath": "/opt/iron-vault/sex/generate-lesson-audio.mjs",
+    "sourceFilename": "generate-lesson-audio.mjs",
+    "sourceKey": "scholar:generate-lesson-audio-mjs",
+    "sha256": "26ec8bdf086f4edd9e8189fa524bf42c4046a2039740c88a54dad41dc02226ad",
+    "bytes": 24036,
+    "extension": ".mjs",
+    "detectedContentType": "interactive-block-react-reference",
+    "sourceFamily": "interactive-capabilities",
+    "counts": {
+      "modules": 0,
+      "lessons": 0,
+      "assessments": 0,
+      "questions": 0,
+      "answerKeys": 0,
+      "interactiveComponents": 5,
+      "narrationFeatures": 0,
+      "mediaFeatures": 0
+    },
+    "implementationInstructionsFound": [
+      "Five local-state interaction behaviors and their source data shapes"
+    ],
+    "contradictions": [
+      "Filename says audio generator; payload implements calculator, simulator, scenario, sortgame, and reveal."
+    ],
+    "editorialStatus": "source-inventoried",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "sourcePath": "/opt/iron-vault/sex/instructor-integration.md",
+    "sourceFilename": "instructor-integration.md",
+    "sourceKey": "scholar:instructor-integration-md",
+    "sha256": "18e34cda8d00c1f26bb46e7c55727eff1f51efada831e6b68815373a6b29aa2e",
+    "bytes": 9778,
+    "extension": ".md",
+    "detectedContentType": "elevenlabs-offline-audio-generator",
+    "sourceFamily": "narration",
+    "counts": {
+      "modules": 0,
+      "lessons": 0,
+      "assessments": 0,
+      "questions": 0,
+      "answerKeys": 0,
+      "interactiveComponents": 0,
+      "narrationFeatures": 1,
+      "mediaFeatures": 0
+    },
+    "implementationInstructionsFound": [
+      "Offline ElevenLabs synthesis",
+      "content-hash cache",
+      "word timing generation",
+      "narration derivation"
+    ],
+    "contradictions": [
+      "Markdown filename contains executable Node.js rather than an integration guide."
+    ],
+    "editorialStatus": "source-inventoried",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "sourcePath": "/opt/iron-vault/sex/iron-vault-academy-gated.jsx",
+    "sourceFilename": "iron-vault-academy-gated.jsx",
+    "sourceKey": "scholar:iron-vault-academy-gated-jsx",
+    "sha256": "2b77778309f87b9b35d8129745dbf403854c97d4477734b70356cdbd01d07d0f",
+    "bytes": 6737,
+    "extension": ".jsx",
+    "detectedContentType": "lesson-instructor-integration-guide",
+    "sourceFamily": "narration",
+    "counts": {
+      "modules": 0,
+      "lessons": 0,
+      "assessments": 0,
+      "questions": 0,
+      "answerKeys": 0,
+      "interactiveComponents": 0,
+      "narrationFeatures": 1,
+      "mediaFeatures": 1
+    },
+    "implementationInstructionsFound": [
+      "Begin-lesson autoplay",
+      "audio/timing associations",
+      "HeyGen video asset upgrade"
+    ],
+    "contradictions": [
+      "Filename says gated Academy; payload is an instructor/narration integration guide."
+    ],
+    "editorialStatus": "source-inventoried",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "sourcePath": "/opt/iron-vault/sex/iron-vault-academy-unlocked (1).jsx",
+    "sourceFilename": "iron-vault-academy-unlocked (1).jsx",
+    "sourceKey": "scholar:iron-vault-academy-unlocked-1-jsx",
+    "sha256": "72352d24ae18418c0235a6b2fe1304727fd79ae82987633db05c549f7e45757f",
+    "bytes": 100523,
+    "extension": ".jsx",
+    "detectedContentType": "gated-original-academy-with-embedded-curriculum",
+    "sourceFamily": "original-academy-gated",
+    "counts": {
+      "modules": 6,
+      "lessons": 40,
+      "assessments": 6,
+      "questions": 60,
+      "answerKeys": 60,
+      "interactiveComponents": 0,
+      "narrationFeatures": 0,
+      "mediaFeatures": 1
+    },
+    "implementationInstructionsFound": [
+      "Legacy gated UI and browser scoring are reference-only and excluded from this package."
+    ],
+    "contradictions": [
+      "Filename says unlocked; source header and behavior identify the gated variant."
+    ],
+    "editorialStatus": "source-inventoried",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+    "sourceFilename": "iron-vault-modules-13-22.jsx",
+    "sourceKey": "scholar:iron-vault-modules-13-22-jsx",
+    "sha256": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+    "bytes": 104161,
+    "extension": ".jsx",
+    "detectedContentType": "unlocked-original-academy-with-embedded-curriculum",
+    "sourceFamily": "original-academy-unlocked",
+    "counts": {
+      "modules": 6,
+      "lessons": 40,
+      "assessments": 6,
+      "questions": 60,
+      "answerKeys": 60,
+      "interactiveComponents": 0,
+      "narrationFeatures": 0,
+      "mediaFeatures": 1
+    },
+    "implementationInstructionsFound": [
+      "Legacy unlocked UI and browser scoring are reference-only and excluded from this package."
+    ],
+    "contradictions": [
+      "Filename says modules 13–22; payload is the unlocked modules 1–6 Academy."
+    ],
+    "editorialStatus": "source-inventoried",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+    "sourceFilename": "iron-vault-modules-7-12.md",
+    "sourceKey": "scholar:iron-vault-modules-7-12-md",
+    "sha256": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+    "bytes": 105473,
+    "extension": ".md",
+    "detectedContentType": "authored-modules-13-22-javascript",
+    "sourceFamily": "modules-13-22",
+    "counts": {
+      "modules": 10,
+      "lessons": 32,
+      "assessments": 10,
+      "questions": 100,
+      "answerKeys": 100,
+      "interactiveComponents": 12,
+      "narrationFeatures": 0,
+      "mediaFeatures": 1
+    },
+    "implementationInstructionsFound": [
+      "Append-only legacy module array; presentation instructions excluded."
+    ],
+    "contradictions": [
+      "Filename says modules 7–12; payload declares MODULES_13_22."
+    ],
+    "editorialStatus": "source-inventoried",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+    "sourceFilename": "Iron_Vault_Master_Curriculum_Canvas.docx",
+    "sourceKey": "scholar:iron-vault-master-curriculum-canvas-docx",
+    "sha256": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+    "bytes": 101037,
+    "extension": ".docx",
+    "detectedContentType": "authored-modules-7-12-markdown",
+    "sourceFamily": "modules-7-12",
+    "counts": {
+      "modules": 6,
+      "lessons": 36,
+      "assessments": 6,
+      "questions": 60,
+      "answerKeys": 60,
+      "interactiveComponents": 0,
+      "narrationFeatures": 0,
+      "mediaFeatures": 1
+    },
+    "implementationInstructionsFound": [
+      "Six complete lessons and ten questions per module."
+    ],
+    "contradictions": [
+      "DOCX extension is false; payload is UTF-8 Markdown for Modules 7–12."
+    ],
+    "editorialStatus": "source-inventoried",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "sourcePath": "/opt/iron-vault/sex/LessonInstructor.jsx",
+    "sourceFilename": "LessonInstructor.jsx",
+    "sourceKey": "scholar:lessoninstructor-jsx",
+    "sha256": "a01a2a67b9586158918091bc261efd9df0c1a4e8fabab29b77cf7f615252d050",
+    "bytes": 56366,
+    "extension": ".jsx",
+    "detectedContentType": "master-curriculum-canvas-docx",
+    "sourceFamily": "master-canvas",
+    "counts": {
+      "modules": 137,
+      "lessons": 15,
+      "assessments": 42,
+      "questions": 0,
+      "answerKeys": 0,
+      "interactiveComponents": 12,
+      "narrationFeatures": 0,
+      "mediaFeatures": 0
+    },
+    "implementationInstructionsFound": [
+      "Canonical pathways, course outlines, bootcamp, developer/AI/security/growth programs, interactions, assessments"
+    ],
+    "contradictions": [
+      "JSX extension is false; payload is a valid Microsoft Word DOCX with 38 tables."
+    ],
+    "editorialStatus": "source-inventoried",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "sourcePath": "/opt/iron-vault/sex/module zero.md",
+    "sourceFilename": "module zero.md",
+    "sourceKey": "scholar:module-zero-md",
+    "sha256": "304b578f5cd96f7ced2c7749e86348ef8f42583bda4d790fbb6ee462297b21e1",
+    "bytes": 14022,
+    "extension": ".md",
+    "detectedContentType": "lesson-instructor-react-reference",
+    "sourceFamily": "narration",
+    "counts": {
+      "modules": 0,
+      "lessons": 0,
+      "assessments": 0,
+      "questions": 0,
+      "answerKeys": 0,
+      "interactiveComponents": 1,
+      "narrationFeatures": 1,
+      "mediaFeatures": 1
+    },
+    "implementationInstructionsFound": [
+      "Cached audio/video playback",
+      "autoplay fallback",
+      "word highlighting",
+      "onEnded callback"
+    ],
+    "contradictions": [
+      "Filename says Module Zero; payload is the LessonInstructor React component and contains no Module Zero curriculum."
+    ],
+    "editorialStatus": "source-inventoried",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+    "sourceFilename": "VaultLoadingScreen-integration.md",
+    "sourceKey": "scholar:vaultloadingscreen-integration-md",
+    "sha256": "d11b612bcc230e2e98066e2c3e0bacaed7d143701b69f088965ba66dcfb6adb9",
+    "bytes": 82134,
+    "extension": ".md",
+    "detectedContentType": "authored-researched-crypto-modules-1-10",
+    "sourceFamily": "researched-crypto-1-10",
+    "counts": {
+      "modules": 10,
+      "lessons": 30,
+      "assessments": 10,
+      "questions": 100,
+      "answerKeys": 100,
+      "interactiveComponents": 14,
+      "narrationFeatures": 1,
+      "mediaFeatures": 1
+    },
+    "implementationInstructionsFound": [
+      "Time-sensitive research log",
+      "three lessons and ten questions per module",
+      "interaction placement"
+    ],
+    "contradictions": [
+      "Filename says loading-screen integration; payload is a complete researched ten-module crypto curriculum."
+    ],
+    "editorialStatus": "source-inventoried",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen.jsx",
+    "sourceFilename": "VaultLoadingScreen.jsx",
+    "sourceKey": "scholar:vaultloadingscreen-jsx",
+    "sha256": "68b1dc7c349abee430b7c8f036d1d888cb7b538e41fb51f197221b90c749f799",
+    "bytes": 2831,
+    "extension": ".jsx",
+    "detectedContentType": "vault-loading-screen-integration-guide",
+    "sourceFamily": "media-motion",
+    "counts": {
+      "modules": 0,
+      "lessons": 0,
+      "assessments": 0,
+      "questions": 0,
+      "answerKeys": 0,
+      "interactiveComponents": 0,
+      "narrationFeatures": 0,
+      "mediaFeatures": 1
+    },
+    "implementationInstructionsFound": [
+      "Loading sequence behavior",
+      "GSAP lifecycle",
+      "GPU compositing"
+    ],
+    "contradictions": [
+      "Filename says JSX component; payload is the Markdown integration guide."
+    ],
+    "editorialStatus": "source-inventoried",
+    "publicationStatus": "unpublished"
+  }
+]

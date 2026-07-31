@@ -1,0 +1,262 @@
+{
+  "status": "proposal-only",
+  "activeCurriculumChanged": false,
+  "pathways": {
+    "Financial Systems": {
+      "Money and Wealth Foundations": [
+        {
+          "moduleId": "ea11d493-f060-5f6b-ae8f-d6081fae5592",
+          "title": "Money & Wealth Basics",
+          "sourceFamily": "original-academy-unlocked",
+          "legacyIndex": 1
+        }
+      ],
+      "Economic Systems": [
+        {
+          "moduleId": "182ecbd3-0ed1-51f7-8253-57e8dfdf4a28",
+          "title": "How the Economy Actually Works",
+          "sourceFamily": "original-academy-unlocked",
+          "legacyIndex": 2
+        }
+      ],
+      "Traditional Finance Systems": [
+        {
+          "moduleId": "1070b069-a13e-5383-903f-e619e7926226",
+          "title": "Traditional Finance Systems",
+          "sourceFamily": "original-academy-unlocked",
+          "legacyIndex": 3
+        }
+      ],
+      "Debt Economy": [
+        {
+          "moduleId": "d43217e6-d3c1-561f-ad4a-872007ed558a",
+          "title": "The Debt Economy",
+          "sourceFamily": "modules-7-12",
+          "legacyIndex": 7
+        }
+      ],
+      "The Psychology of Money": [
+        {
+          "moduleId": "67d6f838-2e5f-599b-8345-0625bf9e79d7",
+          "title": "The Psychology of Money",
+          "sourceFamily": "modules-13-22",
+          "legacyIndex": 15
+        }
+      ],
+      "Compounding & Time": [
+        {
+          "moduleId": "39438ebb-9ab1-5b1f-8552-71092230f9f5",
+          "title": "Compounding & Time",
+          "sourceFamily": "modules-13-22",
+          "legacyIndex": 16
+        }
+      ],
+      "Risk, Ruin & Position Sizing": [
+        {
+          "moduleId": "6b11f6f1-87ca-5ed0-92f8-3791d79cd20f",
+          "title": "Risk, Ruin & Position Sizing",
+          "sourceFamily": "modules-13-22",
+          "legacyIndex": 17
+        }
+      ],
+      "Market Cycles & Manias": [
+        {
+          "moduleId": "c4ba74af-ddb8-58f4-9489-4b9e181e3558",
+          "title": "Market Cycles & Manias",
+          "sourceFamily": "modules-13-22",
+          "legacyIndex": 18
+        }
+      ],
+      "Cash Flow Architecture": [
+        {
+          "moduleId": "6d00e8e7-2420-5a26-8b97-54c95cc579bd",
+          "title": "Cash Flow Architecture",
+          "sourceFamily": "modules-13-22",
+          "legacyIndex": 19
+        }
+      ],
+      "Negotiation & Leverage": [
+        {
+          "moduleId": "40e340cc-ba9f-5de8-9548-7bcb15e6a5e9",
+          "title": "Negotiation & Leverage",
+          "sourceFamily": "modules-13-22",
+          "legacyIndex": 20
+        }
+      ]
+    },
+    "Blockchain and Digital Assets": {
+      "Crypto and Blockchain Foundations": [
+        {
+          "moduleId": "17089054-0146-5e2a-a0d5-4524412f6f23",
+          "title": "Introduction to Crypto & Blockchain",
+          "sourceFamily": "original-academy-unlocked",
+          "legacyIndex": 4
+        }
+      ],
+      "Digital Asset Foundations": [
+        {
+          "moduleId": "18d63028-bfe2-5093-a9a7-63675d8a967d",
+          "title": "Digital Assets & Modern Wealth",
+          "sourceFamily": "original-academy-unlocked",
+          "legacyIndex": 5
+        }
+      ],
+      "Crypto Foundations": [
+        {
+          "moduleId": "8aaae592-d672-532f-a575-3199d909a026",
+          "title": "Crypto Foundations",
+          "sourceFamily": "modules-13-22",
+          "legacyIndex": 13
+        }
+      ],
+      "On-Chain Mechanics": [
+        {
+          "moduleId": "69631824-cfcf-5f51-a104-dcf5613a7528",
+          "title": "On-Chain Mechanics",
+          "sourceFamily": "modules-13-22",
+          "legacyIndex": 14
+        }
+      ],
+      "Crypto Systems and On-Chain Practice": [
+        {
+          "moduleId": "c98241f5-a878-5159-9a55-fe7183e0d055",
+          "title": "Bitcoin",
+          "sourceFamily": "researched-crypto-1-10",
+          "legacyIndex": 1
+        },
+        {
+          "moduleId": "9220372d-c9f2-5c0d-9496-446655633ec5",
+          "title": "Ethereum",
+          "sourceFamily": "researched-crypto-1-10",
+          "legacyIndex": 2
+        },
+        {
+          "moduleId": "20fa2bba-77a8-5d19-9a4a-93e61c225366",
+          "title": "Solana",
+          "sourceFamily": "researched-crypto-1-10",
+          "legacyIndex": 3
+        },
+        {
+          "moduleId": "181c390e-93b2-5bb4-9a23-2b8a22afafb0",
+          "title": "Tokenomics",
+          "sourceFamily": "researched-crypto-1-10",
+          "legacyIndex": 5
+        },
+        {
+          "moduleId": "7f558187-6ece-5389-be00-6db4d695a752",
+          "title": "Crypto Security",
+          "sourceFamily": "researched-crypto-1-10",
+          "legacyIndex": 6
+        },
+        {
+          "moduleId": "829654f3-d20c-50c2-b23e-fcd758f62a4c",
+          "title": "On-Chain Intelligence",
+          "sourceFamily": "researched-crypto-1-10",
+          "legacyIndex": 7
+        },
+        {
+          "moduleId": "85542a4a-c4ab-51f4-b5d3-408499c89f33",
+          "title": "Market Cycles",
+          "sourceFamily": "researched-crypto-1-10",
+          "legacyIndex": 8
+        },
+        {
+          "moduleId": "36cca377-7229-52a0-b51d-9ccf3c33a9a8",
+          "title": "Airdrops and Points",
+          "sourceFamily": "researched-crypto-1-10",
+          "legacyIndex": 9
+        }
+      ]
+    },
+    "Iron Vault Foundations": {
+      "Iron Vault Orientation and Participation": [
+        {
+          "moduleId": "77bd998f-83cb-5712-9347-e821e65d4a41",
+          "title": "The Iron Vault System",
+          "sourceFamily": "original-academy-unlocked",
+          "legacyIndex": 6
+        }
+      ]
+    },
+    "Sovereign Systems Lab": {
+      "Wealth Transfer and Estate Structures": [
+        {
+          "moduleId": "3b540b1a-4836-5c5e-83ce-44f7f0a91139",
+          "title": "How Wealth Is Actually Transferred",
+          "sourceFamily": "modules-7-12",
+          "legacyIndex": 8
+        }
+      ],
+      "Jurisdictions, Residency, and Exit Strategy": [
+        {
+          "moduleId": "463fb3b7-5155-545a-bb88-ec85e416272b",
+          "title": "The Exit Strategy",
+          "sourceFamily": "modules-7-12",
+          "legacyIndex": 12
+        }
+      ],
+      "Tax Strategy & Entities": [
+        {
+          "moduleId": "63affe6e-b91c-5977-ad04-7c895daf9baf",
+          "title": "Tax Strategy & Entities",
+          "sourceFamily": "modules-13-22",
+          "legacyIndex": 21
+        }
+      ],
+      "The Sovereign Endgame": [
+        {
+          "moduleId": "19719b44-e892-58bc-8622-ffbba115358e",
+          "title": "The Sovereign Endgame",
+          "sourceFamily": "modules-13-22",
+          "legacyIndex": 22
+        }
+      ]
+    },
+    "DeFi and Stablecoins": {
+      "DeFi and the Parallel Financial System": [
+        {
+          "moduleId": "5254899c-9a85-51c9-ac1e-a6187d6a19d3",
+          "title": "DeFi & The Parallel Financial System",
+          "sourceFamily": "modules-7-12",
+          "legacyIndex": 9
+        }
+      ],
+      "Crypto Systems and On-Chain Practice": [
+        {
+          "moduleId": "136da461-46fe-5f91-8398-b6efcea973f2",
+          "title": "Stablecoins",
+          "sourceFamily": "researched-crypto-1-10",
+          "legacyIndex": 4
+        }
+      ]
+    },
+    "Tokenization and Real-World Assets": {
+      "RWA Tokenization": [
+        {
+          "moduleId": "046fe2ce-9eab-5bc3-89ae-b4fd3a603cee",
+          "title": "Tokenized Real World Assets & the Ownership Revolution",
+          "sourceFamily": "modules-7-12",
+          "legacyIndex": 10
+        }
+      ],
+      "Crypto Systems and On-Chain Practice": [
+        {
+          "moduleId": "983f644a-b48c-5ac7-9e6e-7e50f5f17934",
+          "title": "Future Stack",
+          "sourceFamily": "researched-crypto-1-10",
+          "legacyIndex": 10
+        }
+      ]
+    },
+    "Enterprise and Growth": {
+      "Cash Flow and Scalable Income": [
+        {
+          "moduleId": "f29ecbef-6555-511c-bd45-150e661ece83",
+          "title": "Building Income That Doesn't Require You",
+          "sourceFamily": "modules-7-12",
+          "legacyIndex": 11
+        }
+      ]
+    }
+  }
+}

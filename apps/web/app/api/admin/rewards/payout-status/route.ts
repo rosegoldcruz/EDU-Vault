@@ -140,7 +140,6 @@ export async function GET(req: NextRequest) {
         .select('id', { count: 'exact', head: true })
         .eq('status', 'queued')
         .eq('reward_track', 'single_module')
-        .eq('module_number', 1)
         .eq('amount_raw', '1'),
       getSupabaseAdmin()
         .from('iv_payout_transactions')

@@ -18,36 +18,60 @@ export function LoginPanel({ returnTo }: { returnTo?: string }) {
 
   useEffect(() => {
     if (!ready || !authenticated) return;
+    let cancelled = false;
+    let retryTimer: ReturnType<typeof setTimeout> | null = null;
 
     const redirect = () => {
-      if (redirectedRef.current) return;
+      if (cancelled || redirectedRef.current) return;
       redirectedRef.current = true;
       router.replace(destination);
     };
     const fail = () => setSessionFailed(true);
+    const confirmSession = async (attempt = 0) => {
+      const response = await fetch("/api/auth/privy-session", {
+        credentials: "include",
+        cache: "no-store",
+      }).catch(() => null);
+      if (cancelled) return;
+      if (response?.ok) {
+        redirect();
+        return;
+      }
+      if (attempt < 5) {
+        retryTimer = setTimeout(
+          () => void confirmSession(attempt + 1),
+          400 * (attempt + 1),
+        );
+      } else {
+        fail();
+      }
+    };
 
     window.addEventListener("privy-server-session-ready", redirect);
     window.addEventListener("privy-server-session-failed", fail);
+    void confirmSession();
     return () => {
+      cancelled = true;
+      if (retryTimer) clearTimeout(retryTimer);
       window.removeEventListener("privy-server-session-ready", redirect);
       window.removeEventListener("privy-server-session-failed", fail);
     };
   }, [ready, authenticated, destination, router]);
 
   if (!ready) {
-    return <p className="academy-status">Restoring your secure session…</p>;
+    return <p className="iv-member-auth-status">Restoring your secure session…</p>;
   }
 
   if (authenticated) {
     return (
-      <p className="academy-status">
+      <p className="iv-member-auth-status">
         {sessionFailed ? "Session sync failed. Refresh and try again." : "Signed in. Redirecting…"}
       </p>
     );
   }
 
   return (
-    <button type="button" className="academy-primary-button" onClick={() => login()}>
+    <button type="button" className="iv-btn" onClick={() => login()}>
       Sign in with Privy
     </button>
   );

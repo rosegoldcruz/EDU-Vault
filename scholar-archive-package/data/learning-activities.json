@@ -1,0 +1,1628 @@
+{
+  "assignments": [
+    {
+      "id": "c468a86f-abfb-50e3-ba2a-263d1f98c199",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Research: Who are the private member banks of the Federal Reserve? Write what you find.",
+      "lessonId": "5b215abd-46eb-5f14-8ade-e9c16f43bf03",
+      "moduleId": "ea11d493-f060-5f6b-ae8f-d6081fae5592",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:1:lesson:1:block:8",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "5f3d055f-1733-532e-8a87-a09def181d27",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Look up the price of a median home, a gallon of milk, and a college degree in 1971 vs today. Then ask: was the American Dream stolen, or was it always sold?",
+      "lessonId": "0b7b0baa-a37d-5d40-8e14-bb74fdaf261b",
+      "moduleId": "ea11d493-f060-5f6b-ae8f-d6081fae5592",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:1:lesson:2:block:7",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "58968b87-b9fa-5a11-bd98-7150d1bd4e93",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Track every dollar for 30 days. Then ask: how many of these expenses could be legitimate business deductions if you had an LLC?",
+      "lessonId": "e9e35ca3-7d75-57ed-849e-910e6d97ea14",
+      "moduleId": "ea11d493-f060-5f6b-ae8f-d6081fae5592",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:1:lesson:3:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "27be43fd-026b-586f-9487-bf43a793452b",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "List everything you own. Mark each: Asset (cash flow positive), Liability (cash flow negative), Neutral. Be honest.",
+      "lessonId": "09bd40f3-c3ab-5185-b257-b67bd974bc1b",
+      "moduleId": "ea11d493-f060-5f6b-ae8f-d6081fae5592",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:1:lesson:4:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "0ec7be7a-7036-5412-a61a-139f8d6d92ab",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Calculate your monthly survival number. Multiply by 3. That's your freedom number. How far are you from it?",
+      "lessonId": "8e539bc5-1c87-5396-8e0e-761d005c54cb",
+      "moduleId": "ea11d493-f060-5f6b-ae8f-d6081fae5592",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:1:lesson:5:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "79cd1f25-0ed1-5281-8079-c41236284b38",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write your 30-day, 12-month, and 5-year goals — but frame each one around building an entity or system, not just saving a number.",
+      "lessonId": "875bfb02-8e32-5183-a6e2-b933fdc69728",
+      "moduleId": "ea11d493-f060-5f6b-ae8f-d6081fae5592",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:1:lesson:6:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "825f1757-0b21-586e-936c-7e72861dd9c1",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Track where your last 10 purchases went. Local business or national chain? Calculate how much of your spending stays in your community versus leaves it.",
+      "lessonId": "5041a680-dcca-5c8d-8d16-e686a3046fdb",
+      "moduleId": "182ecbd3-0ed1-51f7-8253-57e8dfdf4a28",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:2:lesson:1:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "d480b3fe-2fe3-5bf5-bdc9-98e153234d5f",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Pick one financial product you currently use — insurance, mortgage, credit card. Spend one hour learning exactly how the provider makes money from you. Write what you find.",
+      "lessonId": "8aa9199d-fc90-545d-801b-75b093203734",
+      "moduleId": "182ecbd3-0ed1-51f7-8253-57e8dfdf4a28",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:2:lesson:2:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "c071bf1a-0f62-57d4-9520-7c68cb74db00",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Identify one market, skill, or platform where you have more knowledge than average. Write how you could monetize that gap in the next 90 days.",
+      "lessonId": "e16a4a2d-458d-5081-b9f8-080509ca606f",
+      "moduleId": "182ecbd3-0ed1-51f7-8253-57e8dfdf4a28",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:2:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "b7dde033-6647-50af-8828-b52f536fe3bf",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Calculate the opportunity cost of your current largest financial decision. What is the next best use of that money or time?",
+      "lessonId": "544aa85e-fdd3-533f-a2d6-1100026412bc",
+      "moduleId": "182ecbd3-0ed1-51f7-8253-57e8dfdf4a28",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:2:lesson:4:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "8ec81182-e854-5f47-a2d0-85c7ef273882",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "List your current income sources. For each one, ask: how easy is it for the payer to replace me?",
+      "lessonId": "fb2e92c5-fe7a-53ef-b8e0-7c48c443fe1f",
+      "moduleId": "182ecbd3-0ed1-51f7-8253-57e8dfdf4a28",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:2:lesson:5:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "71a43947-82c5-5468-a9dc-9a1b04f82c1c",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Identify every agent currently making decisions that affect your financial life. For each one, write their actual incentive. Is it aligned with yours?",
+      "lessonId": "03677898-af84-5875-b444-3efbbbc23c19",
+      "moduleId": "182ecbd3-0ed1-51f7-8253-57e8dfdf4a28",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:2:lesson:6:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "01ce6a3a-38a8-5842-8874-c0cf187cc7e9",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Find an asset class currently experiencing extreme fear or extreme euphoria. Write the rational case for why the emotional extreme may be creating a mispricing.",
+      "lessonId": "6c7aac82-e409-5c49-a1b4-a05eec5fb74b",
+      "moduleId": "182ecbd3-0ed1-51f7-8253-57e8dfdf4a28",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:2:lesson:7:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "7935434a-637d-59bf-84b2-6b6fc6630a9f",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Calculate the marginal return on your last three major decisions. Was the margin improving or declining?",
+      "lessonId": "c8ed030c-4f09-5831-ba35-6b529500847f",
+      "moduleId": "182ecbd3-0ed1-51f7-8253-57e8dfdf4a28",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:2:lesson:8:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "e7a1fbad-d7d4-567d-b7e8-4c786586a48f",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Identify one technology or market currently in early adoption. Write the case for why acceleration may be coming.",
+      "lessonId": "8aa07c04-bffa-5c78-a979-316162f530c7",
+      "moduleId": "182ecbd3-0ed1-51f7-8253-57e8dfdf4a28",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:2:lesson:9:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "9088659f-5cc8-5806-92d3-8858d1cdfda3",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Draw your personal circular flow. Where does money enter your life? Where does it exit? Where are you losing it to intermediaries?",
+      "lessonId": "eab19558-5ee1-51a1-9fa2-f252a0453fd3",
+      "moduleId": "182ecbd3-0ed1-51f7-8253-57e8dfdf4a28",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:2:lesson:10:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "6432ecf1-e306-545a-bf0e-e3d3af241e02",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Check your bank accounts: what interest are you earning? What fees are you paying? Calculate how much you've paid your bank in fees over the last 12 months.",
+      "lessonId": "260c8965-ff5b-597c-93ac-8fdca9c12c50",
+      "moduleId": "1070b069-a13e-5383-903f-e619e7926226",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:3:lesson:1:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "bf8b7e29-21c5-53eb-96de-714252e86675",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Research: compare a target-date retirement fund's fees vs a Vanguard S&P 500 index fund over 30 years on $100,000. The difference will shock you.",
+      "lessonId": "b11d9cc8-d491-5ba4-b853-06fecd9299d4",
+      "moduleId": "1070b069-a13e-5383-903f-e619e7926226",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:3:lesson:2:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "b5505b70-9359-5671-8abf-90206683c64f",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Research median rent prices in your city and compare to median mortgage payments on similar properties. Is there cash flow potential in your market?",
+      "lessonId": "d0ea4563-c946-5e35-aa3a-4e0d7fc311a6",
+      "moduleId": "1070b069-a13e-5383-903f-e619e7926226",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:3:lesson:3:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "9213a830-6f75-54f0-8c4a-33e195bd2d66",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Find out: does your employer offer a 401(k) match? Are you contributing enough to capture the full match? Calculate the exact dollar amount you are leaving on the table.",
+      "lessonId": "99ab44a7-a623-5621-b15a-82dc987de4a1",
+      "moduleId": "1070b069-a13e-5383-903f-e619e7926226",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:3:lesson:4:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "38a15bd4-597e-537c-b907-fcb7f9268cee",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Pull your free credit report at AnnualCreditReport.com. Identify every negative item and look up the statute of limitations for removal in your state.",
+      "lessonId": "0de1608c-9243-5332-9fc8-1b5e098cc242",
+      "moduleId": "1070b069-a13e-5383-903f-e619e7926226",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:3:lesson:5:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "59f0a20e-4f88-5859-a09b-e028aeda1318",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Calculate the difference in take-home pay between earning $100,000 as a W-2 employee vs a properly structured S-Corp owner in your state.",
+      "lessonId": "746bbf99-fd61-5d80-b1cb-d9efede3e804",
+      "moduleId": "1070b069-a13e-5383-903f-e619e7926226",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:3:lesson:6:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "ecfe40fd-dc3a-54bf-8119-47a216a2e123",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Research: What happened to Cyprus bank depositors in 2013? What happened to Canadian truckers' bank accounts in 2022? Write what you find.",
+      "lessonId": "0d01a2fd-8057-5393-b883-49b27c1a249b",
+      "moduleId": "17089054-0146-5e2a-a0d5-4524412f6f23",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:4:lesson:1:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "75e7819d-7f2a-517f-9a61-3a0576c3e37e",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write one sentence describing Bitcoin and one sentence describing Ethereum in your own words.",
+      "lessonId": "3a356ee5-7750-5cb0-a4ee-ab325a69012c",
+      "moduleId": "17089054-0146-5e2a-a0d5-4524412f6f23",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:4:lesson:2:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "2f5f37bf-a681-5595-89c4-4834a55b06ef",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Look up Solana's current transaction speed and cost vs Ethereum's. Then look up what Act 60 requires for qualification.",
+      "lessonId": "3986acc7-688f-5598-9591-8f4b4e105749",
+      "moduleId": "17089054-0146-5e2a-a0d5-4524412f6f23",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:4:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "28f7b48f-587f-501d-914d-99e90d51dcac",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write three security habits you would follow before holding any crypto in self-custody.",
+      "lessonId": "0a7613f0-d39e-58c6-a498-a99eb758c0c4",
+      "moduleId": "17089054-0146-5e2a-a0d5-4524412f6f23",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:4:lesson:4:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "5374574c-62ea-5ecf-bd97-bb371d51877b",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Pick two tokens. For each, answer: What does it do? Who uses it? Why does it need to be a token?",
+      "lessonId": "f14c87a2-0ee9-5f9b-9be7-7f158a933ac1",
+      "moduleId": "17089054-0146-5e2a-a0d5-4524412f6f23",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:4:lesson:5:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "acbc9cfc-ef47-5cd1-9cc4-8230ce137ce4",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write three personal rules you would follow before ever buying any digital asset.",
+      "lessonId": "26dc5abe-8f42-59de-a26c-cf110c88561a",
+      "moduleId": "17089054-0146-5e2a-a0d5-4524412f6f23",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:4:lesson:6:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "83d9d049-f4c2-548d-b68b-102629e7c645",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Research one stablecoin. Write how it maintains its peg, what backs it, and what risks exist if that backing fails.",
+      "lessonId": "f9b0ac75-1344-50dd-96b6-08b233483eb6",
+      "moduleId": "18d63028-bfe2-5093-a9a7-63675d8a967d",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:5:lesson:1:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "a3006b1f-f8dc-5bdd-a103-9b1f3d271c94",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write the difference between 'real revenue' and 'speculative hype' in your own words. Then apply that test to three projects you've heard of.",
+      "lessonId": "ceb1a52b-3140-5999-ad54-48b86b3a55b7",
+      "moduleId": "18d63028-bfe2-5093-a9a7-63675d8a967d",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:5:lesson:2:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "00616d2c-0267-564d-be81-6c96ba1807e9",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Choose one token. List every use case you can verify. If speculation is the only story, write that honestly.",
+      "lessonId": "c68fdc77-466a-5d54-8d1f-f7a53b23ba70",
+      "moduleId": "18d63028-bfe2-5093-a9a7-63675d8a967d",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:5:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "504200f5-9e61-59dc-b69b-c7b062f161df",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Research: What is an Irrevocable Life Insurance Trust (ILIT)? Write how it differs from owning a life insurance policy personally.",
+      "lessonId": "cabeb1a3-d7d8-5827-8811-567b99509010",
+      "moduleId": "18d63028-bfe2-5093-a9a7-63675d8a967d",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:5:lesson:4:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "8b5b3ccc-3751-517e-9863-981d18bf819f",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Research: What is the difference between a Schedule C sole proprietorship, an LLC, and an S-Corp? Write the tax treatment differences for each.",
+      "lessonId": "aac21185-be39-5a3c-8880-74ea01eff83b",
+      "moduleId": "18d63028-bfe2-5093-a9a7-63675d8a967d",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:5:lesson:5:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "8496f99d-f6cc-5ec9-b65f-e075d8f90b8e",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write three personal rules your future self would thank you for. Make them behavioral — not about returns, about process.",
+      "lessonId": "dfe6d5ee-94f0-5f2b-8ebd-0b092c4627c2",
+      "moduleId": "18d63028-bfe2-5093-a9a7-63675d8a967d",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:5:lesson:6:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "5965f98b-a035-52d0-bddc-13d32fd9b600",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write which phase you believe creates the most long-term value — and defend your reasoning.",
+      "lessonId": "9324d7c1-4b3c-558d-a3a5-664b2710d875",
+      "moduleId": "77bd998f-83cb-5712-9347-e821e65d4a41",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:6:lesson:1:block:9",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "7cc6649d-e68a-5b14-9420-11c51059671b",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Name one real-world asset class that would benefit most from automated, transparent distribution infrastructure.",
+      "lessonId": "b0416af6-8f0e-5e5b-8153-a2ea9a384115",
+      "moduleId": "77bd998f-83cb-5712-9347-e821e65d4a41",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:6:lesson:2:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "458e0b36-fe5f-5805-84ed-54b79d1dc3d4",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write one thing you understand now that you didn't before this course. Be specific.",
+      "lessonId": "07933acf-7eaf-59b9-9b9c-7ec879b4c332",
+      "moduleId": "77bd998f-83cb-5712-9347-e821e65d4a41",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:6:lesson:3:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "da98f2ce-31ca-54cd-873c-dd5aad058af6",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write the top three risks that concern you personally. Then write how you would manage each one before committing capital.",
+      "lessonId": "2ed50184-4eb2-5cf7-8511-5811ffdacb3e",
+      "moduleId": "77bd998f-83cb-5712-9347-e821e65d4a41",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:6:lesson:4:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "2d4c9416-4d4b-5f90-8e36-353749dc2e6d",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write a 30-day action plan. Include at least one concrete structural move — not just 'save money.'",
+      "lessonId": "8d99dd43-8cbb-51ac-89b3-b2ee1b68ed17",
+      "moduleId": "77bd998f-83cb-5712-9347-e821e65d4a41",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:6:lesson:5:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "4522754d-201b-5e51-aef6-3a55af78c5b8",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Answer: What belief about money changed most? What action will you take in the next 7 days? What mistake will you now avoid?",
+      "lessonId": "3d7cfa51-13c1-5c3a-bfc5-f88bfca0eab5",
+      "moduleId": "77bd998f-83cb-5712-9347-e821e65d4a41",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-13-22.jsx",
+      "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+      "sourceKey": "original-academy-unlocked:module:6:lesson:6:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "74573da1-de2c-58ac-8de5-476b65a774b7",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Calculate the true cost of your current debt. For every balance you carry, multiply the outstanding amount by your APR and divide by 12. That's what you're paying per month just to stand still. Write the number down. Then ask: what asset could I have bought with that money instead?",
+      "lessonId": "4009d104-2ba4-565e-9977-eed70a2111ea",
+      "moduleId": "d43217e6-d3c1-561f-ad4a-872007ed558a",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:7:lesson:1:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "3bf245c1-3017-5ef2-8f5b-1a17c4b28be2",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "List every debt you currently carry. Label each: Bad Debt (financing consumption or depreciation), Good Debt (financing income-producing assets), or Neutral. If your bad debt column is the longest, that's your first target.",
+      "lessonId": "239f1add-389a-51e0-ad69-1fb484b3a773",
+      "moduleId": "d43217e6-d3c1-561f-ad4a-872007ed558a",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:7:lesson:2:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "5e5c41eb-797d-5371-af08-f14e0778f1e9",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "If you carry student debt, look up your loan servicer and request a full accounting: loan types, interest rates, and eligibility for income-driven repayment. Determine if any of your loans qualify for forgiveness programs. This single hour of research has the potential to restructure decades of payments.",
+      "lessonId": "ef25466d-b080-5fff-8fea-0bef7a0a0fae",
+      "moduleId": "d43217e6-d3c1-561f-ad4a-872007ed558a",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:7:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "a2ea79a4-c042-55c1-bd65-3163ea89ae11",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "If you have outstanding medical debt, call the billing department of the provider and ask two questions: \"What is your self-pay discount rate?\" and \"Do you have a financial assistance or charity care program?\" Write down what they say. Then negotiate.",
+      "lessonId": "00d5a487-92d0-5234-9fbc-bc4c091583f9",
+      "moduleId": "d43217e6-d3c1-561f-ad4a-872007ed558a",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:7:lesson:4:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "fca812d3-91d5-534d-993d-38d43c4e0fa9",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write your debt payoff strategy in order: highest interest rate first (avalanche method — mathematically optimal) or smallest balance first (snowball method — psychologically easier). Pick one. Commit to it. Then write the date you will be consumer-debt free.",
+      "lessonId": "e45b07a8-2967-5688-a4d5-0422e0e2fc19",
+      "moduleId": "d43217e6-d3c1-561f-ad4a-872007ed558a",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:7:lesson:5:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "c4b4662c-8846-5a50-8f0a-d145a9b08b78",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Pull your credit report at AnnualCreditReport.com. Identify your utilization ratio on every revolving account. If any account is above 30%, paying it down to under 10% is the single fastest legal move to improve your score.",
+      "lessonId": "7bf8f138-e64b-5b87-b304-bbe6a7284682",
+      "moduleId": "d43217e6-d3c1-561f-ad4a-872007ed558a",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:7:lesson:6:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "86cabe50-17a4-5166-bf99-5a2ab7445154",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Research your state's estate tax threshold — several states have lower thresholds than the federal $13M. If you have any assets, dependents, or wishes about what happens to your estate, write down what would happen if you died tomorrow without any planning. Then ask: is that what you want?",
+      "lessonId": "394315ff-aff2-5060-a204-dc70686575a6",
+      "moduleId": "3b540b1a-4836-5c5e-83ce-44f7f0a91139",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:8:lesson:1:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "e5262aab-5321-5d81-ba16-849d7dabf36b",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Look up the probate process in your state. Find the cost and average timeline. Then look up the cost of a revocable living trust from an estate attorney in your area. The difference will make the decision obvious.",
+      "lessonId": "e9d2afe4-4fb6-5244-b033-bdd5b7681674",
+      "moduleId": "3b540b1a-4836-5c5e-83ce-44f7f0a91139",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:8:lesson:2:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "aba70e88-e257-50a4-8a31-6107b356e38b",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "If you own a business, real estate, or investment assets you intend to pass to heirs, research family limited partnerships. Write down your assets and their approximate value. Then calculate what 25% less than that value represents — that's the approximate tax savings a valuation discount could provide on transfer.",
+      "lessonId": "c4a79fea-41f2-57f4-94c0-c0372e5f3dbe",
+      "moduleId": "3b540b1a-4836-5c5e-83ce-44f7f0a91139",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:8:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "2545a1c0-07d4-5c9d-9d4b-56964d09d509",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Research the cost of a $500,000 term life insurance policy for your age and health status on a comparison site like Policygenius. Then calculate: if you died tomorrow with no insurance, what financial burden would your family carry? Is that acceptable?",
+      "lessonId": "a0ae773a-f2b0-58bc-96a8-f6eba68c08da",
+      "moduleId": "3b540b1a-4836-5c5e-83ce-44f7f0a91139",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:8:lesson:4:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "b2e77545-0ff1-5e87-9aa8-c7964282a194",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Look up Donor-Advised Fund minimums at Fidelity Charitable or Schwab Charitable — both have $5,000 minimums. If you give to charity regularly and have any appreciated assets, this structure likely saves you more in taxes than the entire cost of setting it up.",
+      "lessonId": "8290f831-eff9-535f-a1f6-b87e903fb72b",
+      "moduleId": "3b540b1a-4836-5c5e-83ce-44f7f0a91139",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:8:lesson:5:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "e17d4dd1-d788-5b4d-9f9b-ca1b74bfd349",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "List every financial account, retirement account, and insurance policy you own. For each one, write down the current beneficiary. Are they current? Are they correct? Update any that are wrong or outdated.",
+      "lessonId": "b7bdf44d-afe6-5360-bccb-0b7c6d811d83",
+      "moduleId": "3b540b1a-4836-5c5e-83ce-44f7f0a91139",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:8:lesson:6:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "806c417d-9c23-56b2-aa7a-f3394129e8c4",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Look up the current Total Value Locked in DeFi at DeFiLlama.com. Then look up what the largest DeFi protocols by TVL are. Write down three you've never heard of before and what they do.",
+      "lessonId": "5038e573-10e8-53ce-8281-8b08b5d14bd9",
+      "moduleId": "5254899c-9a85-51c9-ac1e-a6187d6a19d3",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:9:lesson:1:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "60516ad2-b3bc-5b04-b4a2-7a6c4a972f4a",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Visit app.uniswap.org or jup.ag and connect a test wallet with minimal funds. Navigate the interface without executing any trade. Understand the process before committing capital. The interface is the least important part — understanding what's happening behind it is what matters.",
+      "lessonId": "043c3dc5-e0d3-55ab-b725-38fb46d2e361",
+      "moduleId": "5254899c-9a85-51c9-ac1e-a6187d6a19d3",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:9:lesson:2:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "cc1d6c6f-c554-5982-8ae0-e8ec1569dd90",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Look up the current supply and borrow APYs on Aave (app.aave.com). Compare what lenders are earning on USDC vs what a bank savings account pays. Write the difference. Then look up what the liquidation threshold is for ETH collateral. Understand the risk before the yield.",
+      "lessonId": "e2b3c7ac-7985-5e93-9366-09fc5281a456",
+      "moduleId": "5254899c-9a85-51c9-ac1e-a6187d6a19d3",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:9:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "4f3bcf14-3199-57d8-b5b5-8a05e6dec4db",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Research one DeFi protocol currently offering yield. Identify: (1) where the yield comes from, (2) whether it's paid in the protocol's own token or in established assets, (3) what the protocol's TVL and revenue history look like on DeFiLlama.com. Write your assessment: real yield or inflationary yield?",
+      "lessonId": "fe3327a4-cdd1-5472-892f-eea4538f416c",
+      "moduleId": "5254899c-9a85-51c9-ac1e-a6187d6a19d3",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:9:lesson:4:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "2c810b5b-fd57-5186-a112-00bce34c94ed",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Look up one major DeFi hack from the last three years. Research how it happened technically. Write a one-paragraph explanation in your own words. Understanding attack vectors is as important as understanding yield mechanisms.",
+      "lessonId": "b588c48b-996d-5435-bbf4-7a9fe0543d4d",
+      "moduleId": "5254899c-9a85-51c9-ac1e-a6187d6a19d3",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:9:lesson:5:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "d8ce601b-7da4-56fd-b47c-dc50be85171c",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Look up the current staking APY for SOL on Marinade.finance. Then look up what you can do with mSOL in Kamino or other Solana DeFi protocols. Map the full yield stack: base staking yield + potential additional DeFi yield on top.",
+      "lessonId": "5d63160f-ddb1-5913-a29d-2cfc124985e4",
+      "moduleId": "5254899c-9a85-51c9-ac1e-a6187d6a19d3",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:9:lesson:6:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "69e24678-24b4-5107-98c2-ce56f02f497a",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Look up BlackRock BUIDL on rwa.xyz or DeFiLlama's RWA section. Write down how much is currently locked in institutional tokenized assets. Then look up one retail-accessible RWA protocol. Compare the two.",
+      "lessonId": "7ee06268-9397-5480-bd4f-b3886e4d12ab",
+      "moduleId": "046fe2ce-9eab-5bc3-89ae-b4fd3a603cee",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:10:lesson:1:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "7aaaa9ad-d752-5824-97d4-ddd0a89a824a",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Go to Lofty.ai or RealT.co. Browse current available properties. Look at the projected annual yield, the current token price, and the distribution history. Write down whether the yields compare favorably to other income investments you're aware of.",
+      "lessonId": "b09cb32b-0a22-55d6-a023-20972c7c3240",
+      "moduleId": "046fe2ce-9eab-5bc3-89ae-b4fd3a603cee",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:10:lesson:2:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "d96c3b4f-dd2e-51aa-863d-71338538c8b9",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Look up Ondo Finance's OUSG or Mountain Protocol's USDM. Find the current yield and the minimum investment. Compare it to your current savings account or money market rate. Write the actual dollar difference on $10,000 in capital annually.",
+      "lessonId": "a20ece5f-b4da-5c93-9180-e681314fcca6",
+      "moduleId": "046fe2ce-9eab-5bc3-89ae-b4fd3a603cee",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:10:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "2db28221-8bfb-50c0-9863-36b77ec31973",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "When you find an RWA protocol, locate its legal documentation. Look for: (1) the legal entity holding the underlying asset, (2) the jurisdiction, (3) whether it restricts U.S. persons. Write what you find. If the documentation doesn't exist or can't be found, that tells you everything you need to know.",
+      "lessonId": "2c10341b-4264-5f13-9a0d-22b863ac92d9",
+      "moduleId": "046fe2ce-9eab-5bc3-89ae-b4fd3a603cee",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:10:lesson:4:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "05fb9854-4957-5222-aa33-47a043629a8a",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write the three questions you would ask any RWA project before participating. Make them specific enough that a project team's answers would meaningfully differentiate a legitimate project from a fraudulent one.",
+      "lessonId": "a8741f81-151f-561c-9dd6-1d6a751a5131",
+      "moduleId": "046fe2ce-9eab-5bc3-89ae-b4fd3a603cee",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:10:lesson:5:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "bd4931a6-648a-500a-ab46-de83bdeebf5b",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Research one of these: Securitize, Ondo Finance, or Maple Finance. Write what asset class they tokenize, what the minimum investment is, and whether U.S. investors can participate. Map it against a traditional equivalent — what was the minimum before tokenization?",
+      "lessonId": "4754c1c1-925b-550d-8493-6634520de944",
+      "moduleId": "046fe2ce-9eab-5bc3-89ae-b4fd3a603cee",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:10:lesson:6:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "c9f1c8b2-898d-54ab-b643-a8a2c79a297f",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Map your current income. Write every source and classify it: linear, leveraged, or passive. Calculate what percentage of your income would survive if you stopped working entirely for 6 months. That percentage is your current level of financial resilience.",
+      "lessonId": "948737d6-65f2-59c6-9082-1a9a62679ea2",
+      "moduleId": "f29ecbef-6555-511c-bd45-150e661ece83",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:11:lesson:1:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "07a53ecb-0be2-52e6-9c1c-44fa5e52838b",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write down three things you know deeply enough to teach, explain, or build tools around. For each, identify: (1) who would pay to learn it, (2) what format it would take (course, template, tool, membership), (3) what you would charge for it. You don't need to build any of it yet. The exercise is identifying your knowledge assets.",
+      "lessonId": "a7a667d8-fc99-5af6-8464-553f767991df",
+      "moduleId": "f29ecbef-6555-511c-bd45-150e661ece83",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:11:lesson:2:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "0f1727b6-ac76-5a6e-afe8-5a1c911039ef",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Identify one thing you do — a process, a system, a methodology — that other people or businesses would pay to use or replicate. Write how it could be structured as a licensing arrangement: what would you charge, to whom, and on what terms?",
+      "lessonId": "90c82560-4682-5c2e-b5ba-40c877786ecb",
+      "moduleId": "f29ecbef-6555-511c-bd45-150e661ece83",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:11:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "89a2e6bc-1165-55c2-8e15-bd4d487643c2",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Research median rental rates in your city for the property type you could realistically acquire in the next 2–3 years. Then calculate: at 20% down, what mortgage payment are you looking at? Is there a rental rate that creates positive cash flow? Write the math.",
+      "lessonId": "3f54d8a1-ac0b-5a37-90ed-139d66ba58b9",
+      "moduleId": "f29ecbef-6555-511c-bd45-150e661ece83",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:11:lesson:4:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "4896dfbb-dc0e-5bcb-8e19-cba91c4ddd50",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "If you have a business or side income, identify the one process that is most dependent on you personally. Write the steps of that process as if you were training a replacement to do it without asking you any questions. This is the beginning of building a system.",
+      "lessonId": "2d29bda9-163d-52fe-914c-feb93121a918",
+      "moduleId": "f29ecbef-6555-511c-bd45-150e661ece83",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:11:lesson:5:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "887cf0ae-df6a-5349-9baa-2fd5f80e1813",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Draw your personal money flywheel. Start with your current primary income source. Map where the surplus goes. Then design the flywheel you want to build — what feeds what, in what order. This is your blueprint.",
+      "lessonId": "f9f39a16-1456-5a44-8633-05074c4b0643",
+      "moduleId": "f29ecbef-6555-511c-bd45-150e661ece83",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:11:lesson:6:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "984dc3b3-a402-5c1e-b981-f367d5e04605",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Research which countries currently offer territorial taxation — taxing only income earned within their borders, not worldwide income. Write a list of five. Then research which of those have viable residency programs.",
+      "lessonId": "ecdeb5f3-4089-579b-8c2b-d850c3e8a0e8",
+      "moduleId": "463fb3b7-5155-545a-bb88-ec85e416272b",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:12:lesson:1:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "a0659926-9ee6-564e-8dda-d2a38a134955",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Look up the full IRS Publication 570 on Puerto Rico bona fide residency. Write the three tests in your own words. Then honestly assess: if you relocated to Puerto Rico, would you pass all three tests? What would need to change?",
+      "lessonId": "85caff5f-0c84-5945-b694-080d4cd4ca1c",
+      "moduleId": "463fb3b7-5155-545a-bb88-ec85e416272b",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:12:lesson:2:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "1df8c012-d592-550d-9aad-20e13ce021a2",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Research the current investment threshold and processing time for one CBI program — Dominica, St. Kitts, or Grenada. Write: (1) what the minimum investment is, (2) what visa-free access the passport provides, (3) whether the country taxes worldwide income.",
+      "lessonId": "898d77e7-c11d-5879-9f2d-84e69fec89d6",
+      "moduleId": "463fb3b7-5155-545a-bb88-ec85e416272b",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:12:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "cb8d7abc-b24f-5d42-a35f-023aa84eabe0",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Research the FBAR filing requirements for U.S. persons with foreign financial accounts. Write: (1) the threshold at which filing is required, (2) the penalty for non-compliance, (3) what types of accounts must be reported. Understanding the disclosure requirements is the prerequisite to understanding the structures.",
+      "lessonId": "141eb0cb-f7e7-5ba9-8371-bf22e66fe257",
+      "moduleId": "463fb3b7-5155-545a-bb88-ec85e416272b",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:12:lesson:4:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "32c4e9a0-93a2-5b26-b00f-cae6441434f4",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Research IRS Form 2555 (Foreign Earned Income Exclusion). Write the two tests to qualify — bona fide foreign residence and physical presence. Then calculate: on your current income, what would the FEIE save you annually if you lived abroad and qualified?",
+      "lessonId": "0ba794d2-6c69-574c-acaf-e336320faad4",
+      "moduleId": "463fb3b7-5155-545a-bb88-ec85e416272b",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:12:lesson:5:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "73535dae-b7cb-5b6e-9ef0-0b488e8a9cbc",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write your personal exit strategy blueprint — not as a plan to execute today, but as a 10-year target architecture. Which jurisdictions interest you? What residency requirements could you realistically meet? What would the structure cost to establish vs. the annual tax savings? Write the math.",
+      "lessonId": "50b1f811-32c3-5546-991f-3c0e0965a58f",
+      "moduleId": "463fb3b7-5155-545a-bb88-ec85e416272b",
+      "sourcePath": "/opt/iron-vault/sex/Iron_Vault_Master_Curriculum_Canvas.docx",
+      "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+      "sourceKey": "modules-7-12:module:12:lesson:6:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "eed9adfe-c9ce-5911-ab8b-d323057d913d",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write down the difference between a custodial and a non-custodial wallet in one sentence each. Then ask: for the amount we're holding, which model matches our risk tolerance?",
+      "lessonId": "5ed7455c-df4e-5654-a208-9cca81379e66",
+      "moduleId": "8aaae592-d672-532f-a575-3199d909a026",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:13:lesson:1:block:7",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "63e83468-8fd3-5d7c-86fa-00398e652433",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Map our current crypto holdings against the wallet spectrum. Is our long-term position sitting in a hot wallet or on an exchange? If so, that's the first thing we move.",
+      "lessonId": "43d4d33d-cf8f-5825-85d1-d0de5d631a07",
+      "moduleId": "8aaae592-d672-532f-a575-3199d909a026",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:13:lesson:2:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "6aff0ddc-df14-5c1f-8183-c5fdf9c753c8",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Look up a real transaction on a block explorer (etherscan.io or solscan.io). Trace the sender, receiver, fee, and confirmation count. Watching one settle makes the abstraction concrete.",
+      "lessonId": "a78ee85b-b5f4-5d3c-9e5a-23704be4dc29",
+      "moduleId": "8aaae592-d672-532f-a575-3199d909a026",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:13:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "e0366de6-04a4-5b4a-a9a2-a76b199309a3",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Audit our security posture against the five rules. Where's the gap? Close it before the next transaction, not after the next loss.",
+      "lessonId": "39b38276-c674-576c-8629-129b155ba1a2",
+      "moduleId": "8aaae592-d672-532f-a575-3199d909a026",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:13:lesson:4:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "891ae5d5-31e8-581f-a332-2496c6a665d5",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Check the current gas price on Ethereum and the typical fee on Solana. Write both down. That spread explains a huge amount about why different chains exist.",
+      "lessonId": "0f4bcd34-f575-5f64-a9b0-7106b17ab800",
+      "moduleId": "69631824-cfcf-5f51-a104-dcf5613a7528",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:14:lesson:1:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "3bbb7581-4f32-578d-a8a2-e221a1ff057a",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Identify one token in each category that we actually hold or have used. If we've only ever held a native coin, note which token standard our chain uses for everything else.",
+      "lessonId": "0dc4f8bb-ca6d-5b74-b53f-2d238b88890d",
+      "moduleId": "69631824-cfcf-5f51-a104-dcf5613a7528",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:14:lesson:2:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "df9a0d32-272e-5b40-961c-ade6cf5cda7e",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Pick any token we're interested in. Open its contract on a block explorer. Check: how many holders, how concentrated is the top 10, is the contract verified? Those three facts filter out a huge share of bad projects.",
+      "lessonId": "ed8a4d44-845e-516a-aa01-9f645084d0e8",
+      "moduleId": "69631824-cfcf-5f51-a104-dcf5613a7528",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:14:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "80e4ad41-395b-5673-ba82-502adb796e07",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "List the chains we currently hold assets on. Are we consolidated or scattered across bridges? Map where our assets actually live before the next move.",
+      "lessonId": "b22f15d7-0a68-5711-9b30-2b854ffd071e",
+      "moduleId": "69631824-cfcf-5f51-a104-dcf5613a7528",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:14:lesson:4:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "0a7b79d3-cc17-5312-b911-54c03e774a24",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Identify one financial decision we recently made from scarcity — a purchase for relief, or a good risk avoided from fear. Name the program. Naming it is the first interruption.",
+      "lessonId": "9670084c-3dd2-57c6-9cf0-76a6394cbc35",
+      "moduleId": "67d6f838-2e5f-599b-8345-0625bf9e79d7",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:15:lesson:1:block:7",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "1f139191-1d8b-59aa-8d50-7d61fd093f2d",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write the three money beliefs we absorbed before age 12. For each, ask: is this true, or is it just old? Which one is costing us the most right now?",
+      "lessonId": "45296d91-e017-529d-9412-6a4704ad5c7f",
+      "moduleId": "67d6f838-2e5f-599b-8345-0625bf9e79d7",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:15:lesson:2:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "8474ecdd-b7b9-5ef1-b197-b9b4e4491635",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Calculate our 'enough' number: the annual passive income that would cover the life we genuinely want — not the life we're told to want. Write it down. Now it's a target instead of a horizon.",
+      "lessonId": "a32ba1aa-d2b1-54f5-8aca-e11f79af5821",
+      "moduleId": "67d6f838-2e5f-599b-8345-0625bf9e79d7",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:15:lesson:3:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "9b4241bd-6dce-59c3-aca9-1351640c29f2",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Set the calculator to our real numbers. Then change only the 'years' from 25 to 30. Note how much the final figure jumps for five more years of doing nothing. Time is the most undervalued input.",
+      "lessonId": "310e9752-36c0-5c65-b24b-57fe721c4cf4",
+      "moduleId": "39438ebb-9ab1-5b1f-8552-71092230f9f5",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:16:lesson:1:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "3bcb0f7f-e1e4-55f4-865c-5672dc319569",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "If we've been waiting to start until conditions are 'right' — more income, less debt, more certainty — calculate what one more year of waiting costs using the tool above. Let the number decide.",
+      "lessonId": "e6e3de62-1e45-5a84-9c01-dcdd4d87c829",
+      "moduleId": "39438ebb-9ab1-5b1f-8552-71092230f9f5",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:16:lesson:2:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "61e513e0-7c64-55ab-a253-1c583a5e91ec",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Name the four compounding engines in our life right now — money, skill, reputation, network. Rate each 1–10 on how deliberately we're compounding it. The lowest score is our highest-leverage fix.",
+      "lessonId": "82767bd3-1a31-5520-9ada-361b4d107ead",
+      "moduleId": "39438ebb-9ab1-5b1f-8552-71092230f9f5",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:16:lesson:3:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "af37f1c0-ed6c-535a-9fc2-40ccb59f4802",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Think of our largest current financial position as a percentage of our total net worth. If it went to zero tomorrow, would we be wounded or ruined? Write the honest answer.",
+      "lessonId": "2acdfaf1-8dae-575f-9fee-0ac17bcf5a90",
+      "moduleId": "6b11f6f1-87ca-5ed0-92f8-3791d79cd20f",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:17:lesson:1:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "9a25ad76-1cef-526a-a056-13635010ebb8",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Map our capital across positions as percentages. Is any single position large enough that its failure would end our ability to keep playing? That's the one to trim first — not because it's wrong, but because it's too big.",
+      "lessonId": "90f6127f-23a3-53c5-9621-79312f068e6c",
+      "moduleId": "6b11f6f1-87ca-5ed0-92f8-3791d79cd20f",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:17:lesson:2:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "ca9f4190-16ba-567c-9bf9-c16217d5dca8",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Examine our portfolio for the 'mediocre middle' — positions risky enough to hurt but without the upside to justify it. Could a barbell — safer base, small asymmetric tip — serve us better?",
+      "lessonId": "025b7234-d141-5757-8805-da399433b291",
+      "moduleId": "6b11f6f1-87ca-5ed0-92f8-3791d79cd20f",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:17:lesson:3:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "b3507a93-a8a1-5175-8a9f-eb7a6e7cbef9",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Think of a market moment we lived through — buying or selling driven by the crowd. Which Minsky stage were we in? Recognizing it in hindsight trains us to recognize it in real time.",
+      "lessonId": "2c13d503-41b4-57af-b4dd-d8649bc1fc38",
+      "moduleId": "c4ba74af-ddb8-58f4-9489-4b9e181e3558",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:18:lesson:1:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "ea83ec91-68c5-5f40-b009-eda4bc1c22cb",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Recall a time we followed the crowd into a financial decision. What was the collective emotion at that moment? Would treating that emotion as a contrarian signal have served us better?",
+      "lessonId": "150316ab-b5dc-53c9-8b00-55966bddf68e",
+      "moduleId": "c4ba74af-ddb8-58f4-9489-4b9e181e3558",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:18:lesson:2:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "cca1d70b-db71-5a85-b90a-d8e8e0f8d1f2",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Assess our current cycle exposure: if a significant downturn hit next quarter, would we be a forced seller or a patient buyer? Do we hold any dry powder? Position for the answer we want before the cycle decides for us.",
+      "lessonId": "76f2a8b4-b462-5241-a9f2-8f62c6b7dd7f",
+      "moduleId": "c4ba74af-ddb8-58f4-9489-4b9e181e3558",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:18:lesson:3:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "9ec709b9-1527-505f-a37f-ccdbbee442a2",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Enter our real monthly passive income by stream above. Then write our annual expenses. The difference is the precise gap we're engineering to close. Name the single stream we can most realistically grow first.",
+      "lessonId": "698bbf68-3033-5ab9-a512-2e800daf2d62",
+      "moduleId": "6d00e8e7-2420-5a26-8b97-54c95cc579bd",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:19:lesson:1:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "1592cb16-1480-5f0a-9327-76afed2a730d",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "List every income stream we have. Mark each active or passive, and note what would kill it. If losing one stream would end us, building a second uncorrelated stream is our highest-priority project.",
+      "lessonId": "33a756bd-e25e-5b07-8611-7f3428780f5f",
+      "moduleId": "6d00e8e7-2420-5a26-8b97-54c95cc579bd",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:19:lesson:2:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "23510eeb-2196-5129-b94f-a7c802d5c83a",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Identify the one income-generating task most dependent on us personally. Write its steps as if training a replacement who can ask no questions. That document is the first brick of a system that runs without us.",
+      "lessonId": "8aa6825f-bcce-546d-82d6-ab2c943a95d7",
+      "moduleId": "6d00e8e7-2420-5a26-8b97-54c95cc579bd",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:19:lesson:3:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "105b587b-7ac2-5803-87e8-17039ca22492",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Recall the last time we accepted a price or offer without negotiating. Estimate what a single calm counter might have saved. That number is our tuition for learning this skill.",
+      "lessonId": "18281586-0b22-597f-a533-416653f00c1f",
+      "moduleId": "40e340cc-ba9f-5de8-9548-7bcb15e6a5e9",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:20:lesson:1:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "18830e7e-7dfb-5fa7-abb1-72a812d4fa3f",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Before our next significant negotiation, list our real alternatives if it falls through. If the list is thin, our first task isn't negotiating harder — it's manufacturing more alternatives to negotiate from strength.",
+      "lessonId": "f23aa148-3d82-575b-a6e2-26de08dd6737",
+      "moduleId": "40e340cc-ba9f-5de8-9548-7bcb15e6a5e9",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:20:lesson:2:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "ebaa98bc-142b-5c5c-8452-533e4919be27",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Pick one tactic above — anchoring or strategic silence is easiest to start — and consciously use it in our next negotiation, however small. Skill is built through deliberate reps, not theory.",
+      "lessonId": "89b06df2-d5f4-50bf-984a-5a520a3cf812",
+      "moduleId": "40e340cc-ba9f-5de8-9548-7bcb15e6a5e9",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:20:lesson:3:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "c601dc16-4b07-57f8-9b8c-68e197e05a8f",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "List our recurring expenses. How many have a legitimate business purpose that, with the right entity and documentation, could become deductible? That list is the argument for structure.",
+      "lessonId": "efeade08-1523-5b49-857b-5bdd0cebe5fe",
+      "moduleId": "63affe6e-b91c-5977-ad04-7c895daf9baf",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:21:lesson:1:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "f6d77f7b-b640-5eb9-90c9-1ac187fbf662",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Ask honestly: do we own our income-producing activities personally or through an entity? If personally, researching the right entity structure with a qualified professional is likely our highest-leverage structural move.",
+      "lessonId": "0ec66495-63b6-53c7-a662-6bd3c67aee68",
+      "moduleId": "63affe6e-b91c-5977-ad04-7c895daf9baf",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:21:lesson:2:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "6bfd2611-fff2-5c2a-94b7-44ff8220ee48",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Identify one timing lever available to us right now — a tax-advantaged account we're underusing, or a gain we could hold past the long-term threshold. Small timing decisions compound into large tax differences over a lifetime.",
+      "lessonId": "2529c498-d4df-5f5f-a362-26603703ef2a",
+      "moduleId": "63affe6e-b91c-5977-ad04-7c895daf9baf",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:21:lesson:3:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "c996519e-c423-519c-bed6-41d9481eb299",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "For each of the six layers above, rate honestly where we stand: not started, in progress, or solid. The lowest-rated layer that the others depend on is our single highest-priority build. Convergence over accumulation.",
+      "lessonId": "d0c6dc7b-9680-59f8-90e5-f12d80bc862b",
+      "moduleId": "19719b44-e892-58bc-8622-ffbba115358e",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:22:lesson:1:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "18f2dc1e-7ee3-51ec-a6dd-5ba503eca641",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Name the one loop in our financial architecture most in need of closing. Commit to finishing it completely before opening anything new. Write the specific 'done' condition. Then close it.",
+      "lessonId": "52c55920-3831-515a-aea6-ee2325eb020d",
+      "moduleId": "19719b44-e892-58bc-8622-ffbba115358e",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:22:lesson:2:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "ba090c75-73c8-56f9-aaf3-719b1648d0dd",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Write our definition of 'enough' — the annual passive income and the structure that would let us say no to anything that violated our values. That definition, nailed down, is the true finish line. Everything else is the build toward it.",
+      "lessonId": "07699413-8a43-5e92-bab4-9466cac62184",
+      "moduleId": "19719b44-e892-58bc-8622-ffbba115358e",
+      "sourcePath": "/opt/iron-vault/sex/iron-vault-modules-7-12.md",
+      "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+      "sourceKey": "modules-13-22:module:22:lesson:3:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "7e049287-1793-55c0-8a34-ec38c3c02f31",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Open a Bitcoin block explorer (like mempool.space) and find the current block height. Divide the blocks remaining until 1,050,000 by ~144 blocks/day to estimate how many days until the next halving.",
+      "lessonId": "296a9127-ebc2-5f78-a8ca-72e8a3c01271",
+      "moduleId": "c98241f5-a878-5159-9a55-fe7183e0d055",
+      "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+      "sourceHash": "d11b612bcc230e2e98066e2c3e0bacaed7d143701b69f088965ba66dcfb6adb9",
+      "sourceKey": "researched-crypto-1-10:module:1:lesson:2:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "f4c672cf-c5ad-503e-a18e-0a8846ecda86",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Bridge a tiny amount of ETH to Base or Arbitrum using the official bridge, then do one swap. Compare the fee you paid to what the same action costs on Ethereum L1 — you'll feel the Dencun difference.",
+      "lessonId": "c4243ac8-ca7e-5f26-87d5-cf9d6b7b6ff1",
+      "moduleId": "9220372d-c9f2-5c0d-9496-446655633ec5",
+      "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+      "sourceHash": "d11b612bcc230e2e98066e2c3e0bacaed7d143701b69f088965ba66dcfb6adb9",
+      "sourceKey": "researched-crypto-1-10:module:2:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "c0570022-1e72-52fa-a09a-13139e611a3e",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Install Phantom, write your recovery phrase on paper (never a screenshot), fund it with a few dollars of SOL, and stake a small amount to a validator. Then look up your transaction on Solscan to see the whole thing on-chain.",
+      "lessonId": "fea6e415-e298-5fbc-a101-e2f019b5ef38",
+      "moduleId": "20fa2bba-77a8-5d19-9a4a-93e61c225366",
+      "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+      "sourceHash": "d11b612bcc230e2e98066e2c3e0bacaed7d143701b69f088965ba66dcfb6adb9",
+      "sourceKey": "researched-crypto-1-10:module:3:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "e2921961-eb2a-5559-b755-d483f97b3175",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Hold a small amount of USDC in your wallet and send $1 to another wallet you own. Note the fee and the settlement time, then compare it to a bank transfer or wire you've done recently.",
+      "lessonId": "cd1c413f-c75a-5bef-a835-3bd988afb272",
+      "moduleId": "136da461-46fe-5f91-8398-b6efcea973f2",
+      "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+      "sourceHash": "d11b612bcc230e2e98066e2c3e0bacaed7d143701b69f088965ba66dcfb6adb9",
+      "sourceKey": "researched-crypto-1-10:module:4:lesson:3:block:6",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "cade4311-84f9-575f-aea2-e6787b4db9e9",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Pick any token on CoinGecko, toggle 'Show Fully Diluted Valuation,' and calculate the FDV/market-cap ratio. Then find its unlock schedule on a tracker and note the next big cliff date.",
+      "lessonId": "a8308221-e8a8-539e-b5bd-795a7d179e7e",
+      "moduleId": "181c390e-93b2-5bb4-9a23-2b8a22afafb0",
+      "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+      "sourceHash": "d11b612bcc230e2e98066e2c3e0bacaed7d143701b69f088965ba66dcfb6adb9",
+      "sourceKey": "researched-crypto-1-10:module:5:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "4eab7989-0be6-5128-8a62-f6fc14d6c7eb",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Go to revoke.cash, connect your main wallet (read-only to view), and review every active token approval. Revoke anything you don't recognize or no longer use.",
+      "lessonId": "612fac58-fca5-5a7b-bbd4-63ee8d58402b",
+      "moduleId": "7f558187-6ece-5389-be00-6db4d695a752",
+      "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+      "sourceHash": "d11b612bcc230e2e98066e2c3e0bacaed7d143701b69f088965ba66dcfb6adb9",
+      "sourceKey": "researched-crypto-1-10:module:6:lesson:3:block:4",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "d98e39a0-c2f4-50f6-beaa-ed11b07ba29a",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Pick a token you're curious about. Open its page on DexScreener (liquidity, volume), then find its top holders on the relevant explorer. Write down one green flag and one red flag before forming any opinion.",
+      "lessonId": "bff97e40-ec4c-590a-a529-7c43db71e3e9",
+      "moduleId": "829654f3-d20c-50c2-b23e-fcd758f62a4c",
+      "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+      "sourceHash": "d11b612bcc230e2e98066e2c3e0bacaed7d143701b69f088965ba66dcfb6adb9",
+      "sourceKey": "researched-crypto-1-10:module:7:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "ba51e1da-d140-51c2-87af-e5548e475bda",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Look up the current Bitcoin Dominance (BTC.D) on TradingView and the current Fear & Greed Index. Write down both numbers and one sentence on what phase they suggest — then revisit in 30 days and see how it moved.",
+      "lessonId": "5afe5f48-947c-5550-9c59-2bae1f5830f5",
+      "moduleId": "85542a4a-c4ab-51f4-b5d3-408499c89f33",
+      "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+      "sourceHash": "d11b612bcc230e2e98066e2c3e0bacaed7d143701b69f088965ba66dcfb6adb9",
+      "sourceKey": "researched-crypto-1-10:module:8:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "48f5496f-67be-5977-870f-a5c9e4b0aa82",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Pick ONE protocol you actually find useful and would use anyway. Use it genuinely from your main wallet over time — real swaps, maybe some liquidity — and treat any future airdrop as a bonus, not the plan. Never chase a claim link from a DM.",
+      "lessonId": "9e3e8655-56d0-556e-93f0-a1fa5e64ed03",
+      "moduleId": "36cca377-7229-52a0-b51d-9ccf3c33a9a8",
+      "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+      "sourceHash": "d11b612bcc230e2e98066e2c3e0bacaed7d143701b69f088965ba66dcfb6adb9",
+      "sourceKey": "researched-crypto-1-10:module:9:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    },
+    {
+      "id": "3fb68d1a-ffaa-57be-b4f9-7c997dd9efaf",
+      "type": "assignment",
+      "title": "Lesson application",
+      "instructions": "Pick ONE frontier area (agentic payments, RWA, or DePIN) and find one real project in it. Read its official docs for 20 minutes and write three sentences: what it does, what token/mechanism powers it, and one open risk. That's how the fox stays early — by reading, not guessing.",
+      "lessonId": "df766381-f397-5bbd-8db3-139438344f37",
+      "moduleId": "983f644a-b48c-5ac7-9e6e-7e50f5f17934",
+      "sourcePath": "/opt/iron-vault/sex/VaultLoadingScreen-integration.md",
+      "sourceHash": "d11b612bcc230e2e98066e2c3e0bacaed7d143701b69f088965ba66dcfb6adb9",
+      "sourceKey": "researched-crypto-1-10:module:10:lesson:3:block:5",
+      "publicationStatus": "unpublished"
+    }
+  ],
+  "authoredProjects": [],
+  "authoredCapstones": [],
+  "canvasActivityBlueprints": [
+    {
+      "module": "1. Background and Basics",
+      "title": "Blockchain Lifecycle Simulation",
+      "type": "Simulation"
+    },
+    {
+      "module": "2. Blockchain Types",
+      "title": "BCF-M2-Lesson-3: Public vs. Private vs. Hybrid Discussion",
+      "type": "Discussion"
+    },
+    {
+      "module": "Modules 1–2",
+      "title": "BCF Modules 1 and 2 Quiz",
+      "type": "Quiz / exam"
+    },
+    {
+      "module": "3. Consensus",
+      "title": "Consensus Mechanism Simulator",
+      "type": "Simulation"
+    },
+    {
+      "module": "4. Cryptography and Hashing",
+      "title": "Hash Function and Avalanche Effect Lab",
+      "type": "Lab"
+    },
+    {
+      "concept": "Blockchain lifecycle",
+      "interaction": "Sequenced lifecycle simulation"
+    },
+    {
+      "concept": "Consensus",
+      "interaction": "Consensus-mechanism comparison simulator"
+    },
+    {
+      "concept": "Hashing",
+      "interaction": "Editable-input avalanche-effect lab"
+    },
+    {
+      "concept": "Wallet security",
+      "interaction": "Select-the-safe-practices scenario"
+    },
+    {
+      "concept": "Smart contracts",
+      "interaction": "Escrow-condition and release-flow simulation"
+    },
+    {
+      "concept": "Blockchain structure",
+      "interaction": "Hash-linked chain builder"
+    },
+    {
+      "concept": "Terminology",
+      "interaction": "Concept-definition matching game"
+    },
+    {
+      "concept": "DeFi lending",
+      "interaction": "Collateral, interest, health-factor, and liquidation sandbox"
+    },
+    {
+      "concept": "DAO governance",
+      "interaction": "Proposal review and simulated vote"
+    },
+    {
+      "concept": "Tokenization",
+      "interaction": "Practice NFT mint and metadata exercise"
+    },
+    {
+      "concept": "Solidity",
+      "interaction": "Progressive code-completion and contract-debugging labs"
+    },
+    {
+      "concept": "Security",
+      "interaction": "Vulnerability recognition, exploit-path analysis, and remediation scenarios"
+    },
+    {
+      "index": 18,
+      "style": "ListNumber",
+      "text": "Assessment, simulation, and gamification delivery model"
+    },
+    {
+      "index": 21,
+      "style": null,
+      "text": "This canvas organizes every course, program, module, lesson, question, learning outcome, assessment, simulation, delivery mode, audience description, and completion capability supplied for the Iron Vault Academy expansion."
+    },
+    {
+      "index": 46,
+      "style": null,
+      "text": "A simulation, lab, scenario, quiz, match, or builder"
+    },
+    {
+      "index": 47,
+      "style": null,
+      "text": "Hash Avalanche Effect Lab"
+    },
+    {
+      "index": 67,
+      "style": null,
+      "text": "Safely practice wallets, stablecoins, swaps, lending, governance, tokenization, and security."
+    },
+    {
+      "index": 82,
+      "style": null,
+      "text": "Position, fund, distribute, and sustain a Web3 project responsibly."
+    },
+    {
+      "index": 132,
+      "style": null,
+      "text": "Lesson / activity"
+    },
+    {
+      "index": 159,
+      "style": null,
+      "text": "Blockchain Lifecycle Simulation"
+    },
+    {
+      "index": 160,
+      "style": null,
+      "text": "Simulation"
+    },
+    {
+      "index": 184,
+      "style": null,
+      "text": "Simulation"
+    },
+    {
+      "index": 192,
+      "style": null,
+      "text": "Hash Function and Avalanche Effect Lab"
+    },
+    {
+      "index": 193,
+      "style": null,
+      "text": "Lab"
+    },
+    {
+      "index": 232,
+      "style": null,
+      "text": "Create a secure practice wallet and complete test transactions."
+    },
+    {
+      "index": 240,
+      "style": null,
+      "text": "Execute a practice token swap and explain liquidity mechanics."
+    },
+    {
+      "index": 252,
+      "style": null,
+      "text": "Mint a practice NFT and explain tokenization models and limitations."
+    },
+    {
+      "index": 260,
+      "style": "ListBullet",
+      "text": "Create and secure a practice crypto wallet."
+    },
+    {
+      "index": 264,
+      "style": "ListBullet",
+      "text": "Mint a simple practice NFT and explain tokenization."
+    },
+    {
+      "index": 748,
+      "style": null,
+      "text": "AI Prompt Engineer Capstone and Mastery Assessment"
+    },
+    {
+      "index": 794,
+      "style": null,
+      "text": "1. Project essence"
+    },
+    {
+      "index": 795,
+      "style": null,
+      "text": "Define what the project is, the problem it addresses, its tagline, its keywords, its differentiated value, and the audience that should care."
+    },
+    {
+      "index": 806,
+      "style": null,
+      "text": "Web3 growth requires project-specific positioning, audience clarity, disciplined resource allocation, channel testing, and sustained community engagement. Community is treated as a long-term operating asset, not a short-term promotional trick."
+    },
+    {
+      "index": 807,
+      "style": "Heading1",
+      "text": "9. Assessment, Simulation & Gamification Delivery Model"
+    },
+    {
+      "index": 826,
+      "style": null,
+      "text": "Sequenced lifecycle simulation"
+    },
+    {
+      "index": 830,
+      "style": null,
+      "text": "Editable-input avalanche-effect lab"
+    },
+    {
+      "index": 834,
+      "style": null,
+      "text": "Escrow-condition and release-flow simulation"
+    },
+    {
+      "index": 844,
+      "style": null,
+      "text": "Practice NFT mint and metadata exercise"
+    }
+  ],
+  "finding": "The archive contains authored lesson assignments/actions, but project and capstone references in the Canvas are outline-level rather than complete authored bodies."
+}

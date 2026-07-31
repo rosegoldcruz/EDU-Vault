@@ -1,0 +1,90 @@
+.card {
+  align-items: center;
+  background: var(--iv-ink);
+  border-radius: var(--iv-radius);
+  color: var(--iv-white);
+  display: grid;
+  gap: 20px;
+  grid-template-columns: auto 1fr auto;
+  margin-top: 52px;
+  padding: clamp(22px, 4vw, 30px);
+}
+
+.card[data-complete="true"] {
+  background: #153c2e;
+}
+
+.card > svg {
+  color: var(--iv-accent);
+  height: 26px;
+  width: 26px;
+}
+
+.card h2 {
+  font-family: var(--iv-display);
+  font-size: 24px;
+  margin: 0 0 6px;
+}
+
+.card p {
+  color: rgb(255 255 255 / 70%);
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.card button,
+.card a {
+  align-items: center;
+  background: var(--iv-accent);
+  border: 0;
+  border-radius: 999px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  gap: 8px;
+  justify-content: center;
+  padding: 12px 18px;
+  white-space: nowrap;
+}
+
+.card button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.card a svg {
+  height: 15px;
+  width: 15px;
+}
+
+.card .error {
+  color: #ffb4ab;
+  margin-top: 8px;
+}
+
+.spinner {
+  animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 680px) {
+  .card {
+    align-items: start;
+    grid-template-columns: auto 1fr;
+  }
+
+  .card button,
+  .card a {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+}

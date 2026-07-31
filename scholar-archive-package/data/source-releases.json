@@ -1,0 +1,62 @@
+[
+  {
+    "id": "47c1bf9c-1f0c-5509-ab8a-67715434e613",
+    "slug": "scholar-original-academy-gated-import",
+    "sourceFilename": "iron-vault-academy-unlocked (1).jsx",
+    "sourceHash": "72352d24ae18418c0235a6b2fe1304727fd79ae82987633db05c549f7e45757f",
+    "sourceFamily": "original-academy-gated",
+    "state": "immutable-import-package",
+    "publicationStatus": "unpublished",
+    "importedToDatabase": false
+  },
+  {
+    "id": "60969f29-b9d8-5a41-aa65-a84ce748b366",
+    "slug": "scholar-original-academy-unlocked-import",
+    "sourceFilename": "iron-vault-modules-13-22.jsx",
+    "sourceHash": "592281060dc83fecc84d7ade04d7bff33cd0b2c67778cfc1ff12c67e3e02e012",
+    "sourceFamily": "original-academy-unlocked",
+    "state": "immutable-import-package",
+    "publicationStatus": "unpublished",
+    "importedToDatabase": false
+  },
+  {
+    "id": "0ff1516d-eb45-5ea7-9d6b-31994287dbe2",
+    "slug": "scholar-modules-7-12-import",
+    "sourceFilename": "Iron_Vault_Master_Curriculum_Canvas.docx",
+    "sourceHash": "519232cdd530109b8713858b5851a612ff1ee9a9f46850e65e2c6ca1e4870664",
+    "sourceFamily": "modules-7-12",
+    "state": "immutable-import-package",
+    "publicationStatus": "unpublished",
+    "importedToDatabase": false
+  },
+  {
+    "id": "7838ac60-65ea-5b59-86d8-20521c21f07d",
+    "slug": "scholar-modules-13-22-import",
+    "sourceFilename": "iron-vault-modules-7-12.md",
+    "sourceHash": "5f8df33e08bd1738d6c24137e1383c8cd5bd97be7bdc7c3742d787d959727d04",
+    "sourceFamily": "modules-13-22",
+    "state": "immutable-import-package",
+    "publicationStatus": "unpublished",
+    "importedToDatabase": false
+  },
+  {
+    "id": "cf5d1eb8-c205-546a-99cb-9031700bd8c5",
+    "slug": "scholar-researched-crypto-import",
+    "sourceFilename": "VaultLoadingScreen-integration.md",
+    "sourceHash": "d11b612bcc230e2e98066e2c3e0bacaed7d143701b69f088965ba66dcfb6adb9",
+    "sourceFamily": "researched-crypto-1-10",
+    "state": "immutable-import-package",
+    "publicationStatus": "unpublished",
+    "importedToDatabase": false
+  },
+  {
+    "id": "92956648-4209-5e06-8954-2764f455d159",
+    "slug": "scholar-master-canvas-import",
+    "sourceFilename": "LessonInstructor.jsx",
+    "sourceHash": "a01a2a67b9586158918091bc261efd9df0c1a4e8fabab29b77cf7f615252d050",
+    "sourceFamily": "master-canvas",
+    "state": "immutable-blueprint-package",
+    "publicationStatus": "unpublished",
+    "importedToDatabase": false
+  }
+]

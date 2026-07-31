@@ -1,0 +1,1977 @@
+[
+  {
+    "id": "c2ebee27-0ba0-5f66-a0b8-39d0822fc210",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "Orientation:BCF-M0-Lesson-1: Course Introduction",
+    "title": "Course Introduction",
+    "type": "Lesson",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "956bd6f7-249b-5b2e-b743-c35106ff0d34",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "Orientation:BCF-M0-Lesson-2: Course Overview & Learning Objectives",
+    "title": "Course Overview & Learning Objectives",
+    "type": "Lesson",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "175efd2c-95a1-5b55-8255-aa9efaa21f20",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "1. Background and Basics:BCF-M1-Lesson-1: Blockchain History",
+    "title": "Blockchain History",
+    "type": "Lesson",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "a78ee85b-b5f4-5d3c-9e5a-23704be4dc29",
+      "lessonTitle": "The Anatomy of a Blockchain",
+      "sourceFamily": "modules-13-22",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "0d0235eb-aa8d-562c-9a49-092ae308048a",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "1. Background and Basics:BCF-M1-Lesson-2: Bitcoin History",
+    "title": "Bitcoin History",
+    "type": "Lesson",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "1fd033a4-abe8-5ae5-8f32-bc671a938b12",
+      "lessonTitle": "Why Bitcoin Exists",
+      "sourceFamily": "researched-crypto-1-10",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "592301af-70fa-5e93-80c5-4bd0fd57ff56",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "1. Background and Basics:BCF-M1-Lesson-3: Fear of Missing Out (FOMO)",
+    "title": "Fear of Missing Out (FOMO)",
+    "type": "Lesson",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "d7b84023-ea9b-52db-9fa7-8a2ada381844",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "1. Background and Basics:BCF-M1-Lesson-4: How Blockchain Works",
+    "title": "How Blockchain Works",
+    "type": "Lesson",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "96206787-77b5-5145-b452-ec749ffbcc08",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "1. Background and Basics:BCF-M1-Lesson-5: What Is Mining and Hashing?",
+    "title": "What Is Mining and Hashing?",
+    "type": "Lesson",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "5b215abd-46eb-5f14-8ade-e9c16f43bf03",
+      "lessonTitle": "What Money Actually Is — And Who Controls It",
+      "sourceFamily": "original-academy-unlocked",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "251d70f0-29b0-5d97-8057-f5558f8803b3",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "1. Background and Basics:BCF-M1-Lesson-6: What Are the Properties of a Blockchain?",
+    "title": "What Are the Properties of a Blockchain?",
+    "type": "Lesson",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "a78ee85b-b5f4-5d3c-9e5a-23704be4dc29",
+      "lessonTitle": "The Anatomy of a Blockchain",
+      "sourceFamily": "modules-13-22",
+      "titleSimilarity": 0.333
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "193bae4d-16f3-51d3-bf3b-54dd3b6ad427",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "1. Background and Basics:Blockchain Lifecycle Simulation",
+    "title": "Blockchain Lifecycle Simulation",
+    "type": "Simulation",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "4bbec04b-8aaf-5e8e-8738-b5dd395a9dda",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "2. Blockchain Types:BCF-M2-Lesson-1: Private vs. Public Blockchains",
+    "title": "Private vs. Public Blockchains",
+    "type": "Lesson",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "95003900-2a75-57ad-86ee-b8f65c00b6c3",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "2. Blockchain Types:BCF-M2-Lesson-2: Permissioned vs. Permissionless",
+    "title": "Permissioned vs. Permissionless",
+    "type": "Lesson",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "9d9e1d96-4376-54d6-afc8-5aba8a46bc89",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "2. Blockchain Types:BCF-M2-Lesson-3: Public vs. Private vs. Hybrid Discussion",
+    "title": "Public vs. Private vs. Hybrid Discussion",
+    "type": "Discussion",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "c48c8f5a-2f9a-5ca4-87cc-0d040445dbdc",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "Modules 1–2:BCF Modules 1 and 2 Quiz",
+    "title": "BCF Modules 1 and 2 Quiz",
+    "type": "Quiz / exam",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "6305f03a-1722-55cb-bea4-c26613e47317",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "3. Consensus:BCF-M3-Lesson-1: Consensus Mechanisms",
+    "title": "Consensus Mechanisms",
+    "type": "Lesson",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "274b7f92-d978-592e-a024-cafe1e4b6bf2",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "3. Consensus:BCF-M3-Lesson-2: Consensus Protocols — 14 Examples",
+    "title": "Consensus Protocols — 14 Examples",
+    "type": "Lesson",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "cb2ab650-4105-5ce2-b68b-da94e76354f5",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "3. Consensus:BCF-M3-Lesson-3: Consensus Protocols, Continued",
+    "title": "Consensus Protocols, Continued",
+    "type": "Lesson",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "347bdd75-5f9a-5d89-8309-16d350d8ef0a",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "3. Consensus:Consensus Mechanism Simulator",
+    "title": "Consensus Mechanism Simulator",
+    "type": "Simulation",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "8102d392-5575-56e4-bb48-e81849f7cd63",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "4. Cryptography and Hashing:BCF-M4-Lesson-1: Machine/Mathematical Cryptography",
+    "title": "Machine/Mathematical Cryptography",
+    "type": "Lesson",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "b1e30fc1-8f7d-594c-a543-682b1f36e97b",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "4. Cryptography and Hashing:BCF-M4-Lesson-2: Hash Function Properties",
+    "title": "Hash Function Properties",
+    "type": "Lesson",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "d9f12295-ae7c-55b6-9582-7bef3cb0b05b",
+    "sourceSection": "Blockchain Foundations detailed lesson plan",
+    "outlineKey": "4. Cryptography and Hashing:Hash Function and Avalanche Effect Lab",
+    "title": "Hash Function and Avalanche Effect Lab",
+    "type": "Lab",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "73c3ebdb-1f3d-5c29-a736-34d12b8a6ca7",
+    "sourceSection": "Eight-Week Practical DeFi & Web3 Finance Bootcamp",
+    "outlineKey": "week:1",
+    "title": "Welcome to Web3 & Why DeFi Matters",
+    "type": "week",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "5038e573-10e8-53ce-8281-8b08b5d14bd9",
+      "lessonTitle": "What DeFi Actually Is (And Why Banks Hate It)",
+      "sourceFamily": "modules-7-12",
+      "titleSimilarity": 0.3
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "cd366384-41a6-5d0f-b2d7-a5fbcc7c1e84",
+    "sourceSection": "Eight-Week Practical DeFi & Web3 Finance Bootcamp",
+    "outlineKey": "week:2",
+    "title": "Your First Wallet & Moving Money",
+    "type": "week",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "e6d8dc09-92c7-5118-8dae-84f3fb83c308",
+    "sourceSection": "Eight-Week Practical DeFi & Web3 Finance Bootcamp",
+    "outlineKey": "week:3",
+    "title": "Stablecoins and Digital Dollars",
+    "type": "week",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "f9b0ac75-1344-50dd-96b6-08b233483eb6",
+      "lessonTitle": "Stablecoins & Real-World Asset Backing",
+      "sourceFamily": "original-academy-unlocked",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "851d74cc-464d-5f80-902a-642a2790cf06",
+    "sourceSection": "Eight-Week Practical DeFi & Web3 Finance Bootcamp",
+    "outlineKey": "week:4",
+    "title": "Trading Without Banks — DEXs",
+    "type": "week",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "043c3dc5-e0d3-55ab-b725-38fb46d2e361",
+      "lessonTitle": "Decentralized Exchanges (DEXs): Trading Without a Middleman",
+      "sourceFamily": "modules-7-12",
+      "titleSimilarity": 0.429
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "8cc0f677-c9dd-5a95-b00e-6247fb98f599",
+    "sourceSection": "Eight-Week Practical DeFi & Web3 Finance Bootcamp",
+    "outlineKey": "week:5",
+    "title": "Lending, Borrowing & Yield",
+    "type": "week",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "e2b3c7ac-7985-5e93-9366-09fc5281a456",
+      "lessonTitle": "DeFi Lending and Borrowing: Collateralized Loans Without Banks",
+      "sourceFamily": "modules-7-12",
+      "titleSimilarity": 0.333
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "7584acab-0aca-5d5b-914a-cd3494470a0b",
+    "sourceSection": "Eight-Week Practical DeFi & Web3 Finance Bootcamp",
+    "outlineKey": "week:6",
+    "title": "DAOs and Digital Cooperatives",
+    "type": "week",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "d23271b0-9d26-5f3b-8d59-9a222bf94864",
+    "sourceSection": "Eight-Week Practical DeFi & Web3 Finance Bootcamp",
+    "outlineKey": "week:7",
+    "title": "NFTs & Tokenization of Assets",
+    "type": "week",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "2f5befe1-48c3-52f1-ae85-0bb8386a621e",
+    "sourceSection": "Eight-Week Practical DeFi & Web3 Finance Bootcamp",
+    "outlineKey": "week:8",
+    "title": "Security & the Future of Web3",
+    "type": "week",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "296a9127-ebc2-5f78-a8ca-72e8a3c01271",
+      "lessonTitle": "Scarcity and the Halving",
+      "sourceFamily": "researched-crypto-1-10",
+      "titleSimilarity": 0.286
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "16c7c6b9-f7c8-5d2e-b58c-7df80eb430bd",
+    "sourceSection": "Web3 Foundations",
+    "outlineKey": "Web3 Foundations:Module 1",
+    "title": "Understanding What Web3 Is",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "8332227f-75a8-56a9-8c22-544fb4d30c17",
+    "sourceSection": "Web3 Foundations",
+    "outlineKey": "Web3 Foundations:Module 2",
+    "title": "Why Web3",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "1fd033a4-abe8-5ae5-8f32-bc671a938b12",
+      "lessonTitle": "Why Bitcoin Exists",
+      "sourceFamily": "researched-crypto-1-10",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "87bb64e0-ef1c-590e-b5e2-f91a59696067",
+    "sourceSection": "Web3 Foundations",
+    "outlineKey": "Web3 Foundations:Module 3",
+    "title": "Web3 and the Metaverse",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "296a9127-ebc2-5f78-a8ca-72e8a3c01271",
+      "lessonTitle": "Scarcity and the Halving",
+      "sourceFamily": "researched-crypto-1-10",
+      "titleSimilarity": 0.333
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "18344386-2bf7-55b7-9435-81f9d0751eb5",
+    "sourceSection": "Web3 Foundations",
+    "outlineKey": "Web3 Foundations:Module 4",
+    "title": "Blockchain Fundamentals",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "a78ee85b-b5f4-5d3c-9e5a-23704be4dc29",
+      "lessonTitle": "The Anatomy of a Blockchain",
+      "sourceFamily": "modules-13-22",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "477721a9-dec9-5622-b9ec-51a664028c5d",
+    "sourceSection": "Web3 Foundations",
+    "outlineKey": "Web3 Foundations:Module 5",
+    "title": "Understanding DeFi",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "ec0bbb52-fb76-5ce2-a142-935b5ac1814f",
+    "sourceSection": "Web3 Foundations",
+    "outlineKey": "Web3 Foundations:Module 6",
+    "title": "Challenges, Risks and Ethics of Web3",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "99f009d2-c16f-5a25-9fde-534711f41a48",
+    "sourceSection": "Web3 Foundations",
+    "outlineKey": "Web3 Foundations:Module 7",
+    "title": "What Comes After Web3?",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "8d99dd43-8cbb-51ac-89b3-b2ee1b68ed17",
+      "lessonTitle": "What You Do After This Course",
+      "sourceFamily": "original-academy-unlocked",
+      "titleSimilarity": 0.286
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "4cf54a5d-e1b2-507d-b4aa-9dd170788b35",
+    "sourceSection": "Blockchain Foundations",
+    "outlineKey": "Blockchain Foundations:Module 1",
+    "title": "Blockchain Background and Basics",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "ba30b80d-10d1-5289-a395-91c1b054da66",
+    "sourceSection": "Blockchain Foundations",
+    "outlineKey": "Blockchain Foundations:Module 2",
+    "title": "Different Types of Blockchains",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "d6f7709c-457b-5313-934c-2c6c535f71be",
+    "sourceSection": "Blockchain Foundations",
+    "outlineKey": "Blockchain Foundations:Module 3",
+    "title": "Consensus",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "1c891399-974e-5301-91d4-00fb5e4d11fc",
+    "sourceSection": "Blockchain Foundations",
+    "outlineKey": "Blockchain Foundations:Module 4",
+    "title": "Cryptography and Hashing",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "8b811117-75a8-5cd8-b7cb-00f5c8a3aa51",
+    "sourceSection": "Blockchain Foundations",
+    "outlineKey": "Blockchain Foundations:Module 5",
+    "title": "Smart Contracts",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "909b4820-e7c5-5e2b-bc38-e340140508d1",
+    "sourceSection": "Blockchain Foundations",
+    "outlineKey": "Blockchain Foundations:Module 6",
+    "title": "Blockchain Wallets",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "a78ee85b-b5f4-5d3c-9e5a-23704be4dc29",
+      "lessonTitle": "The Anatomy of a Blockchain",
+      "sourceFamily": "modules-13-22",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "b2efa18e-383a-5dd8-a30a-d0c82b8eb83c",
+    "sourceSection": "Blockchain Foundations",
+    "outlineKey": "Blockchain Foundations:Module 7",
+    "title": "Pros and Cons",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "2eea6920-7002-59ab-a328-016fffdfc786",
+    "sourceSection": "Blockchain Foundations",
+    "outlineKey": "Blockchain Foundations:Module 8",
+    "title": "Public Blockchain-Based Applications",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "ce54aa7c-1262-5e4e-a333-d2fb8ca23c3e",
+      "lessonTitle": "The Blockchain Is Public",
+      "sourceFamily": "researched-crypto-1-10",
+      "titleSimilarity": 0.4
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "09c80475-ed9d-5165-82b0-65e8bb00d6a5",
+    "sourceSection": "Blockchain Foundations",
+    "outlineKey": "Blockchain Foundations:Module 9",
+    "title": "Blockchain and Crypto Regulation",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "cd1c413f-c75a-5bef-a835-3bd988afb272",
+      "lessonTitle": "Regulation: GENIUS, MiCA, and Trust",
+      "sourceFamily": "researched-crypto-1-10",
+      "titleSimilarity": 0.286
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "ca0d2109-7517-5a30-8eec-8818d3544d3a",
+    "sourceSection": "Blockchain Foundations",
+    "outlineKey": "Blockchain Foundations:Module 10",
+    "title": "Regulatory Reporting",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "03629800-734a-5569-9b49-ee1c16bb2844",
+    "sourceSection": "Blockchain Foundations",
+    "outlineKey": "Blockchain Foundations:Module 11",
+    "title": "Distributed Autonomous Organizations",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "938dc588-adb0-51f6-97f2-4ece7c730e51",
+    "sourceSection": "Blockchain Foundations",
+    "outlineKey": "Blockchain Foundations:Module 12",
+    "title": "Blockchain Today",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "a78ee85b-b5f4-5d3c-9e5a-23704be4dc29",
+      "lessonTitle": "The Anatomy of a Blockchain",
+      "sourceFamily": "modules-13-22",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "e5cada50-237e-57ea-a88b-3b59365fb71c",
+    "sourceSection": "Blockchain Foundations",
+    "outlineKey": "Blockchain Foundations:Module 13",
+    "title": "The Trilemma",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "5041a680-dcca-5c8d-8d16-e686a3046fdb",
+      "lessonTitle": "The Velocity of Money",
+      "sourceFamily": "original-academy-unlocked",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "83990cd3-4a46-525e-8702-e373a08eb78e",
+    "sourceSection": "Bitcoin Intensive",
+    "outlineKey": "Bitcoin Intensive:Module 1",
+    "title": "Bitcoin Overview",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "1fd033a4-abe8-5ae5-8f32-bc671a938b12",
+      "lessonTitle": "Why Bitcoin Exists",
+      "sourceFamily": "researched-crypto-1-10",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "87e1b4f9-6478-5513-8925-f872992df229",
+    "sourceSection": "Bitcoin Intensive",
+    "outlineKey": "Bitcoin Intensive:Module 2",
+    "title": "Technical Limitations and Mining Introduction",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "d3d64cb4-fc79-51b7-b0d1-97ac671eaa7b",
+    "sourceSection": "Bitcoin Intensive",
+    "outlineKey": "Bitcoin Intensive:Module 3",
+    "title": "Mining",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "ecbae6f2-0e52-5a29-b359-bda560a67805",
+    "sourceSection": "Bitcoin Intensive",
+    "outlineKey": "Bitcoin Intensive:Module 4",
+    "title": "Bitcoin vs. Protocols 2.0, 3.0, 4.0, etc.",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "34317954-52bd-56af-8613-050ad309ffb3",
+    "sourceSection": "Bitcoin Intensive",
+    "outlineKey": "Bitcoin Intensive:Module 5",
+    "title": "The New Database",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "21bb1b51-a5fe-58e8-8648-94d4ee32ecc7",
+    "sourceSection": "Bitcoin Intensive",
+    "outlineKey": "Bitcoin Intensive:Module 6",
+    "title": "Payments, Voting, and Other Use Cases",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "3f74917a-1de3-5ef9-bee6-eb3a9c2b415a",
+    "sourceSection": "Bitcoin Intensive",
+    "outlineKey": "Bitcoin Intensive:Module 7",
+    "title": "What’s Next?",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "35a433e2-33a6-56ea-b720-07574ffa94b1",
+      "lessonTitle": "What a Stablecoin Actually Is",
+      "sourceFamily": "researched-crypto-1-10",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "dcc4ceb1-56b3-5a2a-9503-7bc8c43cf1d4",
+    "sourceSection": "Blockchain Development Decision",
+    "outlineKey": "Blockchain Development Decision:Module 1",
+    "title": "Development Essentials",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "0726d1a1-1005-532f-a849-2c0b4034a85d",
+    "sourceSection": "Blockchain Development Decision",
+    "outlineKey": "Blockchain Development Decision:Module 2",
+    "title": "Platforms",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "9c3ea011-6888-5f91-a57d-943fda35c7e4",
+    "sourceSection": "Blockchain Development Decision",
+    "outlineKey": "Blockchain Development Decision:Module 3",
+    "title": "Hosting and Mining Decisions",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "3f5da242-cad9-56ae-92f0-952703d5b1e5",
+    "sourceSection": "Blockchain Development Decision",
+    "outlineKey": "Blockchain Development Decision:Module 4",
+    "title": "Associated Technologies",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "7a69ebd2-1443-5d90-b490-e5ad4c68b8d6",
+    "sourceSection": "Blockchain Development Decision",
+    "outlineKey": "Blockchain Development Decision:Module 5",
+    "title": "Development Languages",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "8da51e96-911b-5cd7-be66-5add6f6ed081",
+    "sourceSection": "Blockchain Development Decision",
+    "outlineKey": "Blockchain Development Decision:Module 6",
+    "title": "Security and Implementation Goals",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "fdebe55d-df31-5bdd-a952-07ab81a4db5e",
+    "sourceSection": "Blockchain Development Decision",
+    "outlineKey": "Blockchain Development Decision:Module 7",
+    "title": "Risk Management",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "a663d5eb-4f30-58e4-a0d9-4b2544ef06eb",
+    "sourceSection": "Blockchain Development Decision",
+    "outlineKey": "Blockchain Development Decision:Module 8",
+    "title": "Digital Transformation and Summary",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "70253af0-164a-55f4-a0b2-1bf928864d64",
+    "sourceSection": "Introduction to Blockchain Scrum Master",
+    "outlineKey": "Introduction to Blockchain Scrum Master:Module 1",
+    "title": "Introduction to Blockchain Scrum Master",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "ed44552e-0f28-5f65-8971-67743ef8ed62",
+    "sourceSection": "Introduction to Blockchain Scrum Master",
+    "outlineKey": "Introduction to Blockchain Scrum Master:Module 2",
+    "title": "Agile Economics, Managing, Options, Myths and Benefits",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "0944991c-3c98-5ea4-b60b-e728c883effc",
+    "sourceSection": "Introduction to Blockchain Scrum Master",
+    "outlineKey": "Introduction to Blockchain Scrum Master:Module 3",
+    "title": "Scrum Master Role, Scrum Roles, Teams, and Basics",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "35ac403d-861c-5ce9-bb4e-f7c3b675a6fd",
+    "sourceSection": "Introduction to Blockchain Scrum Master",
+    "outlineKey": "Introduction to Blockchain Scrum Master:Module 4",
+    "title": "Iteration Basics and Elements",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "f6a7b65a-2882-52a0-9e34-616d7c5ea47d",
+    "sourceSection": "Introduction to Blockchain Scrum Master",
+    "outlineKey": "Introduction to Blockchain Scrum Master:Module 5",
+    "title": "Blockchain Elements Leadership",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "70558cfd-116e-500f-bd68-9969759a1173",
+    "sourceSection": "Introduction to DevOps",
+    "outlineKey": "Introduction to DevOps:Module 1",
+    "title": "Introduction to DevOps",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "87b3758e-4190-503a-81fa-bc528cfd15e0",
+    "sourceSection": "Introduction to DevOps",
+    "outlineKey": "Introduction to DevOps:Module 2",
+    "title": "The DevOps Lifecycle",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "d78c26b9-e433-5f16-9c15-32147aab4148",
+    "sourceSection": "Introduction to DevOps",
+    "outlineKey": "Introduction to DevOps:Module 3",
+    "title": "Popular DevOps Tools",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "fddeadc0-fef7-5e4c-ae49-c8d8d7661a10",
+    "sourceSection": "Introduction to DevOps",
+    "outlineKey": "Introduction to DevOps:Module 4",
+    "title": "DevOps Team Structure and Roles",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "c680311d-82ef-5dbb-a8dd-f3ea4451f815",
+    "sourceSection": "Introduction to DevOps",
+    "outlineKey": "Introduction to DevOps:Module 5",
+    "title": "DevOps and ITIL",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "f5ccede6-9d98-503d-a5ed-1b0e5e66d914",
+    "sourceSection": "Introduction to DevOps",
+    "outlineKey": "Introduction to DevOps:Module 6",
+    "title": "Implementing DevOps: Best Practices and Challenges",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "e401884d-26f3-5cd5-98ba-46fc39adafc7",
+    "sourceSection": "Introduction to DevOps",
+    "outlineKey": "Introduction to DevOps:Module 7",
+    "title": "DevOps Culture and Collaboration",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "fb82c110-64d4-5bcc-911b-b61793e82787",
+    "sourceSection": "Introduction to DevOps",
+    "outlineKey": "Introduction to DevOps:Module 8",
+    "title": "DevOps in the Future",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "e051ec81-fc06-5891-bd8e-4067be7afb39",
+    "sourceSection": "zk-SNARKs Essentials",
+    "outlineKey": "zk-SNARKs Essentials:Module 1",
+    "title": "Introduction to zk-SNARKs",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "fe8e598c-be5c-58a9-995c-764f929981b2",
+    "sourceSection": "zk-SNARKs Essentials",
+    "outlineKey": "zk-SNARKs Essentials:Module 2",
+    "title": "Technical Details of zk-SNARKs",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "b899563e-b720-5571-9d5b-faa30bcec08a",
+    "sourceSection": "zk-SNARKs Essentials",
+    "outlineKey": "zk-SNARKs Essentials:Module 3",
+    "title": "Building a zk-SNARK Application",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "42c52877-957b-5c89-bdea-657888290129",
+    "sourceSection": "zk-SNARKs Essentials",
+    "outlineKey": "zk-SNARKs Essentials:Module 4",
+    "title": "Future Developments and Research in zk-SNARKs",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "087200d2-1415-57cd-812a-78dfd2f9c3fd",
+    "sourceSection": "Solidity Smart Contract Developer (EVM)",
+    "outlineKey": "Solidity Smart Contract Developer (EVM):Module 1",
+    "title": "First Smart Contract",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "f2ce2353-0a5e-52ee-bfbe-a1c606bfcf1c",
+    "sourceSection": "Solidity Smart Contract Developer (EVM)",
+    "outlineKey": "Solidity Smart Contract Developer (EVM):Module 2",
+    "title": "Adding Functionality",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "d0f0e5d3-6d0b-5f8c-aaf3-0beb4707c57f",
+    "sourceSection": "Solidity Smart Contract Developer (EVM)",
+    "outlineKey": "Solidity Smart Contract Developer (EVM):Module 3",
+    "title": "User Addresses",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "3add2aaf-69fe-5bc7-a1fa-c59e88d4aa3a",
+    "sourceSection": "Solidity Smart Contract Developer (EVM)",
+    "outlineKey": "Solidity Smart Contract Developer (EVM):Module 4",
+    "title": "Update State Conditions",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "ee051845-30dd-58c5-b3a9-549e49c6aefd",
+    "sourceSection": "Solidity Smart Contract Developer (EVM)",
+    "outlineKey": "Solidity Smart Contract Developer (EVM):Module 5",
+    "title": "Payments Introduction",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "22c198d0-c4c8-5b7a-8163-2e39ac16588f",
+    "sourceSection": "Solidity Smart Contract Developer (EVM)",
+    "outlineKey": "Solidity Smart Contract Developer (EVM):Module 6",
+    "title": "Sending Crypto to an Address",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "7cd5171a-01ac-5dcc-bdeb-82c5d96f41a1",
+    "sourceSection": "Solidity Smart Contract Developer (EVM)",
+    "outlineKey": "Solidity Smart Contract Developer (EVM):Module 7",
+    "title": "Conditional Transfer",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "ce7d4908-7f9e-597f-81d9-1eb1377448fe",
+    "sourceSection": "Solidity Smart Contract Developer (EVM)",
+    "outlineKey": "Solidity Smart Contract Developer (EVM):Module 8",
+    "title": "ERC-20 Development Options for Fungible Tokens",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "9b539242-84c3-553b-9579-b479b794e9b0",
+    "sourceSection": "Solidity Smart Contract Developer (EVM)",
+    "outlineKey": "Solidity Smart Contract Developer (EVM):Module 9",
+    "title": "ERC-721 Development Options for Non-Fungible Tokens",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "0848fb39-87ee-51c5-a70b-43e870d48436",
+    "sourceSection": "Solidity Smart Contract Developer (EVM)",
+    "outlineKey": "Solidity Smart Contract Developer (EVM):Module 10",
+    "title": "Smart Contract Voting",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "54949761-e0b7-5c8f-9edc-d55182fe917b",
+    "sourceSection": "Solidity Smart Contract Developer (EVM)",
+    "outlineKey": "Solidity Smart Contract Developer (EVM):Module 11",
+    "title": "Demo a DApp",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "26c4933d-ed8f-5354-b508-0c35f63c0733",
+    "sourceSection": "Smart Contract Security",
+    "outlineKey": "Smart Contract Security:Module 1",
+    "title": "Introduction to Smart Contract Security",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "1646c6ee-5838-56be-b338-183abc733f48",
+    "sourceSection": "Smart Contract Security",
+    "outlineKey": "Smart Contract Security:Module 2",
+    "title": "General Programming Vulnerabilities",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "7e6b77d8-2463-5af4-930b-ca7f6c697d54",
+    "sourceSection": "Smart Contract Security",
+    "outlineKey": "Smart Contract Security:Module 3",
+    "title": "Blockchain Vulnerabilities",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "a78ee85b-b5f4-5d3c-9e5a-23704be4dc29",
+      "lessonTitle": "The Anatomy of a Blockchain",
+      "sourceFamily": "modules-13-22",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "db3cda4d-07e2-5989-b510-6b22e90338f1",
+    "sourceSection": "Smart Contract Security",
+    "outlineKey": "Smart Contract Security:Module 4",
+    "title": "Ethereum-Specific Vulnerabilities",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "5b6f1dce-1182-5edc-8ccf-9411681a349f",
+    "sourceSection": "Understanding L1 & L2 Blockchains",
+    "outlineKey": "Understanding L1 & L2 Blockchains:Module 1",
+    "title": "Introduction",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "0a1debb0-e3a3-52d9-9a6c-b7599b8a4781",
+    "sourceSection": "Understanding L1 & L2 Blockchains",
+    "outlineKey": "Understanding L1 & L2 Blockchains:Module 2",
+    "title": "Layer 1 Blockchains",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "cb06c9ae-4b46-51fd-89b1-5620714a024d",
+    "sourceSection": "Understanding L1 & L2 Blockchains",
+    "outlineKey": "Understanding L1 & L2 Blockchains:Module 3",
+    "title": "Layer 2 Blockchains",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "b532e060-b80b-5323-980a-cd62d03edef7",
+    "sourceSection": "Understanding L1 & L2 Blockchains",
+    "outlineKey": "Understanding L1 & L2 Blockchains:Module 4",
+    "title": "Use Cases",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "d9bcf98d-114a-552a-9855-5f0839d45b19",
+    "sourceSection": "Understanding L1 & L2 Blockchains",
+    "outlineKey": "Understanding L1 & L2 Blockchains:Module 5",
+    "title": "Technical Aspects",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "2e36e4ce-9953-5f09-b0cb-58b49986ba2a",
+    "sourceSection": "Understanding L1 & L2 Blockchains",
+    "outlineKey": "Understanding L1 & L2 Blockchains:Module 6",
+    "title": "Conclusion",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "daae9b1d-9626-59a8-be5f-435a49c9bce5",
+    "sourceSection": "Understanding L1 & L2 Blockchains",
+    "outlineKey": "Understanding L1 & L2 Blockchains:Module 7",
+    "title": "Layer 0 and Layer 3 Blockchains",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "e0c3e6b8-41f2-5a14-81a0-2e8ce959206d",
+    "sourceSection": "Ethereum Enterprise Strategist",
+    "outlineKey": "Ethereum Enterprise Strategist:Module 1",
+    "title": "Blockchain Basics",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "a78ee85b-b5f4-5d3c-9e5a-23704be4dc29",
+      "lessonTitle": "The Anatomy of a Blockchain",
+      "sourceFamily": "modules-13-22",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "92f58aba-fad7-5fcc-a4ef-14171591998e",
+    "sourceSection": "Ethereum Enterprise Strategist",
+    "outlineKey": "Ethereum Enterprise Strategist:Module 2",
+    "title": "Origins of Ethereum",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "1c6976cb-d17f-5198-8106-94eaa13bbb62",
+    "sourceSection": "Ethereum Enterprise Strategist",
+    "outlineKey": "Ethereum Enterprise Strategist:Module 3",
+    "title": "Transactions on Ethereum",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "29041a35-a7db-537b-a663-55199bc00a0a",
+    "sourceSection": "Ethereum Enterprise Strategist",
+    "outlineKey": "Ethereum Enterprise Strategist:Module 4",
+    "title": "Ethereum Protocols",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "ab59f2f2-c1ce-578a-aa7b-7b705c1ae863",
+    "sourceSection": "Ethereum Enterprise Strategist",
+    "outlineKey": "Ethereum Enterprise Strategist:Module 5",
+    "title": "Ether and Cryptocurrencies",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "69fc3bfa-bb28-5164-b9fa-6d0077c3eb0f",
+    "sourceSection": "Ethereum Enterprise Strategist",
+    "outlineKey": "Ethereum Enterprise Strategist:Module 6",
+    "title": "Wallets",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "27f8e855-d807-5ddc-962e-032abe3de497",
+      "lessonTitle": "AI Agents With Wallets",
+      "sourceFamily": "researched-crypto-1-10",
+      "titleSimilarity": 0.333
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "31b58e62-3c3c-54bb-b2f6-79b75e0bab5c",
+    "sourceSection": "Ethereum Enterprise Strategist",
+    "outlineKey": "Ethereum Enterprise Strategist:Module 7",
+    "title": "The Ethereum Virtual Machine",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "83126309-7088-5feb-b80c-22630ab98c7b",
+    "sourceSection": "Ethereum Enterprise Strategist",
+    "outlineKey": "Ethereum Enterprise Strategist:Module 8",
+    "title": "Smart Contracts",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "63104708-a8d5-5df4-bb2b-0e670b45eea4",
+    "sourceSection": "Ethereum Enterprise Strategist",
+    "outlineKey": "Ethereum Enterprise Strategist:Module 9",
+    "title": "Ethereum Standards: ERC-20, ERC-721, etc.",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "0e8e79a3-fba4-5eb0-8017-42f868ffd62a",
+    "sourceSection": "Ethereum Enterprise Strategist",
+    "outlineKey": "Ethereum Enterprise Strategist:Module 10",
+    "title": "Fungible Tokens",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "e258c109-a8e1-5000-889e-75367cf87069",
+    "sourceSection": "Ethereum Enterprise Strategist",
+    "outlineKey": "Ethereum Enterprise Strategist:Module 11",
+    "title": "Non-Fungible Tokens",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "bd5c5927-f276-5b80-8fb8-729f7505d23e",
+    "sourceSection": "Ethereum Enterprise Strategist",
+    "outlineKey": "Ethereum Enterprise Strategist:Module 12",
+    "title": "Ethereum Distributed Applications",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "ae779cad-9a75-5835-85fa-8506f80d96b1",
+    "sourceSection": "Ethereum Enterprise Strategist",
+    "outlineKey": "Ethereum Enterprise Strategist:Module 13",
+    "title": "Ethereum Networks: Testnet and Live Networks",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "4db38c60-6a96-5b1d-bf9a-c1c3e8591b47",
+    "sourceSection": "Ethereum Enterprise Strategist",
+    "outlineKey": "Ethereum Enterprise Strategist:Module 14",
+    "title": "Ethereum Use Cases: Token Launches, DAOs, and Games",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "fea6e415-e298-5fbc-a101-e2f019b5ef38",
+      "lessonTitle": "Token Launches and Real Risk",
+      "sourceFamily": "researched-crypto-1-10",
+      "titleSimilarity": 0.3
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "ec5d1889-ecab-5dcd-93c7-e57ecb593e23",
+    "sourceSection": "Ethereum DApp Developer",
+    "outlineKey": "Ethereum DApp Developer:Module 1",
+    "title": "Basic Concepts and Configuring a Working Environment",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "8e3ba415-bbef-57e8-b755-ba59fceb2623",
+    "sourceSection": "Ethereum DApp Developer",
+    "outlineKey": "Ethereum DApp Developer:Module 2",
+    "title": "Introduction to Solidity",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "75ebb3b7-5524-598a-b49e-c096e29c567f",
+    "sourceSection": "Ethereum DApp Developer",
+    "outlineKey": "Ethereum DApp Developer:Module 3",
+    "title": "Exploring Smart Contracts and Ethereum Protocols",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "a0af47e2-4675-5339-92ac-adffa03b867c",
+    "sourceSection": "Ethereum DApp Developer",
+    "outlineKey": "Ethereum DApp Developer:Module 4",
+    "title": "Finalizing Your App",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "76909f48-4c1b-55ba-8dd4-0f0fa8c64489",
+    "sourceSection": "Blockchain Architecture 101",
+    "outlineKey": "Blockchain Architecture 101:Module 1",
+    "title": "Blockchain Introduction, Revisited",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "a56ed431-d699-580c-80b0-6b66c8d7bb37",
+    "sourceSection": "Blockchain Architecture 101",
+    "outlineKey": "Blockchain Architecture 101:Module 2",
+    "title": "Development Languages and Tools",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "0f50136a-2dbb-577f-82b6-b41c8f805ae6",
+    "sourceSection": "Blockchain Architecture 101",
+    "outlineKey": "Blockchain Architecture 101:Module 3",
+    "title": "Consensus Deep Dive",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "0ffb7f4b-5ae9-5724-a0aa-f3ae7d4198d2",
+    "sourceSection": "Blockchain Architecture 101",
+    "outlineKey": "Blockchain Architecture 101:Module 4",
+    "title": "The Blockchain Trilemma",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "a78ee85b-b5f4-5d3c-9e5a-23704be4dc29",
+      "lessonTitle": "The Anatomy of a Blockchain",
+      "sourceFamily": "modules-13-22",
+      "titleSimilarity": 0.5
+    },
+    "reconciliationStatus": "possible-overlap-review",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "ad7566eb-64a1-5183-a10e-a5d08aaceb4d",
+    "sourceSection": "Blockchain Architecture 101",
+    "outlineKey": "Blockchain Architecture 101:Module 5",
+    "title": "Blockchain Security Overview",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "a8a7e920-a1ad-5e7d-ad4e-8d22e8217338",
+    "sourceSection": "Blockchain Architecture 201",
+    "outlineKey": "Blockchain Architecture 201:Module 1",
+    "title": "Blockchain Security Deep Dive",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "aee9255e-3ac3-5880-a380-1bb0ac52a365",
+    "sourceSection": "Blockchain Architecture 201",
+    "outlineKey": "Blockchain Architecture 201:Module 2",
+    "title": "The Regulatory Landscape",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "2c10341b-4264-5f13-9a0d-22b863ac92d9",
+      "lessonTitle": "The Regulatory Landscape for RWAs",
+      "sourceFamily": "modules-7-12",
+      "titleSimilarity": 0.6
+    },
+    "reconciliationStatus": "possible-overlap-review",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "b0ba5b11-362e-5ba0-a3a0-3e82fd676fb1",
+    "sourceSection": "Blockchain Architecture 201",
+    "outlineKey": "Blockchain Architecture 201:Module 3",
+    "title": "Risk Management",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "231584bf-b262-5238-858b-beb50f618aab",
+    "sourceSection": "Blockchain Architecture 201",
+    "outlineKey": "Blockchain Architecture 201:Module 4",
+    "title": "Blockchain Solution Architecture Considerations",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "8bb079ae-bdaf-536a-af31-a9b343f53c3d",
+    "sourceSection": "Blockchain Architecture 201",
+    "outlineKey": "Blockchain Architecture 201:Module 5",
+    "title": "Blockchain Governance Concerns",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "3714a007-94d4-5cce-890b-ff71d031cc28",
+    "sourceSection": "Blockchain Architecture 201",
+    "outlineKey": "Blockchain Architecture 201:Module 6",
+    "title": "Blockchain in the Real World",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "a78ee85b-b5f4-5d3c-9e5a-23704be4dc29",
+      "lessonTitle": "The Anatomy of a Blockchain",
+      "sourceFamily": "modules-13-22",
+      "titleSimilarity": 0.4
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "909fb01f-e747-5f25-8147-ac273f6639ca",
+    "sourceSection": "Key Management",
+    "outlineKey": "Key Management:Module 1",
+    "title": "Key Management Overview",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "3ec07930-ec39-5fc0-9ef6-490176a9b480",
+    "sourceSection": "Key Management",
+    "outlineKey": "Key Management:Module 2",
+    "title": "Key Generation",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "7f4aa118-f937-5dcc-8340-734fb4cde6f2",
+    "sourceSection": "Key Management",
+    "outlineKey": "Key Management:Module 3",
+    "title": "Key Management and Storage",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "9c696962-73a7-586a-861b-85c6bc7fec94",
+    "sourceSection": "Key Management",
+    "outlineKey": "Key Management:Module 4",
+    "title": "Risks",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "9c5d7097-5bd1-5c8c-93ee-d5203b8e23a4",
+    "sourceSection": "Blockchain Security",
+    "outlineKey": "Blockchain Security:Module 1",
+    "title": "Introduction to Blockchain Security",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "41113f5d-aac8-5d07-ba77-e8b473fe85b0",
+    "sourceSection": "Blockchain Security",
+    "outlineKey": "Blockchain Security:Module 2",
+    "title": "Cryptography, Hash Functions, and Public Keys",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "a2ea810d-dfaa-5059-9851-268e4ae29ac5",
+    "sourceSection": "Blockchain Security",
+    "outlineKey": "Blockchain Security:Module 3",
+    "title": "Consensus, Proof of Work, and Proof of Stake Security",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "53130168-43f1-5c92-86e7-f6680c997660",
+      "lessonTitle": "Proof-of-Work and Reserve Status",
+      "sourceFamily": "researched-crypto-1-10",
+      "titleSimilarity": 0.375
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "06457c90-0ccd-5410-bb8f-0d1b529686e1",
+    "sourceSection": "Blockchain Security",
+    "outlineKey": "Blockchain Security:Module 4",
+    "title": "Advanced Blockchain and Architectural Security",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "557adcc0-9302-5512-bd88-175d96491d4b",
+    "sourceSection": "Blockchain Security",
+    "outlineKey": "Blockchain Security:Module 5",
+    "title": "Blockchain User and Node Security",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "8d4fc10c-62c7-5098-9655-f6cd32e6efd2",
+    "sourceSection": "Blockchain Security",
+    "outlineKey": "Blockchain Security:Module 6",
+    "title": "Securing Blockchain Networks and Staking",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "8e86fbb3-9555-56a2-bf4b-dac094f18e32",
+      "lessonTitle": "Gas, The Merge, and Staking",
+      "sourceFamily": "researched-crypto-1-10",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "b054513c-2508-5051-b554-f4589e6f3456",
+    "sourceSection": "Blockchain Security",
+    "outlineKey": "Blockchain Security:Module 7",
+    "title": "Introduction to Smart Contract Security",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "b2c6fb1e-ffb6-5e6b-8ebe-b43b3d052e5e",
+    "sourceSection": "Blockchain Security",
+    "outlineKey": "Blockchain Security:Module 8",
+    "title": "Programming Vulnerabilities",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "324402ee-a870-593e-8328-72b566d84c04",
+    "sourceSection": "Blockchain Architecture 301",
+    "outlineKey": "Blockchain Architecture 301:Module 1",
+    "title": "The Lifecycle of a Blockchain Solution",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "a78ee85b-b5f4-5d3c-9e5a-23704be4dc29",
+      "lessonTitle": "The Anatomy of a Blockchain",
+      "sourceFamily": "modules-13-22",
+      "titleSimilarity": 0.4
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "4b3e4cce-67ad-53cd-a541-e9c2cd3d30a9",
+    "sourceSection": "Blockchain Architecture 301",
+    "outlineKey": "Blockchain Architecture 301:Module 2",
+    "title": "Consumer vs. Enterprise Blockchain Use and Adoption",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "6faff036-ee0e-588f-970d-f97adc354402",
+    "sourceSection": "Blockchain Architecture 301",
+    "outlineKey": "Blockchain Architecture 301:Module 3",
+    "title": "Identity Management and Blockchain",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "f83184c8-685b-5cb6-a63c-212850f816d3",
+    "sourceSection": "Blockchain Architecture 301",
+    "outlineKey": "Blockchain Architecture 301:Module 4",
+    "title": "Web 2.5",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "ec9ee75c-f7bd-5960-91da-45e632d2f8ec",
+    "sourceSection": "Blockchain Architecture 301",
+    "outlineKey": "Blockchain Architecture 301:Module 5",
+    "title": "Blockchain Interoperability Deep Dive",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "17bb9723-a288-5db1-acc6-3d72dcb36b66",
+    "sourceSection": "Blockchain Architecture 301",
+    "outlineKey": "Blockchain Architecture 301:Module 6",
+    "title": "Blockchain Sustainability",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "a78ee85b-b5f4-5d3c-9e5a-23704be4dc29",
+      "lessonTitle": "The Anatomy of a Blockchain",
+      "sourceFamily": "modules-13-22",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "c82f6e04-f62c-50c7-82ae-73bd37a1f849",
+    "sourceSection": "Blockchain Architecture 301",
+    "outlineKey": "Blockchain Architecture 301:Module 7",
+    "title": "Where to Go from Here",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "9ca2679c-8a87-5955-aeed-cd73055e340d",
+    "sourceSection": "Scrum Methods for Blockchain",
+    "outlineKey": "Scrum Methods for Blockchain:Module 1",
+    "title": "User Stories",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "45296d91-e017-529d-9412-6a4704ad5c7f",
+      "lessonTitle": "The Stories We Inherited",
+      "sourceFamily": "modules-13-22",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "9af6de0e-e026-5543-aed7-a9426c24096b",
+    "sourceSection": "Scrum Methods for Blockchain",
+    "outlineKey": "Scrum Methods for Blockchain:Module 2",
+    "title": "User Story Estimation",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "3e75d65a-5e14-578f-8241-cb94914f873d",
+    "sourceSection": "Scrum Methods for Blockchain",
+    "outlineKey": "Scrum Methods for Blockchain:Module 3",
+    "title": "Team Velocity",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "5041a680-dcca-5c8d-8d16-e686a3046fdb",
+      "lessonTitle": "The Velocity of Money",
+      "sourceFamily": "original-academy-unlocked",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "6ed66d69-0a9e-5ac6-a8e7-1db545142c27",
+    "sourceSection": "Scrum Methods for Blockchain",
+    "outlineKey": "Scrum Methods for Blockchain:Module 4",
+    "title": "Scrum Events",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "80f0a653-d133-5b02-873f-7f222c3794cf",
+    "sourceSection": "Scrum Methods for Blockchain",
+    "outlineKey": "Scrum Methods for Blockchain:Module 5",
+    "title": "Prioritize the Backlog",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "03c980c7-062e-5c0f-8685-46f66bd95b18",
+    "sourceSection": "Scrum Methods for Blockchain",
+    "outlineKey": "Scrum Methods for Blockchain:Module 6",
+    "title": "Scrum Reporting",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "f0b2e78b-a90b-5921-9454-b7f0502467e3",
+    "sourceSection": "Scrum Methods for Blockchain",
+    "outlineKey": "Scrum Methods for Blockchain:Module 7",
+    "title": "Scrum Teams",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "e7b46a4f-bfa5-571a-8c5e-880810238ad0",
+    "sourceSection": "Scrum Methods for Blockchain",
+    "outlineKey": "Scrum Methods for Blockchain:Module 8",
+    "title": "Risk Management",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "40eaf457-7f28-5a69-8155-c818b26c4bb8",
+    "sourceSection": "Architecting Solutions by Combining Agile Methodologies",
+    "outlineKey": "Architecting Solutions by Combining Agile Methodologies:Module 1",
+    "title": "Architecting Solutions and Continuous Integration",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "834c8742-1d51-51c0-a8ce-97a5a7229591",
+    "sourceSection": "Architecting Solutions by Combining Agile Methodologies",
+    "outlineKey": "Architecting Solutions by Combining Agile Methodologies:Module 2",
+    "title": "Lean Methods",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "0c2ef4dd-d5f9-5561-ac5b-e27006141b9d",
+    "sourceSection": "Architecting Solutions by Combining Agile Methodologies",
+    "outlineKey": "Architecting Solutions by Combining Agile Methodologies:Module 3",
+    "title": "DevOps and Release Management",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "7caae192-71a9-5a47-a413-47ad606473b4",
+    "sourceSection": "Scaling Agile Solutions for Blockchain to a Team-of-Teams",
+    "outlineKey": "Scaling Agile Solutions for Blockchain to a Team-of-Teams:Module 1",
+    "title": "Scaling Agile Solutions",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "b3188aeb-476a-50b3-af47-4cd775ba0b5a",
+    "sourceSection": "Scaling Agile Solutions for Blockchain to a Team-of-Teams",
+    "outlineKey": "Scaling Agile Solutions for Blockchain to a Team-of-Teams:Module 2",
+    "title": "The Scaled Agile Team-of-Teams and Agile Enterprise",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "89125fc6-be3c-5620-845a-6c6717bfd37c",
+    "sourceSection": "Scaling Agile Solutions for Blockchain to a Team-of-Teams",
+    "outlineKey": "Scaling Agile Solutions for Blockchain to a Team-of-Teams:Module 3",
+    "title": "Agile for Device and Emerging Technology",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "044066af-786a-53a1-ace7-99c9989aab02",
+    "sourceSection": "Scaling Agile Solutions for Blockchain to a Team-of-Teams",
+    "outlineKey": "Scaling Agile Solutions for Blockchain to a Team-of-Teams:Module 4",
+    "title": "Business Outcomes",
+    "type": "module-sequence",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "3919336f-f4e8-5102-bf3b-e0aa008bbdb0",
+    "sourceSection": "AI Prompt Engineer pathway",
+    "outlineKey": "ai:1",
+    "title": "AI Essentials",
+    "type": "course",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "78dd877b-30d2-54b2-8264-2d1dec28dfec",
+    "sourceSection": "AI Prompt Engineer pathway",
+    "outlineKey": "ai:2",
+    "title": "Web3 Foundations",
+    "type": "course",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "8cc75613-2d3d-5211-b68a-ffd4d7f70a63",
+    "sourceSection": "AI Prompt Engineer pathway",
+    "outlineKey": "ai:3",
+    "title": "Blockchain Foundations",
+    "type": "course",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "a78ee85b-b5f4-5d3c-9e5a-23704be4dc29",
+      "lessonTitle": "The Anatomy of a Blockchain",
+      "sourceFamily": "modules-13-22",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "999fa206-f5e2-5dc9-abfa-a7889919fe5f",
+    "sourceSection": "AI Prompt Engineer pathway",
+    "outlineKey": "ai:4",
+    "title": "Blockchain & Bitcoin Intensive",
+    "type": "course",
+    "bestAuthoredLessonCandidate": {
+      "lessonId": "3a356ee5-7750-5cb0-a4ee-ab325a69012c",
+      "lessonTitle": "Bitcoin & Ethereum — Two Different Revolutions",
+      "sourceFamily": "original-academy-unlocked",
+      "titleSimilarity": 0.25
+    },
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "d81369af-5e96-5269-949f-e9f03dd6a660",
+    "sourceSection": "AI Prompt Engineer pathway",
+    "outlineKey": "ai:5",
+    "title": "Prompt Engineering 101: AI Chatbot (ChatGPT)",
+    "type": "course",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "31c364d6-9ce3-5931-b032-5f244bf07bed",
+    "sourceSection": "AI Prompt Engineer pathway",
+    "outlineKey": "ai:6",
+    "title": "AI Prompt Engineering 201: Advanced Topics",
+    "type": "course",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "1970c65e-5b6f-5343-a5e3-33bc8ee59d32",
+    "sourceSection": "AI Prompt Engineer pathway",
+    "outlineKey": "ai:7",
+    "title": "AI Prompt Engineering 301: Developer Topics",
+    "type": "course",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "a1e982a0-57d1-55e4-9708-8f78307cc4a0",
+    "sourceSection": "AI Prompt Engineer pathway",
+    "outlineKey": "ai:8",
+    "title": "Mastering Image Generative AI",
+    "type": "course",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "89531117-04cd-510d-a5ed-4801f0193228",
+    "sourceSection": "AI Prompt Engineer pathway",
+    "outlineKey": "ai:9",
+    "title": "Mastering Music Generative AI",
+    "type": "course",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "aa71fd92-79cc-546a-880b-f3f7d5d27915",
+    "sourceSection": "AI Prompt Engineer pathway",
+    "outlineKey": "ai:10",
+    "title": "AI Prompt Engineer Capstone and Mastery Assessment",
+    "type": "capstone-assessment",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "ae3ee50e-9e2b-5105-b690-7b2e243d95aa",
+    "sourceSection": "Web3 Growth & Community",
+    "outlineKey": "1. Project essence",
+    "title": "Define what the project is, the problem it addresses, its tagline, its keywords, its differentiated value, and the audience that should care.",
+    "type": "module-outline",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "3e23b72f-10c9-5adc-ab15-5710d49d2295",
+    "sourceSection": "Web3 Growth & Community",
+    "outlineKey": "2. Target audience",
+    "title": "Analyze who the strategy is for. Separate newcomers, experienced users, builders, investors, operators, and institutional audiences rather than marketing to everyone.",
+    "type": "module-outline",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "199e925a-ee41-5ec5-a4dc-279e120d3942",
+    "sourceSection": "Web3 Growth & Community",
+    "outlineKey": "3. Marketing budget",
+    "title": "Establish available budget before selecting tactics. Distinguish paid acquisition, content, partnerships, events, creators, community operations, and experimentation.",
+    "type": "module-outline",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "cbc8ab8e-c60c-5302-b63d-4195958ac9f2",
+    "sourceSection": "Web3 Growth & Community",
+    "outlineKey": "4. Channel possibilities",
+    "title": "Evaluate influencer marketing, blockchain SEO, email, educational content, partnerships, community programs, airdrops where appropriate, and other distribution channels against the audience and budget.",
+    "type": "module-outline",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  },
+  {
+    "id": "17602f18-7de4-5264-bbd5-062628d417d4",
+    "sourceSection": "Web3 Growth & Community",
+    "outlineKey": "5. Community continuity",
+    "title": "Support early users, maintain communication, collect feedback, and convert community trust into long-term participation and advocacy.",
+    "type": "module-outline",
+    "bestAuthoredLessonCandidate": null,
+    "reconciliationStatus": "outline-body-missing",
+    "publicationStatus": "unpublished"
+  }
+]

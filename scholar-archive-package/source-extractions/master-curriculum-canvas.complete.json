@@ -1,0 +1,6227 @@
+{
+  "paragraphs": [
+    {
+      "index": 1,
+      "style": "Eyebrow",
+      "text": "IRON VAULT ACADEMY"
+    },
+    {
+      "index": 2,
+      "style": "Title",
+      "text": "Master Curriculum Canvas"
+    },
+    {
+      "index": 3,
+      "style": null,
+      "text": "Canonical organization of the existing academy and all newly supplied course frameworks, lesson plans, simulations, assessments, and learning pathways"
+    },
+    {
+      "index": 4,
+      "style": null,
+      "text": "OPERATING PRINCIPLE"
+    },
+    {
+      "index": 5,
+      "style": null,
+      "text": "The academy is presented as clear pathways—not as a 500–700 lesson dump. Every source item is preserved in the register, then assigned to a coherent learner outcome."
+    },
+    {
+      "index": 6,
+      "style": "Eyebrow",
+      "text": "Version: July 2026"
+    },
+    {
+      "index": 7,
+      "style": null,
+      "text": "Status: Curriculum architecture canvas for content normalization, product design, and implementation."
+    },
+    {
+      "index": 9,
+      "style": "Heading1",
+      "text": "Canvas map"
+    },
+    {
+      "index": 10,
+      "style": "ListNumber",
+      "text": "Scope, preservation rules, and canonical model"
+    },
+    {
+      "index": 11,
+      "style": "ListNumber",
+      "text": "Academy pathway architecture"
+    },
+    {
+      "index": 12,
+      "style": "ListNumber",
+      "text": "Blockchain Foundations — complete supplied course specification"
+    },
+    {
+      "index": 13,
+      "style": "ListNumber",
+      "text": "Eight-Week Practical DeFi & Web3 Finance Bootcamp"
+    },
+    {
+      "index": 14,
+      "style": "ListNumber",
+      "text": "Web3 Developer and Master Blockchain Developer pathway"
+    },
+    {
+      "index": 15,
+      "style": "ListNumber",
+      "text": "AI Prompt Engineer pathway"
+    },
+    {
+      "index": 16,
+      "style": "ListNumber",
+      "text": "Enterprise, operator, risk, security, and compliance pathway"
+    },
+    {
+      "index": 17,
+      "style": "ListNumber",
+      "text": "Web3 Growth & Community elective"
+    },
+    {
+      "index": 18,
+      "style": "ListNumber",
+      "text": "Assessment, simulation, and gamification delivery model"
+    },
+    {
+      "index": 19,
+      "style": "ListNumber",
+      "text": "Complete source-course register and normalization notes"
+    },
+    {
+      "index": 20,
+      "style": "Heading1",
+      "text": "1. Scope and preservation rules"
+    },
+    {
+      "index": 21,
+      "style": null,
+      "text": "This canvas organizes every course, program, module, lesson, question, learning outcome, assessment, simulation, delivery mode, audience description, and completion capability supplied for the Iron Vault Academy expansion."
+    },
+    {
+      "index": 22,
+      "style": "ListBullet",
+      "text": "The existing 320-lesson academy catalog remains the current base inventory and is not replaced by this expansion."
+    },
+    {
+      "index": 23,
+      "style": "ListBullet",
+      "text": "Repeated titles are consolidated into one canonical course while their appearances across multiple pathways are retained through cross-listing."
+    },
+    {
+      "index": 24,
+      "style": "ListBullet",
+      "text": "Spelling and naming are normalized (for example, zk-SNARKs and self-study)."
+    },
+    {
+      "index": 25,
+      "style": "ListBullet",
+      "text": "Source-specific African positioning, including SACCO/chama use cases, is excluded from the general Iron Vault version."
+    },
+    {
+      "index": 26,
+      "style": "ListBullet",
+      "text": "Unsupported third-party certification, examination-voucher, tuition-credit, badge-percentage, and recognized-credential claims are excluded until a verified partnership exists."
+    },
+    {
+      "index": 27,
+      "style": "ListBullet",
+      "text": "Claims implying guaranteed or superior financial returns are replaced with neutral education about yield, borrowing, collateral, liquidation, and risk."
+    },
+    {
+      "index": 28,
+      "style": "ListBullet",
+      "text": "Iron Vault may issue its own course-completion certificate or digital completion credential based on verified completion data."
+    },
+    {
+      "index": 29,
+      "style": "Heading2",
+      "text": "Canonical content model"
+    },
+    {
+      "index": 30,
+      "style": null,
+      "text": "Layer"
+    },
+    {
+      "index": 31,
+      "style": null,
+      "text": "Definition"
+    },
+    {
+      "index": 32,
+      "style": null,
+      "text": "Example"
+    },
+    {
+      "index": 33,
+      "style": null,
+      "text": "Pathway"
+    },
+    {
+      "index": 34,
+      "style": null,
+      "text": "A marketable learner outcome spanning multiple courses"
+    },
+    {
+      "index": 35,
+      "style": null,
+      "text": "DeFi Practitioner"
+    },
+    {
+      "index": 36,
+      "style": null,
+      "text": "Course"
+    },
+    {
+      "index": 37,
+      "style": null,
+      "text": "A bounded body of knowledge with outcomes and assessment"
+    },
+    {
+      "index": 38,
+      "style": null,
+      "text": "Blockchain Foundations"
+    },
+    {
+      "index": 39,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 40,
+      "style": null,
+      "text": "A major concept cluster inside a course"
+    },
+    {
+      "index": 41,
+      "style": null,
+      "text": "Consensus"
+    },
+    {
+      "index": 42,
+      "style": null,
+      "text": "Lesson"
+    },
+    {
+      "index": 43,
+      "style": null,
+      "text": "A short instructional unit"
+    },
+    {
+      "index": 44,
+      "style": null,
+      "text": "Consensus Mechanisms"
+    },
+    {
+      "index": 45,
+      "style": null,
+      "text": "Interaction"
+    },
+    {
+      "index": 46,
+      "style": null,
+      "text": "A simulation, lab, scenario, quiz, match, or builder"
+    },
+    {
+      "index": 47,
+      "style": null,
+      "text": "Hash Avalanche Effect Lab"
+    },
+    {
+      "index": 48,
+      "style": null,
+      "text": "Assessment"
+    },
+    {
+      "index": 49,
+      "style": null,
+      "text": "A mastery checkpoint with defined pass logic"
+    },
+    {
+      "index": 50,
+      "style": null,
+      "text": "Final exam, 70% threshold"
+    },
+    {
+      "index": 51,
+      "style": null,
+      "text": "Credential"
+    },
+    {
+      "index": 52,
+      "style": null,
+      "text": "Evidence of verified completion"
+    },
+    {
+      "index": 53,
+      "style": null,
+      "text": "Iron Vault completion certificate"
+    },
+    {
+      "index": 55,
+      "style": "Heading1",
+      "text": "2. Academy pathway architecture"
+    },
+    {
+      "index": 56,
+      "style": null,
+      "text": "Pathway"
+    },
+    {
+      "index": 57,
+      "style": null,
+      "text": "Primary learner"
+    },
+    {
+      "index": 58,
+      "style": null,
+      "text": "Outcome"
+    },
+    {
+      "index": 59,
+      "style": null,
+      "text": "Start Here / Core Literacy"
+    },
+    {
+      "index": 60,
+      "style": null,
+      "text": "Beginners and token-community members"
+    },
+    {
+      "index": 61,
+      "style": null,
+      "text": "Understand wallets, Bitcoin, blockchain, Web3, risk, and safe participation."
+    },
+    {
+      "index": 62,
+      "style": null,
+      "text": "Blockchain Foundations"
+    },
+    {
+      "index": 63,
+      "style": null,
+      "text": "Professionals and advisors"
+    },
+    {
+      "index": 64,
+      "style": null,
+      "text": "Explain blockchain mechanics, consensus, cryptography, wallets, dApps, and business use cases."
+    },
+    {
+      "index": 65,
+      "style": null,
+      "text": "DeFi Practitioner"
+    },
+    {
+      "index": 66,
+      "style": null,
+      "text": "Beginner-to-intermediate users"
+    },
+    {
+      "index": 67,
+      "style": null,
+      "text": "Safely practice wallets, stablecoins, swaps, lending, governance, tokenization, and security."
+    },
+    {
+      "index": 68,
+      "style": null,
+      "text": "Web3 Developer"
+    },
+    {
+      "index": 69,
+      "style": null,
+      "text": "Developers and technical learners"
+    },
+    {
+      "index": 70,
+      "style": null,
+      "text": "Build, test, secure, and ship Solidity contracts and Ethereum applications."
+    },
+    {
+      "index": 71,
+      "style": null,
+      "text": "Architecture & Enterprise"
+    },
+    {
+      "index": 72,
+      "style": null,
+      "text": "Architects, operators, and business leaders"
+    },
+    {
+      "index": 73,
+      "style": null,
+      "text": "Evaluate platforms, governance, architecture, integration, risk, and adoption."
+    },
+    {
+      "index": 74,
+      "style": null,
+      "text": "Security, Risk & Compliance"
+    },
+    {
+      "index": 75,
+      "style": null,
+      "text": "Operators, analysts, and regulated teams"
+    },
+    {
+      "index": 76,
+      "style": null,
+      "text": "Manage keys, cyber risk, smart-contract risk, data protection, and sanctions awareness."
+    },
+    {
+      "index": 77,
+      "style": null,
+      "text": "AI Prompt Engineer"
+    },
+    {
+      "index": 78,
+      "style": null,
+      "text": "Creators, operators, marketers, and developers"
+    },
+    {
+      "index": 79,
+      "style": null,
+      "text": "Use conversational, image, music, and developer-oriented generative AI workflows."
+    },
+    {
+      "index": 80,
+      "style": null,
+      "text": "Web3 Growth & Community"
+    },
+    {
+      "index": 81,
+      "style": null,
+      "text": "Founders, growth teams, and community operators"
+    },
+    {
+      "index": 82,
+      "style": null,
+      "text": "Position, fund, distribute, and sustain a Web3 project responsibly."
+    },
+    {
+      "index": 85,
+      "style": "Heading1",
+      "text": "3. Blockchain Foundations"
+    },
+    {
+      "index": 86,
+      "style": null,
+      "text": "Course promise: Educate and empower learners to confidently discuss digital-asset technologies with their sector, clients, and colleagues."
+    },
+    {
+      "index": 87,
+      "style": null,
+      "text": "Course description: This course introduces blockchain, Bitcoin, and distributed ledgers. Learners study how blockchain works, explore Bitcoin, review the technology’s history, and examine practical and emerging uses across finance and other business areas. The objective is to build a solid foundation for understanding how blockchain may affect operations, information safeguards, and industry structures."
+    },
+    {
+      "index": 88,
+      "style": null,
+      "text": "Course attribute"
+    },
+    {
+      "index": 89,
+      "style": null,
+      "text": "Specification"
+    },
+    {
+      "index": 90,
+      "style": null,
+      "text": "Total hours"
+    },
+    {
+      "index": 91,
+      "style": null,
+      "text": "5"
+    },
+    {
+      "index": 92,
+      "style": null,
+      "text": "On-demand video"
+    },
+    {
+      "index": 93,
+      "style": null,
+      "text": "4 hours"
+    },
+    {
+      "index": 94,
+      "style": null,
+      "text": "Self-study"
+    },
+    {
+      "index": 95,
+      "style": null,
+      "text": "1 hour"
+    },
+    {
+      "index": 96,
+      "style": null,
+      "text": "Live workshop"
+    },
+    {
+      "index": 97,
+      "style": null,
+      "text": "0 required hours"
+    },
+    {
+      "index": 98,
+      "style": null,
+      "text": "Optional support"
+    },
+    {
+      "index": 99,
+      "style": null,
+      "text": "Live student orientation; live instructor-led AMA"
+    },
+    {
+      "index": 100,
+      "style": null,
+      "text": "Assessment standard"
+    },
+    {
+      "index": 101,
+      "style": null,
+      "text": "Checkpoint quizzes plus final exam; 70% required; three final-exam attempts"
+    },
+    {
+      "index": 102,
+      "style": null,
+      "text": "Completion evidence"
+    },
+    {
+      "index": 103,
+      "style": null,
+      "text": "Iron Vault Academy completion certificate or digital completion credential"
+    },
+    {
+      "index": 105,
+      "style": "Heading2",
+      "text": "Questions explored"
+    },
+    {
+      "index": 106,
+      "style": "ListBullet",
+      "text": "How does blockchain work?"
+    },
+    {
+      "index": 107,
+      "style": "ListBullet",
+      "text": "What are mining and hashing?"
+    },
+    {
+      "index": 108,
+      "style": "ListBullet",
+      "text": "How do digital wallets differ in their capabilities?"
+    },
+    {
+      "index": 109,
+      "style": "ListBullet",
+      "text": "What are smart contracts, and how may they change operations?"
+    },
+    {
+      "index": 110,
+      "style": "ListBullet",
+      "text": "What are the nuances of private, public, and hybrid blockchains?"
+    },
+    {
+      "index": 111,
+      "style": "ListBullet",
+      "text": "How do permissioned and permissionless blockchains differ?"
+    },
+    {
+      "index": 112,
+      "style": "ListBullet",
+      "text": "What consensus types exist, and how do consensus mechanisms differ across protocols?"
+    },
+    {
+      "index": 113,
+      "style": "Heading2",
+      "text": "Learning outcomes"
+    },
+    {
+      "index": 114,
+      "style": "ListBullet",
+      "text": "Explore the origins of blockchain and evaluate its potential effects across industries."
+    },
+    {
+      "index": 115,
+      "style": "ListBullet",
+      "text": "Adopt a Web3-oriented mental model for identity, ownership, verification, and participation online."
+    },
+    {
+      "index": 116,
+      "style": "ListBullet",
+      "text": "Comprehend and clearly explain blockchain applications and decentralized applications (dApps)."
+    },
+    {
+      "index": 117,
+      "style": "ListBullet",
+      "text": "Build the prerequisite knowledge needed for advanced Iron Vault pathways."
+    },
+    {
+      "index": 118,
+      "style": "Heading2",
+      "text": "Assessment plan"
+    },
+    {
+      "index": 119,
+      "style": null,
+      "text": "Assessment"
+    },
+    {
+      "index": 120,
+      "style": null,
+      "text": "Specification"
+    },
+    {
+      "index": 121,
+      "style": null,
+      "text": "Modules 1–2 quiz"
+    },
+    {
+      "index": 122,
+      "style": null,
+      "text": "5 questions"
+    },
+    {
+      "index": 123,
+      "style": null,
+      "text": "Modules 3–4 quiz"
+    },
+    {
+      "index": 124,
+      "style": null,
+      "text": "6 questions"
+    },
+    {
+      "index": 125,
+      "style": null,
+      "text": "Modules 7–11 quiz"
+    },
+    {
+      "index": 126,
+      "style": null,
+      "text": "7 questions"
+    },
+    {
+      "index": 127,
+      "style": null,
+      "text": "Final exam"
+    },
+    {
+      "index": 128,
+      "style": null,
+      "text": "20 questions; 70% required; three attempts"
+    },
+    {
+      "index": 130,
+      "style": "Heading2",
+      "text": "Detailed supplied lesson plan"
+    },
+    {
+      "index": 131,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 132,
+      "style": null,
+      "text": "Lesson / activity"
+    },
+    {
+      "index": 133,
+      "style": null,
+      "text": "Type"
+    },
+    {
+      "index": 134,
+      "style": null,
+      "text": "Orientation"
+    },
+    {
+      "index": 135,
+      "style": null,
+      "text": "BCF-M0-Lesson-1: Course Introduction"
+    },
+    {
+      "index": 136,
+      "style": null,
+      "text": "Lesson"
+    },
+    {
+      "index": 137,
+      "style": null,
+      "text": "Orientation"
+    },
+    {
+      "index": 138,
+      "style": null,
+      "text": "BCF-M0-Lesson-2: Course Overview & Learning Objectives"
+    },
+    {
+      "index": 139,
+      "style": null,
+      "text": "Lesson"
+    },
+    {
+      "index": 140,
+      "style": null,
+      "text": "1. Background and Basics"
+    },
+    {
+      "index": 141,
+      "style": null,
+      "text": "BCF-M1-Lesson-1: Blockchain History"
+    },
+    {
+      "index": 142,
+      "style": null,
+      "text": "Lesson"
+    },
+    {
+      "index": 143,
+      "style": null,
+      "text": "1. Background and Basics"
+    },
+    {
+      "index": 144,
+      "style": null,
+      "text": "BCF-M1-Lesson-2: Bitcoin History"
+    },
+    {
+      "index": 145,
+      "style": null,
+      "text": "Lesson"
+    },
+    {
+      "index": 146,
+      "style": null,
+      "text": "1. Background and Basics"
+    },
+    {
+      "index": 147,
+      "style": null,
+      "text": "BCF-M1-Lesson-3: Fear of Missing Out (FOMO)"
+    },
+    {
+      "index": 148,
+      "style": null,
+      "text": "Lesson"
+    },
+    {
+      "index": 149,
+      "style": null,
+      "text": "1. Background and Basics"
+    },
+    {
+      "index": 150,
+      "style": null,
+      "text": "BCF-M1-Lesson-4: How Blockchain Works"
+    },
+    {
+      "index": 151,
+      "style": null,
+      "text": "Lesson"
+    },
+    {
+      "index": 152,
+      "style": null,
+      "text": "1. Background and Basics"
+    },
+    {
+      "index": 153,
+      "style": null,
+      "text": "BCF-M1-Lesson-5: What Is Mining and Hashing?"
+    },
+    {
+      "index": 154,
+      "style": null,
+      "text": "Lesson"
+    },
+    {
+      "index": 155,
+      "style": null,
+      "text": "1. Background and Basics"
+    },
+    {
+      "index": 156,
+      "style": null,
+      "text": "BCF-M1-Lesson-6: What Are the Properties of a Blockchain?"
+    },
+    {
+      "index": 157,
+      "style": null,
+      "text": "Lesson"
+    },
+    {
+      "index": 158,
+      "style": null,
+      "text": "1. Background and Basics"
+    },
+    {
+      "index": 159,
+      "style": null,
+      "text": "Blockchain Lifecycle Simulation"
+    },
+    {
+      "index": 160,
+      "style": null,
+      "text": "Simulation"
+    },
+    {
+      "index": 161,
+      "style": null,
+      "text": "2. Blockchain Types"
+    },
+    {
+      "index": 162,
+      "style": null,
+      "text": "BCF-M2-Lesson-1: Private vs. Public Blockchains"
+    },
+    {
+      "index": 163,
+      "style": null,
+      "text": "Lesson"
+    },
+    {
+      "index": 164,
+      "style": null,
+      "text": "2. Blockchain Types"
+    },
+    {
+      "index": 165,
+      "style": null,
+      "text": "BCF-M2-Lesson-2: Permissioned vs. Permissionless"
+    },
+    {
+      "index": 166,
+      "style": null,
+      "text": "Lesson"
+    },
+    {
+      "index": 167,
+      "style": null,
+      "text": "2. Blockchain Types"
+    },
+    {
+      "index": 168,
+      "style": null,
+      "text": "BCF-M2-Lesson-3: Public vs. Private vs. Hybrid Discussion"
+    },
+    {
+      "index": 169,
+      "style": null,
+      "text": "Discussion"
+    },
+    {
+      "index": 170,
+      "style": null,
+      "text": "Modules 1–2"
+    },
+    {
+      "index": 171,
+      "style": null,
+      "text": "BCF Modules 1 and 2 Quiz"
+    },
+    {
+      "index": 172,
+      "style": null,
+      "text": "Quiz / exam"
+    },
+    {
+      "index": 173,
+      "style": null,
+      "text": "3. Consensus"
+    },
+    {
+      "index": 174,
+      "style": null,
+      "text": "BCF-M3-Lesson-1: Consensus Mechanisms"
+    },
+    {
+      "index": 175,
+      "style": null,
+      "text": "Lesson"
+    },
+    {
+      "index": 176,
+      "style": null,
+      "text": "3. Consensus"
+    },
+    {
+      "index": 177,
+      "style": null,
+      "text": "BCF-M3-Lesson-2: Consensus Protocols — 14 Examples"
+    },
+    {
+      "index": 178,
+      "style": null,
+      "text": "Lesson"
+    },
+    {
+      "index": 179,
+      "style": null,
+      "text": "3. Consensus"
+    },
+    {
+      "index": 180,
+      "style": null,
+      "text": "BCF-M3-Lesson-3: Consensus Protocols, Continued"
+    },
+    {
+      "index": 181,
+      "style": null,
+      "text": "Lesson"
+    },
+    {
+      "index": 182,
+      "style": null,
+      "text": "3. Consensus"
+    },
+    {
+      "index": 183,
+      "style": null,
+      "text": "Consensus Mechanism Simulator"
+    },
+    {
+      "index": 184,
+      "style": null,
+      "text": "Simulation"
+    },
+    {
+      "index": 185,
+      "style": null,
+      "text": "4. Cryptography and Hashing"
+    },
+    {
+      "index": 186,
+      "style": null,
+      "text": "BCF-M4-Lesson-1: Machine/Mathematical Cryptography"
+    },
+    {
+      "index": 187,
+      "style": null,
+      "text": "Lesson"
+    },
+    {
+      "index": 188,
+      "style": null,
+      "text": "4. Cryptography and Hashing"
+    },
+    {
+      "index": 189,
+      "style": null,
+      "text": "BCF-M4-Lesson-2: Hash Function Properties"
+    },
+    {
+      "index": 190,
+      "style": null,
+      "text": "Lesson"
+    },
+    {
+      "index": 191,
+      "style": null,
+      "text": "4. Cryptography and Hashing"
+    },
+    {
+      "index": 192,
+      "style": null,
+      "text": "Hash Function and Avalanche Effect Lab"
+    },
+    {
+      "index": 193,
+      "style": null,
+      "text": "Lab"
+    },
+    {
+      "index": 195,
+      "style": null,
+      "text": "CONTENT CONTINUATION"
+    },
+    {
+      "index": 196,
+      "style": null,
+      "text": "The broader Blockchain Foundations outline supplied elsewhere in this canvas continues through wallets, applications, regulation, reporting, DAOs, the trilemma, and the present state of blockchain. Those modules are preserved in the canonical register in Section 5."
+    },
+    {
+      "index": 198,
+      "style": "Heading1",
+      "text": "4. Eight-Week Practical DeFi & Web3 Finance Bootcamp"
+    },
+    {
+      "index": 199,
+      "style": null,
+      "text": "Program promise: Discover the future of finance and build practical confidence with digital finance, tokenization, and blockchain innovation—without requiring a technical background."
+    },
+    {
+      "index": 200,
+      "style": null,
+      "text": "Program attribute"
+    },
+    {
+      "index": 201,
+      "style": null,
+      "text": "Specification"
+    },
+    {
+      "index": 202,
+      "style": null,
+      "text": "Length"
+    },
+    {
+      "index": 203,
+      "style": null,
+      "text": "8 weeks"
+    },
+    {
+      "index": 204,
+      "style": null,
+      "text": "Format"
+    },
+    {
+      "index": 205,
+      "style": null,
+      "text": "Hands-on learning with practical exercises every week"
+    },
+    {
+      "index": 206,
+      "style": null,
+      "text": "Delivery"
+    },
+    {
+      "index": 207,
+      "style": null,
+      "text": "Flexible online or on-site"
+    },
+    {
+      "index": 208,
+      "style": null,
+      "text": "Level"
+    },
+    {
+      "index": 209,
+      "style": null,
+      "text": "Beginner-friendly"
+    },
+    {
+      "index": 210,
+      "style": null,
+      "text": "Completion"
+    },
+    {
+      "index": 211,
+      "style": null,
+      "text": "Iron Vault Academy completion certificate"
+    },
+    {
+      "index": 213,
+      "style": "Heading2",
+      "text": "What learners master"
+    },
+    {
+      "index": 214,
+      "style": null,
+      "text": "Learners build a practical understanding of the Internet of Finance and examine how Web3 can affect personal finance, organizations, communities, and digital ownership."
+    },
+    {
+      "index": 215,
+      "style": "ListBullet",
+      "text": "Entrepreneurs"
+    },
+    {
+      "index": 216,
+      "style": "ListBullet",
+      "text": "Professionals"
+    },
+    {
+      "index": 217,
+      "style": "ListBullet",
+      "text": "Finance enthusiasts"
+    },
+    {
+      "index": 218,
+      "style": "ListBullet",
+      "text": "Community leaders"
+    },
+    {
+      "index": 219,
+      "style": "ListBullet",
+      "text": "Young adults and career explorers"
+    },
+    {
+      "index": 220,
+      "style": "ListBullet",
+      "text": "Learners with no prior crypto experience"
+    },
+    {
+      "index": 221,
+      "style": null,
+      "text": "Week"
+    },
+    {
+      "index": 222,
+      "style": null,
+      "text": "Theme"
+    },
+    {
+      "index": 223,
+      "style": null,
+      "text": "Core topics"
+    },
+    {
+      "index": 224,
+      "style": null,
+      "text": "Practical outcome"
+    },
+    {
+      "index": 225,
+      "style": null,
+      "text": "1"
+    },
+    {
+      "index": 226,
+      "style": null,
+      "text": "Welcome to Web3 & Why DeFi Matters"
+    },
+    {
+      "index": 227,
+      "style": null,
+      "text": "Web1 → Web2 → Web3 evolution; blockchain and decentralization basics; DeFi fundamentals and safety"
+    },
+    {
+      "index": 228,
+      "style": null,
+      "text": "Explain the DeFi landscape and identify relevant opportunities and risks."
+    },
+    {
+      "index": 229,
+      "style": null,
+      "text": "2"
+    },
+    {
+      "index": 230,
+      "style": null,
+      "text": "Your First Wallet & Moving Money"
+    },
+    {
+      "index": 231,
+      "style": null,
+      "text": "Hot vs. cold wallets; security best practices; send and receive crypto on testnet"
+    },
+    {
+      "index": 232,
+      "style": null,
+      "text": "Create a secure practice wallet and complete test transactions."
+    },
+    {
+      "index": 233,
+      "style": null,
+      "text": "3"
+    },
+    {
+      "index": 234,
+      "style": null,
+      "text": "Stablecoins and Digital Dollars"
+    },
+    {
+      "index": 235,
+      "style": null,
+      "text": "USDT, USDC, DAI, and other stablecoin models; centralized vs. decentralized; remittance, settlement, and savings use cases"
+    },
+    {
+      "index": 236,
+      "style": null,
+      "text": "Explain stablecoin models and evaluate cross-border and treasury use cases."
+    },
+    {
+      "index": 237,
+      "style": null,
+      "text": "4"
+    },
+    {
+      "index": 238,
+      "style": null,
+      "text": "Trading Without Banks — DEXs"
+    },
+    {
+      "index": 239,
+      "style": null,
+      "text": "Uniswap and PancakeSwap basics; liquidity pools; CEX vs. DEX comparison"
+    },
+    {
+      "index": 240,
+      "style": null,
+      "text": "Execute a practice token swap and explain liquidity mechanics."
+    },
+    {
+      "index": 241,
+      "style": null,
+      "text": "5"
+    },
+    {
+      "index": 242,
+      "style": null,
+      "text": "Lending, Borrowing & Yield"
+    },
+    {
+      "index": 243,
+      "style": null,
+      "text": "Aave and Compound; collateral and liquidation; yield-farming fundamentals"
+    },
+    {
+      "index": 244,
+      "style": null,
+      "text": "Calculate example positions and explain yield, leverage, collateral, and liquidation risk."
+    },
+    {
+      "index": 245,
+      "style": null,
+      "text": "6"
+    },
+    {
+      "index": 246,
+      "style": null,
+      "text": "DAOs and Digital Cooperatives"
+    },
+    {
+      "index": 247,
+      "style": null,
+      "text": "DAO fundamentals and governance; token-based voting; organizational and community applications"
+    },
+    {
+      "index": 248,
+      "style": null,
+      "text": "Participate in a simulated governance proposal and vote."
+    },
+    {
+      "index": 249,
+      "style": null,
+      "text": "7"
+    },
+    {
+      "index": 250,
+      "style": null,
+      "text": "NFTs & Tokenization of Assets"
+    },
+    {
+      "index": 251,
+      "style": null,
+      "text": "NFTs beyond art: access, tickets, identity, property claims; fractional ownership concepts; digital ownership models"
+    },
+    {
+      "index": 252,
+      "style": null,
+      "text": "Mint a practice NFT and explain tokenization models and limitations."
+    },
+    {
+      "index": 253,
+      "style": null,
+      "text": "8"
+    },
+    {
+      "index": 254,
+      "style": null,
+      "text": "Security & the Future of Web3"
+    },
+    {
+      "index": 255,
+      "style": null,
+      "text": "Common threats; security tools and practices; regulation; career and participation pathways"
+    },
+    {
+      "index": 256,
+      "style": null,
+      "text": "Graduate able to navigate core Web3 activities with a documented safety framework."
+    },
+    {
+      "index": 259,
+      "style": "Heading2",
+      "text": "Graduation capabilities"
+    },
+    {
+      "index": 260,
+      "style": "ListBullet",
+      "text": "Create and secure a practice crypto wallet."
+    },
+    {
+      "index": 261,
+      "style": "ListBullet",
+      "text": "Send, receive, and swap tokens on testnets or controlled learning environments."
+    },
+    {
+      "index": 262,
+      "style": "ListBullet",
+      "text": "Explain DeFi lending, borrowing, yield, collateral, and liquidation risk."
+    },
+    {
+      "index": 263,
+      "style": "ListBullet",
+      "text": "Participate in a simulated DAO governance vote."
+    },
+    {
+      "index": 264,
+      "style": "ListBullet",
+      "text": "Mint a simple practice NFT and explain tokenization."
+    },
+    {
+      "index": 265,
+      "style": "ListBullet",
+      "text": "Explain how Web3 tools can support finance, organizations, ownership, and coordination."
+    },
+    {
+      "index": 266,
+      "style": "ListBullet",
+      "text": "Earn an Iron Vault Academy completion certificate after verified completion."
+    },
+    {
+      "index": 267,
+      "style": "Heading1",
+      "text": "5. Web3 Developer / Master Blockchain Developer Pathway"
+    },
+    {
+      "index": 268,
+      "style": null,
+      "text": "Purpose: A technical avenue for developers, solution architects, technology enthusiasts, and professionals who want to build or deepen a blockchain-development career."
+    },
+    {
+      "index": 269,
+      "style": "Heading2",
+      "text": "Prerequisites"
+    },
+    {
+      "index": 270,
+      "style": null,
+      "text": "Recommended: at least one year of software-development experience in C++, Python, Java, or JavaScript. Solidity is influenced by C++, Python, and JavaScript. Foundation courses can be used as a bridge for learners who do not yet meet the recommendation."
+    },
+    {
+      "index": 271,
+      "style": "Heading2",
+      "text": "Program delivery inventory"
+    },
+    {
+      "index": 272,
+      "style": null,
+      "text": "Course / event"
+    },
+    {
+      "index": 273,
+      "style": null,
+      "text": "Duration"
+    },
+    {
+      "index": 274,
+      "style": null,
+      "text": "Delivery"
+    },
+    {
+      "index": 275,
+      "style": null,
+      "text": "Student Orientation"
+    },
+    {
+      "index": 276,
+      "style": null,
+      "text": "1 hour"
+    },
+    {
+      "index": 277,
+      "style": null,
+      "text": "Live online, optional"
+    },
+    {
+      "index": 278,
+      "style": null,
+      "text": "Live Instructor AMA — bi-weekly"
+    },
+    {
+      "index": 279,
+      "style": null,
+      "text": "1+ hour"
+    },
+    {
+      "index": 280,
+      "style": null,
+      "text": "Live online, optional"
+    },
+    {
+      "index": 281,
+      "style": null,
+      "text": "Web3 Foundations"
+    },
+    {
+      "index": 282,
+      "style": null,
+      "text": "3 hours"
+    },
+    {
+      "index": 283,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 284,
+      "style": null,
+      "text": "Blockchain Foundations"
+    },
+    {
+      "index": 285,
+      "style": null,
+      "text": "6 hours"
+    },
+    {
+      "index": 286,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 287,
+      "style": null,
+      "text": "Bitcoin Intensive"
+    },
+    {
+      "index": 288,
+      "style": null,
+      "text": "6 hours"
+    },
+    {
+      "index": 289,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 290,
+      "style": null,
+      "text": "Blockchain Development Decision"
+    },
+    {
+      "index": 291,
+      "style": null,
+      "text": "5 hours"
+    },
+    {
+      "index": 292,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 293,
+      "style": null,
+      "text": "Blockchain+ mastery assessment"
+    },
+    {
+      "index": 294,
+      "style": null,
+      "text": "1 hour"
+    },
+    {
+      "index": 295,
+      "style": null,
+      "text": "Remote-proctored assessment model"
+    },
+    {
+      "index": 296,
+      "style": null,
+      "text": "Introduction to Blockchain Scrum Master"
+    },
+    {
+      "index": 297,
+      "style": null,
+      "text": "3 hours"
+    },
+    {
+      "index": 298,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 299,
+      "style": null,
+      "text": "Introduction to DevOps"
+    },
+    {
+      "index": 300,
+      "style": null,
+      "text": "4 hours"
+    },
+    {
+      "index": 301,
+      "style": null,
+      "text": "Live online"
+    },
+    {
+      "index": 302,
+      "style": null,
+      "text": "zk-SNARKs Essentials"
+    },
+    {
+      "index": 303,
+      "style": null,
+      "text": "2 hours"
+    },
+    {
+      "index": 304,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 305,
+      "style": null,
+      "text": "Solidity Smart Contract Developer (EVM)"
+    },
+    {
+      "index": 306,
+      "style": null,
+      "text": "7 hours"
+    },
+    {
+      "index": 307,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 308,
+      "style": null,
+      "text": "Smart Contract Developer Live Workshop"
+    },
+    {
+      "index": 309,
+      "style": null,
+      "text": "3 hours"
+    },
+    {
+      "index": 310,
+      "style": null,
+      "text": "Live online"
+    },
+    {
+      "index": 311,
+      "style": null,
+      "text": "Smart Contract Security"
+    },
+    {
+      "index": 312,
+      "style": null,
+      "text": "7 hours"
+    },
+    {
+      "index": 313,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 314,
+      "style": null,
+      "text": "Understanding L1 & L2 Blockchains"
+    },
+    {
+      "index": 315,
+      "style": null,
+      "text": "2 hours"
+    },
+    {
+      "index": 316,
+      "style": null,
+      "text": "Live online"
+    },
+    {
+      "index": 317,
+      "style": null,
+      "text": "Smart Contract Developer mastery assessment"
+    },
+    {
+      "index": 318,
+      "style": null,
+      "text": "1 hour"
+    },
+    {
+      "index": 319,
+      "style": null,
+      "text": "Online proctored assessment model"
+    },
+    {
+      "index": 320,
+      "style": null,
+      "text": "Ethereum Enterprise Strategist"
+    },
+    {
+      "index": 321,
+      "style": null,
+      "text": "4 hours"
+    },
+    {
+      "index": 322,
+      "style": null,
+      "text": "Remote-proctored assessment model"
+    },
+    {
+      "index": 323,
+      "style": null,
+      "text": "Ethereum DApp Developer"
+    },
+    {
+      "index": 324,
+      "style": null,
+      "text": "5 hours"
+    },
+    {
+      "index": 325,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 326,
+      "style": null,
+      "text": "Ethereum DApp Live Workshop"
+    },
+    {
+      "index": 327,
+      "style": null,
+      "text": "3 hours"
+    },
+    {
+      "index": 328,
+      "style": null,
+      "text": "Live online"
+    },
+    {
+      "index": 329,
+      "style": null,
+      "text": "Blockchain Architecture 101"
+    },
+    {
+      "index": 330,
+      "style": null,
+      "text": "4 hours"
+    },
+    {
+      "index": 331,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 332,
+      "style": null,
+      "text": "Blockchain Architecture 201"
+    },
+    {
+      "index": 333,
+      "style": null,
+      "text": "4 hours"
+    },
+    {
+      "index": 334,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 335,
+      "style": null,
+      "text": "Ethereum Developer mastery assessment"
+    },
+    {
+      "index": 336,
+      "style": null,
+      "text": "2 hours"
+    },
+    {
+      "index": 337,
+      "style": null,
+      "text": "Remote-proctored assessment model"
+    },
+    {
+      "index": 338,
+      "style": null,
+      "text": "Key Management"
+    },
+    {
+      "index": 339,
+      "style": null,
+      "text": "3 hours"
+    },
+    {
+      "index": 340,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 341,
+      "style": null,
+      "text": "Blockchain Security"
+    },
+    {
+      "index": 342,
+      "style": null,
+      "text": "10 hours"
+    },
+    {
+      "index": 343,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 344,
+      "style": null,
+      "text": "Blockchain Security Live Workshop"
+    },
+    {
+      "index": 345,
+      "style": null,
+      "text": "3 hours"
+    },
+    {
+      "index": 346,
+      "style": null,
+      "text": "Live online"
+    },
+    {
+      "index": 347,
+      "style": null,
+      "text": "Blockchain Security Professional mastery assessment"
+    },
+    {
+      "index": 348,
+      "style": null,
+      "text": "2 hours"
+    },
+    {
+      "index": 349,
+      "style": null,
+      "text": "Remote-proctored assessment model"
+    },
+    {
+      "index": 350,
+      "style": null,
+      "text": "Blockchain Architecture 301"
+    },
+    {
+      "index": 351,
+      "style": null,
+      "text": "5 hours"
+    },
+    {
+      "index": 352,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 353,
+      "style": null,
+      "text": "Blockchain Architecture Workshop"
+    },
+    {
+      "index": 354,
+      "style": null,
+      "text": "3 hours"
+    },
+    {
+      "index": 355,
+      "style": null,
+      "text": "Live online"
+    },
+    {
+      "index": 356,
+      "style": null,
+      "text": "Scrum Methods for Blockchain"
+    },
+    {
+      "index": 357,
+      "style": null,
+      "text": "2 hours"
+    },
+    {
+      "index": 358,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 359,
+      "style": null,
+      "text": "Architecting Solutions by Combining Agile Methodologies"
+    },
+    {
+      "index": 360,
+      "style": null,
+      "text": "2 hours"
+    },
+    {
+      "index": 361,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 362,
+      "style": null,
+      "text": "Scaling Agile Solutions for Blockchain to a Team-of-Teams"
+    },
+    {
+      "index": 363,
+      "style": null,
+      "text": "5 hours"
+    },
+    {
+      "index": 364,
+      "style": null,
+      "text": "On-demand, instructor-supported"
+    },
+    {
+      "index": 365,
+      "style": null,
+      "text": "Master Blockchain Developer Level 3 mastery assessment"
+    },
+    {
+      "index": 366,
+      "style": null,
+      "text": "2 hours"
+    },
+    {
+      "index": 367,
+      "style": null,
+      "text": "Remote-proctored assessment model"
+    },
+    {
+      "index": 369,
+      "style": "Heading2",
+      "text": "Detailed developer curriculum"
+    },
+    {
+      "index": 370,
+      "style": "Heading3",
+      "text": "Web3 Foundations"
+    },
+    {
+      "index": 371,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 372,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 373,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 374,
+      "style": null,
+      "text": "Understanding What Web3 Is"
+    },
+    {
+      "index": 375,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 376,
+      "style": null,
+      "text": "Why Web3"
+    },
+    {
+      "index": 377,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 378,
+      "style": null,
+      "text": "Web3 and the Metaverse"
+    },
+    {
+      "index": 379,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 380,
+      "style": null,
+      "text": "Blockchain Fundamentals"
+    },
+    {
+      "index": 381,
+      "style": null,
+      "text": "Module 5"
+    },
+    {
+      "index": 382,
+      "style": null,
+      "text": "Understanding DeFi"
+    },
+    {
+      "index": 383,
+      "style": null,
+      "text": "Module 6"
+    },
+    {
+      "index": 384,
+      "style": null,
+      "text": "Challenges, Risks and Ethics of Web3"
+    },
+    {
+      "index": 385,
+      "style": null,
+      "text": "Module 7"
+    },
+    {
+      "index": 386,
+      "style": null,
+      "text": "What Comes After Web3?"
+    },
+    {
+      "index": 388,
+      "style": "Heading3",
+      "text": "Blockchain Foundations"
+    },
+    {
+      "index": 389,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 390,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 391,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 392,
+      "style": null,
+      "text": "Blockchain Background and Basics"
+    },
+    {
+      "index": 393,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 394,
+      "style": null,
+      "text": "Different Types of Blockchains"
+    },
+    {
+      "index": 395,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 396,
+      "style": null,
+      "text": "Consensus"
+    },
+    {
+      "index": 397,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 398,
+      "style": null,
+      "text": "Cryptography and Hashing"
+    },
+    {
+      "index": 399,
+      "style": null,
+      "text": "Module 5"
+    },
+    {
+      "index": 400,
+      "style": null,
+      "text": "Smart Contracts"
+    },
+    {
+      "index": 401,
+      "style": null,
+      "text": "Module 6"
+    },
+    {
+      "index": 402,
+      "style": null,
+      "text": "Blockchain Wallets"
+    },
+    {
+      "index": 403,
+      "style": null,
+      "text": "Module 7"
+    },
+    {
+      "index": 404,
+      "style": null,
+      "text": "Pros and Cons"
+    },
+    {
+      "index": 405,
+      "style": null,
+      "text": "Module 8"
+    },
+    {
+      "index": 406,
+      "style": null,
+      "text": "Public Blockchain-Based Applications"
+    },
+    {
+      "index": 407,
+      "style": null,
+      "text": "Module 9"
+    },
+    {
+      "index": 408,
+      "style": null,
+      "text": "Blockchain and Crypto Regulation"
+    },
+    {
+      "index": 409,
+      "style": null,
+      "text": "Module 10"
+    },
+    {
+      "index": 410,
+      "style": null,
+      "text": "Regulatory Reporting"
+    },
+    {
+      "index": 411,
+      "style": null,
+      "text": "Module 11"
+    },
+    {
+      "index": 412,
+      "style": null,
+      "text": "Distributed Autonomous Organizations"
+    },
+    {
+      "index": 413,
+      "style": null,
+      "text": "Module 12"
+    },
+    {
+      "index": 414,
+      "style": null,
+      "text": "Blockchain Today"
+    },
+    {
+      "index": 415,
+      "style": null,
+      "text": "Module 13"
+    },
+    {
+      "index": 416,
+      "style": null,
+      "text": "The Trilemma"
+    },
+    {
+      "index": 418,
+      "style": "Heading3",
+      "text": "Blockchain & Bitcoin Intensive"
+    },
+    {
+      "index": 419,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 420,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 421,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 422,
+      "style": null,
+      "text": "Bitcoin Overview"
+    },
+    {
+      "index": 423,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 424,
+      "style": null,
+      "text": "Technical Limitations and Mining Introduction"
+    },
+    {
+      "index": 425,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 426,
+      "style": null,
+      "text": "Mining"
+    },
+    {
+      "index": 427,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 428,
+      "style": null,
+      "text": "Bitcoin vs. Protocols 2.0, 3.0, 4.0, etc."
+    },
+    {
+      "index": 429,
+      "style": null,
+      "text": "Module 5"
+    },
+    {
+      "index": 430,
+      "style": null,
+      "text": "The New Database"
+    },
+    {
+      "index": 431,
+      "style": null,
+      "text": "Module 6"
+    },
+    {
+      "index": 432,
+      "style": null,
+      "text": "Payments, Voting, and Other Use Cases"
+    },
+    {
+      "index": 433,
+      "style": null,
+      "text": "Module 7"
+    },
+    {
+      "index": 434,
+      "style": null,
+      "text": "What’s Next?"
+    },
+    {
+      "index": 436,
+      "style": "Heading3",
+      "text": "Blockchain Development Decision"
+    },
+    {
+      "index": 437,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 438,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 439,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 440,
+      "style": null,
+      "text": "Development Essentials"
+    },
+    {
+      "index": 441,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 442,
+      "style": null,
+      "text": "Platforms"
+    },
+    {
+      "index": 443,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 444,
+      "style": null,
+      "text": "Hosting and Mining Decisions"
+    },
+    {
+      "index": 445,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 446,
+      "style": null,
+      "text": "Associated Technologies"
+    },
+    {
+      "index": 447,
+      "style": null,
+      "text": "Module 5"
+    },
+    {
+      "index": 448,
+      "style": null,
+      "text": "Development Languages"
+    },
+    {
+      "index": 449,
+      "style": null,
+      "text": "Module 6"
+    },
+    {
+      "index": 450,
+      "style": null,
+      "text": "Security and Implementation Goals"
+    },
+    {
+      "index": 451,
+      "style": null,
+      "text": "Module 7"
+    },
+    {
+      "index": 452,
+      "style": null,
+      "text": "Risk Management"
+    },
+    {
+      "index": 453,
+      "style": null,
+      "text": "Module 8"
+    },
+    {
+      "index": 454,
+      "style": null,
+      "text": "Digital Transformation and Summary"
+    },
+    {
+      "index": 456,
+      "style": "Heading3",
+      "text": "Introduction to Blockchain Scrum Master"
+    },
+    {
+      "index": 457,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 458,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 459,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 460,
+      "style": null,
+      "text": "Introduction to Blockchain Scrum Master"
+    },
+    {
+      "index": 461,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 462,
+      "style": null,
+      "text": "Agile Economics, Managing, Options, Myths and Benefits"
+    },
+    {
+      "index": 463,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 464,
+      "style": null,
+      "text": "Scrum Master Role, Scrum Roles, Teams, and Basics"
+    },
+    {
+      "index": 465,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 466,
+      "style": null,
+      "text": "Iteration Basics and Elements"
+    },
+    {
+      "index": 467,
+      "style": null,
+      "text": "Module 5"
+    },
+    {
+      "index": 468,
+      "style": null,
+      "text": "Blockchain Elements Leadership"
+    },
+    {
+      "index": 470,
+      "style": "Heading3",
+      "text": "Introduction to DevOps"
+    },
+    {
+      "index": 471,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 472,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 473,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 474,
+      "style": null,
+      "text": "Introduction to DevOps"
+    },
+    {
+      "index": 475,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 476,
+      "style": null,
+      "text": "The DevOps Lifecycle"
+    },
+    {
+      "index": 477,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 478,
+      "style": null,
+      "text": "Popular DevOps Tools"
+    },
+    {
+      "index": 479,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 480,
+      "style": null,
+      "text": "DevOps Team Structure and Roles"
+    },
+    {
+      "index": 481,
+      "style": null,
+      "text": "Module 5"
+    },
+    {
+      "index": 482,
+      "style": null,
+      "text": "DevOps and ITIL"
+    },
+    {
+      "index": 483,
+      "style": null,
+      "text": "Module 6"
+    },
+    {
+      "index": 484,
+      "style": null,
+      "text": "Implementing DevOps: Best Practices and Challenges"
+    },
+    {
+      "index": 485,
+      "style": null,
+      "text": "Module 7"
+    },
+    {
+      "index": 486,
+      "style": null,
+      "text": "DevOps Culture and Collaboration"
+    },
+    {
+      "index": 487,
+      "style": null,
+      "text": "Module 8"
+    },
+    {
+      "index": 488,
+      "style": null,
+      "text": "DevOps in the Future"
+    },
+    {
+      "index": 490,
+      "style": "Heading3",
+      "text": "zk-SNARKs Essentials"
+    },
+    {
+      "index": 491,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 492,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 493,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 494,
+      "style": null,
+      "text": "Introduction to zk-SNARKs"
+    },
+    {
+      "index": 495,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 496,
+      "style": null,
+      "text": "Technical Details of zk-SNARKs"
+    },
+    {
+      "index": 497,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 498,
+      "style": null,
+      "text": "Building a zk-SNARK Application"
+    },
+    {
+      "index": 499,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 500,
+      "style": null,
+      "text": "Future Developments and Research in zk-SNARKs"
+    },
+    {
+      "index": 502,
+      "style": "Heading3",
+      "text": "Solidity Smart Contract Developer (EVM)"
+    },
+    {
+      "index": 503,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 504,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 505,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 506,
+      "style": null,
+      "text": "First Smart Contract"
+    },
+    {
+      "index": 507,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 508,
+      "style": null,
+      "text": "Adding Functionality"
+    },
+    {
+      "index": 509,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 510,
+      "style": null,
+      "text": "User Addresses"
+    },
+    {
+      "index": 511,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 512,
+      "style": null,
+      "text": "Update State Conditions"
+    },
+    {
+      "index": 513,
+      "style": null,
+      "text": "Module 5"
+    },
+    {
+      "index": 514,
+      "style": null,
+      "text": "Payments Introduction"
+    },
+    {
+      "index": 515,
+      "style": null,
+      "text": "Module 6"
+    },
+    {
+      "index": 516,
+      "style": null,
+      "text": "Sending Crypto to an Address"
+    },
+    {
+      "index": 517,
+      "style": null,
+      "text": "Module 7"
+    },
+    {
+      "index": 518,
+      "style": null,
+      "text": "Conditional Transfer"
+    },
+    {
+      "index": 519,
+      "style": null,
+      "text": "Module 8"
+    },
+    {
+      "index": 520,
+      "style": null,
+      "text": "ERC-20 Development Options for Fungible Tokens"
+    },
+    {
+      "index": 521,
+      "style": null,
+      "text": "Module 9"
+    },
+    {
+      "index": 522,
+      "style": null,
+      "text": "ERC-721 Development Options for Non-Fungible Tokens"
+    },
+    {
+      "index": 523,
+      "style": null,
+      "text": "Module 10"
+    },
+    {
+      "index": 524,
+      "style": null,
+      "text": "Smart Contract Voting"
+    },
+    {
+      "index": 525,
+      "style": null,
+      "text": "Module 11"
+    },
+    {
+      "index": 526,
+      "style": null,
+      "text": "Demo a DApp"
+    },
+    {
+      "index": 528,
+      "style": "Heading3",
+      "text": "Smart Contract Security"
+    },
+    {
+      "index": 529,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 530,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 531,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 532,
+      "style": null,
+      "text": "Introduction to Smart Contract Security"
+    },
+    {
+      "index": 533,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 534,
+      "style": null,
+      "text": "General Programming Vulnerabilities"
+    },
+    {
+      "index": 535,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 536,
+      "style": null,
+      "text": "Blockchain Vulnerabilities"
+    },
+    {
+      "index": 537,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 538,
+      "style": null,
+      "text": "Ethereum-Specific Vulnerabilities"
+    },
+    {
+      "index": 540,
+      "style": "Heading3",
+      "text": "Understanding L1 and L2 Blockchains"
+    },
+    {
+      "index": 541,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 542,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 543,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 544,
+      "style": null,
+      "text": "Introduction"
+    },
+    {
+      "index": 545,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 546,
+      "style": null,
+      "text": "Layer 1 Blockchains"
+    },
+    {
+      "index": 547,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 548,
+      "style": null,
+      "text": "Layer 2 Blockchains"
+    },
+    {
+      "index": 549,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 550,
+      "style": null,
+      "text": "Use Cases"
+    },
+    {
+      "index": 551,
+      "style": null,
+      "text": "Module 5"
+    },
+    {
+      "index": 552,
+      "style": null,
+      "text": "Technical Aspects"
+    },
+    {
+      "index": 553,
+      "style": null,
+      "text": "Module 6"
+    },
+    {
+      "index": 554,
+      "style": null,
+      "text": "Conclusion"
+    },
+    {
+      "index": 555,
+      "style": null,
+      "text": "Module 7"
+    },
+    {
+      "index": 556,
+      "style": null,
+      "text": "Layer 0 and Layer 3 Blockchains"
+    },
+    {
+      "index": 558,
+      "style": "Heading3",
+      "text": "Ethereum Enterprise Strategist"
+    },
+    {
+      "index": 559,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 560,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 561,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 562,
+      "style": null,
+      "text": "Blockchain Basics"
+    },
+    {
+      "index": 563,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 564,
+      "style": null,
+      "text": "Origins of Ethereum"
+    },
+    {
+      "index": 565,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 566,
+      "style": null,
+      "text": "Transactions on Ethereum"
+    },
+    {
+      "index": 567,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 568,
+      "style": null,
+      "text": "Ethereum Protocols"
+    },
+    {
+      "index": 569,
+      "style": null,
+      "text": "Module 5"
+    },
+    {
+      "index": 570,
+      "style": null,
+      "text": "Ether and Cryptocurrencies"
+    },
+    {
+      "index": 571,
+      "style": null,
+      "text": "Module 6"
+    },
+    {
+      "index": 572,
+      "style": null,
+      "text": "Wallets"
+    },
+    {
+      "index": 573,
+      "style": null,
+      "text": "Module 7"
+    },
+    {
+      "index": 574,
+      "style": null,
+      "text": "The Ethereum Virtual Machine"
+    },
+    {
+      "index": 575,
+      "style": null,
+      "text": "Module 8"
+    },
+    {
+      "index": 576,
+      "style": null,
+      "text": "Smart Contracts"
+    },
+    {
+      "index": 577,
+      "style": null,
+      "text": "Module 9"
+    },
+    {
+      "index": 578,
+      "style": null,
+      "text": "Ethereum Standards: ERC-20, ERC-721, etc."
+    },
+    {
+      "index": 579,
+      "style": null,
+      "text": "Module 10"
+    },
+    {
+      "index": 580,
+      "style": null,
+      "text": "Fungible Tokens"
+    },
+    {
+      "index": 581,
+      "style": null,
+      "text": "Module 11"
+    },
+    {
+      "index": 582,
+      "style": null,
+      "text": "Non-Fungible Tokens"
+    },
+    {
+      "index": 583,
+      "style": null,
+      "text": "Module 12"
+    },
+    {
+      "index": 584,
+      "style": null,
+      "text": "Ethereum Distributed Applications"
+    },
+    {
+      "index": 585,
+      "style": null,
+      "text": "Module 13"
+    },
+    {
+      "index": 586,
+      "style": null,
+      "text": "Ethereum Networks: Testnet and Live Networks"
+    },
+    {
+      "index": 587,
+      "style": null,
+      "text": "Module 14"
+    },
+    {
+      "index": 588,
+      "style": null,
+      "text": "Ethereum Use Cases: Token Launches, DAOs, and Games"
+    },
+    {
+      "index": 590,
+      "style": "Heading3",
+      "text": "Ethereum DApp Developer"
+    },
+    {
+      "index": 591,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 592,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 593,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 594,
+      "style": null,
+      "text": "Basic Concepts and Configuring a Working Environment"
+    },
+    {
+      "index": 595,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 596,
+      "style": null,
+      "text": "Introduction to Solidity"
+    },
+    {
+      "index": 597,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 598,
+      "style": null,
+      "text": "Exploring Smart Contracts and Ethereum Protocols"
+    },
+    {
+      "index": 599,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 600,
+      "style": null,
+      "text": "Finalizing Your App"
+    },
+    {
+      "index": 602,
+      "style": "Heading3",
+      "text": "Blockchain Architecture 101"
+    },
+    {
+      "index": 603,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 604,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 605,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 606,
+      "style": null,
+      "text": "Blockchain Introduction, Revisited"
+    },
+    {
+      "index": 607,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 608,
+      "style": null,
+      "text": "Development Languages and Tools"
+    },
+    {
+      "index": 609,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 610,
+      "style": null,
+      "text": "Consensus Deep Dive"
+    },
+    {
+      "index": 611,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 612,
+      "style": null,
+      "text": "The Blockchain Trilemma"
+    },
+    {
+      "index": 613,
+      "style": null,
+      "text": "Module 5"
+    },
+    {
+      "index": 614,
+      "style": null,
+      "text": "Blockchain Security Overview"
+    },
+    {
+      "index": 616,
+      "style": "Heading3",
+      "text": "Blockchain Architecture 201"
+    },
+    {
+      "index": 617,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 618,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 619,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 620,
+      "style": null,
+      "text": "Blockchain Security Deep Dive"
+    },
+    {
+      "index": 621,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 622,
+      "style": null,
+      "text": "The Regulatory Landscape"
+    },
+    {
+      "index": 623,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 624,
+      "style": null,
+      "text": "Risk Management"
+    },
+    {
+      "index": 625,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 626,
+      "style": null,
+      "text": "Blockchain Solution Architecture Considerations"
+    },
+    {
+      "index": 627,
+      "style": null,
+      "text": "Module 5"
+    },
+    {
+      "index": 628,
+      "style": null,
+      "text": "Blockchain Governance Concerns"
+    },
+    {
+      "index": 629,
+      "style": null,
+      "text": "Module 6"
+    },
+    {
+      "index": 630,
+      "style": null,
+      "text": "Blockchain in the Real World"
+    },
+    {
+      "index": 632,
+      "style": "Heading3",
+      "text": "Key Management"
+    },
+    {
+      "index": 633,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 634,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 635,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 636,
+      "style": null,
+      "text": "Key Management Overview"
+    },
+    {
+      "index": 637,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 638,
+      "style": null,
+      "text": "Key Generation"
+    },
+    {
+      "index": 639,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 640,
+      "style": null,
+      "text": "Key Management and Storage"
+    },
+    {
+      "index": 641,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 642,
+      "style": null,
+      "text": "Risks"
+    },
+    {
+      "index": 644,
+      "style": "Heading3",
+      "text": "Blockchain Security"
+    },
+    {
+      "index": 645,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 646,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 647,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 648,
+      "style": null,
+      "text": "Introduction to Blockchain Security"
+    },
+    {
+      "index": 649,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 650,
+      "style": null,
+      "text": "Cryptography, Hash Functions, and Public Keys"
+    },
+    {
+      "index": 651,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 652,
+      "style": null,
+      "text": "Consensus, Proof of Work, and Proof of Stake Security"
+    },
+    {
+      "index": 653,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 654,
+      "style": null,
+      "text": "Advanced Blockchain and Architectural Security"
+    },
+    {
+      "index": 655,
+      "style": null,
+      "text": "Module 5"
+    },
+    {
+      "index": 656,
+      "style": null,
+      "text": "Blockchain User and Node Security"
+    },
+    {
+      "index": 657,
+      "style": null,
+      "text": "Module 6"
+    },
+    {
+      "index": 658,
+      "style": null,
+      "text": "Securing Blockchain Networks and Staking"
+    },
+    {
+      "index": 659,
+      "style": null,
+      "text": "Module 7"
+    },
+    {
+      "index": 660,
+      "style": null,
+      "text": "Introduction to Smart Contract Security"
+    },
+    {
+      "index": 661,
+      "style": null,
+      "text": "Module 8"
+    },
+    {
+      "index": 662,
+      "style": null,
+      "text": "Programming Vulnerabilities"
+    },
+    {
+      "index": 664,
+      "style": "Heading3",
+      "text": "Blockchain Architecture 301"
+    },
+    {
+      "index": 665,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 666,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 667,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 668,
+      "style": null,
+      "text": "The Lifecycle of a Blockchain Solution"
+    },
+    {
+      "index": 669,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 670,
+      "style": null,
+      "text": "Consumer vs. Enterprise Blockchain Use and Adoption"
+    },
+    {
+      "index": 671,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 672,
+      "style": null,
+      "text": "Identity Management and Blockchain"
+    },
+    {
+      "index": 673,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 674,
+      "style": null,
+      "text": "Web 2.5"
+    },
+    {
+      "index": 675,
+      "style": null,
+      "text": "Module 5"
+    },
+    {
+      "index": 676,
+      "style": null,
+      "text": "Blockchain Interoperability Deep Dive"
+    },
+    {
+      "index": 677,
+      "style": null,
+      "text": "Module 6"
+    },
+    {
+      "index": 678,
+      "style": null,
+      "text": "Blockchain Sustainability"
+    },
+    {
+      "index": 679,
+      "style": null,
+      "text": "Module 7"
+    },
+    {
+      "index": 680,
+      "style": null,
+      "text": "Where to Go from Here"
+    },
+    {
+      "index": 682,
+      "style": "Heading3",
+      "text": "Scrum Methods for Blockchain"
+    },
+    {
+      "index": 683,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 684,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 685,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 686,
+      "style": null,
+      "text": "User Stories"
+    },
+    {
+      "index": 687,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 688,
+      "style": null,
+      "text": "User Story Estimation"
+    },
+    {
+      "index": 689,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 690,
+      "style": null,
+      "text": "Team Velocity"
+    },
+    {
+      "index": 691,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 692,
+      "style": null,
+      "text": "Scrum Events"
+    },
+    {
+      "index": 693,
+      "style": null,
+      "text": "Module 5"
+    },
+    {
+      "index": 694,
+      "style": null,
+      "text": "Prioritize the Backlog"
+    },
+    {
+      "index": 695,
+      "style": null,
+      "text": "Module 6"
+    },
+    {
+      "index": 696,
+      "style": null,
+      "text": "Scrum Reporting"
+    },
+    {
+      "index": 697,
+      "style": null,
+      "text": "Module 7"
+    },
+    {
+      "index": 698,
+      "style": null,
+      "text": "Scrum Teams"
+    },
+    {
+      "index": 699,
+      "style": null,
+      "text": "Module 8"
+    },
+    {
+      "index": 700,
+      "style": null,
+      "text": "Risk Management"
+    },
+    {
+      "index": 702,
+      "style": "Heading3",
+      "text": "Architecting Solutions by Combining Agile Methodologies"
+    },
+    {
+      "index": 703,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 704,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 705,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 706,
+      "style": null,
+      "text": "Architecting Solutions and Continuous Integration"
+    },
+    {
+      "index": 707,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 708,
+      "style": null,
+      "text": "Lean Methods"
+    },
+    {
+      "index": 709,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 710,
+      "style": null,
+      "text": "DevOps and Release Management"
+    },
+    {
+      "index": 712,
+      "style": "Heading3",
+      "text": "Scaling Agile Solutions for Blockchain to a Team-of-Teams"
+    },
+    {
+      "index": 713,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 714,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 715,
+      "style": null,
+      "text": "Module 1"
+    },
+    {
+      "index": 716,
+      "style": null,
+      "text": "Scaling Agile Solutions"
+    },
+    {
+      "index": 717,
+      "style": null,
+      "text": "Module 2"
+    },
+    {
+      "index": 718,
+      "style": null,
+      "text": "The Scaled Agile Team-of-Teams and Agile Enterprise"
+    },
+    {
+      "index": 719,
+      "style": null,
+      "text": "Module 3"
+    },
+    {
+      "index": 720,
+      "style": null,
+      "text": "Agile for Device and Emerging Technology"
+    },
+    {
+      "index": 721,
+      "style": null,
+      "text": "Module 4"
+    },
+    {
+      "index": 722,
+      "style": null,
+      "text": "Business Outcomes"
+    },
+    {
+      "index": 725,
+      "style": "Heading1",
+      "text": "6. AI Prompt Engineer Pathway"
+    },
+    {
+      "index": 726,
+      "style": null,
+      "text": "Purpose: A career-oriented avenue connecting AI literacy, prompt engineering, developer workflows, and generative media. Foundational Web3 and blockchain courses can be shared prerequisites where the program is positioned as AI × Web3."
+    },
+    {
+      "index": 727,
+      "style": null,
+      "text": "Sequence"
+    },
+    {
+      "index": 728,
+      "style": null,
+      "text": "Course"
+    },
+    {
+      "index": 729,
+      "style": null,
+      "text": "1"
+    },
+    {
+      "index": 730,
+      "style": null,
+      "text": "AI Essentials"
+    },
+    {
+      "index": 731,
+      "style": null,
+      "text": "2"
+    },
+    {
+      "index": 732,
+      "style": null,
+      "text": "Web3 Foundations"
+    },
+    {
+      "index": 733,
+      "style": null,
+      "text": "3"
+    },
+    {
+      "index": 734,
+      "style": null,
+      "text": "Blockchain Foundations"
+    },
+    {
+      "index": 735,
+      "style": null,
+      "text": "4"
+    },
+    {
+      "index": 736,
+      "style": null,
+      "text": "Blockchain & Bitcoin Intensive"
+    },
+    {
+      "index": 737,
+      "style": null,
+      "text": "5"
+    },
+    {
+      "index": 738,
+      "style": null,
+      "text": "Prompt Engineering 101: AI Chatbot (ChatGPT)"
+    },
+    {
+      "index": 739,
+      "style": null,
+      "text": "6"
+    },
+    {
+      "index": 740,
+      "style": null,
+      "text": "AI Prompt Engineering 201: Advanced Topics"
+    },
+    {
+      "index": 741,
+      "style": null,
+      "text": "7"
+    },
+    {
+      "index": 742,
+      "style": null,
+      "text": "AI Prompt Engineering 301: Developer Topics"
+    },
+    {
+      "index": 743,
+      "style": null,
+      "text": "8"
+    },
+    {
+      "index": 744,
+      "style": null,
+      "text": "Mastering Image Generative AI"
+    },
+    {
+      "index": 745,
+      "style": null,
+      "text": "9"
+    },
+    {
+      "index": 746,
+      "style": null,
+      "text": "Mastering Music Generative AI"
+    },
+    {
+      "index": 747,
+      "style": null,
+      "text": "10"
+    },
+    {
+      "index": 748,
+      "style": null,
+      "text": "AI Prompt Engineer Capstone and Mastery Assessment"
+    },
+    {
+      "index": 750,
+      "style": "Heading1",
+      "text": "7. Enterprise, Operator, Risk, Security & Compliance Pathway"
+    },
+    {
+      "index": 751,
+      "style": null,
+      "text": "Purpose: Cross-functional education for leaders, advisors, analysts, operators, risk teams, and professionals evaluating digital-asset technologies in organizational settings."
+    },
+    {
+      "index": 752,
+      "style": null,
+      "text": "Domain"
+    },
+    {
+      "index": 753,
+      "style": null,
+      "text": "Courses and content"
+    },
+    {
+      "index": 754,
+      "style": null,
+      "text": "Core literacy"
+    },
+    {
+      "index": 755,
+      "style": null,
+      "text": "AI Essentials; Web3 Foundations; Blockchain Foundations; Blockchain & Bitcoin Intensive"
+    },
+    {
+      "index": 756,
+      "style": null,
+      "text": "Architecture and strategy"
+    },
+    {
+      "index": 757,
+      "style": null,
+      "text": "Blockchain Development Decision; Blockchain Enterprise Strategy; Blockchain Architecture 101, 201, and 301; Ethereum Enterprise Strategist"
+    },
+    {
+      "index": 758,
+      "style": null,
+      "text": "Finance and assets"
+    },
+    {
+      "index": 759,
+      "style": null,
+      "text": "Fundamentals of DeFi & Primitives; Non-Fungible Token Essentials; Tokenomic Essentials; Understanding L1 and L2 Blockchains"
+    },
+    {
+      "index": 760,
+      "style": null,
+      "text": "Operations"
+    },
+    {
+      "index": 761,
+      "style": null,
+      "text": "Introduction to DevOps; Introduction to Blockchain Scrum Master; Scrum Methods for Blockchain; agile architecture and team-of-teams scaling"
+    },
+    {
+      "index": 762,
+      "style": null,
+      "text": "Security"
+    },
+    {
+      "index": 763,
+      "style": null,
+      "text": "Key Management; Information Security and Cyber Risk Awareness; Smart Contract Security; Blockchain Security"
+    },
+    {
+      "index": 764,
+      "style": null,
+      "text": "Risk"
+    },
+    {
+      "index": 765,
+      "style": null,
+      "text": "Risk Management for Blockchain-Based Technology Companies; architecture and implementation risk; protocol and user risk"
+    },
+    {
+      "index": 766,
+      "style": null,
+      "text": "Compliance"
+    },
+    {
+      "index": 767,
+      "style": null,
+      "text": "Data Protection Regulation: GDPR and CPRA/CCPA; OFAC Compliance Essentials; blockchain and crypto regulation; regulatory reporting"
+    },
+    {
+      "index": 769,
+      "style": "Heading2",
+      "text": "Canonical standalone course inventory"
+    },
+    {
+      "index": 770,
+      "style": "ListBullet",
+      "text": "AI Essentials"
+    },
+    {
+      "index": 771,
+      "style": "ListBullet",
+      "text": "Web3 Foundations"
+    },
+    {
+      "index": 772,
+      "style": "ListBullet",
+      "text": "Blockchain Foundations"
+    },
+    {
+      "index": 773,
+      "style": "ListBullet",
+      "text": "Blockchain & Bitcoin Intensive"
+    },
+    {
+      "index": 774,
+      "style": "ListBullet",
+      "text": "Blockchain Development Decision"
+    },
+    {
+      "index": 775,
+      "style": "ListBullet",
+      "text": "Key Management"
+    },
+    {
+      "index": 776,
+      "style": "ListBullet",
+      "text": "Blockchain Enterprise Strategy"
+    },
+    {
+      "index": 777,
+      "style": "ListBullet",
+      "text": "Fundamentals of DeFi & Primitives"
+    },
+    {
+      "index": 778,
+      "style": "ListBullet",
+      "text": "Non-Fungible Token Essentials"
+    },
+    {
+      "index": 779,
+      "style": "ListBullet",
+      "text": "Tokenomic Essentials"
+    },
+    {
+      "index": 780,
+      "style": "ListBullet",
+      "text": "Understanding L1 and L2 Blockchains"
+    },
+    {
+      "index": 781,
+      "style": "ListBullet",
+      "text": "Introduction to DevOps"
+    },
+    {
+      "index": 782,
+      "style": "ListBullet",
+      "text": "Information Security and Cyber Risk Awareness"
+    },
+    {
+      "index": 783,
+      "style": "ListBullet",
+      "text": "Risk Management for Blockchain-Based Technology Companies"
+    },
+    {
+      "index": 784,
+      "style": "ListBullet",
+      "text": "Data Protection Regulation: GDPR and CPRA/CCPA"
+    },
+    {
+      "index": 785,
+      "style": "ListBullet",
+      "text": "OFAC Compliance Essentials"
+    },
+    {
+      "index": 786,
+      "style": "ListBullet",
+      "text": "Introduction to Blockchain Scrum Master"
+    },
+    {
+      "index": 787,
+      "style": "ListBullet",
+      "text": "Blockchain Architecture 101"
+    },
+    {
+      "index": 788,
+      "style": "ListBullet",
+      "text": "Blockchain Architecture 201"
+    },
+    {
+      "index": 790,
+      "style": "Heading1",
+      "text": "8. Web3 Growth & Community Elective"
+    },
+    {
+      "index": 791,
+      "style": null,
+      "text": "Purpose: Translate the supplied DeFi-marketing material into a structured elective for founders, growth teams, and community operators."
+    },
+    {
+      "index": 792,
+      "style": null,
+      "text": "Module"
+    },
+    {
+      "index": 793,
+      "style": null,
+      "text": "Core lesson"
+    },
+    {
+      "index": 794,
+      "style": null,
+      "text": "1. Project essence"
+    },
+    {
+      "index": 795,
+      "style": null,
+      "text": "Define what the project is, the problem it addresses, its tagline, its keywords, its differentiated value, and the audience that should care."
+    },
+    {
+      "index": 796,
+      "style": null,
+      "text": "2. Target audience"
+    },
+    {
+      "index": 797,
+      "style": null,
+      "text": "Analyze who the strategy is for. Separate newcomers, experienced users, builders, investors, operators, and institutional audiences rather than marketing to everyone."
+    },
+    {
+      "index": 798,
+      "style": null,
+      "text": "3. Marketing budget"
+    },
+    {
+      "index": 799,
+      "style": null,
+      "text": "Establish available budget before selecting tactics. Distinguish paid acquisition, content, partnerships, events, creators, community operations, and experimentation."
+    },
+    {
+      "index": 800,
+      "style": null,
+      "text": "4. Channel possibilities"
+    },
+    {
+      "index": 801,
+      "style": null,
+      "text": "Evaluate influencer marketing, blockchain SEO, email, educational content, partnerships, community programs, airdrops where appropriate, and other distribution channels against the audience and budget."
+    },
+    {
+      "index": 802,
+      "style": null,
+      "text": "5. Community continuity"
+    },
+    {
+      "index": 803,
+      "style": null,
+      "text": "Support early users, maintain communication, collect feedback, and convert community trust into long-term participation and advocacy."
+    },
+    {
+      "index": 805,
+      "style": null,
+      "text": "KEY OPERATING IDEA"
+    },
+    {
+      "index": 806,
+      "style": null,
+      "text": "Web3 growth requires project-specific positioning, audience clarity, disciplined resource allocation, channel testing, and sustained community engagement. Community is treated as a long-term operating asset, not a short-term promotional trick."
+    },
+    {
+      "index": 807,
+      "style": "Heading1",
+      "text": "9. Assessment, Simulation & Gamification Delivery Model"
+    },
+    {
+      "index": 808,
+      "style": null,
+      "text": "The curriculum is delivered through the three-part academy loop already established for Iron Vault: identity, training, and visible progress."
+    },
+    {
+      "index": 809,
+      "style": null,
+      "text": "System"
+    },
+    {
+      "index": 810,
+      "style": null,
+      "text": "Function"
+    },
+    {
+      "index": 811,
+      "style": null,
+      "text": "Curriculum application"
+    },
+    {
+      "index": 812,
+      "style": null,
+      "text": "Avatar Forge"
+    },
+    {
+      "index": 813,
+      "style": null,
+      "text": "Learner identity and personalization"
+    },
+    {
+      "index": 814,
+      "style": null,
+      "text": "A persistent Vault identity associated with rank, progress, and earned achievements."
+    },
+    {
+      "index": 815,
+      "style": null,
+      "text": "Training Grounds"
+    },
+    {
+      "index": 816,
+      "style": null,
+      "text": "Interactive learning"
+    },
+    {
+      "index": 817,
+      "style": null,
+      "text": "Quizzes, labs, simulations, scenarios, chain building, terminology matching, contract flows, and security decisions."
+    },
+    {
+      "index": 818,
+      "style": null,
+      "text": "Progress Vault"
+    },
+    {
+      "index": 819,
+      "style": null,
+      "text": "Progress and retention"
+    },
+    {
+      "index": 820,
+      "style": null,
+      "text": "XP, levels, streaks, badges, course completion, pathway progress, and mastery milestones."
+    },
+    {
+      "index": 822,
+      "style": "Heading2",
+      "text": "Recommended interaction mapping"
+    },
+    {
+      "index": 823,
+      "style": null,
+      "text": "Concept"
+    },
+    {
+      "index": 824,
+      "style": null,
+      "text": "Interaction"
+    },
+    {
+      "index": 825,
+      "style": null,
+      "text": "Blockchain lifecycle"
+    },
+    {
+      "index": 826,
+      "style": null,
+      "text": "Sequenced lifecycle simulation"
+    },
+    {
+      "index": 827,
+      "style": null,
+      "text": "Consensus"
+    },
+    {
+      "index": 828,
+      "style": null,
+      "text": "Consensus-mechanism comparison simulator"
+    },
+    {
+      "index": 829,
+      "style": null,
+      "text": "Hashing"
+    },
+    {
+      "index": 830,
+      "style": null,
+      "text": "Editable-input avalanche-effect lab"
+    },
+    {
+      "index": 831,
+      "style": null,
+      "text": "Wallet security"
+    },
+    {
+      "index": 832,
+      "style": null,
+      "text": "Select-the-safe-practices scenario"
+    },
+    {
+      "index": 833,
+      "style": null,
+      "text": "Smart contracts"
+    },
+    {
+      "index": 834,
+      "style": null,
+      "text": "Escrow-condition and release-flow simulation"
+    },
+    {
+      "index": 835,
+      "style": null,
+      "text": "Blockchain structure"
+    },
+    {
+      "index": 836,
+      "style": null,
+      "text": "Hash-linked chain builder"
+    },
+    {
+      "index": 837,
+      "style": null,
+      "text": "Terminology"
+    },
+    {
+      "index": 838,
+      "style": null,
+      "text": "Concept-definition matching game"
+    },
+    {
+      "index": 839,
+      "style": null,
+      "text": "DeFi lending"
+    },
+    {
+      "index": 840,
+      "style": null,
+      "text": "Collateral, interest, health-factor, and liquidation sandbox"
+    },
+    {
+      "index": 841,
+      "style": null,
+      "text": "DAO governance"
+    },
+    {
+      "index": 842,
+      "style": null,
+      "text": "Proposal review and simulated vote"
+    },
+    {
+      "index": 843,
+      "style": null,
+      "text": "Tokenization"
+    },
+    {
+      "index": 844,
+      "style": null,
+      "text": "Practice NFT mint and metadata exercise"
+    },
+    {
+      "index": 845,
+      "style": null,
+      "text": "Solidity"
+    },
+    {
+      "index": 846,
+      "style": null,
+      "text": "Progressive code-completion and contract-debugging labs"
+    },
+    {
+      "index": 847,
+      "style": null,
+      "text": "Security"
+    },
+    {
+      "index": 848,
+      "style": null,
+      "text": "Vulnerability recognition, exploit-path analysis, and remediation scenarios"
+    },
+    {
+      "index": 850,
+      "style": "Heading2",
+      "text": "Mastery and progression rules"
+    },
+    {
+      "index": 851,
+      "style": "ListBullet",
+      "text": "Use XP as the internal learning-progress unit."
+    },
+    {
+      "index": 852,
+      "style": "ListBullet",
+      "text": "Award XP for first completion, improved assessment performance, verified labs, pathway milestones, and streaks according to documented rules."
+    },
+    {
+      "index": 853,
+      "style": "ListBullet",
+      "text": "Separate XP from any token, financial, or payout mechanism."
+    },
+    {
+      "index": 854,
+      "style": "ListBullet",
+      "text": "Use course-level pass requirements, retry policies, and prerequisite gates where the curriculum requires sequential mastery."
+    },
+    {
+      "index": 855,
+      "style": "ListBullet",
+      "text": "Award badges for demonstrated outcomes—not merely for opening content."
+    },
+    {
+      "index": 856,
+      "style": "ListBullet",
+      "text": "Record completion against a canonical course, module, lesson, interaction, and assessment identifier."
+    },
+    {
+      "index": 858,
+      "style": "Heading1",
+      "text": "10. Complete Source-Course Register"
+    },
+    {
+      "index": 859,
+      "style": null,
+      "text": "This register preserves the supplied catalog entries and shows where each belongs after normalization. Identical titles appearing in multiple supplied programs are cross-listed rather than duplicated as separate canonical courses."
+    },
+    {
+      "index": 860,
+      "style": null,
+      "text": "Canonical course / program"
+    },
+    {
+      "index": 861,
+      "style": null,
+      "text": "Pathway placement"
+    },
+    {
+      "index": 862,
+      "style": null,
+      "text": "AI Essentials"
+    },
+    {
+      "index": 863,
+      "style": null,
+      "text": "AI Prompt Engineer; Enterprise/Operator"
+    },
+    {
+      "index": 864,
+      "style": null,
+      "text": "Web3 Foundations"
+    },
+    {
+      "index": 865,
+      "style": null,
+      "text": "Core Literacy; Developer; AI Prompt Engineer"
+    },
+    {
+      "index": 866,
+      "style": null,
+      "text": "Blockchain Foundations"
+    },
+    {
+      "index": 867,
+      "style": null,
+      "text": "Core Literacy; Developer; AI Prompt Engineer; Enterprise"
+    },
+    {
+      "index": 868,
+      "style": null,
+      "text": "Blockchain & Bitcoin Intensive / Bitcoin Intensive"
+    },
+    {
+      "index": 869,
+      "style": null,
+      "text": "Core Literacy; Developer; AI Prompt Engineer"
+    },
+    {
+      "index": 870,
+      "style": null,
+      "text": "Blockchain Development Decision"
+    },
+    {
+      "index": 871,
+      "style": null,
+      "text": "Developer; Architecture & Enterprise"
+    },
+    {
+      "index": 872,
+      "style": null,
+      "text": "Key Management"
+    },
+    {
+      "index": 873,
+      "style": null,
+      "text": "Developer; Security, Risk & Compliance"
+    },
+    {
+      "index": 874,
+      "style": null,
+      "text": "Blockchain Enterprise Strategy"
+    },
+    {
+      "index": 875,
+      "style": null,
+      "text": "Architecture & Enterprise"
+    },
+    {
+      "index": 876,
+      "style": null,
+      "text": "Fundamentals of DeFi & Primitives"
+    },
+    {
+      "index": 877,
+      "style": null,
+      "text": "DeFi Practitioner; Enterprise/Operator"
+    },
+    {
+      "index": 878,
+      "style": null,
+      "text": "Non-Fungible Token Essentials"
+    },
+    {
+      "index": 879,
+      "style": null,
+      "text": "DeFi Practitioner; Enterprise/Operator"
+    },
+    {
+      "index": 880,
+      "style": null,
+      "text": "Tokenomic Essentials"
+    },
+    {
+      "index": 881,
+      "style": null,
+      "text": "DeFi Practitioner; Enterprise/Operator"
+    },
+    {
+      "index": 882,
+      "style": null,
+      "text": "Understanding L1 and L2 Blockchains"
+    },
+    {
+      "index": 883,
+      "style": null,
+      "text": "Developer; Architecture & Enterprise"
+    },
+    {
+      "index": 884,
+      "style": null,
+      "text": "Introduction to DevOps"
+    },
+    {
+      "index": 885,
+      "style": null,
+      "text": "Developer; Operations"
+    },
+    {
+      "index": 886,
+      "style": null,
+      "text": "Information Security and Cyber Risk Awareness"
+    },
+    {
+      "index": 887,
+      "style": null,
+      "text": "Security, Risk & Compliance"
+    },
+    {
+      "index": 888,
+      "style": null,
+      "text": "Risk Management for Blockchain-Based Technology Companies"
+    },
+    {
+      "index": 889,
+      "style": null,
+      "text": "Security, Risk & Compliance"
+    },
+    {
+      "index": 890,
+      "style": null,
+      "text": "Data Protection Regulation: GDPR and CPRA/CCPA"
+    },
+    {
+      "index": 891,
+      "style": null,
+      "text": "Security, Risk & Compliance"
+    },
+    {
+      "index": 892,
+      "style": null,
+      "text": "OFAC Compliance Essentials"
+    },
+    {
+      "index": 893,
+      "style": null,
+      "text": "Security, Risk & Compliance"
+    },
+    {
+      "index": 894,
+      "style": null,
+      "text": "Introduction to Blockchain Scrum Master"
+    },
+    {
+      "index": 895,
+      "style": null,
+      "text": "Developer; Operations"
+    },
+    {
+      "index": 896,
+      "style": null,
+      "text": "Blockchain Architecture 101"
+    },
+    {
+      "index": 897,
+      "style": null,
+      "text": "Developer; Architecture & Enterprise"
+    },
+    {
+      "index": 898,
+      "style": null,
+      "text": "Blockchain Architecture 201"
+    },
+    {
+      "index": 899,
+      "style": null,
+      "text": "Developer; Architecture & Enterprise"
+    },
+    {
+      "index": 900,
+      "style": null,
+      "text": "Prompt Engineering 101: AI Chatbot (ChatGPT)"
+    },
+    {
+      "index": 901,
+      "style": null,
+      "text": "AI Prompt Engineer"
+    },
+    {
+      "index": 902,
+      "style": null,
+      "text": "AI Prompt Engineering 201: Advanced Topics"
+    },
+    {
+      "index": 903,
+      "style": null,
+      "text": "AI Prompt Engineer"
+    },
+    {
+      "index": 904,
+      "style": null,
+      "text": "AI Prompt Engineering 301: Developer Topics"
+    },
+    {
+      "index": 905,
+      "style": null,
+      "text": "AI Prompt Engineer"
+    },
+    {
+      "index": 906,
+      "style": null,
+      "text": "Mastering Image Generative AI"
+    },
+    {
+      "index": 907,
+      "style": null,
+      "text": "AI Prompt Engineer"
+    },
+    {
+      "index": 908,
+      "style": null,
+      "text": "Mastering Music Generative AI"
+    },
+    {
+      "index": 909,
+      "style": null,
+      "text": "AI Prompt Engineer"
+    },
+    {
+      "index": 910,
+      "style": null,
+      "text": "zk-SNARKs Essentials"
+    },
+    {
+      "index": 911,
+      "style": null,
+      "text": "Web3 Developer"
+    },
+    {
+      "index": 912,
+      "style": null,
+      "text": "Solidity Smart Contract Developer (EVM)"
+    },
+    {
+      "index": 913,
+      "style": null,
+      "text": "Web3 Developer"
+    },
+    {
+      "index": 914,
+      "style": null,
+      "text": "Smart Contract Developer Live Workshop"
+    },
+    {
+      "index": 915,
+      "style": null,
+      "text": "Web3 Developer"
+    },
+    {
+      "index": 916,
+      "style": null,
+      "text": "Smart Contract Security"
+    },
+    {
+      "index": 917,
+      "style": null,
+      "text": "Web3 Developer; Security"
+    },
+    {
+      "index": 918,
+      "style": null,
+      "text": "Ethereum Enterprise Strategist"
+    },
+    {
+      "index": 919,
+      "style": null,
+      "text": "Web3 Developer; Architecture & Enterprise"
+    },
+    {
+      "index": 920,
+      "style": null,
+      "text": "Ethereum DApp Developer"
+    },
+    {
+      "index": 921,
+      "style": null,
+      "text": "Web3 Developer"
+    },
+    {
+      "index": 922,
+      "style": null,
+      "text": "Ethereum DApp Live Workshop"
+    },
+    {
+      "index": 923,
+      "style": null,
+      "text": "Web3 Developer"
+    },
+    {
+      "index": 924,
+      "style": null,
+      "text": "Blockchain Security"
+    },
+    {
+      "index": 925,
+      "style": null,
+      "text": "Web3 Developer; Security"
+    },
+    {
+      "index": 926,
+      "style": null,
+      "text": "Blockchain Security Live Workshop"
+    },
+    {
+      "index": 927,
+      "style": null,
+      "text": "Web3 Developer; Security"
+    },
+    {
+      "index": 928,
+      "style": null,
+      "text": "Blockchain Architecture 301"
+    },
+    {
+      "index": 929,
+      "style": null,
+      "text": "Web3 Developer; Architecture & Enterprise"
+    },
+    {
+      "index": 930,
+      "style": null,
+      "text": "Blockchain Architecture Workshop"
+    },
+    {
+      "index": 931,
+      "style": null,
+      "text": "Web3 Developer; Architecture & Enterprise"
+    },
+    {
+      "index": 932,
+      "style": null,
+      "text": "Scrum Methods for Blockchain"
+    },
+    {
+      "index": 933,
+      "style": null,
+      "text": "Web3 Developer; Operations"
+    },
+    {
+      "index": 934,
+      "style": null,
+      "text": "Architecting Solutions by Combining Agile Methodologies"
+    },
+    {
+      "index": 935,
+      "style": null,
+      "text": "Web3 Developer; Operations"
+    },
+    {
+      "index": 936,
+      "style": null,
+      "text": "Scaling Agile Solutions for Blockchain to a Team-of-Teams"
+    },
+    {
+      "index": 937,
+      "style": null,
+      "text": "Web3 Developer; Operations"
+    },
+    {
+      "index": 938,
+      "style": null,
+      "text": "Eight-Week Practical DeFi & Web3 Finance Bootcamp"
+    },
+    {
+      "index": 939,
+      "style": null,
+      "text": "DeFi Practitioner"
+    },
+    {
+      "index": 940,
+      "style": null,
+      "text": "Web3 Growth & Community"
+    },
+    {
+      "index": 941,
+      "style": null,
+      "text": "Growth elective"
+    },
+    {
+      "index": 943,
+      "style": "Heading2",
+      "text": "Items intentionally excluded from product claims"
+    },
+    {
+      "index": 944,
+      "style": "ListBullet",
+      "text": "Unverified third-party exam vouchers, certification-board exam claims, certification-badge coverage percentages, and tuition-credit promises."
+    },
+    {
+      "index": 945,
+      "style": "ListBullet",
+      "text": "The Africa-specific positioning, including savings-group, SACCO, and chama framing, from the general-market curriculum."
+    },
+    {
+      "index": 946,
+      "style": "ListBullet",
+      "text": "Claims that DeFi yield will outperform bank interest or otherwise produce a particular financial result."
+    },
+    {
+      "index": 947,
+      "style": "ListBullet",
+      "text": "Any implication that course completion constitutes financial, legal, tax, or investment advice."
+    },
+    {
+      "index": 948,
+      "style": "Heading1",
+      "text": "Implementation handoff"
+    },
+    {
+      "index": 949,
+      "style": "ListBullet",
+      "text": "Import the existing 320-lesson inventory as the base catalog without renaming or deleting records."
+    },
+    {
+      "index": 950,
+      "style": "ListBullet",
+      "text": "Normalize every new item in this canvas into pathway, course, module, lesson, interaction, and assessment records."
+    },
+    {
+      "index": 951,
+      "style": "ListBullet",
+      "text": "Deduplicate shared courses through cross-listing rather than copying course content."
+    },
+    {
+      "index": 952,
+      "style": "ListBullet",
+      "text": "Assign stable identifiers and prerequisite relationships before UI implementation."
+    },
+    {
+      "index": 953,
+      "style": "ListBullet",
+      "text": "Map each interaction to Training Grounds and each verified completion event to Progress Vault."
+    },
+    {
+      "index": 954,
+      "style": "ListBullet",
+      "text": "Release the Eight-Week DeFi & Web3 Bootcamp as the first marketable guided journey while the deeper technical pathways are completed."
+    },
+    {
+      "index": 955,
+      "style": null,
+      "text": "END STATE"
+    },
+    {
+      "index": 956,
+      "style": null,
+      "text": "A trust-first public academy with a structured beginner entry point, practical DeFi journey, professional blockchain foundation, advanced Web3 developer pathway, AI career track, enterprise and security depth, and a single gamified learning system underneath it all."
+    }
+  ],
+  "tables": [
+    {
+      "index": 1,
+      "rows": [
+        [
+          "OPERATING PRINCIPLEThe academy is presented as clear pathways—not as a 500–700 lesson dump. Every source item is preserved in the register, then assigned to a coherent learner outcome."
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "rows": [
+        [
+          "Layer",
+          "Definition",
+          "Example"
+        ],
+        [
+          "Pathway",
+          "A marketable learner outcome spanning multiple courses",
+          "DeFi Practitioner"
+        ],
+        [
+          "Course",
+          "A bounded body of knowledge with outcomes and assessment",
+          "Blockchain Foundations"
+        ],
+        [
+          "Module",
+          "A major concept cluster inside a course",
+          "Consensus"
+        ],
+        [
+          "Lesson",
+          "A short instructional unit",
+          "Consensus Mechanisms"
+        ],
+        [
+          "Interaction",
+          "A simulation, lab, scenario, quiz, match, or builder",
+          "Hash Avalanche Effect Lab"
+        ],
+        [
+          "Assessment",
+          "A mastery checkpoint with defined pass logic",
+          "Final exam, 70% threshold"
+        ],
+        [
+          "Credential",
+          "Evidence of verified completion",
+          "Iron Vault completion certificate"
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "rows": [
+        [
+          "Pathway",
+          "Primary learner",
+          "Outcome"
+        ],
+        [
+          "Start Here / Core Literacy",
+          "Beginners and token-community members",
+          "Understand wallets, Bitcoin, blockchain, Web3, risk, and safe participation."
+        ],
+        [
+          "Blockchain Foundations",
+          "Professionals and advisors",
+          "Explain blockchain mechanics, consensus, cryptography, wallets, dApps, and business use cases."
+        ],
+        [
+          "DeFi Practitioner",
+          "Beginner-to-intermediate users",
+          "Safely practice wallets, stablecoins, swaps, lending, governance, tokenization, and security."
+        ],
+        [
+          "Web3 Developer",
+          "Developers and technical learners",
+          "Build, test, secure, and ship Solidity contracts and Ethereum applications."
+        ],
+        [
+          "Architecture & Enterprise",
+          "Architects, operators, and business leaders",
+          "Evaluate platforms, governance, architecture, integration, risk, and adoption."
+        ],
+        [
+          "Security, Risk & Compliance",
+          "Operators, analysts, and regulated teams",
+          "Manage keys, cyber risk, smart-contract risk, data protection, and sanctions awareness."
+        ],
+        [
+          "AI Prompt Engineer",
+          "Creators, operators, marketers, and developers",
+          "Use conversational, image, music, and developer-oriented generative AI workflows."
+        ],
+        [
+          "Web3 Growth & Community",
+          "Founders, growth teams, and community operators",
+          "Position, fund, distribute, and sustain a Web3 project responsibly."
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "rows": [
+        [
+          "Course attribute",
+          "Specification"
+        ],
+        [
+          "Total hours",
+          "5"
+        ],
+        [
+          "On-demand video",
+          "4 hours"
+        ],
+        [
+          "Self-study",
+          "1 hour"
+        ],
+        [
+          "Live workshop",
+          "0 required hours"
+        ],
+        [
+          "Optional support",
+          "Live student orientation; live instructor-led AMA"
+        ],
+        [
+          "Assessment standard",
+          "Checkpoint quizzes plus final exam; 70% required; three final-exam attempts"
+        ],
+        [
+          "Completion evidence",
+          "Iron Vault Academy completion certificate or digital completion credential"
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "rows": [
+        [
+          "Assessment",
+          "Specification"
+        ],
+        [
+          "Modules 1–2 quiz",
+          "5 questions"
+        ],
+        [
+          "Modules 3–4 quiz",
+          "6 questions"
+        ],
+        [
+          "Modules 7–11 quiz",
+          "7 questions"
+        ],
+        [
+          "Final exam",
+          "20 questions; 70% required; three attempts"
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "rows": [
+        [
+          "Module",
+          "Lesson / activity",
+          "Type"
+        ],
+        [
+          "Orientation",
+          "BCF-M0-Lesson-1: Course Introduction",
+          "Lesson"
+        ],
+        [
+          "Orientation",
+          "BCF-M0-Lesson-2: Course Overview & Learning Objectives",
+          "Lesson"
+        ],
+        [
+          "1. Background and Basics",
+          "BCF-M1-Lesson-1: Blockchain History",
+          "Lesson"
+        ],
+        [
+          "1. Background and Basics",
+          "BCF-M1-Lesson-2: Bitcoin History",
+          "Lesson"
+        ],
+        [
+          "1. Background and Basics",
+          "BCF-M1-Lesson-3: Fear of Missing Out (FOMO)",
+          "Lesson"
+        ],
+        [
+          "1. Background and Basics",
+          "BCF-M1-Lesson-4: How Blockchain Works",
+          "Lesson"
+        ],
+        [
+          "1. Background and Basics",
+          "BCF-M1-Lesson-5: What Is Mining and Hashing?",
+          "Lesson"
+        ],
+        [
+          "1. Background and Basics",
+          "BCF-M1-Lesson-6: What Are the Properties of a Blockchain?",
+          "Lesson"
+        ],
+        [
+          "1. Background and Basics",
+          "Blockchain Lifecycle Simulation",
+          "Simulation"
+        ],
+        [
+          "2. Blockchain Types",
+          "BCF-M2-Lesson-1: Private vs. Public Blockchains",
+          "Lesson"
+        ],
+        [
+          "2. Blockchain Types",
+          "BCF-M2-Lesson-2: Permissioned vs. Permissionless",
+          "Lesson"
+        ],
+        [
+          "2. Blockchain Types",
+          "BCF-M2-Lesson-3: Public vs. Private vs. Hybrid Discussion",
+          "Discussion"
+        ],
+        [
+          "Modules 1–2",
+          "BCF Modules 1 and 2 Quiz",
+          "Quiz / exam"
+        ],
+        [
+          "3. Consensus",
+          "BCF-M3-Lesson-1: Consensus Mechanisms",
+          "Lesson"
+        ],
+        [
+          "3. Consensus",
+          "BCF-M3-Lesson-2: Consensus Protocols — 14 Examples",
+          "Lesson"
+        ],
+        [
+          "3. Consensus",
+          "BCF-M3-Lesson-3: Consensus Protocols, Continued",
+          "Lesson"
+        ],
+        [
+          "3. Consensus",
+          "Consensus Mechanism Simulator",
+          "Simulation"
+        ],
+        [
+          "4. Cryptography and Hashing",
+          "BCF-M4-Lesson-1: Machine/Mathematical Cryptography",
+          "Lesson"
+        ],
+        [
+          "4. Cryptography and Hashing",
+          "BCF-M4-Lesson-2: Hash Function Properties",
+          "Lesson"
+        ],
+        [
+          "4. Cryptography and Hashing",
+          "Hash Function and Avalanche Effect Lab",
+          "Lab"
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "rows": [
+        [
+          "CONTENT CONTINUATIONThe broader Blockchain Foundations outline supplied elsewhere in this canvas continues through wallets, applications, regulation, reporting, DAOs, the trilemma, and the present state of blockchain. Those modules are preserved in the canonical register in Section 5."
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "rows": [
+        [
+          "Program attribute",
+          "Specification"
+        ],
+        [
+          "Length",
+          "8 weeks"
+        ],
+        [
+          "Format",
+          "Hands-on learning with practical exercises every week"
+        ],
+        [
+          "Delivery",
+          "Flexible online or on-site"
+        ],
+        [
+          "Level",
+          "Beginner-friendly"
+        ],
+        [
+          "Completion",
+          "Iron Vault Academy completion certificate"
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "rows": [
+        [
+          "Week",
+          "Theme",
+          "Core topics",
+          "Practical outcome"
+        ],
+        [
+          "1",
+          "Welcome to Web3 & Why DeFi Matters",
+          "Web1 → Web2 → Web3 evolution; blockchain and decentralization basics; DeFi fundamentals and safety",
+          "Explain the DeFi landscape and identify relevant opportunities and risks."
+        ],
+        [
+          "2",
+          "Your First Wallet & Moving Money",
+          "Hot vs. cold wallets; security best practices; send and receive crypto on testnet",
+          "Create a secure practice wallet and complete test transactions."
+        ],
+        [
+          "3",
+          "Stablecoins and Digital Dollars",
+          "USDT, USDC, DAI, and other stablecoin models; centralized vs. decentralized; remittance, settlement, and savings use cases",
+          "Explain stablecoin models and evaluate cross-border and treasury use cases."
+        ],
+        [
+          "4",
+          "Trading Without Banks — DEXs",
+          "Uniswap and PancakeSwap basics; liquidity pools; CEX vs. DEX comparison",
+          "Execute a practice token swap and explain liquidity mechanics."
+        ],
+        [
+          "5",
+          "Lending, Borrowing & Yield",
+          "Aave and Compound; collateral and liquidation; yield-farming fundamentals",
+          "Calculate example positions and explain yield, leverage, collateral, and liquidation risk."
+        ],
+        [
+          "6",
+          "DAOs and Digital Cooperatives",
+          "DAO fundamentals and governance; token-based voting; organizational and community applications",
+          "Participate in a simulated governance proposal and vote."
+        ],
+        [
+          "7",
+          "NFTs & Tokenization of Assets",
+          "NFTs beyond art: access, tickets, identity, property claims; fractional ownership concepts; digital ownership models",
+          "Mint a practice NFT and explain tokenization models and limitations."
+        ],
+        [
+          "8",
+          "Security & the Future of Web3",
+          "Common threats; security tools and practices; regulation; career and participation pathways",
+          "Graduate able to navigate core Web3 activities with a documented safety framework."
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "rows": [
+        [
+          "Course / event",
+          "Duration",
+          "Delivery"
+        ],
+        [
+          "Student Orientation",
+          "1 hour",
+          "Live online, optional"
+        ],
+        [
+          "Live Instructor AMA — bi-weekly",
+          "1+ hour",
+          "Live online, optional"
+        ],
+        [
+          "Web3 Foundations",
+          "3 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Blockchain Foundations",
+          "6 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Bitcoin Intensive",
+          "6 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Blockchain Development Decision",
+          "5 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Blockchain+ mastery assessment",
+          "1 hour",
+          "Remote-proctored assessment model"
+        ],
+        [
+          "Introduction to Blockchain Scrum Master",
+          "3 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Introduction to DevOps",
+          "4 hours",
+          "Live online"
+        ],
+        [
+          "zk-SNARKs Essentials",
+          "2 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Solidity Smart Contract Developer (EVM)",
+          "7 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Smart Contract Developer Live Workshop",
+          "3 hours",
+          "Live online"
+        ],
+        [
+          "Smart Contract Security",
+          "7 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Understanding L1 & L2 Blockchains",
+          "2 hours",
+          "Live online"
+        ],
+        [
+          "Smart Contract Developer mastery assessment",
+          "1 hour",
+          "Online proctored assessment model"
+        ],
+        [
+          "Ethereum Enterprise Strategist",
+          "4 hours",
+          "Remote-proctored assessment model"
+        ],
+        [
+          "Ethereum DApp Developer",
+          "5 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Ethereum DApp Live Workshop",
+          "3 hours",
+          "Live online"
+        ],
+        [
+          "Blockchain Architecture 101",
+          "4 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Blockchain Architecture 201",
+          "4 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Ethereum Developer mastery assessment",
+          "2 hours",
+          "Remote-proctored assessment model"
+        ],
+        [
+          "Key Management",
+          "3 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Blockchain Security",
+          "10 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Blockchain Security Live Workshop",
+          "3 hours",
+          "Live online"
+        ],
+        [
+          "Blockchain Security Professional mastery assessment",
+          "2 hours",
+          "Remote-proctored assessment model"
+        ],
+        [
+          "Blockchain Architecture 301",
+          "5 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Blockchain Architecture Workshop",
+          "3 hours",
+          "Live online"
+        ],
+        [
+          "Scrum Methods for Blockchain",
+          "2 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Architecting Solutions by Combining Agile Methodologies",
+          "2 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Scaling Agile Solutions for Blockchain to a Team-of-Teams",
+          "5 hours",
+          "On-demand, instructor-supported"
+        ],
+        [
+          "Master Blockchain Developer Level 3 mastery assessment",
+          "2 hours",
+          "Remote-proctored assessment model"
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Understanding What Web3 Is"
+        ],
+        [
+          "Module 2",
+          "Why Web3"
+        ],
+        [
+          "Module 3",
+          "Web3 and the Metaverse"
+        ],
+        [
+          "Module 4",
+          "Blockchain Fundamentals"
+        ],
+        [
+          "Module 5",
+          "Understanding DeFi"
+        ],
+        [
+          "Module 6",
+          "Challenges, Risks and Ethics of Web3"
+        ],
+        [
+          "Module 7",
+          "What Comes After Web3?"
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Blockchain Background and Basics"
+        ],
+        [
+          "Module 2",
+          "Different Types of Blockchains"
+        ],
+        [
+          "Module 3",
+          "Consensus"
+        ],
+        [
+          "Module 4",
+          "Cryptography and Hashing"
+        ],
+        [
+          "Module 5",
+          "Smart Contracts"
+        ],
+        [
+          "Module 6",
+          "Blockchain Wallets"
+        ],
+        [
+          "Module 7",
+          "Pros and Cons"
+        ],
+        [
+          "Module 8",
+          "Public Blockchain-Based Applications"
+        ],
+        [
+          "Module 9",
+          "Blockchain and Crypto Regulation"
+        ],
+        [
+          "Module 10",
+          "Regulatory Reporting"
+        ],
+        [
+          "Module 11",
+          "Distributed Autonomous Organizations"
+        ],
+        [
+          "Module 12",
+          "Blockchain Today"
+        ],
+        [
+          "Module 13",
+          "The Trilemma"
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Bitcoin Overview"
+        ],
+        [
+          "Module 2",
+          "Technical Limitations and Mining Introduction"
+        ],
+        [
+          "Module 3",
+          "Mining"
+        ],
+        [
+          "Module 4",
+          "Bitcoin vs. Protocols 2.0, 3.0, 4.0, etc."
+        ],
+        [
+          "Module 5",
+          "The New Database"
+        ],
+        [
+          "Module 6",
+          "Payments, Voting, and Other Use Cases"
+        ],
+        [
+          "Module 7",
+          "What’s Next?"
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Development Essentials"
+        ],
+        [
+          "Module 2",
+          "Platforms"
+        ],
+        [
+          "Module 3",
+          "Hosting and Mining Decisions"
+        ],
+        [
+          "Module 4",
+          "Associated Technologies"
+        ],
+        [
+          "Module 5",
+          "Development Languages"
+        ],
+        [
+          "Module 6",
+          "Security and Implementation Goals"
+        ],
+        [
+          "Module 7",
+          "Risk Management"
+        ],
+        [
+          "Module 8",
+          "Digital Transformation and Summary"
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Introduction to Blockchain Scrum Master"
+        ],
+        [
+          "Module 2",
+          "Agile Economics, Managing, Options, Myths and Benefits"
+        ],
+        [
+          "Module 3",
+          "Scrum Master Role, Scrum Roles, Teams, and Basics"
+        ],
+        [
+          "Module 4",
+          "Iteration Basics and Elements"
+        ],
+        [
+          "Module 5",
+          "Blockchain Elements Leadership"
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Introduction to DevOps"
+        ],
+        [
+          "Module 2",
+          "The DevOps Lifecycle"
+        ],
+        [
+          "Module 3",
+          "Popular DevOps Tools"
+        ],
+        [
+          "Module 4",
+          "DevOps Team Structure and Roles"
+        ],
+        [
+          "Module 5",
+          "DevOps and ITIL"
+        ],
+        [
+          "Module 6",
+          "Implementing DevOps: Best Practices and Challenges"
+        ],
+        [
+          "Module 7",
+          "DevOps Culture and Collaboration"
+        ],
+        [
+          "Module 8",
+          "DevOps in the Future"
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Introduction to zk-SNARKs"
+        ],
+        [
+          "Module 2",
+          "Technical Details of zk-SNARKs"
+        ],
+        [
+          "Module 3",
+          "Building a zk-SNARK Application"
+        ],
+        [
+          "Module 4",
+          "Future Developments and Research in zk-SNARKs"
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "First Smart Contract"
+        ],
+        [
+          "Module 2",
+          "Adding Functionality"
+        ],
+        [
+          "Module 3",
+          "User Addresses"
+        ],
+        [
+          "Module 4",
+          "Update State Conditions"
+        ],
+        [
+          "Module 5",
+          "Payments Introduction"
+        ],
+        [
+          "Module 6",
+          "Sending Crypto to an Address"
+        ],
+        [
+          "Module 7",
+          "Conditional Transfer"
+        ],
+        [
+          "Module 8",
+          "ERC-20 Development Options for Fungible Tokens"
+        ],
+        [
+          "Module 9",
+          "ERC-721 Development Options for Non-Fungible Tokens"
+        ],
+        [
+          "Module 10",
+          "Smart Contract Voting"
+        ],
+        [
+          "Module 11",
+          "Demo a DApp"
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Introduction to Smart Contract Security"
+        ],
+        [
+          "Module 2",
+          "General Programming Vulnerabilities"
+        ],
+        [
+          "Module 3",
+          "Blockchain Vulnerabilities"
+        ],
+        [
+          "Module 4",
+          "Ethereum-Specific Vulnerabilities"
+        ]
+      ]
+    },
+    {
+      "index": 20,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Introduction"
+        ],
+        [
+          "Module 2",
+          "Layer 1 Blockchains"
+        ],
+        [
+          "Module 3",
+          "Layer 2 Blockchains"
+        ],
+        [
+          "Module 4",
+          "Use Cases"
+        ],
+        [
+          "Module 5",
+          "Technical Aspects"
+        ],
+        [
+          "Module 6",
+          "Conclusion"
+        ],
+        [
+          "Module 7",
+          "Layer 0 and Layer 3 Blockchains"
+        ]
+      ]
+    },
+    {
+      "index": 21,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Blockchain Basics"
+        ],
+        [
+          "Module 2",
+          "Origins of Ethereum"
+        ],
+        [
+          "Module 3",
+          "Transactions on Ethereum"
+        ],
+        [
+          "Module 4",
+          "Ethereum Protocols"
+        ],
+        [
+          "Module 5",
+          "Ether and Cryptocurrencies"
+        ],
+        [
+          "Module 6",
+          "Wallets"
+        ],
+        [
+          "Module 7",
+          "The Ethereum Virtual Machine"
+        ],
+        [
+          "Module 8",
+          "Smart Contracts"
+        ],
+        [
+          "Module 9",
+          "Ethereum Standards: ERC-20, ERC-721, etc."
+        ],
+        [
+          "Module 10",
+          "Fungible Tokens"
+        ],
+        [
+          "Module 11",
+          "Non-Fungible Tokens"
+        ],
+        [
+          "Module 12",
+          "Ethereum Distributed Applications"
+        ],
+        [
+          "Module 13",
+          "Ethereum Networks: Testnet and Live Networks"
+        ],
+        [
+          "Module 14",
+          "Ethereum Use Cases: Token Launches, DAOs, and Games"
+        ]
+      ]
+    },
+    {
+      "index": 22,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Basic Concepts and Configuring a Working Environment"
+        ],
+        [
+          "Module 2",
+          "Introduction to Solidity"
+        ],
+        [
+          "Module 3",
+          "Exploring Smart Contracts and Ethereum Protocols"
+        ],
+        [
+          "Module 4",
+          "Finalizing Your App"
+        ]
+      ]
+    },
+    {
+      "index": 23,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Blockchain Introduction, Revisited"
+        ],
+        [
+          "Module 2",
+          "Development Languages and Tools"
+        ],
+        [
+          "Module 3",
+          "Consensus Deep Dive"
+        ],
+        [
+          "Module 4",
+          "The Blockchain Trilemma"
+        ],
+        [
+          "Module 5",
+          "Blockchain Security Overview"
+        ]
+      ]
+    },
+    {
+      "index": 24,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Blockchain Security Deep Dive"
+        ],
+        [
+          "Module 2",
+          "The Regulatory Landscape"
+        ],
+        [
+          "Module 3",
+          "Risk Management"
+        ],
+        [
+          "Module 4",
+          "Blockchain Solution Architecture Considerations"
+        ],
+        [
+          "Module 5",
+          "Blockchain Governance Concerns"
+        ],
+        [
+          "Module 6",
+          "Blockchain in the Real World"
+        ]
+      ]
+    },
+    {
+      "index": 25,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Key Management Overview"
+        ],
+        [
+          "Module 2",
+          "Key Generation"
+        ],
+        [
+          "Module 3",
+          "Key Management and Storage"
+        ],
+        [
+          "Module 4",
+          "Risks"
+        ]
+      ]
+    },
+    {
+      "index": 26,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Introduction to Blockchain Security"
+        ],
+        [
+          "Module 2",
+          "Cryptography, Hash Functions, and Public Keys"
+        ],
+        [
+          "Module 3",
+          "Consensus, Proof of Work, and Proof of Stake Security"
+        ],
+        [
+          "Module 4",
+          "Advanced Blockchain and Architectural Security"
+        ],
+        [
+          "Module 5",
+          "Blockchain User and Node Security"
+        ],
+        [
+          "Module 6",
+          "Securing Blockchain Networks and Staking"
+        ],
+        [
+          "Module 7",
+          "Introduction to Smart Contract Security"
+        ],
+        [
+          "Module 8",
+          "Programming Vulnerabilities"
+        ]
+      ]
+    },
+    {
+      "index": 27,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "The Lifecycle of a Blockchain Solution"
+        ],
+        [
+          "Module 2",
+          "Consumer vs. Enterprise Blockchain Use and Adoption"
+        ],
+        [
+          "Module 3",
+          "Identity Management and Blockchain"
+        ],
+        [
+          "Module 4",
+          "Web 2.5"
+        ],
+        [
+          "Module 5",
+          "Blockchain Interoperability Deep Dive"
+        ],
+        [
+          "Module 6",
+          "Blockchain Sustainability"
+        ],
+        [
+          "Module 7",
+          "Where to Go from Here"
+        ]
+      ]
+    },
+    {
+      "index": 28,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "User Stories"
+        ],
+        [
+          "Module 2",
+          "User Story Estimation"
+        ],
+        [
+          "Module 3",
+          "Team Velocity"
+        ],
+        [
+          "Module 4",
+          "Scrum Events"
+        ],
+        [
+          "Module 5",
+          "Prioritize the Backlog"
+        ],
+        [
+          "Module 6",
+          "Scrum Reporting"
+        ],
+        [
+          "Module 7",
+          "Scrum Teams"
+        ],
+        [
+          "Module 8",
+          "Risk Management"
+        ]
+      ]
+    },
+    {
+      "index": 29,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Architecting Solutions and Continuous Integration"
+        ],
+        [
+          "Module 2",
+          "Lean Methods"
+        ],
+        [
+          "Module 3",
+          "DevOps and Release Management"
+        ]
+      ]
+    },
+    {
+      "index": 30,
+      "rows": [
+        [
+          "Sequence",
+          "Module"
+        ],
+        [
+          "Module 1",
+          "Scaling Agile Solutions"
+        ],
+        [
+          "Module 2",
+          "The Scaled Agile Team-of-Teams and Agile Enterprise"
+        ],
+        [
+          "Module 3",
+          "Agile for Device and Emerging Technology"
+        ],
+        [
+          "Module 4",
+          "Business Outcomes"
+        ]
+      ]
+    },
+    {
+      "index": 31,
+      "rows": [
+        [
+          "Sequence",
+          "Course"
+        ],
+        [
+          "1",
+          "AI Essentials"
+        ],
+        [
+          "2",
+          "Web3 Foundations"
+        ],
+        [
+          "3",
+          "Blockchain Foundations"
+        ],
+        [
+          "4",
+          "Blockchain & Bitcoin Intensive"
+        ],
+        [
+          "5",
+          "Prompt Engineering 101: AI Chatbot (ChatGPT)"
+        ],
+        [
+          "6",
+          "AI Prompt Engineering 201: Advanced Topics"
+        ],
+        [
+          "7",
+          "AI Prompt Engineering 301: Developer Topics"
+        ],
+        [
+          "8",
+          "Mastering Image Generative AI"
+        ],
+        [
+          "9",
+          "Mastering Music Generative AI"
+        ],
+        [
+          "10",
+          "AI Prompt Engineer Capstone and Mastery Assessment"
+        ]
+      ]
+    },
+    {
+      "index": 32,
+      "rows": [
+        [
+          "Domain",
+          "Courses and content"
+        ],
+        [
+          "Core literacy",
+          "AI Essentials; Web3 Foundations; Blockchain Foundations; Blockchain & Bitcoin Intensive"
+        ],
+        [
+          "Architecture and strategy",
+          "Blockchain Development Decision; Blockchain Enterprise Strategy; Blockchain Architecture 101, 201, and 301; Ethereum Enterprise Strategist"
+        ],
+        [
+          "Finance and assets",
+          "Fundamentals of DeFi & Primitives; Non-Fungible Token Essentials; Tokenomic Essentials; Understanding L1 and L2 Blockchains"
+        ],
+        [
+          "Operations",
+          "Introduction to DevOps; Introduction to Blockchain Scrum Master; Scrum Methods for Blockchain; agile architecture and team-of-teams scaling"
+        ],
+        [
+          "Security",
+          "Key Management; Information Security and Cyber Risk Awareness; Smart Contract Security; Blockchain Security"
+        ],
+        [
+          "Risk",
+          "Risk Management for Blockchain-Based Technology Companies; architecture and implementation risk; protocol and user risk"
+        ],
+        [
+          "Compliance",
+          "Data Protection Regulation: GDPR and CPRA/CCPA; OFAC Compliance Essentials; blockchain and crypto regulation; regulatory reporting"
+        ]
+      ]
+    },
+    {
+      "index": 33,
+      "rows": [
+        [
+          "Module",
+          "Core lesson"
+        ],
+        [
+          "1. Project essence",
+          "Define what the project is, the problem it addresses, its tagline, its keywords, its differentiated value, and the audience that should care."
+        ],
+        [
+          "2. Target audience",
+          "Analyze who the strategy is for. Separate newcomers, experienced users, builders, investors, operators, and institutional audiences rather than marketing to everyone."
+        ],
+        [
+          "3. Marketing budget",
+          "Establish available budget before selecting tactics. Distinguish paid acquisition, content, partnerships, events, creators, community operations, and experimentation."
+        ],
+        [
+          "4. Channel possibilities",
+          "Evaluate influencer marketing, blockchain SEO, email, educational content, partnerships, community programs, airdrops where appropriate, and other distribution channels against the audience and budget."
+        ],
+        [
+          "5. Community continuity",
+          "Support early users, maintain communication, collect feedback, and convert community trust into long-term participation and advocacy."
+        ]
+      ]
+    },
+    {
+      "index": 34,
+      "rows": [
+        [
+          "KEY OPERATING IDEAWeb3 growth requires project-specific positioning, audience clarity, disciplined resource allocation, channel testing, and sustained community engagement. Community is treated as a long-term operating asset, not a short-term promotional trick."
+        ]
+      ]
+    },
+    {
+      "index": 35,
+      "rows": [
+        [
+          "System",
+          "Function",
+          "Curriculum application"
+        ],
+        [
+          "Avatar Forge",
+          "Learner identity and personalization",
+          "A persistent Vault identity associated with rank, progress, and earned achievements."
+        ],
+        [
+          "Training Grounds",
+          "Interactive learning",
+          "Quizzes, labs, simulations, scenarios, chain building, terminology matching, contract flows, and security decisions."
+        ],
+        [
+          "Progress Vault",
+          "Progress and retention",
+          "XP, levels, streaks, badges, course completion, pathway progress, and mastery milestones."
+        ]
+      ]
+    },
+    {
+      "index": 36,
+      "rows": [
+        [
+          "Concept",
+          "Interaction"
+        ],
+        [
+          "Blockchain lifecycle",
+          "Sequenced lifecycle simulation"
+        ],
+        [
+          "Consensus",
+          "Consensus-mechanism comparison simulator"
+        ],
+        [
+          "Hashing",
+          "Editable-input avalanche-effect lab"
+        ],
+        [
+          "Wallet security",
+          "Select-the-safe-practices scenario"
+        ],
+        [
+          "Smart contracts",
+          "Escrow-condition and release-flow simulation"
+        ],
+        [
+          "Blockchain structure",
+          "Hash-linked chain builder"
+        ],
+        [
+          "Terminology",
+          "Concept-definition matching game"
+        ],
+        [
+          "DeFi lending",
+          "Collateral, interest, health-factor, and liquidation sandbox"
+        ],
+        [
+          "DAO governance",
+          "Proposal review and simulated vote"
+        ],
+        [
+          "Tokenization",
+          "Practice NFT mint and metadata exercise"
+        ],
+        [
+          "Solidity",
+          "Progressive code-completion and contract-debugging labs"
+        ],
+        [
+          "Security",
+          "Vulnerability recognition, exploit-path analysis, and remediation scenarios"
+        ]
+      ]
+    },
+    {
+      "index": 37,
+      "rows": [
+        [
+          "Canonical course / program",
+          "Pathway placement"
+        ],
+        [
+          "AI Essentials",
+          "AI Prompt Engineer; Enterprise/Operator"
+        ],
+        [
+          "Web3 Foundations",
+          "Core Literacy; Developer; AI Prompt Engineer"
+        ],
+        [
+          "Blockchain Foundations",
+          "Core Literacy; Developer; AI Prompt Engineer; Enterprise"
+        ],
+        [
+          "Blockchain & Bitcoin Intensive / Bitcoin Intensive",
+          "Core Literacy; Developer; AI Prompt Engineer"
+        ],
+        [
+          "Blockchain Development Decision",
+          "Developer; Architecture & Enterprise"
+        ],
+        [
+          "Key Management",
+          "Developer; Security, Risk & Compliance"
+        ],
+        [
+          "Blockchain Enterprise Strategy",
+          "Architecture & Enterprise"
+        ],
+        [
+          "Fundamentals of DeFi & Primitives",
+          "DeFi Practitioner; Enterprise/Operator"
+        ],
+        [
+          "Non-Fungible Token Essentials",
+          "DeFi Practitioner; Enterprise/Operator"
+        ],
+        [
+          "Tokenomic Essentials",
+          "DeFi Practitioner; Enterprise/Operator"
+        ],
+        [
+          "Understanding L1 and L2 Blockchains",
+          "Developer; Architecture & Enterprise"
+        ],
+        [
+          "Introduction to DevOps",
+          "Developer; Operations"
+        ],
+        [
+          "Information Security and Cyber Risk Awareness",
+          "Security, Risk & Compliance"
+        ],
+        [
+          "Risk Management for Blockchain-Based Technology Companies",
+          "Security, Risk & Compliance"
+        ],
+        [
+          "Data Protection Regulation: GDPR and CPRA/CCPA",
+          "Security, Risk & Compliance"
+        ],
+        [
+          "OFAC Compliance Essentials",
+          "Security, Risk & Compliance"
+        ],
+        [
+          "Introduction to Blockchain Scrum Master",
+          "Developer; Operations"
+        ],
+        [
+          "Blockchain Architecture 101",
+          "Developer; Architecture & Enterprise"
+        ],
+        [
+          "Blockchain Architecture 201",
+          "Developer; Architecture & Enterprise"
+        ],
+        [
+          "Prompt Engineering 101: AI Chatbot (ChatGPT)",
+          "AI Prompt Engineer"
+        ],
+        [
+          "AI Prompt Engineering 201: Advanced Topics",
+          "AI Prompt Engineer"
+        ],
+        [
+          "AI Prompt Engineering 301: Developer Topics",
+          "AI Prompt Engineer"
+        ],
+        [
+          "Mastering Image Generative AI",
+          "AI Prompt Engineer"
+        ],
+        [
+          "Mastering Music Generative AI",
+          "AI Prompt Engineer"
+        ],
+        [
+          "zk-SNARKs Essentials",
+          "Web3 Developer"
+        ],
+        [
+          "Solidity Smart Contract Developer (EVM)",
+          "Web3 Developer"
+        ],
+        [
+          "Smart Contract Developer Live Workshop",
+          "Web3 Developer"
+        ],
+        [
+          "Smart Contract Security",
+          "Web3 Developer; Security"
+        ],
+        [
+          "Ethereum Enterprise Strategist",
+          "Web3 Developer; Architecture & Enterprise"
+        ],
+        [
+          "Ethereum DApp Developer",
+          "Web3 Developer"
+        ],
+        [
+          "Ethereum DApp Live Workshop",
+          "Web3 Developer"
+        ],
+        [
+          "Blockchain Security",
+          "Web3 Developer; Security"
+        ],
+        [
+          "Blockchain Security Live Workshop",
+          "Web3 Developer; Security"
+        ],
+        [
+          "Blockchain Architecture 301",
+          "Web3 Developer; Architecture & Enterprise"
+        ],
+        [
+          "Blockchain Architecture Workshop",
+          "Web3 Developer; Architecture & Enterprise"
+        ],
+        [
+          "Scrum Methods for Blockchain",
+          "Web3 Developer; Operations"
+        ],
+        [
+          "Architecting Solutions by Combining Agile Methodologies",
+          "Web3 Developer; Operations"
+        ],
+        [
+          "Scaling Agile Solutions for Blockchain to a Team-of-Teams",
+          "Web3 Developer; Operations"
+        ],
+        [
+          "Eight-Week Practical DeFi & Web3 Finance Bootcamp",
+          "DeFi Practitioner"
+        ],
+        [
+          "Web3 Growth & Community",
+          "Growth elective"
+        ]
+      ]
+    },
+    {
+      "index": 38,
+      "rows": [
+        [
+          "END STATEA trust-first public academy with a structured beginner entry point, practical DeFi journey, professional blockchain foundation, advanced Web3 developer pathway, AI career track, enterprise and security depth, and a single gamified learning system underneath it all."
+        ]
+      ]
+    }
+  ]
+}

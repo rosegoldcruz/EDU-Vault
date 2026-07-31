@@ -1,7 +1,6 @@
 import { getSupabaseAdmin } from '@/lib/server/supabase-admin'
 import { resolveEducationAuthUserId } from '@/lib/education-actions'
-
-const TOTAL_MODULES = 6
+import { getLegacyModuleNumbers } from '@/lib/server/active-curriculum'
 
 type LatestQuizRow = {
   module_index: number
@@ -16,13 +15,8 @@ export type ModuleCompletionStatus = {
   reason?: string
 }
 
-function validateModuleNumber(moduleNumber: number): void {
-  if (!Number.isInteger(moduleNumber) || moduleNumber < 1 || moduleNumber > TOTAL_MODULES) {
-    throw new Error('Invalid moduleNumber: expected integer between 1 and 6')
-  }
-}
-
 async function getLatestQuizByModule(privyUserId: string): Promise<Map<number, LatestQuizRow>> {
+  const configuredModules = new Set(await getLegacyModuleNumbers())
   const resolvedUserId = await resolveEducationAuthUserId(privyUserId)
 
   const { data, error } = await getSupabaseAdmin()
@@ -39,7 +33,7 @@ async function getLatestQuizByModule(privyUserId: string): Promise<Map<number, L
 
   for (const row of (data ?? []) as LatestQuizRow[]) {
     const moduleNumber = Number(row.module_index)
-    if (!Number.isInteger(moduleNumber) || moduleNumber < 1 || moduleNumber > TOTAL_MODULES) continue
+    if (!configuredModules.has(moduleNumber)) continue
     if (!latestByModule.has(moduleNumber)) {
       latestByModule.set(moduleNumber, row)
     }
@@ -51,49 +45,47 @@ async function getLatestQuizByModule(privyUserId: string): Promise<Map<number, L
 export async function getUserModuleCompletionStatus(
   privyUserId: string,
 ): Promise<ModuleCompletionStatus[]> {
+  const configuredModules = await getLegacyModuleNumbers()
   const latestByModule = await getLatestQuizByModule(privyUserId)
 
-  const statuses: ModuleCompletionStatus[] = []
-
-  for (let moduleNumber = 1; moduleNumber <= TOTAL_MODULES; moduleNumber += 1) {
+  return configuredModules.map((moduleNumber): ModuleCompletionStatus => {
     const latestQuiz = latestByModule.get(moduleNumber)
 
     if (!latestQuiz) {
-      statuses.push({
+      return {
         moduleNumber,
         completed: false,
         completedAt: null,
         reason: 'No quiz attempt recorded for module',
-      })
-      continue
+      }
     }
 
     if (!latestQuiz.passed) {
-      statuses.push({
+      return {
         moduleNumber,
         completed: false,
         completedAt: null,
         reason: 'Latest quiz attempt is not passed',
-      })
-      continue
+      }
     }
 
-    statuses.push({
+    return {
       moduleNumber,
       completed: true,
       completedAt: latestQuiz.attempted_at,
       reason: 'Latest quiz attempt is passed',
-    })
-  }
-
-  return statuses
+    }
+  })
 }
 
 export async function isModuleComplete(
   privyUserId: string,
   moduleNumber: number,
 ): Promise<boolean> {
-  validateModuleNumber(moduleNumber)
+  const configuredModules = await getLegacyModuleNumbers()
+  if (!configuredModules.includes(moduleNumber)) {
+    throw new Error('Invalid moduleNumber: not present in the active curriculum release')
+  }
 
   const statuses = await getUserModuleCompletionStatus(privyUserId)
   const status = statuses.find((entry) => entry.moduleNumber === moduleNumber)

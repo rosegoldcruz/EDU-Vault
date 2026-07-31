@@ -49,12 +49,12 @@ export function BackofficeProvider({ children }: { children: ReactNode }) {
   if (!ready) return null
 
   if (!authenticated) return (
-    <div className="min-h-screen bg-ink text-white grid place-items-center px-6">
+    <div className="min-h-screen bg-[color:var(--iv-white)] text-[color:var(--iv-ink)] grid place-items-center px-6">
       <div className="iv-panel w-full max-w-md p-8 text-center">
         <p className="iv-label mb-3">Iron Vault</p>
-        <h1 className="iv-title mb-3 text-4xl">Sign in to continue</h1>
-        <p className="iv-body mb-6 text-sm">Member backoffice access requires your authenticated Iron Vault account.</p>
-        <button type="button" onClick={() => login()} className="iv-button inline-flex items-center justify-center px-5 py-2.5 text-sm">
+        <h1 className="iv-member-title mb-3 text-4xl">Sign in to continue</h1>
+        <p className="iv-member-copy mb-6 text-sm">Member backoffice access requires your authenticated Iron Vault account.</p>
+        <button type="button" onClick={() => login()} className="iv-btn inline-flex items-center justify-center px-5 py-2.5 text-sm">
           Sign In
         </button>
       </div>
@@ -64,11 +64,11 @@ export function BackofficeProvider({ children }: { children: ReactNode }) {
   if (loading && !profile) return null
 
   if (error && !profile) return (
-    <div className="min-h-screen bg-ink text-white grid place-items-center px-6">
+    <div className="min-h-screen bg-[color:var(--iv-white)] text-[color:var(--iv-ink)] grid place-items-center px-6">
       <div className="iv-panel w-full max-w-md p-8 text-center">
-        <h1 className="iv-card-title mb-2 text-3xl">Unable to load backoffice</h1>
+        <h1 className="iv-member-card-title mb-2 text-3xl">Unable to load backoffice</h1>
         <p className="text-sm text-[#ffb4a8] mb-6">{error}</p>
-        <button type="button" onClick={() => void refreshProfile()} className="iv-button inline-flex items-center justify-center px-5 py-2.5 text-sm">Retry</button>
+        <button type="button" onClick={() => void refreshProfile()} className="iv-btn inline-flex items-center justify-center px-5 py-2.5 text-sm">Retry</button>
       </div>
     </div>
   )

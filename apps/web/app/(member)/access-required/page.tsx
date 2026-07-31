@@ -38,22 +38,23 @@ export default function AccessRequiredPage() {
   }
 
   return (
-    <main className="min-h-screen bg-ink text-white grid place-items-center px-6">
-      <div className="iv-panel w-full max-w-2xl p-8 sm:p-10">
-        <h1 className="iv-title text-5xl">Access Required</h1>
-        <p className="iv-body mt-4">
+    <main className="iv-member-auth">
+      <div className="iv-panel iv-member-access-card">
+        <p className="iv-label">Member access</p>
+        <h1 className="iv-member-title">Access <span className="iv-serif">required.</span></h1>
+        <p className="iv-member-copy">
           This portal is available only to approved Iron Vault members. Complete payment on the main Learn page or redeem an invite if one was issued to you.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link
             href="/redeem-invite"
-            className="iv-button-ghost inline-flex items-center justify-center px-5 py-2.5 text-xs"
+            className="iv-btn iv-btn-ghost"
           >
             Redeem Invite
           </Link>
           <Link
             href="/enroll"
-            className="iv-button inline-flex items-center justify-center px-5 py-2.5 text-sm"
+            className="iv-btn"
           >
             Enroll Now
           </Link>
@@ -61,7 +62,7 @@ export default function AccessRequiredPage() {
             type="button"
             onClick={handleLoginReset}
             disabled={resetting}
-            className="iv-button-ghost inline-flex items-center justify-center px-5 py-2.5 text-xs disabled:cursor-not-allowed disabled:opacity-60"
+            className="iv-btn iv-btn-ghost disabled:cursor-not-allowed disabled:opacity-60"
           >
             {resetting ? 'Signing Out...' : 'Back to Login'}
           </button>

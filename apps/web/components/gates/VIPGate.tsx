@@ -78,7 +78,7 @@ export function VIPGate({ children }: { children: ReactNode }) {
   if (unlocked) return <>{children}</>
 
   return (
-    <section className="relative min-h-[calc(100vh-8rem)] overflow-hidden border border-line bg-ink">
+    <section className="relative min-h-[calc(100vh-8rem)] overflow-hidden border border-[color:var(--iv-hairline)] bg-[color:var(--iv-white)]">
       <div className="absolute inset-0 bg-[linear-gradient(rgba(86,230,40,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(86,230,40,0.05)_1px,transparent_1px)] bg-[size:44px_44px] opacity-40" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-acid to-transparent" />
 
@@ -91,18 +91,18 @@ export function VIPGate({ children }: { children: ReactNode }) {
             <div className="vip-vault-ribs" />
           </div>
           <div className="vip-vault-lock">
-            <LockKeyhole className="h-10 w-10 text-acid" />
+            <LockKeyhole className="h-10 w-10 text-[color:var(--iv-accent)]" />
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className={`relative z-20 w-full max-w-md border border-line bg-ink/90 p-6 shadow-[0_0_70px_rgba(86,230,40,0.10)] transition duration-500 sm:p-8 ${opening ? 'scale-95 opacity-0' : 'scale-100 opacity-100'}`}>
+        <form onSubmit={handleSubmit} className={`relative z-20 w-full max-w-md border border-[color:var(--iv-hairline)] bg-[color:var(--iv-white)]/90 p-6 shadow-[0_0_70px_rgba(86,230,40,0.10)] transition duration-500 sm:p-8 ${opening ? 'scale-95 opacity-0' : 'scale-100 opacity-100'}`}>
           <div className="mb-6 text-center">
-            <div className="iv-chip-lime mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center">
+            <div className="iv-chip mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center">
               <ShieldCheck aria-hidden="true" className="h-7 w-7" />
             </div>
             <p className="iv-label mb-3">Private VIP Portal</p>
-            <h1 className="iv-title text-5xl">VAULT ACCESS</h1>
-            <p className="iv-body mt-4 text-sm text-muted">
+            <h1 className="iv-member-title text-5xl">VAULT ACCESS</h1>
+            <p className="iv-member-copy mt-4 text-sm text-[color:var(--iv-ink-2)]">
               Enter the current VIP access code to unlock the partner vault.
             </p>
           </div>
@@ -114,14 +114,14 @@ export function VIPGate({ children }: { children: ReactNode }) {
           ) : (
             <>
               <label htmlFor="vip-access-code" className="block">
-                <span className="iv-label-muted mb-2 block">Access Code</span>
+                <span className="iv-member-meta mb-2 block">Access Code</span>
                 <div className="relative">
-                  <KeyRound aria-hidden="true" className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-acid" />
+                  <KeyRound aria-hidden="true" className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[color:var(--iv-accent)]" />
                   <input
                     id="vip-access-code"
                     value={code}
                     onChange={(event) => setCode(event.target.value)}
-                    className="iv-field min-h-12 w-full pl-11 pr-4 text-sm"
+                    className="iv-member-field min-h-12 w-full pl-11 pr-4 text-sm"
                     type="password"
                     autoComplete="one-time-code"
                     required
@@ -133,7 +133,7 @@ export function VIPGate({ children }: { children: ReactNode }) {
                 <p className="mt-4 border border-[#6f3934] bg-[#6f3934]/15 px-3 py-2 text-sm text-[#ffb4a8]">{error}</p>
               ) : null}
 
-              <button type="submit" disabled={submitting || opening} className="iv-button mt-5 inline-flex min-h-12 w-full items-center justify-center px-5 py-3 text-sm disabled:cursor-not-allowed disabled:opacity-60">
+              <button type="submit" disabled={submitting || opening} className="iv-btn mt-5 inline-flex min-h-12 w-full items-center justify-center px-5 py-3 text-sm disabled:cursor-not-allowed disabled:opacity-60">
                 {submitting || opening ? 'OPENING VAULT' : 'UNLOCK VIP'}
               </button>
             </>

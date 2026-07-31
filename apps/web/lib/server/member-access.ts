@@ -1,13 +1,15 @@
 import { cookies, headers } from 'next/headers'
+import { getDatabasePool } from '@iron-vault/database'
 import { getSupabaseAdmin } from '@/lib/server/supabase-admin'
 import {
 	getPrivyAccessTokenFromHeaders,
 	requirePrivyUserFromAccessToken,
 	type AuthenticatedPrivyUser,
 } from '@/lib/server/privy-auth'
+import { getActiveCurriculumRelease } from '@/lib/server/active-curriculum'
 
 type EntitlementStatus = 'active' | 'revoked' | 'expired'
-type EntitlementSource = 'stripe' | 'invite' | 'grandfathered' | 'admin'
+type EntitlementSource = 'stripe' | 'authorize_net' | 'invite' | 'grandfathered' | 'admin'
 
 type MemberEntitlement = {
 	id: string
@@ -19,6 +21,9 @@ type MemberEntitlement = {
 	stripe_customer_id: string | null
 	stripe_checkout_session_id: string | null
 	stripe_payment_intent_id: string | null
+	payment_provider?: string | null
+	provider_checkout_session_id?: string | null
+	provider_payment_id?: string | null
 	invite_code: string | null
 	granted_by: string | null
 	granted_at: string
@@ -38,13 +43,13 @@ export type MemberAccessScope = {
 	hasAccess: boolean
 	accessType: 'free' | 'all_modules' | 'single_module' | 'admin'
 	allowedModules: number[]
+	allowedModuleIds: string[]
+	releaseId: string
+	releaseVersion: string
 	entitlementId?: string
-	rewardTrack?: 'full_academy' | 'single_module'
 }
 
 const ACCESS_TOKEN_COOKIE_NAMES = ['privy-token', 'privy-id-token'] as const
-export const FREE_ACADEMY_MODULE_ID = 0
-export const FULL_ACADEMY_MODULE_IDS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] as const
 
 function getErrorMessage(error: unknown): string {
 	return error instanceof Error ? error.message : 'Unknown error'
@@ -98,14 +103,28 @@ export async function getOptionalAuthenticatedUser(request?: Request): Promise<A
 }
 
 async function isAdminUser(privyUserId: string): Promise<boolean> {
-	const { data, error } = await getSupabaseAdmin()
-		.from('iv_user_profiles')
-		.select('role')
-		.eq('privy_user_id', privyUserId)
-		.maybeSingle<{ role: 'MEMBER' | 'VIP' | 'ADMIN' }>()
+	const result = await getDatabasePool().query<{ is_admin: boolean }>(
+		`
+			SELECT EXISTS (
+				SELECT 1
+				FROM identity_accounts
+				INNER JOIN members
+					ON members.id = identity_accounts.member_id
+				INNER JOIN member_role_assignments
+					ON member_role_assignments.member_id = members.id
+					AND member_role_assignments.revoked_at IS NULL
+				INNER JOIN roles
+					ON roles.id = member_role_assignments.role_id
+				WHERE identity_accounts.provider = 'privy'
+					AND identity_accounts.provider_subject = $1
+					AND members.status = 'active'
+					AND roles.code = 'admin'
+			) AS is_admin
+		`,
+		[privyUserId],
+	)
 
-	if (error) throw error
-	return data?.role === 'ADMIN'
+	return result.rows[0]?.is_admin ?? false
 }
 
 async function findActiveEntitlement(
@@ -156,38 +175,78 @@ export async function requireMemberAccess(request?: Request): Promise<MemberAcce
 	throw new Error('Forbidden: member entitlement required')
 }
 
-function scopeFromEntitlement(entitlement: MemberEntitlement): MemberAccessScope {
+async function scopeFromEntitlement(entitlement: MemberEntitlement): Promise<MemberAccessScope> {
+	const release = await getActiveCurriculumRelease()
 	const metadata = entitlement.metadata ?? {}
 	const accessType = metadata.access_type
 	const moduleNumber = Number(metadata.module_number)
+	const moduleId = typeof metadata.module_id === 'string' ? metadata.module_id : null
+	const selectedModule = moduleId
+		? release.modules.find((module) => module.id === moduleId)
+		: release.modules.find((module) => module.legacyNumber === moduleNumber)
 
-	if (accessType === 'single_module' && Number.isInteger(moduleNumber) && moduleNumber >= 1 && moduleNumber <= 6) {
+	if (accessType === 'single_module' && selectedModule) {
+		const grantedModules = release.modules.filter(
+			(module) => module.id === selectedModule.id || module.accessClass === 'free',
+		)
 		return {
 			hasAccess: true,
 			accessType: 'single_module',
-			allowedModules: [moduleNumber],
+			allowedModules: grantedModules
+				.map((module) => module.legacyNumber)
+				.filter((moduleNumber): moduleNumber is number => Number.isInteger(moduleNumber)),
+			allowedModuleIds: grantedModules.map((module) => module.id),
+			releaseId: release.id,
+			releaseVersion: release.version,
 			entitlementId: entitlement.id,
-			rewardTrack: 'single_module',
 		}
 	}
 
 	return {
 		hasAccess: true,
 		accessType: 'all_modules',
-		allowedModules: [...FULL_ACADEMY_MODULE_IDS],
+		allowedModules: release.modules
+			.map((module) => module.legacyNumber)
+			.filter((moduleNumber): moduleNumber is number => Number.isInteger(moduleNumber)),
+		allowedModuleIds: release.modules.map((module) => module.id),
+		releaseId: release.id,
+		releaseVersion: release.version,
 		entitlementId: entitlement.id,
-		rewardTrack: 'full_academy',
 	}
 }
 
 export async function getMemberAccessScope(request?: Request): Promise<MemberAccessScope> {
-	const access = await requireMemberAccess(request)
+	const release = await getActiveCurriculumRelease()
+	const freeModules = release.modules.filter((module) => module.accessClass === 'free')
+	const freeScope: MemberAccessScope = {
+		hasAccess: true,
+		accessType: 'free',
+		allowedModules: freeModules
+			.map((module) => module.legacyNumber)
+			.filter((moduleNumber): moduleNumber is number => Number.isInteger(moduleNumber)),
+		allowedModuleIds: freeModules.map((module) => module.id),
+		releaseId: release.id,
+		releaseVersion: release.version,
+	}
+	let access: MemberAccessContext
+	try {
+		access = await requireMemberAccess(request)
+	} catch (error: unknown) {
+		if (getErrorMessage(error).startsWith('Forbidden:')) {
+			return freeScope
+		}
+		throw error
+	}
 	if (access.isAdmin) {
 		return {
 			hasAccess: true,
 			accessType: 'admin',
-			allowedModules: [...FULL_ACADEMY_MODULE_IDS],
-			rewardTrack: 'full_academy',
+			allowedModules: release.modules
+				.map((module) => module.legacyNumber)
+				.filter((moduleNumber): moduleNumber is number => Number.isInteger(moduleNumber)),
+			allowedModuleIds: release.modules.map((module) => module.id),
+			releaseId: release.id,
+			releaseVersion: release.version,
 		}
 	}
 
@@ -195,7 +254,7 @@ export async function getMemberAccessScope(request?: Request): Promise<MemberAcc
 		throw new Error('Forbidden: member entitlement required')
 	}
 
-	return scopeFromEntitlement(access.entitlement)
+	return await scopeFromEntitlement(access.entitlement)
 }
 
 export function canAccessModule(scope: MemberAccessScope, moduleNumber: number): boolean {
@@ -207,13 +266,12 @@ export function canAccessAcademyHub(): boolean {
 }
 
 export function canAccessAcademyModule(scope: MemberAccessScope | null, moduleNumber: number): boolean {
-	if (moduleNumber === FREE_ACADEMY_MODULE_ID) return true
 	if (!scope) return false
 	return canAccessModule(scope, moduleNumber)
 }
 
 export function canAccessDashboard(scope: MemberAccessScope | null): boolean {
-	return Boolean(scope?.hasAccess && scope.accessType !== 'free')
+	return Boolean(scope?.hasAccess)
 }
 
 export function canAccessMemberFeature(scope: MemberAccessScope | null): boolean {
@@ -223,9 +281,20 @@ export function canAccessMemberFeature(scope: MemberAccessScope | null): boolean
 export async function getAcademyAccessScope(request?: Request): Promise<{ auth: AuthenticatedPrivyUser | null; scope: MemberAccessScope }> {
 	const auth = await getOptionalAuthenticatedUser(request)
 	if (!auth) {
+		const release = await getActiveCurriculumRelease()
+		const freeModules = release.modules.filter((module) => module.accessClass === 'free')
 		return {
 			auth: null,
-			scope: { hasAccess: true, accessType: 'free', allowedModules: [FREE_ACADEMY_MODULE_ID] },
+			scope: {
+				hasAccess: true,
+				accessType: 'free',
+				allowedModules: freeModules
+					.map((module) => module.legacyNumber)
+					.filter((moduleNumber): moduleNumber is number => Number.isInteger(moduleNumber)),
+				allowedModuleIds: freeModules.map((module) => module.id),
+				releaseId: release.id,
+				releaseVersion: release.version,
+			},
 		}
 	}
 
@@ -235,9 +304,20 @@ export async function getAcademyAccessScope(request?: Request): Promise<{ auth: 
 	} catch (error: unknown) {
 		const message = getErrorMessage(error)
 		if (message.startsWith('Forbidden:')) {
+			const release = await getActiveCurriculumRelease()
+			const freeModules = release.modules.filter((module) => module.accessClass === 'free')
 			return {
 				auth,
-				scope: { hasAccess: true, accessType: 'free', allowedModules: [FREE_ACADEMY_MODULE_ID] },
+				scope: {
+					hasAccess: true,
+					accessType: 'free',
+					allowedModules: freeModules
+						.map((module) => module.legacyNumber)
+						.filter((moduleNumber): moduleNumber is number => Number.isInteger(moduleNumber)),
+					allowedModuleIds: freeModules.map((module) => module.id),
+					releaseId: release.id,
+					releaseVersion: release.version,
+				},
 			}
 		}
 		throw error
@@ -245,7 +325,7 @@ export async function getAcademyAccessScope(request?: Request): Promise<{ auth: 
 }
 
 export async function requireModuleAccess(request: Request | undefined, moduleNumber: number): Promise<MemberAccessScope> {
-	if (!Number.isInteger(moduleNumber) || !FULL_ACADEMY_MODULE_IDS.includes(moduleNumber as typeof FULL_ACADEMY_MODULE_IDS[number])) {
+	if (!Number.isInteger(moduleNumber)) {
 		throw new Error('Forbidden: invalid module access request')
 	}
 

@@ -4,16 +4,19 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 
 import {
-  extractCheckoutSessionId,
+  extractProviderReferenceId,
+  extractProviderTransactionId,
   isSuccessfulPaymentEvent,
   verifyAuthorizeNetSignature,
 } from "@/lib/server/authorize-net";
 import { withPaymentsTransaction } from "@/lib/server/payments-db";
+import { getSupabaseAdmin } from "@/lib/server/supabase-admin";
 
 export const dynamic = "force-dynamic";
 
 const webhookSchema = z
   .object({
+    notificationId: z.string().optional(),
     eventType: z.string(),
     payload: z.record(z.string(), z.any()).optional(),
   })
@@ -40,22 +43,35 @@ export async function POST(request: NextRequest) {
 
   const webhook = parsed.data;
   const payload = (webhook.payload as Record<string, unknown> | undefined) ?? undefined;
-  const checkoutSessionId = extractCheckoutSessionId(payload);
+  const providerReferenceId = extractProviderReferenceId(payload);
+  const providerTransactionId = extractProviderTransactionId(payload);
+  let duplicate = false;
+  let entitlementGrant: {
+    memberId: string;
+    email: string;
+    entitlementKey: string;
+  } | null = null;
 
   await withPaymentsTransaction(async (client) => {
-    await client.query(
+    const notificationResult = await client.query(
       `
-        INSERT INTO gateway_notifications (id, provider, event_type, signature_valid, checkout_session_id, payload)
-        VALUES ($1, 'authorize-net', $2, $3, $4, $5::jsonb)
+        INSERT INTO gateway_notifications (id, provider, provider_notification_id, event_type, signature_valid, checkout_session_id, payload)
+        VALUES ($1, 'authorize-net', $2, $3, $4, $5, $6::jsonb)
+        ON CONFLICT (provider, provider_notification_id) DO NOTHING
       `,
       [
         crypto.randomUUID(),
+        webhook.notificationId ?? crypto.randomUUID(),
         webhook.eventType,
         signatureValid,
-        checkoutSessionId,
+        providerReferenceId,
         rawBody,
       ],
     );
+
+    if (notificationResult.rowCount === 0) {
+      duplicate = true;
+    }
 
     if (!signatureValid) {
       await client.query(
@@ -63,18 +79,18 @@ export async function POST(request: NextRequest) {
           INSERT INTO audit_events (id, event_type, actor, subject_type, subject_id, payload)
           VALUES ($1, 'payment.webhook.rejected', 'authorize-net', 'gateway_notification', $2, $3::jsonb)
         `,
-        [crypto.randomUUID(), checkoutSessionId ?? "unknown", JSON.stringify({ reason: "invalid-signature" })],
+        [crypto.randomUUID(), providerReferenceId ?? "unknown", JSON.stringify({ reason: "invalid-signature" })],
       );
       return;
     }
 
-    if (!checkoutSessionId) {
+    if (!providerReferenceId || !providerTransactionId) {
       await client.query(
         `
           INSERT INTO audit_events (id, event_type, actor, subject_type, subject_id, payload)
           VALUES ($1, 'payment.webhook.ignored', 'authorize-net', 'gateway_notification', 'missing-session', $2::jsonb)
         `,
-        [crypto.randomUUID(), JSON.stringify({ eventType: webhook.eventType })],
+        [crypto.randomUUID(), JSON.stringify({ eventType: webhook.eventType, reason: "missing-reference" })],
       );
       return;
     }
@@ -82,18 +98,20 @@ export async function POST(request: NextRequest) {
     const paymentResult = await client.query<{
       id: string;
       member_id: string;
+      email: string;
       product_id: string;
       provider_payment_id: string | null;
       entitlement_key: string;
+      amount_cents: number;
     }>(
       `
-        SELECT p.id, p.member_id, p.product_id, p.provider_payment_id, pr.entitlement_key
+        SELECT p.id, p.member_id, p.email, p.product_id, p.provider_payment_id, p.amount_cents, pr.entitlement_key
         FROM payments p
         JOIN products pr ON pr.id = p.product_id
-        WHERE p.checkout_session_id = $1
+        WHERE p.provider_session_id = $1
         LIMIT 1
       `,
-      [checkoutSessionId],
+      [providerReferenceId],
     );
 
     if (paymentResult.rowCount === 0) {
@@ -102,14 +120,20 @@ export async function POST(request: NextRequest) {
           INSERT INTO audit_events (id, event_type, actor, subject_type, subject_id, payload)
           VALUES ($1, 'payment.webhook.unmatched', 'authorize-net', 'checkout_session', $2, $3::jsonb)
         `,
-        [crypto.randomUUID(), checkoutSessionId, JSON.stringify({ eventType: webhook.eventType })],
+        [crypto.randomUUID(), providerReferenceId, JSON.stringify({ eventType: webhook.eventType })],
       );
       return;
     }
 
     const payment = paymentResult.rows[0];
 
-    if (isSuccessfulPaymentEvent(webhook.eventType)) {
+    const responseCode = Number(payload?.responseCode);
+    const authAmountCents = Math.round(Number(payload?.authAmount) * 100);
+    const paymentMatches = responseCode === 1
+      && Number.isFinite(authAmountCents)
+      && authAmountCents === payment.amount_cents;
+
+    if (isSuccessfulPaymentEvent(webhook.eventType) && paymentMatches) {
       await client.query(
         `
           UPDATE payments
@@ -118,7 +142,7 @@ export async function POST(request: NextRequest) {
               provider_payment_id = COALESCE(provider_payment_id, $2)
           WHERE id = $1
         `,
-        [payment.id, checkoutSessionId],
+        [payment.id, providerTransactionId],
       );
 
       await client.query(
@@ -136,10 +160,62 @@ export async function POST(request: NextRequest) {
           INSERT INTO audit_events (id, event_type, actor, subject_type, subject_id, payload)
           VALUES ($1, 'payment.captured', 'authorize-net', 'payment', $2, $3::jsonb)
         `,
-        [crypto.randomUUID(), payment.id, JSON.stringify({ checkoutSessionId, eventType: webhook.eventType })],
+        [crypto.randomUUID(), payment.id, JSON.stringify({ providerReferenceId, providerTransactionId, eventType: webhook.eventType })],
+      );
+      entitlementGrant = {
+        memberId: payment.member_id,
+        email: payment.email,
+        entitlementKey: payment.entitlement_key,
+      };
+    } else if (isSuccessfulPaymentEvent(webhook.eventType)) {
+      await client.query(
+        `
+          INSERT INTO audit_events (id, event_type, actor, subject_type, subject_id, payload)
+          VALUES ($1, 'payment.webhook.rejected', 'authorize-net', 'payment', $2, $3::jsonb)
+        `,
+        [crypto.randomUUID(), payment.id, JSON.stringify({ reason: "payment-mismatch", eventType: webhook.eventType })],
       );
     }
   });
 
-  return NextResponse.json({ accepted: true }, { status: 202 });
+  if (!signatureValid) {
+    return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
+  }
+
+  if (entitlementGrant) {
+    const grant = entitlementGrant as {
+      memberId: string;
+      email: string;
+      entitlementKey: string;
+    };
+    const { error } = await getSupabaseAdmin()
+      .from("iv_member_entitlements")
+      .upsert(
+        {
+          privy_user_id: grant.memberId,
+          email: grant.email,
+          source: "authorize_net",
+          status: "active",
+          payment_provider: "authorize-net",
+          provider_checkout_session_id: providerReferenceId,
+          provider_payment_id: providerTransactionId,
+          metadata: {
+            access_type: "all_modules",
+            reward_track: "full_academy",
+            entitlement_key: grant.entitlementKey,
+          },
+        },
+        { onConflict: "provider_checkout_session_id" },
+      );
+
+    if (error) {
+      console.error("[authorize-net/webhook] entitlement sync failed", {
+        code: error.code,
+        message: error.message,
+      });
+      return NextResponse.json({ error: "Entitlement synchronization failed" }, { status: 500 });
+    }
+  }
+
+  return NextResponse.json({ accepted: true, duplicate }, { status: 200 });
 }

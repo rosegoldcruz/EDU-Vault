@@ -1,4 +1,3 @@
-type RewardMilestoneNumber = 1 | 2 | 3
 export type RewardProductTier = 'INTERNAL_TEST' | 'ENTRY' | 'FOUNDATION' | 'BUILDER_ACCELERATOR' | 'FOUNDER_ELITE'
 
 export type RewardTierMetadata = {
@@ -12,6 +11,8 @@ export type RewardTierMetadata = {
   access_type?: unknown
   reward_track?: unknown
   internal_test?: unknown
+  reward_amounts_raw?: unknown
+  single_module_reward_amount_raw?: unknown
 }
 
 export type RewardResolutionContext = {
@@ -22,17 +23,15 @@ export type RewardResolutionContext = {
 }
 
 type RewardConfig = {
-  modulePairSize: number
-  totalModules: number
   network: string
   payoutWorkerEnabled: boolean
   payoutDryRun: boolean
   payoutSafeTestOnly: boolean
+  payoutSafeTestModuleNumber: number | null
   maxPayoutsPerRun: number
   tokenMintAddress: string
   rewardWalletPublicKey: string
   solanaRpcUrl: string
-  legacyRewardAmountsRaw: Partial<Record<RewardMilestoneNumber, string>>
 }
 
 type RewardTransferConfig = RewardConfig & {
@@ -65,6 +64,16 @@ function parsePositiveInteger(name: string, value: string): number {
   return parsed
 }
 
+function parseOptionalNonNegativeInteger(name: string): number | null {
+  const value = process.env[name]
+  if (!value) return null
+  const parsed = Number(value)
+  if (!Number.isInteger(parsed) || parsed < 0) {
+    throw new Error(`Invalid ${name}: expected a non-negative integer`)
+  }
+  return parsed
+}
+
 function assertRawAmount(name: string, value: string): string {
   const trimmed = value.trim()
   if (!/^\d+$/.test(trimmed)) {
@@ -74,12 +83,6 @@ function assertRawAmount(name: string, value: string): string {
     throw new Error(`Invalid ${name}: amount must be greater than zero`)
   }
   return trimmed
-}
-
-function getOptionalRawAmount(name: string): string | undefined {
-  const value = process.env[name]
-  if (!value) return undefined
-  return assertRawAmount(name, value)
 }
 
 function normalizeMetadataString(value: unknown): string | null {
@@ -205,34 +208,15 @@ export function buildRewardTierJobMetadata(metadata?: RewardTierMetadata | null)
   }
 }
 
-const tierMilestoneEnvNames: Record<Exclude<RewardProductTier, 'INTERNAL_TEST' | 'ENTRY'>, Record<RewardMilestoneNumber, string>> = {
-  FOUNDATION: {
-    1: 'IVT_REWARD_FOUNDATION_MILESTONE_1_AMOUNT_RAW',
-    2: 'IVT_REWARD_FOUNDATION_MILESTONE_2_AMOUNT_RAW',
-    3: 'IVT_REWARD_FOUNDATION_MILESTONE_3_AMOUNT_RAW',
-  },
-  BUILDER_ACCELERATOR: {
-    1: 'IVT_REWARD_BUILDER_MILESTONE_1_AMOUNT_RAW',
-    2: 'IVT_REWARD_BUILDER_MILESTONE_2_AMOUNT_RAW',
-    3: 'IVT_REWARD_BUILDER_MILESTONE_3_AMOUNT_RAW',
-  },
-  FOUNDER_ELITE: {
-    1: 'IVT_REWARD_FOUNDER_MILESTONE_1_AMOUNT_RAW',
-    2: 'IVT_REWARD_FOUNDER_MILESTONE_2_AMOUNT_RAW',
-    3: 'IVT_REWARD_FOUNDER_MILESTONE_3_AMOUNT_RAW',
-  },
-}
-
 export function getRewardAmountRawForMilestone(
   milestoneNumber: number,
   metadata?: RewardTierMetadata | null,
   context?: RewardResolutionContext,
 ): string {
-  if (!Number.isInteger(milestoneNumber) || milestoneNumber < 1 || milestoneNumber > 3) {
-    throw new Error('Invalid milestoneNumber: expected integer between 1 and 3')
+  if (!Number.isInteger(milestoneNumber) || milestoneNumber < 1) {
+    throw new Error('Invalid milestoneNumber: expected a positive integer')
   }
 
-  const normalizedMilestone = milestoneNumber as RewardMilestoneNumber
   const productTier = resolveRewardProductTier(metadata)
   const resolutionContext = context ?? {
     rewardTrack: 'full_academy' as const,
@@ -244,8 +228,13 @@ export function getRewardAmountRawForMilestone(
     (productTier === 'FOUNDATION' || productTier === 'BUILDER_ACCELERATOR' || productTier === 'FOUNDER_ELITE')
     && hasRewardShape(metadata, resolutionContext)
   ) {
-    const envName = tierMilestoneEnvNames[productTier][normalizedMilestone]
-    return assertRawAmount(envName, readEnv(envName))
+    const configuredAmounts = metadata?.reward_amounts_raw
+    if (configuredAmounts && typeof configuredAmounts === 'object' && !Array.isArray(configuredAmounts)) {
+      const amount = (configuredAmounts as Record<string, unknown>)[String(milestoneNumber)]
+      if (typeof amount === 'string') {
+        return assertRawAmount(`reward_amounts_raw.${milestoneNumber}`, amount)
+      }
+    }
   }
 
   throw buildResolutionError('full_academy', metadata, resolutionContext)
@@ -262,7 +251,10 @@ export function getSingleModuleRewardAmountRaw(
   }
 
   if (productTier === 'ENTRY' && hasRewardShape(metadata, resolutionContext)) {
-    return assertRawAmount('IVT_REWARD_ENTRY_SINGLE_MODULE_AMOUNT_RAW', readEnv('IVT_REWARD_ENTRY_SINGLE_MODULE_AMOUNT_RAW'))
+    const amount = metadata?.single_module_reward_amount_raw
+    if (typeof amount === 'string') {
+      return assertRawAmount('single_module_reward_amount_raw', amount)
+    }
   }
 
   if (productTier === 'INTERNAL_TEST' && hasRewardShape(metadata, resolutionContext)) {
@@ -285,39 +277,21 @@ export function getRewardConfig(): RewardConfig {
   if (!rewardWalletPublicKey) throw new Error('Missing required env var: IVT_REWARD_WALLET_PUBLIC_KEY')
   if (!solanaRpcUrl) throw new Error('Missing required env var: IVT_SOLANA_RPC_URL')
 
-  const modulePairSize = parsePositiveInteger(
-    'IVT_REWARD_MODULE_PAIR_SIZE',
-    readOptionalEnv('IVT_REWARD_MODULE_PAIR_SIZE', '2'),
-  )
-
-  const totalModules = parsePositiveInteger(
-    'IVT_TOTAL_MODULES',
-    readOptionalEnv('IVT_TOTAL_MODULES', '6'),
-  )
-
   const maxPayoutsPerRun = parsePositiveInteger(
     'IVT_MAX_PAYOUTS_PER_RUN',
     readOptionalEnv('IVT_MAX_PAYOUTS_PER_RUN', '10'),
   )
 
-  const legacyRewardAmountsRaw: Partial<Record<RewardMilestoneNumber, string>> = {
-    1: getOptionalRawAmount('IVT_REWARD_MILESTONE_1_AMOUNT_RAW'),
-    2: getOptionalRawAmount('IVT_REWARD_MILESTONE_2_AMOUNT_RAW'),
-    3: getOptionalRawAmount('IVT_REWARD_MILESTONE_3_AMOUNT_RAW'),
-  }
-
   return {
-    modulePairSize,
-    totalModules,
     network: readOptionalEnv('IVT_REWARD_NETWORK', 'mainnet-beta').trim(),
     payoutWorkerEnabled: parseBoolean(readOptionalEnv('IVT_PAYOUT_WORKER_ENABLED', 'false')),
     payoutDryRun: parseBoolean(readOptionalEnv('IVT_PAYOUT_DRY_RUN', 'true')),
     payoutSafeTestOnly: parseBoolean(readOptionalEnv('IVT_PAYOUT_SAFE_TEST_ONLY', 'false')),
+    payoutSafeTestModuleNumber: parseOptionalNonNegativeInteger('IVT_PAYOUT_SAFE_TEST_MODULE_NUMBER'),
     maxPayoutsPerRun,
     tokenMintAddress,
     rewardWalletPublicKey,
     solanaRpcUrl,
-    legacyRewardAmountsRaw,
   }
 }
 
@@ -338,17 +312,15 @@ export function getPayoutTransferConfig(): RewardTransferConfig {
 export function getRedactedRewardConfig() {
   const config = getRewardConfig()
   return {
-    modulePairSize: config.modulePairSize,
-    totalModules: config.totalModules,
     network: config.network,
     payoutWorkerEnabled: config.payoutWorkerEnabled,
     payoutDryRun: config.payoutDryRun,
     payoutSafeTestOnly: config.payoutSafeTestOnly,
+    payoutSafeTestModuleNumber: config.payoutSafeTestModuleNumber,
     maxPayoutsPerRun: config.maxPayoutsPerRun,
     tokenMintAddress: config.tokenMintAddress,
     rewardWalletPublicKey: config.rewardWalletPublicKey,
     solanaRpcUrl: config.solanaRpcUrl,
-    legacyRewardAmountsRaw: config.legacyRewardAmountsRaw,
     hasTransferSecretKey: Boolean(process.env.IVT_REWARD_WALLET_SECRET_KEY),
   }
 }
